@@ -189,6 +189,35 @@ public class LuaToolsApiClient(AuthService auth, SteamAppInfoCache appInfo, Cove
     }
 
     /// <summary>
+    /// Public: the most recently-published Denuvo fixes across ALL games. There's no /api/denuvo feed
+    /// endpoint, so this reads the (anon-readable) Supabase `denuvo_fixes` table directly via PostgREST,
+    /// the same way <see cref="GetStandardUsageAsync"/> reads `user_downloads`. Returns the newest
+    /// <paramref name="limit"/> fixes, each with its game name/header and tags embedded. Null on failure.
+    /// </summary>
+    public async Task<List<DenuvoRecentFix>?> GetRecentDenuvoFixesAsync(
+        int limit = 25, CancellationToken ct = default)
+    {
+        try
+        {
+            // PostgREST select with embedded resources (to-one denuvo_games; to-many denuvo_fix_tags,
+            // each carrying its denuvo_tags). Bounded read; anon RLS permits SELECT on these tables.
+            string url = $"{AppConfig.SupabaseUrl}/rest/v1/denuvo_fixes" +
+                         "?select=id,appid,title,description,created_at," +
+                         "denuvo_games(name,header_image)," +
+                         "denuvo_fix_tags(tag_id,denuvo_tags(id,name,slug,color))" +
+                         $"&order=created_at.desc&limit={limit}";
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            req.Headers.TryAddWithoutValidation("apikey", AppConfig.SupabaseAnonKey);
+
+            using var res = await _http.SendAsync(req, ct);
+            if (!res.IsSuccessStatusCode) return null;
+            return await ReadJsonAsync<List<DenuvoRecentFix>>(res, ct);
+        }
+        catch { return null; } // offline / table locked down → the Recent tab shows its own error state
+    }
+
+    /// <summary>
     /// Auth: download a fix's "manifest" or "fix" slot. The endpoint returns a short-lived signed
     /// R2 URL (counts toward 25/day); we then fetch the file from that URL. Caller must be signed in.
     /// </summary>

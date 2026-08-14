@@ -527,4 +527,9 @@
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>已達到每日 Hubcap 上限。</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>此應用程式沒有可用的 Hubcap 資訊清單。</value></data>
   <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Hubcap 下載失敗（{0}）。</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>遊戲</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>最近</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>新</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>暫無近期發布的修正。</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>無法載入最近的修正。請檢查你的網路連線。</value></data>
 </root>

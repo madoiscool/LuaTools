@@ -527,4 +527,9 @@ Dette sletter .lua-filerne fra Steam\config\stplug-in. Genstart Steam bagefter, 
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Du har nået din daglige Hubcap-grænse.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Der er ingen Hubcap-manifest til denne app.</value></data>
   <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Hubcap-download mislykkedes ({0}).</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>Spil</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>Seneste</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>Ny</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>Ingen nylige rettelser.</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>Kunne ikke indlæse nylige rettelser. Tjek din forbindelse.</value></data>
 </root>

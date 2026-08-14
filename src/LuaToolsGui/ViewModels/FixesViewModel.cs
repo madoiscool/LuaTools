@@ -8,6 +8,9 @@ using LuaToolsGui.Services;
 
 namespace LuaToolsGui.ViewModels;
 
+/// <summary>The two sub-tabs on the Fixes page: the game grid (default) and the recently-added feed.</summary>
+public enum FixesPage { Games, Recent }
+
 /// <summary>A game card in the Fixes grid.</summary>
 public partial class FixGameCardVm(DenuvoGameListing g) : ObservableObject
 {
@@ -65,6 +68,47 @@ public partial class FixItemVm(DenuvoFix f) : ObservableObject
         DateTimeOffset.TryParse(iso, out var d) ? d.UtcDateTime.ToString("d MMM yyyy") : "";
 }
 
+/// <summary>One entry in the Fixes page's "Recently added" feed (a fix, with its game + tags).</summary>
+public partial class RecentFixVm(DenuvoRecentFix f) : ObservableObject
+{
+    public string Id { get; } = f.Id;
+    public string AppId { get; } = f.AppId;
+    public string Title { get; } = f.Title;
+    public string? Description { get; } = f.Description;
+    public IReadOnlyList<DenuvoTag> Tags { get; } = f.Tags;
+
+    private readonly string? _headerImage = f.Game?.HeaderImage;
+    private readonly string? _createdAt = f.CreatedAt;
+
+    public string GameNameLabel =>
+        string.IsNullOrWhiteSpace(f.Game?.Name) ? $"App ID: {AppId}" : f.Game!.Name;
+    public string BuildLabel =>
+        string.Format(Resources.Strings.Fixes_Build, string.IsNullOrWhiteSpace(Title) ? "—" : Title);
+    public string DateLabel => FormatDate(_createdAt);
+    public bool IsNew => TryParseDate(_createdAt, out var d) && d >= DateTime.UtcNow.AddDays(-3);
+
+    /// <summary>Local cached cover path (set after CoverCache resolves it); bound via ImagePathToSource.</summary>
+    [ObservableProperty] private string? _cover;
+    private int _resolving;
+
+    public async Task EnsureCoverAsync(CoverCache covers)
+    {
+        if (Cover is not null || string.IsNullOrWhiteSpace(_headerImage)) return;
+        if (!long.TryParse(AppId, out long appid)) return;
+        if (Interlocked.Exchange(ref _resolving, 1) == 1) return;
+        try
+        {
+            string? local = covers.GetLocalPath(appid) ?? await covers.EnsureAsync(appid, _headerImage!);
+            if (local is not null) Cover = local;
+        }
+        finally { Interlocked.Exchange(ref _resolving, 0); }
+    }
+
+    private static bool TryParseDate(string? iso, out DateTimeOffset d) => DateTimeOffset.TryParse(iso, out d);
+    private static string FormatDate(string? iso) =>
+        DateTimeOffset.TryParse(iso, out var d) ? d.UtcDateTime.ToString("d MMM yyyy") : "";
+}
+
 /// <summary>
 /// "Fixes" page: browse games with Denuvo fixes (grid + search + tag filter), open a game to see its
 /// fixes, and download a fix's manifest (force-locked lua install) or fix zip (extract into the game
@@ -103,6 +147,32 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
     private List<FixGameCardVm> _allGames = [];
 
     public ObservableCollection<TagPillVm> Tags { get; } = [];
+
+    // ── Sub-tabs: game grid (default) vs the recently-added fixes feed ──
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(IsGamesMode))]
+    [NotifyPropertyChangedFor(nameof(IsRecentMode))]
+    private FixesPage _page = FixesPage.Games;
+
+    public bool IsGamesMode => Page == FixesPage.Games;
+    public bool IsRecentMode => Page == FixesPage.Recent;
+
+    [RelayCommand]
+    private void ShowGames() => Page = FixesPage.Games;
+
+    [RelayCommand]
+    private void ShowRecent()
+    {
+        Page = FixesPage.Recent;
+        _ = LoadRecentAsync(); // usually a no-op: LoadAsync warms the feed at page load
+    }
+
+    public ObservableCollection<RecentFixVm> RecentFixes { get; } = [];
+    [ObservableProperty] private bool _isLoadingRecent;
+    [ObservableProperty] private string? _recentEmptyMessage;
+
+    /// <summary>True once the "Recent" feed has at least one entry (gates the feed vs its empty/error message).</summary>
+    public bool HasRecentItems => RecentFixes.Count > 0;
 
     // IsLoading, EmptyMessage and the IsEmpty gating are inherited from PagedListViewModel<FixGameCardVm>.
     // Page size persists via SavePageSizeSetting below.
@@ -166,6 +236,9 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
             foreach (var t in data.Tags) Tags.Add(new TagPillVm(t));
             ApplyFilter();
             if (_allGames.Count == 0) EmptyMessage = Resources.Strings.Fixes_Empty_None;
+
+            // Warm the "Recent" sub-tab in the background (one bounded PostgREST read, no auth).
+            _ = LoadRecentAsync();
         }
         catch
         {
@@ -177,12 +250,48 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
         }
     }
 
+    /// <summary>Fetch the most recently-published fixes (feed for the "Recent" sub-tab). Loads once per
+    /// session unless <paramref name="force"/> (the Refresh button) re-fetches.</summary>
+    public async Task LoadRecentAsync(bool force = false)
+    {
+        if (!force && RecentFixes.Count > 0) return;
+        IsLoadingRecent = true;
+        try
+        {
+            var fixes = await api.GetRecentDenuvoFixesAsync(limit: 25);
+            if (fixes is null)
+            {
+                RecentEmptyMessage = Resources.Strings.Fixes_Recent_Err_Load;
+                return;
+            }
+
+            RecentFixes.Clear();
+            foreach (var f in fixes) RecentFixes.Add(new RecentFixVm(f));
+            foreach (var f in RecentFixes) _ = f.EnsureCoverAsync(covers);
+            RecentEmptyMessage = RecentFixes.Count == 0 ? Resources.Strings.Fixes_Recent_Empty : null;
+            OnPropertyChanged(nameof(HasRecentItems));
+        }
+        catch
+        {
+            RecentEmptyMessage = Resources.Strings.Fixes_Recent_Err_Load;
+        }
+        finally
+        {
+            IsLoadingRecent = false;
+        }
+    }
+
+    [RelayCommand]
+    private Task OpenRecentFix(RecentFixVm fix) =>
+        long.TryParse(fix.AppId, out long appId) ? OpenForAppIdAsync(appId) : Task.CompletedTask;
+
     [RelayCommand]
     private Task Refresh() => RefreshWithCooldownAsync(async () =>
     {
         if (SearchText.Length > 0) SearchText = ""; // reset filter → full list visible
         if (SelectedTagId is not null) SelectTag(SelectedTagId); // clear active tag (toggles off)
         await LoadAsync(force: true);
+        await LoadRecentAsync(force: true);
         toast.Show(Resources.Strings.Fixes_Toast_Refreshed_Title,
             string.Format(Resources.Strings.Fixes_Toast_Refreshed_Body, _allGames.Count));
     });

@@ -527,4 +527,9 @@ Cela supprime les fichiers .lua de Steam\config\stplug-in. Redémarrez Steam ens
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Ta limite quotidienne Hubcap est atteinte.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Aucun manifeste Hubcap n'est disponible pour cette app.</value></data>
   <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Échec du téléchargement Hubcap ({0}).</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>Jeux</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>Récents</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>Nouveau</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>Aucun correctif publié récemment.</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>Impossible de charger les correctifs récents. Vérifiez votre connexion.</value></data>
 </root>

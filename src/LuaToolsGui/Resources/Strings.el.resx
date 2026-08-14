@@ -527,4 +527,9 @@
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Έφτασες το ημερήσιο όριο του Hubcap.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Δεν υπάρχει διαθέσιμο manifest Hubcap για αυτήν την εφαρμογή.</value></data>
   <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Η λήψη από το Hubcap απέτυχε ({0}).</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>Παιχνίδια</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>Πρόσφατα</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>Νέο</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>Δεν κυκλοφόρησαν πρόσφατες διορθώσεις.</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>Δεν ήταν δυνατή η φόρτωση των πρόσφατων διορθώσεων. Ελέγξτε τη σύνδεσή σας.</value></data>
 </root>
