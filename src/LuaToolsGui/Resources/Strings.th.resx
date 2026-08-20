@@ -527,4 +527,9 @@
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>คุณใช้ Hubcap ครบตามขีดจำกัดรายวันแล้ว</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>ไม่มี manifest ของ Hubcap สำหรับแอปนี้</value></data>
   <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>ดาวน์โหลดจาก Hubcap ไม่สำเร็จ ({0})</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>เกม</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>ล่าสุด</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>ใหม่</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>ยังไม่มีการแก้ไขที่เผยแพร่ล่าสุด</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>ไม่สามารถโหลดการแก้ไขล่าสุดได้ โปรดตรวจสอบการเชื่อมต่อของคุณ</value></data>
 </root>

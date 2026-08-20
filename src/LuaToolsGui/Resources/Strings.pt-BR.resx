@@ -527,4 +527,9 @@ Isso exclui os arquivos .lua de Steam\config\stplug-in. Reinicie o Steam depois 
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Você atingiu seu limite diário do Hubcap.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Nenhum manifesto do Hubcap disponível para este app.</value></data>
   <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Falha no download do Hubcap ({0}).</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>Jogos</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>Recentes</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>Novo</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>Nenhuma correção lançada recentemente.</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>Não foi possível carregar as correções recentes. Verifique sua conexão.</value></data>
 </root>

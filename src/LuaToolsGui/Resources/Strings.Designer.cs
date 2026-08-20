@@ -301,6 +301,11 @@ public static class Strings
     public static string Fixes_Toast_CouldntApply => Get(nameof(Fixes_Toast_CouldntApply));
     public static string Fixes_Toast_Refreshed_Title => Get(nameof(Fixes_Toast_Refreshed_Title));
     public static string Fixes_Toast_Refreshed_Body => Get(nameof(Fixes_Toast_Refreshed_Body));
+    public static string Fixes_Tab_Games => Get(nameof(Fixes_Tab_Games));
+    public static string Fixes_Tab_Recent => Get(nameof(Fixes_Tab_Recent));
+    public static string Fixes_New => Get(nameof(Fixes_New));
+    public static string Fixes_Recent_Empty => Get(nameof(Fixes_Recent_Empty));
+    public static string Fixes_Recent_Err_Load => Get(nameof(Fixes_Recent_Err_Load));
 
     // ── Add / Download ──
     public static string Add_Title => Get(nameof(Add_Title));

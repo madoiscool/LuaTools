@@ -553,4 +553,9 @@
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>لقد بلغت حدّك اليومي في Hubcap.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>لا يوجد بيان Hubcap متاح لهذا التطبيق.</value></data>
   <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>فشل التنزيل من Hubcap ({0}).</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>ألعاب</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>الأحدث</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>جديد</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>لا توجد إصلاحات صدرت مؤخرًا.</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>تعذّر تحميل الإصلاحات الحديثة. تحقق من اتصالك.</value></data>
 </root>

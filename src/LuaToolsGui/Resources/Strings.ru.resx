@@ -527,4 +527,9 @@
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Достигнут дневной лимит Hubcap.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Для этого приложения нет манифеста Hubcap.</value></data>
   <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Не удалось загрузить с Hubcap ({0}).</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>Игры</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>Последние</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>Новое</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>Свежих фиксов пока нет.</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>Не удалось загрузить свежие фиксы. Проверьте подключение.</value></data>
 </root>

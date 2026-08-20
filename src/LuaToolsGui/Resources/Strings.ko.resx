@@ -527,4 +527,9 @@
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>일일 Hubcap 한도에 도달했습니다.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>이 앱에 사용할 수 있는 Hubcap 매니페스트가 없습니다.</value></data>
   <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Hubcap 다운로드 실패 ({0}).</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>게임</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>최근</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>새 항목</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>최근에 출시된 수정이 없습니다.</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>최근 수정을 불러올 수 없습니다. 연결을 확인하세요.</value></data>
 </root>

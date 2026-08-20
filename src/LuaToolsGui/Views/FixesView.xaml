@@ -26,6 +26,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -47,16 +48,82 @@
                 Icon="{ui:SymbolIcon ArrowSync24}" />
         </Grid>
 
+        <!-- Sub-tabs: game grid vs recently-added fixes feed -->
+        <Border
+            Grid.Row="1"
+            Margin="0,14,0,0"
+            Padding="3"
+            HorizontalAlignment="Left"
+            Background="#0DFFFFFF"
+            BorderBrush="#14FFFFFF"
+            BorderThickness="1"
+            CornerRadius="8">
+            <StackPanel Orientation="Horizontal">
+                <Button Command="{Binding ShowGamesCommand}" Cursor="Hand">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Tab" Padding="18,6" CornerRadius="6" Background="Transparent">
+                                <TextBlock
+                                    x:Name="TabText"
+                                    FontSize="12.5"
+                                    FontWeight="SemiBold"
+                                    Foreground="#9ca3af"
+                                    Text="{x:Static res:Strings.Fixes_Tab_Games}" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Tab" Property="Background" Value="#14a78bfa" />
+                                </Trigger>
+                                <!-- Active: filled accent (declared last so it wins over hover). -->
+                                <DataTrigger Binding="{Binding IsGamesMode}" Value="True">
+                                    <Setter TargetName="Tab" Property="Background" Value="#a78bfa" />
+                                    <Setter TargetName="TabText" Property="Foreground" Value="#ffffff" />
+                                </DataTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Command="{Binding ShowRecentCommand}" Cursor="Hand">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Tab" Padding="18,6" CornerRadius="6" Background="Transparent">
+                                <TextBlock
+                                    x:Name="TabText"
+                                    FontSize="12.5"
+                                    FontWeight="SemiBold"
+                                    Foreground="#9ca3af"
+                                    Text="{x:Static res:Strings.Fixes_Tab_Recent}" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Tab" Property="Background" Value="#14a78bfa" />
+                                </Trigger>
+                                <DataTrigger Binding="{Binding IsRecentMode}" Value="True">
+                                    <Setter TargetName="Tab" Property="Background" Value="#a78bfa" />
+                                    <Setter TargetName="TabText" Property="Foreground" Value="#ffffff" />
+                                </DataTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Border>
+
         <!-- Search -->
         <ui:TextBox
-            Grid.Row="1"
+            Grid.Row="2"
             Margin="0,14,0,0"
             Icon="{ui:SymbolIcon Search24}"
             PlaceholderText="{x:Static res:Strings.Common_SearchPlaceholder}"
-            Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
+            Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+            Visibility="{Binding IsGamesMode, Converter={StaticResource BoolToVis}}" />
 
         <!-- Tag filter pills -->
-        <ItemsControl Grid.Row="2" Margin="0,12,0,0" ItemsSource="{Binding Tags}">
+        <ItemsControl
+            Grid.Row="3"
+            Margin="0,12,0,0"
+            ItemsSource="{Binding Tags}"
+            Visibility="{Binding IsGamesMode, Converter={StaticResource BoolToVis}}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" />
@@ -103,9 +170,14 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
+        <!-- Games sub-tab: loading / empty / grid. Collapsed entirely in Recent mode. -->
+        <Grid
+            Grid.Row="4"
+            Visibility="{Binding IsGamesMode, Converter={StaticResource BoolToVis}}">
+
         <!-- Loading -->
         <StackPanel
-            Grid.Row="3"
+            Grid.Row="0"
             Margin="0,40,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
@@ -117,7 +189,7 @@
 
         <!-- Empty -->
         <TextBlock
-            Grid.Row="3"
+            Grid.Row="0"
             Margin="0,40,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
@@ -128,7 +200,7 @@
         <!-- Game grid -->
         <vwp:VirtualizingItemsControl
             x:Name="GameScroller"
-            Grid.Row="3"
+            Grid.Row="0"
             Margin="0,14,0,0"
             ItemsSource="{Binding Items}"
             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
@@ -185,13 +257,129 @@
                 </DataTemplate>
             </vwp:VirtualizingItemsControl.ItemTemplate>
         </vwp:VirtualizingItemsControl>
+        </Grid>
+
+        <!-- Recent sub-tab: feed of recently-added fixes. Hidden in Games mode. -->
+        <Grid
+            Grid.Row="4"
+            Margin="0,14,0,0"
+            Visibility="{Binding IsRecentMode, Converter={StaticResource BoolToVis}}">
+
+            <!-- Loading -->
+            <StackPanel
+                Margin="0,24,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Orientation="Horizontal"
+                Visibility="{Binding IsLoadingRecent, Converter={StaticResource BoolToVis}}">
+                <ui:ProgressRing Width="20" Height="20" IsIndeterminate="True" />
+                <TextBlock Margin="10,0,0,0" VerticalAlignment="Center" Foreground="#9ca3af" Text="{x:Static res:Strings.Fixes_Loading}" />
+            </StackPanel>
+
+            <!-- Empty / error -->
+            <TextBlock
+                Grid.Row="0"
+                Margin="0,32,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Foreground="#9ca3af"
+                Text="{Binding RecentEmptyMessage}"
+                Visibility="{Binding RecentEmptyMessage, Converter={StaticResource NullToCollapsed}}" />
+
+            <!-- Feed -->
+            <ScrollViewer
+                Grid.Row="0"
+                HorizontalScrollBarVisibility="Disabled"
+                VerticalScrollBarVisibility="Auto"
+                Visibility="{Binding HasRecentItems, Converter={StaticResource BoolToVis}}">
+                <StackPanel>
+                    <ItemsControl ItemsSource="{Binding RecentFixes}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button
+                                    Margin="0,0,0,10"
+                                    HorizontalContentAlignment="Stretch"
+                                    Command="{Binding DataContext.OpenRecentFixCommand, ElementName=Root}"
+                                    CommandParameter="{Binding}"
+                                    Cursor="Hand">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border
+                                                x:Name="card"
+                                                Padding="12,10"
+                                                Background="#0DFFFFFF"
+                                                BorderBrush="#14FFFFFF"
+                                                BorderThickness="1"
+                                                CornerRadius="10">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border Width="44" Height="44" Background="#11FFFFFF" ClipToBounds="True" CornerRadius="8">
+                                                        <Image Source="{Binding Cover, Converter={StaticResource ImagePathToSource}}" Stretch="UniformToFill" />
+                                                    </Border>
+                                                    <StackPanel Grid.Column="1" Margin="12,0,0,0" VerticalAlignment="Center">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock FontSize="13" FontWeight="SemiBold" Foreground="#e5e7eb" Text="{Binding GameNameLabel}" TextTrimming="CharacterEllipsis" />
+                                                            <Border
+                                                                Margin="8,0,0,0"
+                                                                Padding="5,1"
+                                                                VerticalAlignment="Center"
+                                                                Background="#22c55e"
+                                                                CornerRadius="4"
+                                                                Visibility="{Binding IsNew, Converter={StaticResource BoolToVis}}">
+                                                                <TextBlock
+                                                                    FontSize="9.5"
+                                                                    FontWeight="Bold"
+                                                                    Foreground="#0b0a0f"
+                                                                    Text="{x:Static res:Strings.Fixes_New}" />
+                                                            </Border>
+                                                        </StackPanel>
+                                                        <TextBlock Margin="0,3,0,0" FontSize="11.5" Foreground="#6b7280" Text="{Binding Description}" TextTrimming="CharacterEllipsis" />
+                                                    </StackPanel>
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="card" Property="Background" Value="#14a78bfa" />
+                                                    <Setter TargetName="card" Property="BorderBrush" Value="#28a78bfa" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
 
         <!-- Pager bar: page numbers centered across the full width, with results-per-page overlaid at the
              right. Shown once game cards are present. (Mirrors ManageView's pager.) -->
         <Grid
-            Grid.Row="4"
-            Margin="0,12,0,2"
-            Visibility="{Binding ShowItems, Converter={StaticResource BoolToVis}}">
+            Grid.Row="5"
+            Margin="0,12,0,2">
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsGamesMode}" Value="True" />
+                                <Condition Binding="{Binding ShowItems}" Value="True" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" />
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
 
             <!-- Centered group: ‹ prev | page numbers (fixed-width zone) | › next. -->
             <Grid
@@ -301,7 +489,7 @@
         <!-- ── Detail flyout ─────────────────────────────────────────── -->
         <Grid
             Grid.Row="0"
-            Grid.RowSpan="5"
+            Grid.RowSpan="6"
             Margin="-8,-16,-16,-8"
             Background="#80000000"
             Visibility="{Binding IsDetailOpen, Converter={StaticResource BoolToVis}}">

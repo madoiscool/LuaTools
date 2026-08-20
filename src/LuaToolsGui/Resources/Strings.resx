@@ -352,6 +352,11 @@ This deletes the .lua files from Steam\config\stplug-in. Restart Steam afterward
   <data name="Fixes_Toast_CouldntApply" xml:space="preserve"><value>Couldn't apply fix</value></data>
   <data name="Fixes_Toast_Refreshed_Title" xml:space="preserve"><value>Refreshed</value></data>
   <data name="Fixes_Toast_Refreshed_Body" xml:space="preserve"><value>{0} games with fixes.</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>Games</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>Recent</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>New</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>No fixes released recently.</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>Couldn't load recent fixes. Check your connection.</value></data>
 
   <!-- ── Add / Download page ── -->
   <data name="Add_Title" xml:space="preserve"><value>Let's get Luing™!</value></data>

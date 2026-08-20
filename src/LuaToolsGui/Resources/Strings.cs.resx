@@ -527,4 +527,9 @@ Tím se smažou soubory .lua ze Steam\config\stplug-in. Poté restartujte Steam,
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Dosáhl jsi denního limitu Hubcap.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Pro tuto aplikaci není dostupný žádný manifest Hubcap.</value></data>
   <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Stahování z Hubcap selhalo ({0}).</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>Hry</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>Nedávné</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>Nové</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>Žádné nedávné opravy.</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>Nedávné opravy se nepodařilo načíst. Zkontrolujte připojení.</value></data>
 </root>

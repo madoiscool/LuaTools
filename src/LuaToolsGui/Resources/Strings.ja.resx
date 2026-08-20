@@ -527,4 +527,9 @@
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Hubcap の 1 日の上限に達しました。</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>このアプリ用の Hubcap マニフェストはありません。</value></data>
   <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Hubcap からのダウンロードに失敗しました ({0})。</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>ゲーム</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>最近</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>新着</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>最近公開された修正はありません。</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>最近の修正を読み込めませんでした。接続を確認してください。</value></data>
 </root>

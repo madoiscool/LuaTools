@@ -527,4 +527,9 @@ Spowoduje to usunięcie plików .lua z Steam\config\stplug-in. Następnie urucho
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Osiągnięto dzienny limit Hubcap.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Brak manifestu Hubcap dla tej aplikacji.</value></data>
   <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Pobieranie z Hubcap nie powiodło się ({0}).</value></data>
+  <data name="Fixes_Tab_Games" xml:space="preserve"><value>Gry</value></data>
+  <data name="Fixes_Tab_Recent" xml:space="preserve"><value>Ostatnie</value></data>
+  <data name="Fixes_New" xml:space="preserve"><value>Nowe</value></data>
+  <data name="Fixes_Recent_Empty" xml:space="preserve"><value>Brak ostatnio wydanych poprawek.</value></data>
+  <data name="Fixes_Recent_Err_Load" xml:space="preserve"><value>Nie udało się załadować ostatnich poprawek. Sprawdź połączenie.</value></data>
 </root>
