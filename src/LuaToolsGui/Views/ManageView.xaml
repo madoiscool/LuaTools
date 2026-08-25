@@ -742,6 +742,13 @@
                         <ui:Button
                             Margin="0,8,0,0"
                             HorizontalAlignment="Stretch"
+                            Command="{Binding DataContext.ManageAchievementsCommand, ElementName=Root}"
+                            CommandParameter="{Binding}"
+                            Content="{x:Static res:Strings.Nav_Achievements}"
+                            Icon="{ui:SymbolIcon Trophy24}" />
+                        <ui:Button
+                            Margin="0,8,0,0"
+                            HorizontalAlignment="Stretch"
                             Command="{Binding DataContext.RemoveDrmCommand, ElementName=Root}"
                             CommandParameter="{Binding}"
                             Content="{x:Static res:Strings.Manage_Action_RemoveDrm}"

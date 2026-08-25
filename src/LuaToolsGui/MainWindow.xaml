@@ -77,6 +77,11 @@
                             <ui:SymbolIcon Symbol="BranchFork24" />
                         </ui:NavigationViewItem.Icon>
                     </ui:NavigationViewItem>
+                    <ui:NavigationViewItem Content="{x:Static res:Strings.Nav_Achievements}" TargetPageType="{x:Type views:AchievementsView}">
+                        <ui:NavigationViewItem.Icon>
+                            <ui:SymbolIcon Symbol="Trophy24" />
+                        </ui:NavigationViewItem.Icon>
+                    </ui:NavigationViewItem>
                     <ui:NavigationViewItem Content="{x:Static res:Strings.Nav_Mode}" TargetPageType="{x:Type views:ModeView}">
                         <ui:NavigationViewItem.Icon>
                             <ui:SymbolIcon Symbol="Options24" />

@@ -63,6 +63,7 @@
   <data name="Nav_Home" xml:space="preserve"><value>Home</value></data>
   <data name="Nav_Add" xml:space="preserve"><value>Add</value></data>
   <data name="Nav_Manage" xml:space="preserve"><value>Manage</value></data>
+  <data name="Nav_Achievements" xml:space="preserve"><value>Achievements</value></data>
   <data name="Nav_Mode" xml:space="preserve"><value>Mode</value></data>
   <data name="Nav_Fixes" xml:space="preserve"><value>Fixes</value></data>
   <data name="Nav_RestartSteam" xml:space="preserve"><value>Restart Steam</value></data>

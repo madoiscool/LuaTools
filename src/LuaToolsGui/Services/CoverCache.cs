@@ -68,6 +68,10 @@ public class CoverCache
         return p;
     }
 
+    /// <summary>Returns the cached local file path if available, or the standard Steam CDN header URL.</summary>
+    public string GetCoverPathOrUrl(long appid) =>
+        GetLocalPath(appid) ?? $"https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/{appid}/header.jpg";
+
     /// <summary>True if we already determined this appid has no usable cover (don't keep retrying).</summary>
     public bool IsKnownMissing(long appid) => _noCover.ContainsKey(appid);
 

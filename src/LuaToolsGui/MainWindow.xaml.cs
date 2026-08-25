@@ -124,6 +124,9 @@ public partial class MainWindow : Wpf.Ui.Controls.FluentWindow
     /// <summary>Switch to Builds (used by the Manage flyout's "Manage Build"). Caller selects the game.</summary>
     public void NavigateToBuilds() => RootNavigation.Navigate(typeof(BuildsView));
 
+    /// <summary>Switch to Achievements (Steam Achievement Manager).</summary>
+    public void NavigateToAchievements() => RootNavigation.Navigate(typeof(AchievementsView));
+
     /// <summary>Switch to Settings (used when a guest hits a protected action).</summary>
     public void NavigateToSettings() => RootNavigation.Navigate(typeof(SettingsView));
 

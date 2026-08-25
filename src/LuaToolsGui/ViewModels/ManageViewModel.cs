@@ -194,6 +194,9 @@ public partial class ManageViewModel : PagedListViewModel<LuaTileViewModel>
     /// <summary>Set by App so "Manage Build" can open this game on the Builds page.</summary>
     public Action<long>? NavigateToBuilds { get; set; }
 
+    /// <summary>Set by App so "Achievements" can open this game in the Achievements view.</summary>
+    public Action<long>? NavigateToAchievements { get; set; }
+
     // Paging (Items/PageSize/CurrentPage/…), the filtered slice, refresh cooldown, IsLoading/EmptyMessage
     // and the empty-state gating all live in PagedListViewModel<LuaTileViewModel>.
 
@@ -345,6 +348,10 @@ public partial class ManageViewModel : PagedListViewModel<LuaTileViewModel>
     /// <summary>Open this game on the Builds page (switch build, inspect depots/manifests, edit).</summary>
     [RelayCommand]
     private void ManageBuild(LuaTileViewModel tile) => NavigateToBuilds?.Invoke(tile.AppId);
+
+    /// <summary>Open this game in the Achievements view.</summary>
+    [RelayCommand]
+    private void ManageAchievements(LuaTileViewModel tile) => NavigateToAchievements?.Invoke(tile.AppId);
 
     /// <summary>Set by App. Opens the launch-option editor for a game (appid, name).</summary>
     public Action<long, string>? OpenLaunchOptions { get; set; }

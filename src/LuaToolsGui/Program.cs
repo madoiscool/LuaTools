@@ -13,6 +13,14 @@ public static class Program
     [STAThread]
     public static void Main(string[] args)
     {
+        // Handle SAM worker CLI invocation before any WPF or single-instance mutex
+        if (args is { Length: > 0 } && args[0].Equals("--sam-worker", StringComparison.OrdinalIgnoreCase))
+        {
+            int exitCode = Services.SAM.SamWorker.RunAsync(args).GetAwaiter().GetResult();
+            Environment.Exit(exitCode);
+            return;
+        }
+
         // MUST run before any WPF/UI work: handles Velopack install/update hooks,
         // then no-ops on a normal launch.
         VelopackApp.Build().Run();

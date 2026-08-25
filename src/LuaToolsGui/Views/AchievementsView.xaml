@@ -1,0 +1,681 @@
+<UserControl
+    x:Class="LuaToolsGui.Views.AchievementsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:LuaToolsGui.Models"
+    xmlns:res="clr-namespace:LuaToolsGui.Resources"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:vm="clr-namespace:LuaToolsGui.ViewModels"
+    xmlns:vwp="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
+    d:DataContext="{d:DesignInstance Type=vm:AchievementsViewModel}"
+    TextElement.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <!-- Card Button Style for Game Picker -->
+        <Style x:Key="GameCardButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#14FFFFFF" />
+            <Setter Property="BorderBrush" Value="#1FFFFFFF" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="CardBorder"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="CardBorder" Property="Background" Value="#24FFFFFF" />
+                                <Setter TargetName="CardBorder" Property="BorderBrush" Value="#40FFFFFF" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="CardBorder" Property="Background" Value="#0DFFFFFF" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Margin="8,16,16,8">
+        <!-- Loading Overlay -->
+        <Grid
+            Panel.ZIndex="100"
+            Background="#A0000000"
+            Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ui:ProgressRing Width="48" Height="48" IsIndeterminate="True" />
+                <TextBlock
+                    Margin="0,16,0,0"
+                    FontSize="14"
+                    FontWeight="SemiBold"
+                    Foreground="#E0E0E0"
+                    Text="{Binding StatusMessage}"
+                    TextAlignment="Center" />
+            </StackPanel>
+        </Grid>
+
+        <!-- Saving Overlay -->
+        <Grid
+            Panel.ZIndex="100"
+            Background="#A0000000"
+            Visibility="{Binding IsSaving, Converter={StaticResource BoolToVis}}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ui:ProgressRing Width="48" Height="48" IsIndeterminate="True" />
+                <TextBlock
+                    Margin="0,16,0,0"
+                    FontSize="14"
+                    FontWeight="SemiBold"
+                    Foreground="#22c55e"
+                    Text="{Binding StatusMessage}"
+                    TextAlignment="Center" />
+            </StackPanel>
+        </Grid>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SCREEN 1: GAME PICKER (when no game is selected)           -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <Grid Visibility="{Binding IsGameSelected, Converter={StaticResource InverseBoolToVis}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock FontSize="22" FontWeight="Bold" Text="{x:Static res:Strings.Nav_Achievements}" />
+                    <TextBlock
+                        Margin="0,4,0,0"
+                        FontSize="12.5"
+                        Foreground="#9ca3af"
+                        Text="Manage achievements and statistics for Steam games" />
+                </StackPanel>
+                <ui:Button
+                    Grid.Column="1"
+                    VerticalAlignment="Top"
+                    Command="{Binding LoadGamesCommand}"
+                    Content="Scan Steam"
+                    Icon="{ui:SymbolIcon ArrowSync24}">
+                    <ui:Button.CommandParameter>
+                        <sys:Boolean>True</sys:Boolean>
+                    </ui:Button.CommandParameter>
+                </ui:Button>
+            </Grid>
+
+            <!-- Search + Custom App ID -->
+            <Grid Grid.Row="1" Margin="0,14,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="12" />
+                    <ColumnDefinition Width="220" />
+                </Grid.ColumnDefinitions>
+
+                <ui:TextBox
+                    Grid.Column="0"
+                    Icon="{ui:SymbolIcon Search24}"
+                    PlaceholderText="Search games by name or AppID..."
+                    Text="{Binding GameSearchText, UpdateSourceTrigger=PropertyChanged}" />
+
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ui:TextBox
+                        Grid.Column="0"
+                        PlaceholderText="Custom AppID"
+                        Text="{Binding CustomAppIdInput, UpdateSourceTrigger=PropertyChanged}" />
+                    <ui:Button
+                        Grid.Column="1"
+                        Margin="6,0,0,0"
+                        Command="{Binding OpenCustomAppIdCommand}"
+                        Content="Open"
+                        Icon="{ui:SymbolIcon ArrowRight24}" />
+                </Grid>
+            </Grid>
+
+            <!-- Category Filters -->
+            <StackPanel Grid.Row="2" Margin="0,10,0,10" Orientation="Horizontal">
+                <RadioButton
+                    Margin="0,0,8,0"
+                    Content="All Games"
+                    IsChecked="{Binding SelectedCategoryFilter, Converter={StaticResource EnumEquals}, ConverterParameter=All}" />
+                <RadioButton
+                    Margin="0,0,8,0"
+                    Content="Installed in LuaTools"
+                    IsChecked="{Binding SelectedCategoryFilter, Converter={StaticResource EnumEquals}, ConverterParameter=Installed}" />
+                <RadioButton
+                    Margin="0,0,8,0"
+                    Content="Standard Games"
+                    IsChecked="{Binding SelectedCategoryFilter, Converter={StaticResource EnumEquals}, ConverterParameter=Normal}" />
+                <RadioButton
+                    Margin="0,0,8,0"
+                    Content="Demos"
+                    IsChecked="{Binding SelectedCategoryFilter, Converter={StaticResource EnumEquals}, ConverterParameter=Demos}" />
+                <RadioButton
+                    Margin="0,0,8,0"
+                    Content="Mods"
+                    IsChecked="{Binding SelectedCategoryFilter, Converter={StaticResource EnumEquals}, ConverterParameter=Mods}" />
+            </StackPanel>
+
+            <!-- Virtualized Games Grid (Direct scrolling, no outer ScrollViewer) -->
+            <vwp:VirtualizingItemsControl
+                Grid.Row="3"
+                ItemsSource="{Binding FilteredGames}"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                VirtualizingPanel.CacheLengthUnit="Page"
+                VirtualizingPanel.IsVirtualizing="True"
+                VirtualizingPanel.ScrollUnit="Pixel"
+                VirtualizingPanel.VirtualizationMode="Recycling">
+                <vwp:VirtualizingItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <vwp:VirtualizingWrapPanel
+                            Orientation="Horizontal"
+                            SpacingMode="StartAndEndOnly"
+                            StretchItems="False" />
+                    </ItemsPanelTemplate>
+                </vwp:VirtualizingItemsControl.ItemsPanel>
+                <vwp:VirtualizingItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type models:SamGameInfo}">
+                        <Button
+                            Width="200"
+                            Height="140"
+                            Margin="0,0,12,12"
+                            Command="{Binding DataContext.SelectGameCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                            CommandParameter="{Binding}"
+                            Style="{StaticResource GameCardButtonStyle}">
+                            <Grid>
+                                <!-- Background Cover -->
+                                <Image
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Opacity="0.85"
+                                    Source="{Binding DisplayCoverUrl, Converter={StaticResource ImagePathToSource}}"
+                                    Stretch="UniformToFill" />
+
+                                <!-- Bottom Gradient Overlay with Title -->
+                                <Border VerticalAlignment="Bottom" Padding="8,16,8,8">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0.0" Color="#00000000" />
+                                            <GradientStop Offset="0.4" Color="#B0000000" />
+                                            <GradientStop Offset="1.0" Color="#F0000000" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <StackPanel>
+                                        <TextBlock
+                                            FontSize="12.5"
+                                            FontWeight="Bold"
+                                            Foreground="#FFFFFF"
+                                            Text="{Binding Name}"
+                                            TextTrimming="CharacterEllipsis" />
+                                        <Grid Margin="0,2,0,0">
+                                            <TextBlock
+                                                FontSize="10.5"
+                                                Foreground="#9ca3af"
+                                                Text="{Binding Id, StringFormat='ID: {0}'}" />
+                                            <Border
+                                                HorizontalAlignment="Right"
+                                                Padding="4,1"
+                                                Background="#2022c55e"
+                                                BorderBrush="#4022c55e"
+                                                BorderThickness="1"
+                                                CornerRadius="3"
+                                                Visibility="{Binding IsInstalledInLuaTools, Converter={StaticResource BoolToVis}}">
+                                                <TextBlock
+                                                    FontSize="9"
+                                                    FontWeight="SemiBold"
+                                                    Foreground="#4ade80"
+                                                    Text="Installed" />
+                                            </Border>
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </Button>
+                    </DataTemplate>
+                </vwp:VirtualizingItemsControl.ItemTemplate>
+            </vwp:VirtualizingItemsControl>
+        </Grid>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SCREEN 2: ACHIEVEMENT & STATS MANAGER (when game selected)  -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <Grid Visibility="{Binding IsGameSelected, Converter={StaticResource BoolToVis}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Game Header Card -->
+            <Border
+                Grid.Row="0"
+                Margin="0,0,0,12"
+                Padding="12,10"
+                Background="#14FFFFFF"
+                BorderBrush="#1FFFFFFF"
+                BorderThickness="1"
+                CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Back Button -->
+                    <ui:Button
+                        Grid.Column="0"
+                        Margin="0,0,10,0"
+                        VerticalAlignment="Center"
+                        Command="{Binding BackToPickerCommand}"
+                        Icon="{ui:SymbolIcon ArrowLeft24}"
+                        ToolTip="Back to games" />
+
+                    <!-- Game Cover Art Thumbnail -->
+                    <Border
+                        Grid.Column="1"
+                        Width="64"
+                        Height="32"
+                        Margin="0,0,12,0"
+                        ClipToBounds="True"
+                        CornerRadius="4">
+                        <Image
+                            Source="{Binding SelectedGame.DisplayCoverUrl, Converter={StaticResource ImagePathToSource}}"
+                            Stretch="UniformToFill" />
+                    </Border>
+
+                    <!-- Title & Progress Bar -->
+                    <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                FontSize="16"
+                                FontWeight="Bold"
+                                Foreground="#FFFFFF"
+                                Text="{Binding SelectedGame.Name}" />
+                            <TextBlock
+                                Margin="8,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="11"
+                                Foreground="#9ca3af"
+                                Text="{Binding SelectedGame.Id, StringFormat='(AppID: {0})'}" />
+                        </StackPanel>
+                        <Grid Margin="0,4,16,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <ProgressBar
+                                Height="6"
+                                VerticalAlignment="Center"
+                                Foreground="#22c55e"
+                                Maximum="100"
+                                Value="{Binding ProgressPercentage}" />
+                            <TextBlock
+                                Grid.Column="1"
+                                Margin="8,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="11"
+                                Foreground="#9ca3af">
+                                <Run Text="{Binding UnlockedCount, Mode=OneWay}" />
+                                <Run Text="/" />
+                                <Run Text="{Binding TotalAchievementsCount, Mode=OneWay}" />
+                                <Run Text="Unlocked" />
+                                <Run Text="{Binding ProgressPercentage, StringFormat='({0:F0}%)', Mode=OneWay}" />
+                            </TextBlock>
+                        </Grid>
+                    </StackPanel>
+
+                    <!-- Action Buttons -->
+                    <StackPanel
+                        Grid.Column="3"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <ui:Button
+                            Margin="0,0,8,0"
+                            Command="{Binding ReloadStatsCommand}"
+                            Content="Reload"
+                            Icon="{ui:SymbolIcon ArrowSync24}" />
+                        <ui:Button
+                            Appearance="Primary"
+                            Command="{Binding CommitChangesCommand}"
+                            Content="Save to Steam"
+                            Icon="{ui:SymbolIcon CloudCheckmark24}"
+                            IsEnabled="{Binding HasPendingChanges}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Main Tabs: Achievements / Statistics -->
+            <TabControl
+                Grid.Row="1"
+                SelectedIndex="{Binding SelectedTabIndex}">
+                <!-- ══════════════ TAB 1: ACHIEVEMENTS ══════════════ -->
+                <TabItem Header="Achievements">
+                    <Grid Margin="0,10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Achievements Toolbar -->
+                        <Grid Grid.Row="0" Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Bulk Actions -->
+                            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                <ui:Button
+                                    Margin="0,0,6,0"
+                                    Command="{Binding UnlockAllCommand}"
+                                    Content="Unlock All"
+                                    Icon="{ui:SymbolIcon CheckmarkCircle24}" />
+                                <ui:Button
+                                    Margin="0,0,6,0"
+                                    Command="{Binding LockAllCommand}"
+                                    Content="Lock All"
+                                    Icon="{ui:SymbolIcon DismissCircle24}" />
+                                <ui:Button
+                                    Margin="0,0,12,0"
+                                    Command="{Binding InvertSelectionCommand}"
+                                    Content="Invert"
+                                    Icon="{ui:SymbolIcon ArrowSwap24}" />
+                            </StackPanel>
+
+                            <!-- Filter Chips -->
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal">
+                                <RadioButton
+                                    Margin="0,0,6,0"
+                                    Content="All"
+                                    IsChecked="{Binding SelectedAchievementFilter, Converter={StaticResource EnumEquals}, ConverterParameter=All}" />
+                                <RadioButton
+                                    Margin="0,0,6,0"
+                                    Content="Unlocked"
+                                    IsChecked="{Binding SelectedAchievementFilter, Converter={StaticResource EnumEquals}, ConverterParameter=Unlocked}" />
+                                <RadioButton
+                                    Margin="0,0,12,0"
+                                    Content="Locked"
+                                    IsChecked="{Binding SelectedAchievementFilter, Converter={StaticResource EnumEquals}, ConverterParameter=Locked}" />
+                            </StackPanel>
+
+                            <!-- Search Box -->
+                            <ui:TextBox
+                                Grid.Column="2"
+                                HorizontalAlignment="Right"
+                                Width="240"
+                                Icon="{ui:SymbolIcon Search24}"
+                                PlaceholderText="Search achievements..."
+                                Text="{Binding AchievementSearchText, UpdateSourceTrigger=PropertyChanged}" />
+                        </Grid>
+
+                        <!-- Virtualized Achievements List (Smooth 60fps scrolling) -->
+                        <ListBox
+                            Grid.Row="1"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            ItemsSource="{Binding FilteredAchievements}"
+                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                            ScrollViewer.VerticalScrollBarVisibility="Auto"
+                            VirtualizingPanel.CacheLengthUnit="Page"
+                            VirtualizingPanel.IsVirtualizing="True"
+                            VirtualizingPanel.ScrollUnit="Pixel"
+                            VirtualizingPanel.VirtualizationMode="Recycling">
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="Padding" Value="0" />
+                                    <Setter Property="Margin" Value="0,2,0,2" />
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                    <Setter Property="Background" Value="Transparent" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListBoxItem">
+                                                <ContentPresenter />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate DataType="{x:Type models:SamAchievement}">
+                                    <Border
+                                        Padding="10,8"
+                                        Background="#0DFFFFFF"
+                                        BorderBrush="#1AFFFFFF"
+                                        BorderThickness="1"
+                                        CornerRadius="6">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <!-- Achievement Icon (52x52) -->
+                                            <Border
+                                                Grid.Column="0"
+                                                Width="52"
+                                                Height="52"
+                                                Margin="0,0,12,0"
+                                                Background="#10000000"
+                                                ClipToBounds="True"
+                                                CornerRadius="4">
+                                                <Image
+                                                    Source="{Binding EffectiveIconUrl, Converter={StaticResource ImagePathToSource}}"
+                                                    Stretch="UniformToFill" />
+                                            </Border>
+
+                                            <!-- Title, Description & Unlock Date -->
+                                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock
+                                                        FontSize="14"
+                                                        FontWeight="SemiBold"
+                                                        Foreground="#FFFFFF"
+                                                        Text="{Binding Name}" />
+                                                    <!-- Hidden Achievement Badge -->
+                                                    <Border
+                                                        Margin="8,0,0,0"
+                                                        Padding="4,1"
+                                                        Background="#20818cf8"
+                                                        BorderBrush="#40818cf8"
+                                                        BorderThickness="1"
+                                                        CornerRadius="3"
+                                                        Visibility="{Binding IsHidden, Converter={StaticResource BoolToVis}}">
+                                                        <TextBlock
+                                                            FontSize="9"
+                                                            FontWeight="SemiBold"
+                                                            Foreground="#818cf8"
+                                                            Text="Hidden" />
+                                                    </Border>
+                                                    <!-- Modified Status Badge -->
+                                                    <Border
+                                                        Margin="8,0,0,0"
+                                                        Padding="4,1"
+                                                        Background="#20eab308"
+                                                        BorderBrush="#40eab308"
+                                                        BorderThickness="1"
+                                                        CornerRadius="3"
+                                                        Visibility="{Binding IsModified, Converter={StaticResource BoolToVis}}">
+                                                        <TextBlock
+                                                            FontSize="9"
+                                                            FontWeight="Bold"
+                                                            Foreground="#facc15"
+                                                            Text="Pending" />
+                                                    </Border>
+                                                </StackPanel>
+                                                <TextBlock
+                                                    Margin="0,2,0,0"
+                                                    FontSize="12"
+                                                    Foreground="#9ca3af"
+                                                    Text="{Binding Description}"
+                                                    TextWrapping="Wrap" />
+                                                <Grid Margin="0,2,0,0">
+                                                    <TextBlock
+                                                        FontSize="10"
+                                                        Foreground="#6b7280"
+                                                        Text="{Binding Id, StringFormat='API: {0}'}" />
+                                                    <TextBlock
+                                                        HorizontalAlignment="Right"
+                                                        FontSize="10"
+                                                        Foreground="#4ade80"
+                                                        Text="{Binding DisplayUnlockTime, StringFormat='Unlocked: {0}'}"
+                                                        Visibility="{Binding UnlockTime, Converter={StaticResource NullToCollapsed}}" />
+                                                </Grid>
+                                            </StackPanel>
+
+                                            <!-- Toggle Checkbox -->
+                                            <CheckBox
+                                                Grid.Column="2"
+                                                Margin="12,0,4,0"
+                                                VerticalAlignment="Center"
+                                                IsChecked="{Binding IsAchieved, Mode=TwoWay}" />
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                </TabItem>
+
+                <!-- ══════════════ TAB 2: STATISTICS ══════════════ -->
+                <TabItem Header="Statistics">
+                    <Grid Margin="0,10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Safety Banner -->
+                        <Border
+                            Grid.Row="0"
+                            Margin="0,0,0,10"
+                            Padding="12,10"
+                            Background="#10eab308"
+                            BorderBrush="#30eab308"
+                            BorderThickness="1"
+                            CornerRadius="6">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <CheckBox
+                                    Grid.Column="0"
+                                    VerticalAlignment="Center"
+                                    Content="Enable Statistics Editing"
+                                    FontWeight="SemiBold"
+                                    Foreground="#facc15"
+                                    IsChecked="{Binding EnableStatsEditing, Mode=TwoWay}" />
+
+                                <TextBlock
+                                    Grid.Column="1"
+                                    Margin="16,0,0,0"
+                                    VerticalAlignment="Center"
+                                    FontSize="11.5"
+                                    Foreground="#d1d5db"
+                                    Text="Modifying numerical statistics directly edits your Steam stats. Use caution when modifying values." />
+
+                                <ui:Button
+                                    Grid.Column="2"
+                                    Command="{Binding ResetAllStatsCommand}"
+                                    Content="Reset All Stats"
+                                    Icon="{ui:SymbolIcon ArrowCounterclockwise24}"
+                                    IsEnabled="{Binding EnableStatsEditing}" />
+                            </Grid>
+                        </Border>
+
+                        <!-- Stats Table -->
+                        <DataGrid
+                            Grid.Row="1"
+                            AutoGenerateColumns="False"
+                            CanUserAddRows="False"
+                            CanUserDeleteRows="False"
+                            CanUserSortColumns="True"
+                            HeadersVisibility="Column"
+                            ItemsSource="{Binding FilteredStats}"
+                            SelectionMode="Single">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn
+                                    Width="220"
+                                    Binding="{Binding DisplayName}"
+                                    Header="Stat Name"
+                                    IsReadOnly="True" />
+                                <DataGridTextColumn
+                                    Width="180"
+                                    Binding="{Binding Id}"
+                                    Header="API Key"
+                                    IsReadOnly="True" />
+                                <DataGridTextColumn
+                                    Width="110"
+                                    Binding="{Binding DisplayType}"
+                                    Header="Type"
+                                    IsReadOnly="True" />
+                                <DataGridTemplateColumn Width="150" Header="Value">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate DataType="{x:Type models:SamStat}">
+                                            <ui:TextBox
+                                                Height="28"
+                                                Padding="6,2"
+                                                IsEnabled="{Binding DataContext.EnableStatsEditing, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                Text="{Binding ValueString, UpdateSourceTrigger=LostFocus}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn
+                                    Width="140"
+                                    Binding="{Binding RangeDescription}"
+                                    Header="Limits"
+                                    IsReadOnly="True" />
+                                <DataGridTemplateColumn Width="80" Header="Status">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate DataType="{x:Type models:SamStat}">
+                                            <Border
+                                                HorizontalAlignment="Center"
+                                                Padding="4,1"
+                                                Background="#20eab308"
+                                                BorderBrush="#40eab308"
+                                                BorderThickness="1"
+                                                CornerRadius="3"
+                                                Visibility="{Binding IsModified, Converter={StaticResource BoolToVis}}">
+                                                <TextBlock
+                                                    FontSize="9"
+                                                    FontWeight="Bold"
+                                                    Foreground="#facc15"
+                                                    Text="Modified" />
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</UserControl>

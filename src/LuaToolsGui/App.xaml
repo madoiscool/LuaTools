@@ -1,9 +1,8 @@
-<Application
-    x:Class="LuaToolsGui.App"
+<Application x:Class="LuaToolsGui.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-    xmlns:local="clr-namespace:LuaToolsGui"
+    xmlns:conv="clr-namespace:LuaToolsGui"
     ShutdownMode="OnExplicitShutdown">
     <Application.Resources>
         <ResourceDictionary>
@@ -12,14 +11,16 @@
                 <ui:ControlsDictionary />
             </ResourceDictionary.MergedDictionaries>
 
-            <local:InverseBoolToVisibilityConverter x:Key="InverseBoolToVis" />
-            <local:NullToCollapsedConverter x:Key="NullToCollapsed" />
-            <local:StatusToBrushConverter x:Key="StatusToBrush" />
-            <local:ImagePathToSourceConverter x:Key="ImagePathToSource" />
-            <local:EqualityMultiConverter x:Key="EqualityMulti" />
-            <local:MinHeightToVisibilityConverter x:Key="MinHeightToVis" />
-            <local:FilterOptionDisplayConverter x:Key="FilterOptionDisplay" />
-            <BooleanToVisibilityConverter x:Key="BoolToVis" />
+            <!-- Converters -->
+            <conv:InverseBoolToVisibilityConverter x:Key="InverseBoolToVis" />
+            <conv:NullToCollapsedConverter x:Key="NullToCollapsed" />
+            <conv:StatusToBrushConverter x:Key="StatusToBrush" />
+            <conv:ImagePathToSourceConverter x:Key="ImagePathToSource" />
+            <conv:EqualityMultiConverter x:Key="EqualityMulti" />
+            <conv:MinHeightToVisibilityConverter x:Key="MinHeightToVis" />
+            <conv:FilterOptionDisplayConverter x:Key="FilterOptionDisplay" />
+            <conv:EnumEqualsConverter x:Key="EnumEquals" />
+            <conv:BoolToVisibilityConverter x:Key="BoolToVis" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
