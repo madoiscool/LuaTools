@@ -207,8 +207,26 @@ public class SamService
             return cached;
         }
 
-        var data = await RunWorkerGetStatsAsync(appId);
-        if (data != null && string.IsNullOrEmpty(data.ErrorMessage))
+        // Try fetching stats with a retry on timeout
+        const int maxAttempts = 3; // more attempts for stats retrieval
+        SamGameStatsData? data = null;
+        for (int attempt = 1; attempt <= maxAttempts; attempt++)
+        {
+            data = await RunWorkerGetStatsAsync(appId);
+            // success if data contains achievements
+            if (data != null && string.IsNullOrEmpty(data.ErrorMessage) && data.Achievements?.Count > 0)
+            {
+                break; // got valid achievements
+            }
+            // otherwise continue retry
+            // If timeout, wait a bit before retrying
+            if (data != null && data.ErrorMessage?.Contains("timed out") == true && attempt < maxAttempts)
+            {
+                await Task.Delay(2000);
+            }
+        }
+
+        if (data != null && string.IsNullOrWhiteSpace(data.ErrorMessage))
         {
             // Populate fallback game name if missing
             if (string.IsNullOrWhiteSpace(data.GameName) || data.GameName.StartsWith("App "))
@@ -283,27 +301,52 @@ public class SamService
             CreateNoWindow = true,
         };
 
-        using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(8));
-        try
+        // Retry logic for fetching games with increased timeout
+        const int maxAttempts = 3; // increased retries for robustness
+        List<SamGameInfo>? games = null;
+        for (int attempt = 1; attempt <= maxAttempts; attempt++)
         {
-            using var process = Process.Start(psi);
-            if (process == null) return null;
+            using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(45)); // further increased timeout for slow responses
+            try
+            {
+                using var process = Process.Start(psi);
+                if (process == null) return null;
 
-            var readOutputTask = process.StandardOutput.ReadToEndAsync(cts.Token);
-            var waitForExitTask = process.WaitForExitAsync(cts.Token);
+                var readOutputTask = process.StandardOutput.ReadToEndAsync(cts.Token);
+                var waitForExitTask = process.WaitForExitAsync(cts.Token);
 
-            await Task.WhenAll(readOutputTask, waitForExitTask);
+                await Task.WhenAll(readOutputTask, waitForExitTask);
 
-            string output = await readOutputTask;
-            string? json = ExtractJson(output);
-            if (string.IsNullOrWhiteSpace(json)) return null;
-
-            return JsonSerializer.Deserialize<List<SamGameInfo>>(json, JsonOptions);
+                string output = await readOutputTask;
+                string? json = ExtractJson(output);
+                if (string.IsNullOrWhiteSpace(json))
+                {
+                    games = null;
+                }
+                else
+                {
+                    games = JsonSerializer.Deserialize<List<SamGameInfo>>(json, JsonOptions);
+                    if (games != null) break; // success
+                }
+            }
+                catch (OperationCanceledException)
+                {
+                    // timeout, log and retry if attempts remain
+                    Console.WriteLine($"[SamService] GetGames timeout on attempt {attempt}");
+                    // will retry if attempts remain
+                }
+            catch (Exception ex)
+            {
+                // other error, log and break
+                Console.WriteLine($"[SamService] GetGames error on attempt {attempt}: {ex.Message}");
+                break;
+            }
+            if (attempt < maxAttempts)
+            {
+                await Task.Delay(2000);
+            }
         }
-        catch
-        {
-            return null;
-        }
+        return games;
     }
 
     private static async Task<SamGameStatsData?> RunWorkerGetStatsAsync(uint appId)
@@ -323,7 +366,7 @@ public class SamService
             CreateNoWindow = true,
         };
 
-        using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(15));
+        using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(60)); // extended timeout for heavy games
         try
         {
             using var process = Process.Start(psi);
@@ -337,18 +380,20 @@ public class SamService
             string output = await readOutputTask;
             string? json = ExtractJson(output);
             if (string.IsNullOrWhiteSpace(json))
-            {
-                return new SamGameStatsData { AppId = appId, ErrorMessage = "Worker produced no output" };
-            }
+                return null;
 
             return JsonSerializer.Deserialize<SamGameStatsData>(json, JsonOptions);
         }
         catch (OperationCanceledException)
         {
+            // timeout, log
+            Console.WriteLine($"[SamService] GetStats timeout for AppId {appId}");
             return new SamGameStatsData { AppId = appId, ErrorMessage = "Request timed out connecting to Steam" };
         }
         catch (Exception ex)
         {
+            // log unexpected errors
+            Console.WriteLine($"[SamService] GetStats exception for AppId {appId}: {ex.Message}");
             return new SamGameStatsData { AppId = appId, ErrorMessage = $"JSON parse error: {ex.Message}" };
         }
     }

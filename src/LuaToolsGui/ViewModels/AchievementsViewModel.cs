@@ -125,6 +125,10 @@ public partial class AchievementsViewModel : ObservableObject
     [ObservableProperty]
     private int _unlockedCount;
 
+    // Message shown when selected game has no achievements
+    [ObservableProperty]
+    private string _noAchievementsMessage = string.Empty;
+
     [ObservableProperty]
     private int _totalAchievementsCount;
 
@@ -312,12 +316,15 @@ public partial class AchievementsViewModel : ObservableObject
 
         try
         {
-            var data = await _samService.GetGameStatsAsync(game.Id);
+            var data = await _samService.GetGameStatsAsync(game.Id, forceRefresh: true);
 
             if (!string.IsNullOrEmpty(data.ErrorMessage))
             {
                 ErrorMessage = data.ErrorMessage;
                 _toastService.Show("Achievements", data.ErrorMessage, error: true);
+                // Clear any previous message about missing achievements
+                NoAchievementsMessage = string.Empty;
+                return;
             }
 
             if (!string.IsNullOrWhiteSpace(data.GameName))
@@ -326,19 +333,33 @@ public partial class AchievementsViewModel : ObservableObject
                 SelectedGame = game;
             }
 
+            // Determine if there are any achievements
+            bool hasAchievements = data.Achievements != null && data.Achievements.Count > 0;
+
             OnUi(() =>
             {
                 var newAchievements = new ObservableCollection<SamAchievement>();
-                foreach (var ach in data.Achievements)
+                if (hasAchievements)
                 {
-                    ach.PropertyChanged += (_, e) =>
+                    var achList = data.Achievements!;
+                    foreach (var ach in achList)
                     {
-                        if (e.PropertyName == nameof(SamAchievement.IsAchieved))
+                        ach.PropertyChanged += (_, e) =>
                         {
-                            RecalculateProgress();
-                        }
-                    };
-                    newAchievements.Add(ach);
+                            if (e.PropertyName == nameof(SamAchievement.IsAchieved))
+                            {
+                                RecalculateProgress();
+                            }
+                        };
+                        newAchievements.Add(ach);
+                    }
+                    NoAchievementsMessage = string.Empty; // clear any previous message
+                }
+                else
+                {
+                    // Show a friendly message when no achievements are present
+                    NoAchievementsMessage = $"No achievements found for {game.Name}.";
+                    _toastService.Show("Achievements", NoAchievementsMessage, error: false);
                 }
 
                 var newStats = new ObservableCollection<SamStat>();
@@ -353,16 +374,16 @@ public partial class AchievementsViewModel : ObservableObject
                     };
                     newStats.Add(stat);
                 }
-                
+
                 Achievements = newAchievements;
                 Stats = newStats;
-                
+
                 BindingOperations.EnableCollectionSynchronization(Achievements, _achsLock);
                 BindingOperations.EnableCollectionSynchronization(Stats, _statsLock);
 
                 _achievementsView = CollectionViewSource.GetDefaultView(Achievements);
                 _achievementsView.Filter = FilterAchievement;
-                
+
                 _statsView = CollectionViewSource.GetDefaultView(Stats);
                 _statsView.Filter = FilterStat;
 

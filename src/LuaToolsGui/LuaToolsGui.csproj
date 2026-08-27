@@ -10,7 +10,7 @@
     <AssemblyName>LuaTools</AssemblyName>
     <AssemblyTitle>LuaTools</AssemblyTitle>
     <Product>LuaTools</Product>
-    <Version>1.1.4</Version>
+    <Version>1.1.6</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <!-- Velopack needs a custom Main (Program.Main) that runs before WPF -->
     <StartupObject>LuaToolsGui.Program</StartupObject>
