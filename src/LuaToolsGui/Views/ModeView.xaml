@@ -74,60 +74,97 @@
                                                 FontSize="15"
                                                 FontWeight="SemiBold"
                                                 Text="{Binding Title}" />
-                                            <!-- Recommended: green badge to steer users to the best option. -->
+                                            <!-- Active: green badge with checkmark. -->
                                             <Border
                                                 Margin="10,0,0,0"
                                                 Padding="7,2"
                                                 VerticalAlignment="Center"
                                                 Background="#2022c55e"
                                                 CornerRadius="4"
+                                                Visibility="{Binding IsActive, Converter={StaticResource BoolToVis}}">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <ui:SymbolIcon
+                                                        VerticalAlignment="Center"
+                                                        FontSize="11"
+                                                        Foreground="#4ade80"
+                                                        Symbol="Checkmark24" />
+                                                    <TextBlock
+                                                        Margin="4,0,0,0"
+                                                        VerticalAlignment="Center"
+                                                        FontSize="10.5"
+                                                        FontWeight="SemiBold"
+                                                        Foreground="#4ade80"
+                                                        Text="{x:Static res:Strings.Mode_Active}" />
+                                                </StackPanel>
+                                            </Border>
+                                            <!-- Recommended: blue badge to steer users to the best option. -->
+                                            <Border
+                                                Margin="6,0,0,0"
+                                                Padding="7,2"
+                                                VerticalAlignment="Center"
+                                                Background="#202563eb"
+                                                CornerRadius="4"
                                                 Visibility="{Binding IsRecommended, Converter={StaticResource BoolToVis}}">
-                                                <TextBlock
-                                                    FontSize="10.5"
-                                                    FontWeight="SemiBold"
-                                                    Foreground="#4ade80"
-                                                    Text="{x:Static res:Strings.Mode_Recommended}" />
+                                                <StackPanel Orientation="Horizontal">
+                                                    <ui:SymbolIcon
+                                                        VerticalAlignment="Center"
+                                                        FontSize="10"
+                                                        Foreground="#60a5fa"
+                                                        Symbol="Star24" />
+                                                    <TextBlock
+                                                        Margin="4,0,0,0"
+                                                        VerticalAlignment="Center"
+                                                        FontSize="10.5"
+                                                        FontWeight="SemiBold"
+                                                        Foreground="#60a5fa"
+                                                        Text="{x:Static res:Strings.Mode_Recommended}" />
+                                                </StackPanel>
                                             </Border>
                                             <!-- Nightly: amber "Experimental" badge. -->
                                             <Border
-                                                Margin="10,0,0,0"
+                                                Margin="6,0,0,0"
                                                 Padding="7,2"
                                                 VerticalAlignment="Center"
                                                 Background="#20f59e0b"
                                                 CornerRadius="4"
                                                 Visibility="{Binding IsExperimental, Converter={StaticResource BoolToVis}}">
-                                                <TextBlock
-                                                    FontSize="10.5"
-                                                    FontWeight="SemiBold"
-                                                    Foreground="#fbbf24"
-                                                    Text="{x:Static res:Strings.Mode_Experimental}" />
+                                                <StackPanel Orientation="Horizontal">
+                                                    <ui:SymbolIcon
+                                                        VerticalAlignment="Center"
+                                                        FontSize="10"
+                                                        Foreground="#fbbf24"
+                                                        Symbol="Warning24" />
+                                                    <TextBlock
+                                                        Margin="4,0,0,0"
+                                                        VerticalAlignment="Center"
+                                                        FontSize="10.5"
+                                                        FontWeight="SemiBold"
+                                                        Foreground="#fbbf24"
+                                                        Text="{x:Static res:Strings.Mode_Experimental}" />
+                                                </StackPanel>
                                             </Border>
-                                            <!-- Nightly: blue "CloudRedirect Support" badge. -->
-                                            <Border
-                                                Margin="6,0,0,0"
-                                                Padding="7,2"
-                                                VerticalAlignment="Center"
-                                                Background="#200ea5e9"
-                                                CornerRadius="4"
-                                                Visibility="{Binding SupportsCloudRedirect, Converter={StaticResource BoolToVis}}">
-                                                <TextBlock
-                                                    FontSize="10.5"
-                                                    FontWeight="SemiBold"
-                                                    Foreground="#38bdf8"
-                                                    Text="{x:Static res:Strings.Mode_CloudRedirectSupport}" />
-                                            </Border>
+                                            <!-- Nightly: purple "CloudRedirect Support" badge. -->
                                             <Border
                                                 Margin="6,0,0,0"
                                                 Padding="7,2"
                                                 VerticalAlignment="Center"
                                                 Background="#207c3aed"
                                                 CornerRadius="4"
-                                                Visibility="{Binding IsActive, Converter={StaticResource BoolToVis}}">
-                                                <TextBlock
-                                                    FontSize="10.5"
-                                                    FontWeight="SemiBold"
-                                                    Foreground="#c4b5fd"
-                                                    Text="{x:Static res:Strings.Mode_Active}" />
+                                                Visibility="{Binding SupportsCloudRedirect, Converter={StaticResource BoolToVis}}">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <ui:SymbolIcon
+                                                        VerticalAlignment="Center"
+                                                        FontSize="10"
+                                                        Foreground="#c4b5fd"
+                                                        Symbol="Cloud24" />
+                                                    <TextBlock
+                                                        Margin="4,0,0,0"
+                                                        VerticalAlignment="Center"
+                                                        FontSize="10.5"
+                                                        FontWeight="SemiBold"
+                                                        Foreground="#c4b5fd"
+                                                        Text="{x:Static res:Strings.Mode_CloudRedirectSupport}" />
+                                                </StackPanel>
                                             </Border>
                                         </StackPanel>
                                         <TextBlock
@@ -172,7 +209,7 @@
                 <Border Height="1" Margin="0,0,0,14" Background="#1FFFFFFF" />
 
                 <!-- CloudRedirect add-on: a feature of the Nightly BST build. Locked (dimmed, buttons
-                     disabled) unless BetterSteamTools Nightly is the active mode. -->
+                      disabled) unless BetterSteamTools Nightly is the active mode. -->
                 <Border
                     Margin="0,0,0,0"
                     Padding="18"
