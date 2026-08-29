@@ -374,6 +374,9 @@ Thao tác này sẽ xóa các tệp .lua khỏi Steam\config\stplug-in. Sau đó
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Tự động tải xuống từ nguồn có sẵn đầu tiên</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Không tìm thấy nguồn khả dụng cho trò chơi này</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· qua {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Trò chơi này có {0} bản sửa lỗi.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Trò chơi này có {0} bản sửa lỗi: {1}.</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Xem bản sửa lỗi</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>Plugin LuaTools</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>Plugin LuaTools cho Steam! — Giờ đây dùng LuaLoader thay cho Shittenium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Trạng thái</value></data>

@@ -374,6 +374,9 @@
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Автоматическая загрузка из первого доступного источника</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Для этой игры не найдено доступных источников</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· через {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Для этой игры есть фиксы: {0}.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Для этой игры есть фиксы: {0} ({1}).</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Открыть фиксы</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>Плагин LuaTools</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>Плагин LuaTools для Steam! — Теперь использует LuaLoader вместо Shittenium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Статус</value></data>

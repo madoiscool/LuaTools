@@ -374,6 +374,9 @@
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>最初の利用可能なソースから自動ダウンロード</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>このゲームで利用可能なソースが見つかりません</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· ソース：{0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>このゲームには {0} 件の修正があります。</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>このゲームには {0} 件の修正があります：{1}</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>修正を見る</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>LuaTools プラグイン</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>LuaTools の Steam プラグイン！ — Shittenium に代わり LuaLoader を使用</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>ステータス</value></data>

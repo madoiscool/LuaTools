@@ -344,6 +344,9 @@ public static class Strings
     public static string Add_FastFetch_Hint => Get(nameof(Add_FastFetch_Hint));
     public static string Add_FastFetch_NoSource => Get(nameof(Add_FastFetch_NoSource));
     public static string Add_FastFetch_Via => Get(nameof(Add_FastFetch_Via));
+    public static string Add_Fix_Available => Get(nameof(Add_Fix_Available));
+    public static string Add_Fix_Available_Tags => Get(nameof(Add_Fix_Available_Tags));
+    public static string Add_Fix_Open => Get(nameof(Add_Fix_Open));
 
     // ── Confirm overlay ──
     public static string Confirm_OpenSteamDb => Get(nameof(Confirm_OpenSteamDb));

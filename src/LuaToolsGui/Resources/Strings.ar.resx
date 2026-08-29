@@ -400,6 +400,9 @@
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>التنزيل التلقائي من أول مصدر متاح</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>لم يتم العثور على مصادر متاحة لهذه اللعبة</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· عبر {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>تتوفر لهذه اللعبة {0} إصلاح.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>تتوفر لهذه اللعبة {0} إصلاح: {1}.</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>عرض الإصلاحات</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>إضافة LuaTools</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>إضافة LuaTools لمتجر Steam! — تستخدم الآن LuaLoader بدلًا من Shittenium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>الحالة</value></data>

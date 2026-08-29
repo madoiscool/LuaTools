@@ -374,6 +374,9 @@ Tämä poistaa .lua-tiedostot sijainnista Steam\config\stplug-in. Käynnistä St
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Automaattinen lataus ensimmäisestä saatavilla olevasta lähteestä</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Tälle pelille ei löytynyt saatavilla olevia lähteitä</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· kautta {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Tälle pelille on saatavilla {0} korjausta.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Tälle pelille on saatavilla {0} korjausta: {1}.</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Näytä korjaukset</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>LuaTools-laajennus</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>LuaTools-Steam-laajennus! — Käyttää nyt LuaLoaderia Shitteniumin sijaan</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Tila</value></data>

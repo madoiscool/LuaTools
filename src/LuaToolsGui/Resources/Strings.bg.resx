@@ -374,6 +374,9 @@
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Автоматично изтегляне от първия наличен източник</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Няма намерени налични източници за тази игра</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· чрез {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Тази игра има налични корекции: {0}.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Тази игра има налични корекции: {0} ({1}).</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Виж корекциите</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>LuaTools плъгин</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>Плъгинът LuaTools за Steam! — Вече използва LuaLoader вместо Shittenium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Състояние</value></data>

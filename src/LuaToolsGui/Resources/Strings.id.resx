@@ -374,6 +374,9 @@ Ini menghapus file .lua dari Steam\config\stplug-in. Mulai ulang Steam setelahny
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Unduh otomatis dari sumber pertama yang tersedia</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Tidak ada sumber tersedia yang ditemukan untuk game ini</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· melalui {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Game ini punya {0} perbaikan.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Game ini punya {0} perbaikan: {1}.</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Lihat perbaikan</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>Plugin LuaTools</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>Plugin LuaTools untuk Steam! — Kini memakai LuaLoader alih-alih Shittenium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Status</value></data>

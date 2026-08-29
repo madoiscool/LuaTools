@@ -365,6 +365,42 @@
                 TextWrapping="Wrap"
                 Visibility="{Binding Error, Converter={StaticResource NullToCollapsed}}" />
 
+            <!-- Denuvo fix banner: shown after a Fetch when the game has published fixes. Purple, so it
+                 reads as an offer rather than a result (green) or a problem (amber). -->
+            <Border
+                Margin="0,12,0,0"
+                Padding="12,9"
+                Background="#14a78bfa"
+                BorderBrush="#40a78bfa"
+                BorderThickness="1"
+                CornerRadius="8"
+                Visibility="{Binding HasFix, Converter={StaticResource BoolToVis}}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ui:SymbolIcon
+                        VerticalAlignment="Center"
+                        Foreground="#a78bfa"
+                        Symbol="ShieldTask24" />
+                    <TextBlock
+                        Grid.Column="1"
+                        Margin="10,0"
+                        VerticalAlignment="Center"
+                        FontSize="13"
+                        Text="{Binding FixBannerText}"
+                        TextWrapping="Wrap" />
+                    <ui:Button
+                        Grid.Column="2"
+                        Appearance="Primary"
+                        Command="{Binding OpenFixesCommand}"
+                        Content="{x:Static res:Strings.Add_Fix_Open}"
+                        Icon="{ui:SymbolIcon ShieldTask24}" />
+                </Grid>
+            </Border>
+
             <!-- Install result banner (green on success, amber on partial/failed) -->
             <Border
                 Margin="0,12,0,0"

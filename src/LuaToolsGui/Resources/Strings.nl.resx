@@ -374,6 +374,9 @@ Dit verwijdert de .lua-bestanden uit Steam\config\stplug-in. Herstart Steam daar
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Automatisch downloaden van de eerste beschikbare bron</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Geen beschikbare bronnen gevonden voor dit spel</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· via {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Voor dit spel zijn {0} fixes beschikbaar.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Voor dit spel zijn {0} fixes beschikbaar: {1}.</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Fixes bekijken</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>LuaTools-plug-in</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>De LuaTools Steam-plugin! — Gebruikt nu LuaLoader in plaats van Shittenium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Status</value></data>

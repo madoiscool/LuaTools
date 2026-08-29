@@ -374,6 +374,9 @@
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>ดาวน์โหลดอัตโนมัติจากแหล่งแรกที่พร้อมใช้งาน</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>ไม่พบแหล่งที่พร้อมใช้งานสำหรับเกมนี้</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· ผ่าน {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>เกมนี้มีการแก้ไข {0} รายการ</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>เกมนี้มีการแก้ไข {0} รายการ: {1}</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>ดูการแก้ไข</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>ปลั๊กอิน LuaTools</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>ปลั๊กอิน LuaTools สำหรับ Steam! — ตอนนี้ใช้ LuaLoader แทน Shittenium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>สถานะ</value></data>

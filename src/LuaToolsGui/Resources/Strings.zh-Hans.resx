@@ -394,6 +394,9 @@
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>自动从首个可用源下载</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>未找到此游戏的可用源</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· 来源：{0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>这款游戏有 {0} 个修复可用。</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>这款游戏有 {0} 个修复可用：{1}</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>查看修复</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>LuaTools 插件</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>LuaTools 的 Steam 插件！ — 现已改用 LuaLoader 代替 Shittenium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>状态</value></data>

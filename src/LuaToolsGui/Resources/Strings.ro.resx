@@ -374,6 +374,9 @@ Aceasta șterge fișierele .lua din Steam\config\stplug-in. Repornește Steam du
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Descărcare automată de la prima sursă disponibilă</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Nu s-au găsit surse disponibile pentru acest joc</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· prin {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Acest joc are {0} remedieri disponibile.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Acest joc are {0} remedieri disponibile: {1}.</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Vezi remedierile</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>Plugin LuaTools</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>Pluginul LuaTools pentru Steam! — Acum folosește LuaLoader în loc de Shittenium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Stare</value></data>

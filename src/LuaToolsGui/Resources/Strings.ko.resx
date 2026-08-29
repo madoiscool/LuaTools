@@ -374,6 +374,9 @@
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>사용 가능한 첫 번째 소스에서 자동 다운로드</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>이 게임에 사용 가능한 소스를 찾을 수 없습니다</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· 출처: {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>이 게임에는 수정 {0}개가 있습니다.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>이 게임에는 수정 {0}개가 있습니다: {1}</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>수정 보기</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>LuaTools 플러그인</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>LuaTools Steam 플러그인! — 이제 Shittenium 대신 LuaLoader 사용</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>상태</value></data>

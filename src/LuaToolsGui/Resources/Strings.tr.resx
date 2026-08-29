@@ -374,6 +374,9 @@ Bu işlem, .lua dosyalarını Steam\config\stplug-in konumundan siler. Değişik
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>İlk kullanılabilir kaynaktan otomatik indir</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Bu oyun için kullanılabilir kaynak bulunamadı</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· {0} aracılığıyla</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Bu oyun için {0} düzeltme mevcut.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Bu oyun için {0} düzeltme mevcut: {1}.</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Düzeltmeleri gör</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>LuaTools Eklentisi</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>LuaTools Steam eklentisi! — Artık Shittenium yerine LuaLoader kullanıyor</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Durum</value></data>

@@ -374,6 +374,9 @@ Questo elimina i file .lua da Steam\config\stplug-in. Riavvia Steam in seguito a
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Scarica automaticamente dalla prima fonte disponibile</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Nessuna fonte disponibile trovata per questo gioco</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· tramite {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Questo gioco ha {0} fix disponibili.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Questo gioco ha {0} fix disponibili: {1}.</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Vedi i fix</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>Plugin LuaTools</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>Il plugin LuaTools per Steam! — Ora usa LuaLoader invece di Merdennium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Stato</value></data>

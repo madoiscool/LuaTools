@@ -374,6 +374,9 @@ Ez törli a .lua fájlokat a Steam\config\stplug-in mappából. Ezután indítsd
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Automatikus letöltés az első elérhető forrásból</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Nem található elérhető forrás ehhez a játékhoz</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· innen: {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Ehhez a játékhoz {0} javítás érhető el.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Ehhez a játékhoz {0} javítás érhető el: {1}.</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Javítások megtekintése</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>LuaTools bővítmény</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>A LuaTools Steam bővítmény! — Mostantól LuaLoader a Shittenium helyett</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Állapot</value></data>

@@ -396,6 +396,9 @@ This deletes the .lua files from Steam\config\stplug-in. Restart Steam afterward
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Auto-download from the first available source</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>No available sources found for this game</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· via {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>This game has {0} fix(es) available.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>This game has {0} fix(es) available: {1}.</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>See fixes</value></data>
 
   <!-- ── Confirm overlay (overwrite diff) ── -->
   <data name="Confirm_OpenSteamDb" xml:space="preserve"><value>Open on SteamDB</value></data>

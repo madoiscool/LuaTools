@@ -374,6 +374,9 @@ Spowoduje to usunięcie plików .lua z Steam\config\stplug-in. Następnie urucho
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Automatyczne pobieranie z pierwszego dostępnego źródła</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Nie znaleziono dostępnych źródeł dla tej gry</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· przez {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Ta gra ma dostępne poprawki: {0}.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Ta gra ma dostępne poprawki: {0} ({1}).</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Zobacz poprawki</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>Wtyczka LuaTools</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>Wtyczka LuaTools do Steam! — Teraz używa LuaLoader zamiast Shittenium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Stan</value></data>

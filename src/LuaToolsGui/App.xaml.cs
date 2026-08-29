@@ -28,6 +28,7 @@ public partial class App : Application
                 services.AddSingleton<SteamAppListCache>();
                 services.AddSingleton<SteamAppInfoCache>();
                 services.AddSingleton<CoverCache>();
+                services.AddSingleton<FixLookupService>();
                 services.AddSingleton<ToastService>();
                 services.AddSingleton<SteamDepotInfo>();
                 services.AddSingleton<LuaVault>();
@@ -345,6 +346,13 @@ public partial class App : Application
         var home = _host.Services.GetRequiredService<HomeViewModel>();
         home.NavigateToGame = openInManage;
         download.NavigateToGame = openInManage;
+
+        // Add page → the post-fetch "this game has a fix" banner opens it straight in the Fixes page.
+        download.OpenFixesForGame = appId => Dispatcher.Invoke(() =>
+        {
+            window.NavigateToFixes();
+            _ = _host.Services.GetRequiredService<FixesViewModel>().OpenForAppIdAsync(appId);
+        });
         builds.NavigateToManage = openInManage; // Builds "Manage" button: the reverse of "Manage Build"
 
         // Dragging a SteamDB / Steam store link onto either drop box installs that appid. Routed through

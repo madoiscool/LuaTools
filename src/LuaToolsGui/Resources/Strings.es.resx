@@ -374,6 +374,9 @@ Esto borra los archivos .lua de Steam\config\stplug-in. Reinicia Steam después 
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Descargar automáticamente desde la primera fuente disponible</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>No se encontraron fuentes disponibles para este juego</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· a través de {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Este juego tiene {0} parche(s) disponible(s).</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Este juego tiene {0} parche(s) disponible(s): {1}.</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Ver parches</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>Complemento LuaTools</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>¡El plugin de LuaTools para Steam! — Ahora usa LuaLoader en lugar de Shittenium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Estado</value></data>

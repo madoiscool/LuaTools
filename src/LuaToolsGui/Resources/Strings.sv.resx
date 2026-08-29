@@ -374,6 +374,9 @@ Detta tar bort .lua-filerna från Steam\config\stplug-in. Starta om Steam efter�
   <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Automatisk nedladdning från första tillgängliga källan</value></data>
   <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Inga tillgängliga källor hittades för detta spel</value></data>
   <data name="Add_FastFetch_Via" xml:space="preserve"><value>· via {0}</value></data>
+  <data name="Add_Fix_Available" xml:space="preserve"><value>Det här spelet har {0} fixar tillgängliga.</value></data>
+  <data name="Add_Fix_Available_Tags" xml:space="preserve"><value>Det här spelet har {0} fixar tillgängliga: {1}.</value></data>
+  <data name="Add_Fix_Open" xml:space="preserve"><value>Visa fixar</value></data>
   <data name="Plugin_Title" xml:space="preserve"><value>LuaTools-tillägg</value></data>
   <data name="Plugin_Subtitle" xml:space="preserve"><value>LuaTools Steam-tillägget! — Använder nu LuaLoader istället för Shittenium</value></data>
   <data name="Plugin_CardTitle" xml:space="preserve"><value>Status</value></data>
