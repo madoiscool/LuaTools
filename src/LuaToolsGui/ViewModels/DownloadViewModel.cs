@@ -46,13 +46,17 @@ public partial class SourceRowViewModel : ObservableObject
     // would collapse it anyway; this just keeps the button from looking clickable.
     public bool CanDownload => IsAvailable && !IsLocked && QueueItem?.IsActive != true;
 
-    public SourceRowViewModel(DownloadViewModel parent, string name, string status)
+    /// <param name="displayName">
+    /// Overrides the source-meta table. A source declared by a pack is not in it and never will be —
+    /// its label travels with the declaration.
+    /// </param>
+    public SourceRowViewModel(DownloadViewModel parent, string name, string status, string? displayName = null)
     {
         _parent = parent;
         Name = name;
         Status = status;
         var meta = SourceMeta.Get(name);
-        DisplayName = meta.DisplayName ?? name;
+        DisplayName = displayName ?? meta.DisplayName ?? name;
         DiscordUrl = meta.DiscordUrl;
         NeedsKey = meta.RequiresUserKey;
     }
@@ -89,6 +93,8 @@ public partial class DownloadViewModel : ObservableObject
     private readonly HardwareAppIdService _hardware;
     private readonly DownloadQueue _queue;
     private readonly ManifestJobFactory _jobs;
+    private readonly Services.Sources.SourcePackRegistry _packs;
+    private readonly Services.Sources.PackSourceService _packSources;
     private CancellationTokenSource? _searchCts;
     private CancellationTokenSource? _detailsCts;
 
@@ -324,8 +330,11 @@ public partial class DownloadViewModel : ObservableObject
         AuthService auth, ToastService toast, LuaInstaller installer,
         SteamAppListCache appList, SteamAppInfoCache appInfo, SteamDepotInfo depotInfo,
         HardwareAppIdService hardware, DropInstallViewModel drop,
-        DownloadQueue queue, ManifestJobFactory jobs)
+        DownloadQueue queue, ManifestJobFactory jobs,
+        Services.Sources.SourcePackRegistry packs, Services.Sources.PackSourceService packSources)
     {
+        _packs = packs;
+        _packSources = packSources;
         _api = api;
         _hubcap = hubcap;
         _settings = settings;
@@ -543,6 +552,8 @@ public partial class DownloadViewModel : ObservableObject
                 foreach (var (name, status) in statuses.OrderByDescending(kv => SourceMeta.Get(kv.Key).RequiresUserKey ? 1 : 0))
                     Sources.Add(new SourceRowViewModel(this, name, status));
 
+                await AddPackSourcesAsync(Details.AppId);
+
                 await ApplyHubcapStateAsync();
 
                 if (FastFetch)
@@ -667,8 +678,14 @@ public partial class DownloadViewModel : ObservableObject
 
         // Hubcap downloads use the user's OWN key and never touch lua.tools, so a guest with a key
         // configured can download without signing in. Every other source still needs a lua.tools account.
+        // A pack source is fetched straight from the url its file names and never touches lua.tools, so
+        // a lua.tools account has no bearing on it. Resolved before the gate for that reason.
+        var packSource = _packs.Sources.FirstOrDefault(x =>
+            string.Equals(x.Name, source.Name, StringComparison.OrdinalIgnoreCase));
+
         bool hubcapWithKey = source.NeedsKey && !string.IsNullOrEmpty(_settings.HubcapApiKey);
-        if (!hubcapWithKey && await PromptSignInIfGuestAsync(Resources.Strings.Add_SignIn_Download)) return null;
+        if (!hubcapWithKey && packSource is null
+            && await PromptSignInIfGuestAsync(Resources.Strings.Add_SignIn_Download)) return null;
 
         Error = null;
         LastDownload = null;
@@ -680,17 +697,62 @@ public partial class DownloadViewModel : ObservableObject
         string gameName = Details.Name;
         bool needsKey = source.NeedsKey;
 
-        var job = _jobs.CreateManifestJob(
-            appId, gameName, source.Name, needsKey,
-            // Silent/headless installs have no surfaced window to confirm on, so they skip the gate.
-            confirm: _silentInstall ? null : (file, _, ct) => ConfirmOverwriteAsync(file, appId, gameName, ct),
-            onFinished: (item, result) => OnManifestFinished(item, result, needsKey),
-            onReveal: () => NavigateToGame?.Invoke(appId));
+        // Silent/headless installs have no surfaced window to confirm on, so they skip the gate.
+        Func<DownloadedFile, DownloadItem, CancellationToken, Task<bool>>? confirm =
+            _silentInstall ? null : (file, _, ct) => ConfirmOverwriteAsync(file, appId, gameName, ct);
+
+        var job = packSource is not null
+            ? _jobs.CreatePackSourceJob(packSource, appId, gameName,
+                confirm: confirm,
+                onFinished: (item, result) => OnManifestFinished(item, result, needsKey: false),
+                onReveal: () => NavigateToGame?.Invoke(appId))
+            : _jobs.CreateManifestJob(
+                appId, gameName, source.Name, needsKey,
+                confirm: confirm,
+                onFinished: (item, result) => OnManifestFinished(item, result, needsKey),
+                onReveal: () => NavigateToGame?.Invoke(appId));
 
         var queued = _queue.Enqueue(job);
         source.QueueItem = queued;
         _lastEnqueued = queued;
         return queued;
+    }
+
+    /// <summary>
+    /// Append a row for every pack-declared source that has this game.
+    /// </summary>
+    /// <remarks>
+    /// Appended after the app's own sources rather than ranked among them: their order is a decision
+    /// this app makes, and a file the user dropped in a folder should not be able to overturn it.
+    /// Probed in parallel, because the count is whatever the user installed and doing them in sequence
+    /// would put a pack's latency on the critical path of every fetch. A probe that fails means "this
+    /// source doesn't have it", never an error.
+    /// </remarks>
+    private async Task AddPackSourcesAsync(long appId)
+    {
+        _packs.Reload(SourceMeta.All.Keys.ToList());
+
+        var sources = _packs.Sources;
+        if (sources.Count == 0) return;
+
+        var probes = sources.Select(src => (Source: src, Has: SafeHasAsync(src, appId))).ToList();
+        await Task.WhenAll(probes.Select(p => p.Has));
+
+        foreach (var (src, has) in probes)
+        {
+            if (!has.Result) continue;
+            Sources.Add(new SourceRowViewModel(this, src.Name, "available", src.DisplayName)
+            {
+                StatsText = src.Badge,
+            });
+        }
+    }
+
+    /// <summary>A HasGameAsync that never throws: a failed or offline lookup just means "not covered".</summary>
+    private async Task<bool> SafeHasAsync(Services.Sources.PackSource src, long appId)
+    {
+        try { return await _packSources.HasGameAsync(src, appId); }
+        catch { return false; }
     }
 
     /// <summary>DLC lua: download and install silently (it's just an unlock, no confirm).</summary>

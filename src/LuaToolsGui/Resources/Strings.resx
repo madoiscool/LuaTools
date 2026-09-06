@@ -654,4 +654,10 @@ Cancel - keep downloading</value></data>
   <data name="Depot_Err_NoKeyFor" xml:space="preserve"><value>No decryption key in Lua for depot {0}.</value></data>
   <data name="Builds_Select_SharedHint" xml:space="preserve"><value>Shared runtime — usually already installed. Tick to download anyway.</value></data>
   <data name="Downloads_ClearHistory_Confirm" xml:space="preserve"><value>Remove all {0} entries from the download history? Downloaded files are not affected.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>This source doesn't have this game, or couldn't be reached.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Manifest sources</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Extra sources declared in .json files. Data only: a file says where manifests can be fetched from, and nothing in it is ever executed.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Open the folder</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>No source files yet.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>sources: {0}</value></data>
 </root>

@@ -18,6 +18,7 @@ public partial class SettingsViewModel : ObservableObject
     private readonly AuthService _auth;
     private readonly SteamService _steam;
     private readonly HubcapService _hubcap;
+    private readonly Services.Sources.SourcePackRegistry _packs;
 
     [ObservableProperty] private string? _displayName;
     [ObservableProperty] private string? _email;
@@ -222,8 +223,9 @@ public partial class SettingsViewModel : ObservableObject
     public Action? RequestRestartPrompt { get; set; }
 
     public SettingsViewModel(SettingsService settings, AuthService auth, SteamService steam,
-        HubcapService hubcap)
+        HubcapService hubcap, Services.Sources.SourcePackRegistry packs)
     {
+        _packs = packs;
         _settings = settings;
         _auth = auth;
         _steam = steam;
@@ -366,6 +368,10 @@ public partial class SettingsViewModel : ObservableObject
         // that only read the setting at construction). No-op if unchanged; a real change writes back the
         // same value, so no feedback loop.
         FastFetch = _settings.FastFetch;
+
+        // Re-read the source-pack folder every time the page is shown: dropping a file in and coming
+        // back here to check it was accepted is the natural gesture. Cheap - a handful of small files.
+        RefreshSourcePacks();
     }
 
     /// <summary>Re-fetch usage stats for the saved key. Silent no-op if no key is saved.</summary>
@@ -450,5 +456,42 @@ public partial class SettingsViewModel : ObservableObject
             return string.Format(Resources.Strings.Settings_HubcapKeyOkExpiry, stats.DailyUsage, stats.DailyLimit,
                 expiry.ToString("yyyy-MM-dd"));
         return usage;
+    }
+    // ── Manifest source packs ────────────────────────────────────────
+
+    /// <summary>One line per .json file found: what it contributed, or why it was refused.</summary>
+    public System.Collections.ObjectModel.ObservableCollection<string> SourcePacks { get; } = [];
+
+    public bool HasSourcePacks => SourcePacks.Count > 0;
+
+    /// <summary>
+    /// Re-read the source-pack folder. Called when the page is shown, so dropping a file in and coming
+    /// back here is enough to see whether it was accepted - no restart, since a pack is only ever data.
+    /// </summary>
+    public void RefreshSourcePacks()
+    {
+        _packs.Reload(Models.SourceMeta.All.Keys.ToList());
+
+        SourcePacks.Clear();
+        foreach (var pack in _packs.Packs)
+        {
+            string detail = pack.Error is not null
+                ? pack.Error
+                : string.Format(Resources.Strings.Settings_SourcePacks_Count, pack.Sources.Count);
+            SourcePacks.Add($"{pack.DisplayName} — {detail}");
+        }
+        OnPropertyChanged(nameof(HasSourcePacks));
+    }
+
+    [RelayCommand]
+    private void OpenSourcesFolder()
+    {
+        try
+        {
+            System.IO.Directory.CreateDirectory(Services.Sources.SourcePackRegistry.Root);
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(
+                Services.Sources.SourcePackRegistry.Root) { UseShellExecute = true });
+        }
+        catch { /* opening a folder is never worth an error dialog */ }
     }
 }

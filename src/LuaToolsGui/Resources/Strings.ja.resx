@@ -619,4 +619,10 @@ Steam\config\stplug-in から .lua ファイルを削除します。</value></da
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>この修正の適用後に {0} が変更されているため、復元するとその変更が上書きされます。別の修正を上に適用した場合は、先にそちらを元に戻してください。対象は {1} 個のファイルです。</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>修正は一部だけ元に戻りました</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} 個のファイルを復元できませんでした。ゲームを閉じてやり直してください。</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>このソースにはこのゲームがないか、接続できませんでした。</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>マニフェストのソース</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>​.json ファイルで宣言する追加ソース。データのみで、ファイルはマニフェストの取得先を示すだけです。中身が実行されることはありません。</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>フォルダーを開く</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>ソースファイルはまだありません。</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>ソース: {0}</value></data>
 </root>

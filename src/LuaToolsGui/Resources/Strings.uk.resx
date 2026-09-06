@@ -619,4 +619,10 @@
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>Файл {0} змінився після застосування цього фікса, тож відновлення перезапише ці зміни. Якщо згори застосовано інший фікс, спершу скасуйте його. Порушено файлів: {1}.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Виправлення відкочено частково</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>Не вдалося відновити файлів: {0}. Закрийте гру та спробуйте ще раз.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>У цьому джерелі немає цієї гри, або воно недоступне.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Джерела маніфестів</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Додаткові джерела, описані у файлах .json. Лише дані: файл вказує, звідки брати маніфести, і нічого з нього не виконується.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Відкрити теку</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Файлів джерел поки немає.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>джерела: {0}</value></data>
 </root>

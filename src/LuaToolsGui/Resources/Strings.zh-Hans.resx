@@ -639,4 +639,10 @@
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>自应用此修复以来，{0} 已被更改，还原会覆盖这些更改。如果你在其上应用了另一个修复，请先还原那一个。共影响 {1} 个文件。</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>修复部分还原</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>有 {0} 个文件无法恢复。请关闭游戏后重试。</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>此来源没有这个游戏，或无法连接。</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>清单来源</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>在 .json 文件中声明的额外来源。纯数据：文件只说明从哪里获取清单，其中的任何内容都不会被执行。</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>打开文件夹</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>还没有来源文件。</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>来源：{0}</value></data>
 </root>

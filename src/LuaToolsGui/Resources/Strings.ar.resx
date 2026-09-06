@@ -645,4 +645,10 @@
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>تغيّر {0} منذ تطبيق هذا الإصلاح، لذا فإن استعادته ستستبدل تلك التغييرات. إذا طبّقت إصلاحًا آخر فوقه، فتراجع عنه أولاً. الملفات المتأثرة: {1}.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>تم التراجع عن الإصلاح جزئيًا</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>تعذّرت استعادة {0} من الملفات. أغلق اللعبة وحاول مرة أخرى.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>هذا المصدر لا يحتوي على هذه اللعبة، أو تعذّر الوصول إليه.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>مصادر المانيفست</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>مصادر إضافية معرَّفة في ملفات ‎.json. بيانات فقط: الملف يحدّد من أين تُجلب المانيفستات، ولا يُنفَّذ منه أي شيء.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>فتح المجلد</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>لا توجد ملفات مصادر بعد.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>المصادر: {0}</value></data>
 </root>

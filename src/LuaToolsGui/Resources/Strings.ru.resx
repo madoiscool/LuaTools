@@ -619,4 +619,10 @@
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>Файл {0} изменился после применения этого фикса, и восстановление перезапишет эти изменения. Если поверх был применён другой фикс, сначала откатите его. Затронуто файлов: {1}.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Исправление откачено частично</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>Не удалось восстановить файлов: {0}. Закройте игру и повторите попытку.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>В этом источнике нет этой игры, либо он недоступен.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Источники манифестов</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Дополнительные источники, описанные в файлах .json. Только данные: файл указывает, откуда брать манифесты, и ничего из него не выполняется.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Открыть папку</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Файлов источников пока нет.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>источники: {0}</value></data>
 </root>

@@ -619,4 +619,10 @@ Cancelar - continuar a transferir</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} mudou desde que este fix foi aplicado, pelo que restaurá-lo iria sobrescrever essas alterações. Se aplicou outro fix por cima, reverta esse primeiro. {1} ficheiro(s) afetado(s).</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Correção revertida parcialmente</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>Não foi possível restaurar {0} ficheiro(s). Feche o jogo e tente novamente.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Esta fonte não tem este jogo, ou não pôde ser contactada.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Fontes de manifesto</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Fontes adicionais declaradas em ficheiros .json. Apenas dados: um ficheiro diz onde obter manifestos, e nada nele é executado.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Abrir a pasta</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Ainda não há ficheiros de fontes.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>fontes: {0}</value></data>
 </root>

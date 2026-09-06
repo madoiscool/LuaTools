@@ -619,4 +619,10 @@ Peruuta - jatka lataamista</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} on muuttunut tämän korjauksen käyttöönoton jälkeen, joten palauttaminen korvaisi nuo muutokset. Jos otit päälle toisen korjauksen, peru ensin se. {1} tiedosto(a) koskee.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Korjaus peruttu osittain</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} tiedostoa ei voitu palauttaa. Sulje peli ja yritä uudelleen.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Tässä lähteessä ei ole tätä peliä, tai siihen ei saatu yhteyttä.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Manifestilähteet</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Lisälähteitä .json-tiedostoissa. Pelkkää dataa: tiedosto kertoo mistä manifestit haetaan, eikä siitä suoriteta mitään.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Avaa kansio</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Ei vielä lähdetiedostoja.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>lähteet: {0}</value></data>
 </root>

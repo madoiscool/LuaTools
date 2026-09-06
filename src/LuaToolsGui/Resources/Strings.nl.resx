@@ -619,4 +619,10 @@ Annuleren - doorgaan met downloaden</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} is gewijzigd sinds deze fix is toegepast, dus herstellen zou die wijzigingen overschrijven. Als je er een andere fix overheen hebt toegepast, draai die dan eerst terug. {1} bestand(en) getroffen.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Fix gedeeltelijk teruggedraaid</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} bestand(en) konden niet worden hersteld. Sluit de game en probeer opnieuw.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Deze bron heeft dit spel niet, of was niet bereikbaar.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Manifestbronnen</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Extra bronnen, opgegeven in .json-bestanden. Alleen gegevens: een bestand zegt waar manifesten vandaan komen, er wordt nooit iets uit uitgevoerd.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Map openen</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Nog geen bronbestanden.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>bronnen: {0}</value></data>
 </root>

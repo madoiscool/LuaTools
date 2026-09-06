@@ -619,4 +619,10 @@ Abbrechen - weiter herunterladen</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} wurde seit dem Anwenden dieses Fixes geändert; eine Wiederherstellung würde diese Änderungen überschreiben. Falls du einen weiteren Fix darüber angewendet hast, setze zuerst diesen zurück. {1} Datei(en) betroffen.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Fix teilweise rückgängig gemacht</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} Datei(en) konnten nicht wiederhergestellt werden. Schließe das Spiel und versuche es erneut.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Diese Quelle hat dieses Spiel nicht oder war nicht erreichbar.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Manifest-Quellen</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Zusätzliche Quellen, in .json-Dateien deklariert. Nur Daten: eine Datei sagt, woher Manifeste geholt werden, ausgeführt wird daraus nie etwas.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Ordner öffnen</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Noch keine Quellendateien.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>Quellen: {0}</value></data>
 </root>

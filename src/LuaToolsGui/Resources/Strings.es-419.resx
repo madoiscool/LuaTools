@@ -619,4 +619,10 @@ Cancelar: seguir descargando</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} cambió desde que se aplicó este fix, así que restaurarlo sobrescribiría esos cambios. Si aplicaste otro fix encima, revierte ese primero. {1} archivo(s) afectado(s).</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Parche revertido parcialmente</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>No se pudieron restaurar {0} archivo(s). Cerrá el juego y probá de nuevo.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Esta fuente no tiene este juego, o no se pudo contactar.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Fuentes de manifiestos</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Fuentes adicionales declaradas en archivos .json. Solo datos: un archivo indica de dónde obtener manifiestos, y nada en él se ejecuta.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Abrir la carpeta</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Aún no hay archivos de fuentes.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>fuentes: {0}</value></data>
 </root>

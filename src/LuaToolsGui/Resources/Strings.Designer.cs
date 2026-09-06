@@ -599,4 +599,10 @@ public static class Strings
     public static string Depot_Err_NoKeyFor => Get(nameof(Depot_Err_NoKeyFor));
     public static string Builds_Select_SharedHint => Get(nameof(Builds_Select_SharedHint));
     public static string Downloads_ClearHistory_Confirm => Get(nameof(Downloads_ClearHistory_Confirm));
+    public static string Sources_Err_Fetch => Get(nameof(Sources_Err_Fetch));
+    public static string Settings_Section_Sources => Get(nameof(Settings_Section_Sources));
+    public static string Settings_SourcePacks_Hint => Get(nameof(Settings_SourcePacks_Hint));
+    public static string Settings_SourcePacks_Open => Get(nameof(Settings_SourcePacks_Open));
+    public static string Settings_SourcePacks_None => Get(nameof(Settings_SourcePacks_None));
+    public static string Settings_SourcePacks_Count => Get(nameof(Settings_SourcePacks_Count));
 }

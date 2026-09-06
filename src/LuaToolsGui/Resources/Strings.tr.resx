@@ -619,4 +619,10 @@ Hayır - durdur ama dosyaları koru
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>Bu düzeltme uygulandıktan sonra {0} değişti; geri yüklemek bu değişikliklerin üzerine yazar. Üstüne başka bir düzeltme uyguladıysanız önce onu geri alın. {1} dosya etkilendi.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Düzeltme kısmen geri alındı</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} dosya geri yüklenemedi. Oyunu kapatıp tekrar deneyin.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Bu kaynakta bu oyun yok ya da kaynağa ulaşılamadı.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Manifest kaynakları</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>​.json dosyalarında tanımlanan ek kaynaklar. Yalnızca veri: dosya manifestlerin nereden alınacağını söyler, içinden hiçbir şey çalıştırılmaz.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Klasörü aç</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Henüz kaynak dosyası yok.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>kaynaklar: {0}</value></data>
 </root>
