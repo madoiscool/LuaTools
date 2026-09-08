@@ -105,7 +105,7 @@ public class ManifestJobFactory(
             },
             (file, _, _) => Task.FromResult(isManifestSlot
                 ? InstallDenuvoManifest(file, appId, gameName)
-                : ApplyDenuvoFix(file, appId, gameName)),
+                : ApplyDenuvoFix(file, appId, fixId, gameName)),
             ConfirmAsync: null,
             OnFinished: onFinished);
     }
@@ -561,8 +561,9 @@ public class ManifestJobFactory(
         }
     }
 
-    /// <summary>Denuvo fix slot: extract into the game folder. Only possible if the game is installed.</summary>
-    private JobResult ApplyDenuvoFix(DownloadedFile file, long appId, string gameName)
+    /// <summary>Denuvo fix slot: extract into the game folder. Only possible if the game is installed.
+    /// Existing files are backed up as .bak inside .luatools-fix/ so the fix can be reverted.</summary>
+    private JobResult ApplyDenuvoFix(DownloadedFile file, long appId, string fixId, string gameName)
     {
         try
         {
@@ -574,21 +575,69 @@ public class ManifestJobFactory(
                 return new JobResult(false, err);
             }
 
-            // Extract into the game folder, overwriting. Best-effort per entry so one locked file
-            // doesn't abandon the rest of the fix.
+            string fixKey = SafeFixKey(fixId);
+            string fixDir = Path.Combine(installDir, FixManifestDir);
+            string backupDir = Path.Combine(fixDir, fixKey);
+            string manifestPath = Path.Combine(fixDir, $"{fixKey}.json");
+            Directory.CreateDirectory(backupDir);
+
+            var manifest = new DenuvoFixManifest
+            {
+                AppId = appId,
+                FixId = fixId,
+                AppliedAt = DateTimeOffset.UtcNow.ToString("o"),
+            };
+
             using var archive = ZipFile.OpenRead(file.FilePath);
             int failed = 0;
             foreach (var entry in archive.Entries)
             {
-                if (string.IsNullOrEmpty(entry.Name)) continue; // directory entry
+                if (string.IsNullOrEmpty(entry.Name)) continue;
                 string dest = Path.Combine(installDir, entry.FullName);
+                string relPath = entry.FullName.Replace('\\', '/');
+
                 try
                 {
+                    if (File.Exists(dest))
+                    {
+                        // Back up the original — never clobber a known-good .bak
+                        string bakRel = $"{fixKey}/{Path.GetFileName(dest)}.bak";
+                        string bakAbs = Path.Combine(installDir, FixManifestDir, bakRel);
+                        if (!File.Exists(bakAbs))
+                        {
+                            Directory.CreateDirectory(Path.GetDirectoryName(bakAbs)!);
+                            File.Copy(dest, bakAbs, overwrite: false);
+                        }
+                        manifest.Files.Add(new DenuvoFixManifestEntry
+                        {
+                            RelativePath = relPath,
+                            Action = "modified",
+                            BackupPath = bakRel,
+                        });
+                    }
+                    else
+                    {
+                        manifest.Files.Add(new DenuvoFixManifestEntry
+                        {
+                            RelativePath = relPath,
+                            Action = "added",
+                        });
+                    }
+
                     Directory.CreateDirectory(Path.GetDirectoryName(dest)!);
                     entry.ExtractToFile(dest, overwrite: true);
                 }
                 catch { failed++; }
             }
+
+            // Write manifest even on partial failure — the backed-up files still need to be recoverable.
+            try
+            {
+                string json = System.Text.Json.JsonSerializer.Serialize(
+                    manifest, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(manifestPath, json);
+            }
+            catch { /* best effort */ }
 
             if (failed > 0)
             {
@@ -608,7 +657,106 @@ public class ManifestJobFactory(
         }
         finally
         {
-            DeleteStaged(file.FilePath); // archive is disposed by now
+            DeleteStaged(file.FilePath);
+        }
+    }
+
+    // ── Fix revert ──────────────────────────────────────────────────
+
+    private static readonly System.Text.Json.JsonSerializerOptions JsonOpts = new() { PropertyNameCaseInsensitive = true };
+
+    internal const string FixManifestDir = ".luatools-fix";
+
+    /// <summary>
+    /// A fix id can carry `/`, `:`, and other characters that are illegal in a Windows path segment
+    /// (e.g. "online-fix:5e01e852-..."). Sanitise it for use as a folder/file name while keeping the
+    /// raw id in the manifest itself.
+    /// </summary>
+    internal static string SafeFixKey(string fixId) =>
+        string.Concat(fixId.Select(ch => Path.GetInvalidFileNameChars().Contains(ch) ? '_' : ch));
+
+    /// <summary>Resolve the manifest path for a given fix inside a game's install folder.</summary>
+    internal static string GetFixManifestPath(string installDir, string fixId) =>
+        Path.Combine(installDir, FixManifestDir, $"{SafeFixKey(fixId)}.json");
+
+    /// <summary>Read a fix manifest from disk, or null if it doesn't exist.</summary>
+    internal static DenuvoFixManifest? ReadFixManifest(string manifestPath)
+    {
+        try
+        {
+            if (!File.Exists(manifestPath)) return null;
+            string json = File.ReadAllText(manifestPath);
+            return System.Text.Json.JsonSerializer.Deserialize<DenuvoFixManifest>(json, JsonOpts);
+        }
+        catch { return null; }
+    }
+
+    /// <summary>
+    /// Revert a previously applied Denuvo fix: restore .bak files for modified entries, delete added
+    /// files, then clean up the backup directory and manifest.
+    /// </summary>
+    public JobResult RevertDenuvoFix(long appId, string fixId, string gameName)
+    {
+        try
+        {
+            string? installDir = library.GetInstallDir(appId);
+            if (installDir is null)
+                return new JobResult(false, string.Format(Resources.Strings.Fixes_Toast_GameNotFound_Body, gameName));
+
+            string manifestPath = GetFixManifestPath(installDir, fixId);
+            var manifest = ReadFixManifest(manifestPath);
+            if (manifest is null)
+                return new JobResult(false, Resources.Strings.Fixes_Revert_NoManifest);
+
+            int restored = 0, deleted = 0, errors = 0;
+
+            foreach (var entry in manifest.Files)
+            {
+                string dest = Path.Combine(installDir, entry.RelativePath);
+                try
+                {
+                    if (entry.Action == "modified" && entry.BackupPath is { } bakRel)
+                    {
+                        string bakAbs = Path.Combine(installDir, FixManifestDir, bakRel);
+                        if (File.Exists(bakAbs))
+                        {
+                            File.Copy(bakAbs, dest, overwrite: true);
+                            File.Delete(bakAbs);
+                            restored++;
+                        }
+                    }
+                    else if (entry.Action == "added")
+                    {
+                        if (File.Exists(dest))
+                        {
+                            File.Delete(dest);
+                            deleted++;
+                        }
+                    }
+                }
+                catch { errors++; }
+            }
+
+            // Clean up backup dir for this fix
+            string backupDir = Path.Combine(installDir, FixManifestDir, SafeFixKey(fixId));
+            try { if (Directory.Exists(backupDir)) Directory.Delete(backupDir, recursive: true); } catch { }
+            try { if (File.Exists(manifestPath)) File.Delete(manifestPath); } catch { }
+
+            if (errors > 0)
+            {
+                string err = string.Format(Resources.Strings.Fixes_Revert_Partial_Body, errors);
+                toast.Show(Resources.Strings.Fixes_Revert_Partial, err, error: true);
+                return new JobResult(false, err);
+            }
+
+            string message = string.Format(Resources.Strings.Fixes_Revert_Done_Body, restored, deleted);
+            toast.Show(Resources.Strings.Fixes_Revert_Done, message);
+            return new JobResult(true, message, installDir);
+        }
+        catch (Exception ex)
+        {
+            toast.Show(Resources.Strings.Fixes_Toast_CouldntApply, ex.Message, error: true);
+            return new JobResult(false, ex.Message);
         }
     }
 

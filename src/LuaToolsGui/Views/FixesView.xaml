@@ -329,12 +329,13 @@
                 Background="#1c1c22"
                 BorderBrush="#22FFFFFF"
                 BorderThickness="1,0,0,0">
-                <Grid Margin="20" DataContext="{Binding SelectedGame}">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
+                <Grid>
+                    <Grid Margin="20" DataContext="{Binding SelectedGame}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
                     <!-- Close -->
@@ -487,9 +488,10 @@
                                                 </markdig:MarkdownViewer>
 
                                                 <!-- Download buttons -->
-                                                <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                                <StackPanel Margin="0,14,0,0" Orientation="Horizontal">
                                                     <ui:Button
-                                                        Margin="0,0,8,0"
+                                                        Margin="0,0,10,0"
+                                                        Padding="14,7"
                                                         Command="{Binding DataContext.DownloadManifestCommand, ElementName=Root}"
                                                         CommandParameter="{Binding}"
                                                         Content="{x:Static res:Strings.Fixes_Manifest}"
@@ -497,6 +499,8 @@
                                                         IsEnabled="{Binding CanDownloadManifest}"
                                                         Visibility="{Binding HasManifest, Converter={StaticResource BoolToVis}}" />
                                                     <ui:Button
+                                                        Margin="0,0,10,0"
+                                                        Padding="14,7"
                                                         Appearance="Primary"
                                                         Command="{Binding DataContext.DownloadFixCommand, ElementName=Root}"
                                                         CommandParameter="{Binding}"
@@ -506,6 +510,14 @@
                                                         ToolTip="{Binding FixHint}"
                                                         ToolTipService.ShowOnDisabled="True"
                                                         Visibility="{Binding HasFix, Converter={StaticResource BoolToVis}}" />
+                                                    <ui:Button
+                                                        Margin="0,0,10,0"
+                                                        Padding="14,7"
+                                                        Command="{Binding DataContext.RevertFixCommand, ElementName=Root}"
+                                                        CommandParameter="{Binding}"
+                                                        Content="{x:Static res:Strings.Fixes_Revert}"
+                                                        Icon="{ui:SymbolIcon ArrowClockwise24}"
+                                                        Visibility="{Binding IsApplied, Converter={StaticResource BoolToVis}}" />
                                                 </StackPanel>
 
                                                 <!--  Per-slot progress, bound straight to the queue item.  -->
@@ -530,6 +542,53 @@
                             </ItemsControl>
                         </StackPanel>
                     </ScrollViewer>
+                    </Grid>
+
+                    <!-- Revert confirmation overlay (in-flyout card, same pattern as ModeView). -->
+                    <Grid
+                        Background="#99000000"
+                        Visibility="{Binding IsConfirmingRevert, Converter={StaticResource BoolToVis}}">
+                        <Border
+                            MaxWidth="360"
+                            Margin="16"
+                            Padding="20"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="#1c1c22"
+                            BorderBrush="#33FFFFFF"
+                            BorderThickness="1"
+                            CornerRadius="12">
+                            <StackPanel>
+                                <TextBlock
+                                    FontSize="16"
+                                    FontWeight="Bold"
+                                    Text="{Binding ConfirmRevertTitle}"
+                                    TextWrapping="Wrap" />
+                                <TextBlock
+                                    Margin="0,8,0,0"
+                                    FontSize="12.5"
+                                    Foreground="#9ca3af"
+                                    Text="{Binding ConfirmRevertBody}"
+                                    TextWrapping="Wrap" />
+                                <StackPanel
+                                    Margin="0,18,0,0"
+                                    HorizontalAlignment="Right"
+                                    Orientation="Horizontal">
+                                    <ui:Button
+                                        Margin="0,0,10,0"
+                                        Padding="14,7"
+                                        Command="{Binding CancelRevertConfirmCommand}"
+                                        Content="{x:Static res:Strings.Fixes_Revert_Cancel}" />
+                                    <ui:Button
+                                        Padding="14,7"
+                                        Appearance="Primary"
+                                        Command="{Binding ConfirmRevertCommand}"
+                                        Content="{x:Static res:Strings.Fixes_Revert}"
+                                        Icon="{ui:SymbolIcon ArrowClockwise24}" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
                 </Grid>
             </Border>
         </Grid>

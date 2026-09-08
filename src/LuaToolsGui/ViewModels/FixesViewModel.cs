@@ -79,14 +79,25 @@ public partial class FixItemVm(DenuvoFix f) : ObservableObject
     /// </summary>
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(CanDownloadFix), nameof(FixHint))]
+
     private bool _gameInstalled;
 
+    /// <summary>True when the fix has been applied (its revert manifest exists on disk). Drives the Revert button.</summary>
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(HasApplied), nameof(CanDownloadFix), nameof(FixHint))]
+    private bool _isApplied;
+
+    public bool HasApplied => IsApplied;
+
     public bool CanDownloadManifest => HasManifest && ManifestItem?.IsActive != true;
-    public bool CanDownloadFix => HasFix && GameInstalled && FixItem?.IsActive != true;
+    public bool CanDownloadFix => HasFix && GameInstalled && !IsApplied && FixItem?.IsActive != true;
 
     /// <summary>Why the Fix button is greyed out, or null when it isn't. A null ToolTip shows nothing,
     /// so this doubles as the "should there be a tooltip at all" test.</summary>
-    public string? FixHint => GameInstalled ? null : Resources.Strings.Fixes_NotInstalled_Hint;
+    public string? FixHint =>
+        IsApplied ? Resources.Strings.Fixes_Applied_Hint
+        : GameInstalled ? null
+        : Resources.Strings.Fixes_NotInstalled_Hint;
 
     private static string FormatDate(string? iso) =>
         DateTimeOffset.TryParse(iso, out var d) ? d.UtcDateTime.ToString("d MMM yyyy") : "";
@@ -297,9 +308,16 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
 
                 // Is the game on disk? GetInstallDir walks libraryfolders.vdf + appmanifest_*.acf, so
                 // it's file I/O — off the UI thread. Resolved once here rather than per fix row.
-                bool installed = long.TryParse(game.AppId, out long gameAppId)
-                    && await Task.Run(() => library.GetInstallDir(gameAppId) is not null);
-                foreach (var f in _allFixes) f.GameInstalled = installed;
+                string? installDir = long.TryParse(game.AppId, out long gameAppId)
+                    ? await Task.Run(() => library.GetInstallDir(gameAppId))
+                    : null;
+                foreach (var f in _allFixes)
+                {
+                    f.GameInstalled = installDir is not null;
+                    // Whether this specific fix has been applied (revert manifest on disk).
+                    f.IsApplied = installDir is not null
+                        && File.Exists(ManifestJobFactory.GetFixManifestPath(installDir, f.Id));
+                }
 
                 // Build the per-game filter pills from the distinct tags across this game's fixes.
                 // But only when there's more than one (a single tag is no filter).
@@ -344,6 +362,48 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
     [RelayCommand]
     private Task DownloadFix(FixItemVm fix) => RunDownload(fix, "fix");
 
+    /// <summary>Confirm, then revert an applied fix back to its original files.</summary>
+    [RelayCommand]
+    private void RevertFix(FixItemVm fix)
+    {
+        if (SelectedGame is not { } game) return;
+        _pendingRevert = (fix, game);
+        ConfirmRevertTitle = string.Format(Resources.Strings.Fixes_Revert_Confirm_Title, game.Name);
+        ConfirmRevertBody = string.Format(Resources.Strings.Fixes_Revert_Confirm_Body, game.Name);
+        IsConfirmingRevert = true;
+    }
+
+    [RelayCommand]
+    private void CancelRevertConfirm()
+    {
+        IsConfirmingRevert = false;
+        _pendingRevert = null;
+    }
+
+    [RelayCommand]
+    private async Task ConfirmRevert()
+    {
+        IsConfirmingRevert = false;
+        var pending = _pendingRevert;
+        _pendingRevert = null;
+        if (pending is not (var fix, var game)) return;
+        if (!long.TryParse(game.AppId, out long appId)) return;
+
+        var result = await Task.Run(() => jobs.RevertDenuvoFix(appId, fix.Id, game.Name));
+        if (!result.Ok)
+        {
+            toast.Show(Resources.Strings.Fixes_Revert_Failed, result.Message ?? "", error: true);
+            return;
+        }
+
+        fix.IsApplied = false;
+    }
+
+    private (FixItemVm Fix, FixGameCardVm Game)? _pendingRevert;
+    [ObservableProperty] private bool _isConfirmingRevert;
+    [ObservableProperty] private string _confirmRevertTitle = "";
+    [ObservableProperty] private string _confirmRevertBody = "";
+
     /// <summary>
     /// Queue one slot of a fix. The download, install and result toast all happen in the shared queue,
     /// so this returns as soon as the item is enqueued.
@@ -374,8 +434,15 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
                 // The factory already toasts success and install failures. A download that never got
                 // that far (network, auth, daily limit) still needs to say something.
                 if (result is null && item.Status == DownloadStatus.Failed)
+                {
                     toast.Show(Resources.Strings.Fixes_Toast_DownloadFailed,
                         item.Message ?? Resources.Strings.Fixes_Toast_DownloadFailed_Body, error: true);
+                    return;
+                }
+
+                // A successfully applied fix unlocks the Revert button right away, without closing and
+                // reopening the flyout.
+                if (slot == "fix" && result?.Ok == true) fix.IsApplied = true;
             });
 
         var item = queue.Enqueue(job);

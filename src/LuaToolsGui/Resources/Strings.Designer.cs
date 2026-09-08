@@ -298,6 +298,17 @@ public static class Strings
     public static string Fixes_Toast_CouldntApply => Get(nameof(Fixes_Toast_CouldntApply));
     public static string Fixes_Toast_Refreshed_Title => Get(nameof(Fixes_Toast_Refreshed_Title));
     public static string Fixes_Toast_Refreshed_Body => Get(nameof(Fixes_Toast_Refreshed_Body));
+    public static string Fixes_Revert => Get(nameof(Fixes_Revert));
+    public static string Fixes_Revert_Cancel => Get(nameof(Fixes_Revert_Cancel));
+    public static string Fixes_Revert_Confirm_Title => Get(nameof(Fixes_Revert_Confirm_Title));
+    public static string Fixes_Revert_Confirm_Body => Get(nameof(Fixes_Revert_Confirm_Body));
+    public static string Fixes_Revert_Done => Get(nameof(Fixes_Revert_Done));
+    public static string Fixes_Revert_Done_Body => Get(nameof(Fixes_Revert_Done_Body));
+    public static string Fixes_Revert_Partial => Get(nameof(Fixes_Revert_Partial));
+    public static string Fixes_Revert_Partial_Body => Get(nameof(Fixes_Revert_Partial_Body));
+    public static string Fixes_Revert_Failed => Get(nameof(Fixes_Revert_Failed));
+    public static string Fixes_Revert_NoManifest => Get(nameof(Fixes_Revert_NoManifest));
+    public static string Fixes_Applied_Hint => Get(nameof(Fixes_Applied_Hint));
 
     // ── Add / Download ──
     public static string Add_Title => Get(nameof(Add_Title));

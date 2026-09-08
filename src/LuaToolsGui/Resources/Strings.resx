@@ -349,6 +349,17 @@ This deletes the .lua files from Steam\config\stplug-in.</value></data>
   <data name="Fixes_Toast_CouldntApply" xml:space="preserve"><value>Couldn't apply fix</value></data>
   <data name="Fixes_Toast_Refreshed_Title" xml:space="preserve"><value>Refreshed</value></data>
   <data name="Fixes_Toast_Refreshed_Body" xml:space="preserve"><value>{0} games with fixes.</value></data>
+  <data name="Fixes_Revert" xml:space="preserve"><value>Revert</value></data>
+  <data name="Fixes_Revert_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Fixes_Revert_Confirm_Title" xml:space="preserve"><value>Revert fix for {0}?</value></data>
+  <data name="Fixes_Revert_Confirm_Body" xml:space="preserve"><value>Revert "{0}"? Modified files will be restored from backup and files added by the fix will be deleted.</value></data>
+  <data name="Fixes_Revert_Done" xml:space="preserve"><value>Fix reverted</value></data>
+  <data name="Fixes_Revert_Done_Body" xml:space="preserve"><value>{0} restored, {1} added files removed.</value></data>
+  <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Fix partially reverted</value></data>
+  <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} file(s) couldn't be restored. Close the game and try again.</value></data>
+  <data name="Fixes_Revert_Failed" xml:space="preserve"><value>Couldn't revert fix</value></data>
+  <data name="Fixes_Revert_NoManifest" xml:space="preserve"><value>No record of this fix being applied. It may already have been reverted.</value></data>
+  <data name="Fixes_Applied_Hint" xml:space="preserve"><value>This fix is already applied. Revert it if you want to install another.</value></data>
 
   <!-- ── Add / Download page ── -->
   <data name="Add_Title" xml:space="preserve"><value>Let's get Luing™!</value></data>

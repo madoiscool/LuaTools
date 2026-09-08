@@ -56,3 +56,20 @@ public class DenuvoDownloadResponse
 {
     [JsonPropertyName("url")] public string Url { get; set; } = "";
 }
+
+// ── Fix revert manifest (written to .luatools-fix/ inside the game folder) ──
+
+public class DenuvoFixManifest
+{
+    [JsonPropertyName("appId")] public long AppId { get; set; }
+    [JsonPropertyName("fixId")] public string FixId { get; set; } = "";
+    [JsonPropertyName("appliedAt")] public string AppliedAt { get; set; } = "";
+    [JsonPropertyName("files")] public List<DenuvoFixManifestEntry> Files { get; set; } = [];
+}
+
+public class DenuvoFixManifestEntry
+{
+    [JsonPropertyName("relativePath")] public string RelativePath { get; set; } = "";
+    [JsonPropertyName("action")] public string Action { get; set; } = ""; // "modified" or "added"
+    [JsonPropertyName("backupPath")] public string? BackupPath { get; set; } // relative to .luatools-fix/
+}
