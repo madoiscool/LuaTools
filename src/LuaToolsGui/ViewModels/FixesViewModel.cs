@@ -118,11 +118,12 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
     private readonly DownloadQueue queue;
     private readonly ManifestJobFactory jobs;
     private readonly SteamLibraryService library;
+    private readonly SteamService steam;
 
     public FixesViewModel(
         LuaToolsApiClient api, AuthService auth, CoverCache covers, ToastService toast,
         SettingsService settings, DownloadQueue queue, ManifestJobFactory jobs,
-        SteamLibraryService library)
+        SteamLibraryService library, SteamService steam)
     {
         this.api = api;
         this.auth = auth;
@@ -132,6 +133,7 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
         this.queue = queue;
         this.jobs = jobs;
         this.library = library;
+        this.steam = steam;
         InitPageSize(settings.FixesPageSize);
     }
 
@@ -157,6 +159,37 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
     partial void OnSearchTextChanged(string value) => ApplyFilter();
 
     [ObservableProperty] private string? _selectedTagId; // null = "All"
+
+    // Appids with a lua in Steam's config/stplug-in ("my games"), so the page can filter the fix
+    // listing down to games the user actually owns. Empty when Steam isn't set up / no luas installed.
+    private HashSet<long> _installedAppIds = [];
+
+    /// <summary>True once the listing has been fetched (set at the end of LoadAsync).</summary>
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(CanFilter))]
+    private bool _loaded;
+
+    /// <summary>Gates the filter pills ("my games" + tags) behind a finished, non-empty listing.</summary>
+    public bool CanFilter => Loaded && _allGames.Count > 0;
+
+    /// <summary>Only show fix games the user has added (a lua in stplug-in). Mirrors Manage's "my games".</summary>
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(MyGamesHint))]
+    private bool _myGamesOnly;
+
+    public string MyGamesHint => _installedAppIds.Count == 0
+        ? Resources.Strings.Fixes_MyGames_NotInstalled
+        : string.Format(Resources.Strings.Fixes_MyGames_Count, _installedAppIds.Count);
+
+    partial void OnMyGamesOnlyChanged(bool value)
+    {
+        if (value)
+        {
+            SelectedTagId = null; // one filter at a time — turning "my games" on drops any tag
+            foreach (var pill in Tags) pill.IsSelected = false;
+        }
+        ApplyFilter();
+    }
 
     // ── Detail flyout ───────────────────────────────────────────────
     [ObservableProperty]
@@ -198,6 +231,14 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
             _allGames = data.Games.Select(g => new FixGameCardVm(g)).ToList();
             Tags.Clear();
             foreach (var t in data.Tags) Tags.Add(new TagPillVm(t));
+
+            // "My games" filter source: the same stplug-in scan the Manage page uses, so the toggle
+            // shows only games the user actually added. Scanned once per listing load.
+            _installedAppIds = steam.StPlugInDir is { } dir
+                ? await Task.Run(() => LuaInstaller.EnumerateInstalled(dir).Select(i => i.AppId).ToHashSet())
+                : [];
+            OnPropertyChanged(nameof(MyGamesHint));
+
             ApplyFilter();
             if (_allGames.Count == 0) EmptyMessage = Resources.Strings.Fixes_Empty_None;
         }
@@ -208,6 +249,7 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
         finally
         {
             IsLoading = false;
+            Loaded = true; // gates the filter pills: they appear only once the listing settled
         }
     }
 
@@ -216,6 +258,7 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
     {
         if (SearchText.Length > 0) SearchText = ""; // reset filter → full list visible
         if (SelectedTagId is not null) SelectTag(SelectedTagId); // clear active tag (toggles off)
+        if (MyGamesOnly) MyGamesOnly = false; // ditto for the "my games" filter
         await LoadAsync(force: true);
         toast.Show(Resources.Strings.Fixes_Toast_Refreshed_Title,
             string.Format(Resources.Strings.Fixes_Toast_Refreshed_Body, _allGames.Count));
@@ -225,6 +268,7 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
     private void SelectTag(string? tagId)
     {
         SelectedTagId = SelectedTagId == tagId ? null : tagId; // toggle off when re-clicked
+        if (MyGamesOnly) MyGamesOnly = false; // one filter at a time — picking a tag drops "my games"
         foreach (var pill in Tags) pill.IsSelected = pill.Id == SelectedTagId;
         ApplyFilter();
     }
@@ -234,6 +278,7 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
         string q = SearchText.Trim();
         IEnumerable<FixGameCardVm> shown = _allGames;
         if (SelectedTagId is { } tag) shown = shown.Where(g => g.TagIds.Contains(tag));
+        if (MyGamesOnly) shown = shown.Where(g => long.TryParse(g.AppId, out long id) && _installedAppIds.Contains(id));
         if (q.Length > 0) shown = shown.Where(g => g.Matches(q));
 
         // Hand the filtered list to the base: it slices the visible page and (via OnPageSliced) warms

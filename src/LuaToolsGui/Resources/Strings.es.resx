@@ -326,6 +326,9 @@ Esto elimina los archivos .lua de Steam\config\stplug-in.</value></data>
   <data name="Fixes_Revert_Failed" xml:space="preserve"><value>No se pudo revertir el parche</value></data>
   <data name="Fixes_Revert_NoManifest" xml:space="preserve"><value>No hay registro de que este parche se haya aplicado. Puede que ya se haya revertido.</value></data>
   <data name="Fixes_Applied_Hint" xml:space="preserve"><value>Este parche ya está aplicado. Revierte para instalar otro.</value></data>
+  <data name="Fixes_MyGames" xml:space="preserve"><value>Mis juegos</value></data>
+  <data name="Fixes_MyGames_Count" xml:space="preserve"><value>{0} de tus juegos tienen parches. Desplázate para ver el resto.</value></data>
+  <data name="Fixes_MyGames_NotInstalled" xml:space="preserve"><value>Aún no hay luas agregadas: añade un juego (o instala uno) para verlo aquí.</value></data>
   <data name="Add_Title" xml:space="preserve"><value>¡A por los Luas™!</value></data>
   <data name="Add_Subtitle" xml:space="preserve"><value>Introduce un App ID, pega un enlace de Steam o busca por nombre de juego</value></data>
   <data name="Add_SearchPlaceholder" xml:space="preserve"><value>Introduce un App ID o busca juegos...</value></data>

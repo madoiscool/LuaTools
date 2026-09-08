@@ -360,6 +360,9 @@ This deletes the .lua files from Steam\config\stplug-in.</value></data>
   <data name="Fixes_Revert_Failed" xml:space="preserve"><value>Couldn't revert fix</value></data>
   <data name="Fixes_Revert_NoManifest" xml:space="preserve"><value>No record of this fix being applied. It may already have been reverted.</value></data>
   <data name="Fixes_Applied_Hint" xml:space="preserve"><value>This fix is already applied. Revert it if you want to install another.</value></data>
+  <data name="Fixes_MyGames" xml:space="preserve"><value>My games</value></data>
+  <data name="Fixes_MyGames_Count" xml:space="preserve"><value>{0} of your games have fixes. Scroll the grid to browse the rest.</value></data>
+  <data name="Fixes_MyGames_NotInstalled" xml:space="preserve"><value>No luas added yet — add a game (or install one) to see it here.</value></data>
 
   <!-- ── Add / Download page ── -->
   <data name="Add_Title" xml:space="preserve"><value>Let's get Luing™!</value></data>

@@ -55,53 +55,95 @@
             PlaceholderText="{x:Static res:Strings.Common_SearchPlaceholder}"
             Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
 
-        <!-- Tag filter pills -->
-        <ItemsControl Grid.Row="2" Margin="0,12,0,0" ItemsSource="{Binding Tags}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button
-                        Margin="0,0,6,6"
-                        Command="{Binding DataContext.SelectTagCommand, ElementName=Root}"
-                        CommandParameter="{Binding Id}"
-                        Cursor="Hand">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border
-                                    x:Name="Pill"
-                                    Padding="10,4"
-                                    Background="#14a78bfa"
-                                    BorderBrush="#40a78bfa"
-                                    BorderThickness="1"
-                                    CornerRadius="6">
-                                    <TextBlock
-                                        x:Name="PillText"
-                                        FontSize="11.5"
-                                        FontWeight="SemiBold"
-                                        Foreground="#a78bfa"
-                                        Text="{Binding Name}" />
-                                </Border>
-                                <ControlTemplate.Triggers>
-                                    <!-- Active: filled accent. -->
-                                    <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                                        <Setter TargetName="Pill" Property="Background" Value="#a78bfa" />
-                                        <Setter TargetName="Pill" Property="BorderBrush" Value="#a78bfa" />
-                                        <Setter TargetName="PillText" Property="Foreground" Value="#ffffff" />
-                                    </DataTrigger>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="Pill" Property="Background" Value="#28a78bfa" />
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <!-- "My games" toggle + tag filter pills (shown once the listing is loaded and non-empty) -->
+        <StackPanel
+            Grid.Row="2"
+            Margin="0,12,0,0"
+            Orientation="Horizontal"
+            Visibility="{Binding CanFilter, Converter={StaticResource BoolToVis}}">
+            <ToggleButton
+                Margin="0,0,8,6"
+                Cursor="Hand"
+                Foreground="#a78bfa"
+                IsChecked="{Binding MyGamesOnly}"
+                ToolTip="{Binding MyGamesHint}">
+                <ToggleButton.Template>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border
+                            x:Name="Pill"
+                            Padding="10,4"
+                            Background="#14a78bfa"
+                            BorderBrush="#40a78bfa"
+                            BorderThickness="1"
+                            CornerRadius="6">
+                            <TextBlock
+                                x:Name="PillText"
+                                FontSize="11.5"
+                                FontWeight="SemiBold"
+                                Foreground="#a78bfa"
+                                Text="{x:Static res:Strings.Fixes_MyGames}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Active: filled accent, exactly like a selected tag pill. -->
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="Pill" Property="Background" Value="#a78bfa" />
+                                <Setter TargetName="Pill" Property="BorderBrush" Value="#a78bfa" />
+                                <Setter TargetName="PillText" Property="Foreground" Value="#ffffff" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Pill" Property="Background" Value="#28a78bfa" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </ToggleButton.Template>
+            </ToggleButton>
+            <ItemsControl ItemsSource="{Binding Tags}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button
+                            Margin="0,0,6,6"
+                            Command="{Binding DataContext.SelectTagCommand, ElementName=Root}"
+                            CommandParameter="{Binding Id}"
+                            Cursor="Hand">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border
+                                        x:Name="Pill"
+                                        Padding="10,4"
+                                        Background="#14a78bfa"
+                                        BorderBrush="#40a78bfa"
+                                        BorderThickness="1"
+                                        CornerRadius="6">
+                                        <TextBlock
+                                            x:Name="PillText"
+                                            FontSize="11.5"
+                                            FontWeight="SemiBold"
+                                            Foreground="#a78bfa"
+                                            Text="{Binding Name}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <!-- Active: filled accent. -->
+                                        <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                            <Setter TargetName="Pill" Property="Background" Value="#a78bfa" />
+                                            <Setter TargetName="Pill" Property="BorderBrush" Value="#a78bfa" />
+                                            <Setter TargetName="PillText" Property="Foreground" Value="#ffffff" />
+                                        </DataTrigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="Pill" Property="Background" Value="#28a78bfa" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
 
         <!-- Loading -->
         <StackPanel
