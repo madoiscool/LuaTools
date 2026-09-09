@@ -619,4 +619,10 @@ Hủy - tiếp tục tải</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} đã thay đổi kể từ khi bản vá này được áp dụng, nên khôi phục sẽ ghi đè các thay đổi đó. Nếu bạn đã áp dụng bản vá khác lên trên, hãy hoàn tác bản đó trước. {1} tệp bị ảnh hưởng.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Bản sửa lỗi được hoàn tác một phần</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>Không thể khôi phục {0} tệp. Hãy đóng trò chơi và thử lại.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Nguồn này không có trò chơi này, hoặc không kết nối được.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Nguồn manifest</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Nguồn bổ sung khai báo trong tệp .json. Chỉ là dữ liệu: tệp cho biết lấy manifest ở đâu, và không có gì trong đó được thực thi.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Mở thư mục</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Chưa có tệp nguồn nào.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>nguồn: {0}</value></data>
 </root>

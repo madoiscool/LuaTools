@@ -619,4 +619,10 @@
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>Το {0} έχει αλλάξει από τότε που εφαρμόστηκε αυτή η διόρθωση, οπότε η επαναφορά θα αντικαταστήσει αυτές τις αλλαγές. Αν εφαρμόσατε άλλη διόρθωση από πάνω, επαναφέρετε πρώτα εκείνη. Επηρεάζονται {1} αρχεία.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Η διόρθωση αναιρέθηκε μερικώς</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>Δεν ήταν δυνατή η επαναφορά {0} αρχείων. Κλείστε το παιχνίδι και δοκιμάστε ξανά.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Αυτή η πηγή δεν έχει αυτό το παιχνίδι, ή δεν ήταν προσβάσιμη.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Πηγές manifest</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Επιπλέον πηγές δηλωμένες σε αρχεία .json. Μόνο δεδομένα: το αρχείο λέει από πού λαμβάνονται τα manifest, και τίποτα μέσα του δεν εκτελείται.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Άνοιγμα φακέλου</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Δεν υπάρχουν ακόμη αρχεία πηγών.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>πηγές: {0}</value></data>
 </root>

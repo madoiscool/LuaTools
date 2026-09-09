@@ -619,4 +619,10 @@
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} е променен, откакто беше приложена тази поправка, така че възстановяването ще презапише тези промени. Ако сте приложили друга поправка отгоре, първо върнете нея. Засегнати са {1} файла.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Корекцията е върната частично</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} файл(а) не можаха да бъдат възстановени. Затворете играта и опитайте отново.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Този източник няма тази игра или е недостъпен.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Източници на манифести</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Допълнителни източници, описани във файлове .json. Само данни: файлът казва откъде да се вземат манифести и нищо в него не се изпълнява.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Отваряне на папката</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Все още няма файлове с източници.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>източници: {0}</value></data>
 </root>

@@ -619,4 +619,10 @@ Avbryt - fortsätt hämta</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} har ändrats sedan den här fixen tillämpades, så en återställning skulle skriva över de ändringarna. Om du tillämpat en annan fix ovanpå, återställ den först. {1} fil(er) påverkas.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Korrigering delvis ångrad</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} fil(er) kunde inte återställas. Stäng spelet och försök igen.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Den här källan har inte det här spelet, eller kunde inte nås.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Manifestkällor</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Extra källor som anges i .json-filer. Endast data: en fil säger var manifest hämtas, inget i den körs någonsin.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Öppna mappen</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Inga källfiler ännu.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>källor: {0}</value></data>
 </root>

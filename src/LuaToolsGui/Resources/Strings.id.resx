@@ -619,4 +619,10 @@ Batal - lanjutkan mengunduh</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} telah berubah sejak fix ini diterapkan, jadi memulihkannya akan menimpa perubahan tersebut. Jika Anda menerapkan fix lain di atasnya, kembalikan yang itu dulu. {1} berkas terpengaruh.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Perbaikan dikembalikan sebagian</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} berkas tidak dapat dipulihkan. Tutup game lalu coba lagi.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Sumber ini tidak memiliki gim ini, atau tidak dapat dijangkau.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Sumber manifest</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Sumber tambahan yang dideklarasikan dalam berkas .json. Hanya data: berkas menyebutkan dari mana manifest diambil, dan tidak ada isinya yang dijalankan.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Buka folder</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Belum ada berkas sumber.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>sumber: {0}</value></data>
 </root>

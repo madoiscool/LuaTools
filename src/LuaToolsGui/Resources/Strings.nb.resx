@@ -619,4 +619,10 @@ Avbryt - fortsett nedlastingen</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} er endret siden denne fiksen ble brukt, så gjenoppretting ville overskrive de endringene. Hvis du har brukt en annen fiks oppå, tilbakestill den først. {1} fil(er) berørt.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Rettelse delvis angret</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} fil(er) kunne ikke gjenopprettes. Lukk spillet og prøv igjen.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Denne kilden har ikke dette spillet, eller kunne ikke nås.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Manifestkilder</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Ekstra kilder angitt i .json-filer. Bare data: en fil sier hvor manifester hentes fra, og ingenting i den kjøres.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Åpne mappen</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Ingen kildefiler ennå.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>kilder: {0}</value></data>
 </root>

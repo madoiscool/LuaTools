@@ -551,6 +551,45 @@
                         IsChecked="{Binding DonateKeys, Mode=TwoWay}" />
                 </Grid>
             </Border>
+
+            <!-- Manifest sources -->
+            <TextBlock Style="{StaticResource SectionHeader}" Text="{x:Static res:Strings.Settings_Section_Sources}" />
+            <Border Style="{StaticResource SettingsCard}">
+                <StackPanel Margin="14,12">
+                    <TextBlock
+                        FontSize="12"
+                        Foreground="#6b7280"
+                        Text="{x:Static res:Strings.Settings_SourcePacks_Hint}"
+                        TextWrapping="Wrap" />
+
+                    <!-- One line per file. No inner scroller: a nested one marks every wheel event
+                         handled, even at its own end, and traps the wheel for the page below it. -->
+                    <ItemsControl Margin="0,10,0,0" ItemsSource="{Binding SourcePacks}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    Margin="0,0,0,3"
+                                    FontSize="12"
+                                    Text="{Binding}"
+                                    TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <TextBlock
+                        FontSize="12"
+                        Foreground="#6b7280"
+                        Text="{x:Static res:Strings.Settings_SourcePacks_None}"
+                        Visibility="{Binding HasSourcePacks, Converter={StaticResource InverseBoolToVis}}" />
+
+                    <ui:Button
+                        Margin="0,12,0,0"
+                        HorizontalAlignment="Left"
+                        Command="{Binding OpenSourcesFolderCommand}"
+                        Content="{x:Static res:Strings.Settings_SourcePacks_Open}"
+                        Icon="{ui:SymbolIcon FolderOpen24}" />
+                </StackPanel>
+            </Border>
         </StackPanel>
     </ScrollViewer>
 </UserControl>

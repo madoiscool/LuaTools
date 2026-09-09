@@ -619,4 +619,10 @@ Mégse - letöltés folytatása</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>A(z) {0} megváltozott a javítás alkalmazása óta, ezért a visszaállítás felülírná ezeket a módosításokat. Ha másik javítást is alkalmaztál rá, előbb azt vond vissza. {1} fájl érintett.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>A javítás részben lett visszavonva</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} fájlt nem sikerült visszaállítani. Zárd be a játékot, és próbáld újra.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Ez a forrás nem tartalmazza ezt a játékot, vagy nem érhető el.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Manifest-források</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>További források .json fájlokban megadva. Csak adat: a fájl megmondja, honnan töltsük le a manifesteket, és semmi nem fut le belőle.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Mappa megnyitása</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Még nincs forrásfájl.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>források: {0}</value></data>
 </root>

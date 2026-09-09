@@ -619,4 +619,10 @@ Anuluj - kontynuuj pobieranie</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>Plik {0} zmienił się od zastosowania tej poprawki, więc przywrócenie nadpisałoby te zmiany. Jeśli zastosowano na wierzchu inną poprawkę, cofnij najpierw ją. Dotyczy {1} plik(ów).</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Poprawka cofnięta częściowo</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>Nie udało się przywrócić {0} plików. Zamknij grę i spróbuj ponownie.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>To źródło nie ma tej gry lub jest nieosiągalne.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Źródła manifestów</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Dodatkowe źródła zadeklarowane w plikach .json. Wyłącznie dane: plik mówi, skąd pobrać manifesty, i nic z niego nie jest uruchamiane.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Otwórz folder</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Brak plików źródeł.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>źródła: {0}</value></data>
 </root>

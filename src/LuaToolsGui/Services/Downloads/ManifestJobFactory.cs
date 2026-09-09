@@ -25,7 +25,8 @@ public class ManifestJobFactory(
     DepotDownloaderService depotTool,
     SteamDepotInfo depotInfo,
     SteamAutoCrackService sac,
-    AppliedFixIndexService fixIndex)
+    AppliedFixIndexService fixIndex,
+    Sources.PackSourceService packSources)
 {
     // ── Job builders ─────────────────────────────────────────────────
 
@@ -47,6 +48,32 @@ public class ManifestJobFactory(
             (_, progress, ct) => needsKey
                 ? hubcap.DownloadManifestAsync(appId.ToString(), settings.HubcapApiKey ?? "", progress, ct)
                 : api.DownloadManifestAsync(appId.ToString(), sourceName, gameName, progress, ct),
+            (file, _, _) => Task.FromResult(InstallManifest(file, appId, title)),
+            confirm,
+            onFinished,
+            onReveal);
+    }
+
+    /// <summary>
+    /// A manifest from a source a pack declared. Fetched from the pack's url, then installed by exactly
+    /// the same code as any other manifest — a pack changes where a file comes from, never what is done
+    /// with it.
+    /// </summary>
+    public DownloadJob CreatePackSourceJob(
+        Sources.PackSource source, long appId, string? gameName,
+        Func<DownloadedFile, DownloadItem, CancellationToken, Task<bool>>? confirm = null,
+        Action<DownloadItem, JobResult?>? onFinished = null,
+        Action? onReveal = null)
+    {
+        string title = gameName ?? appId.ToString();
+        return new DownloadJob(
+            DownloadKind.Manifest,
+            $"manifest:{appId}",
+            appId,
+            title,
+            source.DisplayName,
+            covers.GetLocalPath(appId),
+            (_, progress, ct) => packSources.FetchAsync(source, appId, progress, ct),
             (file, _, _) => Task.FromResult(InstallManifest(file, appId, title)),
             confirm,
             onFinished,

@@ -619,4 +619,10 @@
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} มีการเปลี่ยนแปลงหลังจากใช้แพตช์นี้ การกู้คืนจะเขียนทับการเปลี่ยนแปลงนั้น หากคุณใช้แพตช์อื่นทับไว้ ให้ย้อนกลับแพตช์นั้นก่อน มีไฟล์ที่ได้รับผลกระทบ {1} ไฟล์</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>ย้อนกลับตัวแก้ไขได้บางส่วน</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>กู้คืนไฟล์ {0} รายการไม่สำเร็จ กรุณาปิดเกมแล้วลองใหม่</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>แหล่งนี้ไม่มีเกมนี้ หรือเข้าถึงไม่ได้</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>แหล่งแมนิเฟสต์</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>แหล่งเพิ่มเติมที่ประกาศไว้ในไฟล์ .json เป็นข้อมูลล้วน ๆ ไฟล์บอกเพียงว่าจะดึงแมนิเฟสต์จากที่ใด และไม่มีอะไรในไฟล์ถูกรัน</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>เปิดโฟลเดอร์</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>ยังไม่มีไฟล์แหล่งข้อมูล</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>แหล่ง: {0}</value></data>
 </root>

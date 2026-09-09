@@ -619,4 +619,10 @@ Annulla - continua a scaricare</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} è cambiato da quando questo fix è stato applicato, quindi ripristinarlo sovrascriverebbe quelle modifiche. Se hai applicato un altro fix sopra, ripristina prima quello. {1} file interessati.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Fix annullata parzialmente</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>Impossibile ripristinare {0} file. Chiudi il gioco e riprova.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Questa fonte non ha questo gioco, o non è raggiungibile.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Fonti di manifest</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Fonti aggiuntive dichiarate in file .json. Solo dati: un file indica dove prendere i manifest, e nulla al suo interno viene mai eseguito.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Apri la cartella</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Nessun file di fonti per ora.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>fonti: {0}</value></data>
 </root>

@@ -619,4 +619,10 @@ Zrušit - pokračovat ve stahování</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>Soubor {0} se od použití této opravy změnil, takže obnovení by tyto změny přepsalo. Pokud jste navrch použili jinou opravu, vraťte nejprve ji. Dotčeno {1} souborů.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Oprava vrácena zpět částečně</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} soubor(ů) se nepodařilo obnovit. Zavřete hru a zkuste to znovu.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Tento zdroj tuto hru nemá, nebo je nedostupný.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Zdroje manifestů</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Další zdroje deklarované v souborech .json. Pouze data: soubor říká, odkud manifesty stáhnout, a nic z něj se nespouští.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Otevřít složku</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Zatím žádné soubory zdrojů.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>zdroje: {0}</value></data>
 </root>

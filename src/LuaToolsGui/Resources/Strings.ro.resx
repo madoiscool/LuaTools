@@ -619,4 +619,10 @@ Anulare - continuă descărcarea</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} s-a modificat de la aplicarea acestui fix, așa că restaurarea ar suprascrie acele modificări. Dacă ai aplicat alt fix peste, anulează-l mai întâi pe acela. {1} fișier(e) afectate.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Reparație anulată parțial</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} fișier(e) nu au putut fi restaurate. Închide jocul și încearcă din nou.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Această sursă nu are acest joc sau nu a putut fi contactată.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Surse de manifeste</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Surse suplimentare declarate în fișiere .json. Doar date: un fișier spune de unde se iau manifestele și nimic din el nu se execută.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Deschide folderul</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Încă niciun fișier de surse.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>surse: {0}</value></data>
 </root>

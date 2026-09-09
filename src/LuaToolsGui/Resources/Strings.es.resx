@@ -619,4 +619,10 @@ Cancelar: seguir descargando</value></data>
   <data name="Depot_Err_NoKeyFor" xml:space="preserve"><value>No hay clave de descifrado en el Lua para el depot {0}.</value></data>
   <data name="Builds_Select_SharedHint" xml:space="preserve"><value>Runtime compartido: normalmente ya está instalado. Marca para descargarlo igualmente.</value></data>
   <data name="Downloads_ClearHistory_Confirm" xml:space="preserve"><value>¿Quitar las {0} entradas del historial de descargas? Los archivos descargados no se ven afectados.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Esta fuente no tiene este juego, o no se pudo contactar.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Fuentes de manifiestos</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Fuentes adicionales declaradas en archivos .json. Solo datos: un archivo indica de dónde obtener manifiestos, y nada en él se ejecuta.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Abrir la carpeta</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Aún no hay archivos de fuentes.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>fuentes: {0}</value></data>
 </root>

@@ -619,4 +619,10 @@ Annuler - continuer le téléchargement</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} a changé depuis l'application de ce correctif ; le restaurer écraserait ces modifications. Si vous avez appliqué un autre correctif par-dessus, annulez-le d'abord. {1} fichier(s) concerné(s).</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Correctif partiellement annulé</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>Impossible de restaurer {0} fichier(s). Fermez le jeu et réessayez.</value></data>
+  <data name="Sources_Err_Fetch" xml:space="preserve"><value>Cette source n'a pas ce jeu, ou n'a pas pu être jointe.</value></data>
+  <data name="Settings_Section_Sources" xml:space="preserve"><value>Sources de manifests</value></data>
+  <data name="Settings_SourcePacks_Hint" xml:space="preserve"><value>Sources supplémentaires déclarées dans des fichiers .json. Uniquement des données : un fichier indique où récupérer des manifests, rien n'y est jamais exécuté.</value></data>
+  <data name="Settings_SourcePacks_Open" xml:space="preserve"><value>Ouvrir le dossier</value></data>
+  <data name="Settings_SourcePacks_None" xml:space="preserve"><value>Aucun fichier de source pour l'instant.</value></data>
+  <data name="Settings_SourcePacks_Count" xml:space="preserve"><value>sources : {0}</value></data>
 </root>
