@@ -162,6 +162,18 @@
   <data name="Mode_Recommended" xml:space="preserve"><value>RECOMMENDED</value></data>
   <data name="Mode_Confirm_Body" xml:space="preserve"><value>Steam will be closed so its files can be changed, then restarted automatically. Any running games or downloads will stop.</value></data>
   <data name="Mode_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <!-- Revert to vanilla Steam -->
+  <data name="Mode_Revert_Title" xml:space="preserve"><value>Revert to vanilla Steam</value></data>
+  <data name="Mode_Revert_Desc" xml:space="preserve"><value>Remove the unlocker and restore Steam to how it was before LuaTools touched it. A backup of the original files was taken before the first install.</value></data>
+  <data name="Mode_Revert_Button" xml:space="preserve"><value>Revert</value></data>
+  <data name="Mode_Revert_Confirm_Body" xml:space="preserve"><value>Steam will be closed, the unlocker files removed, the original files restored, and Steam restarted. Your games and saves are not affected.</value></data>
+  <data name="Mode_Revert_Opt_Lua" xml:space="preserve"><value>Also remove game lua files (removes added games)</value></data>
+  <data name="Mode_Revert_Opt_Manifests" xml:space="preserve"><value>Also remove pinned manifest files</value></data>
+  <data name="Mode_Revert_Toast_Done" xml:space="preserve"><value>Steam reverted to vanilla and restarted.</value></data>
+  <data name="Mode_Revert_Toast_Done_NoStart" xml:space="preserve"><value>Steam reverted to vanilla. Start it manually when ready.</value></data>
+  <data name="Mode_Revert_Failed_Body" xml:space="preserve"><value>Revert failed.</value></data>
+  <data name="Mode_Backup_Summary" xml:space="preserve"><value>Original files backed up</value></data>
+  <data name="Mode_Backup_Summary_None" xml:space="preserve"><value>No backup — the unlocker files will be removed instead of restored (safe: Steam uses its own system DLLs when these are absent)</value></data>
   <data name="Mode_CloseSteamContinue" xml:space="preserve"><value>Close Steam &amp; continue</value></data>
   <!-- Mode descriptions + C# strings -->
   <data name="Mode_Desc_Bst" xml:space="preserve"><value>An open source fork of OpenSteamTools actively maintained by the LuaTools team. Introducing fixes and new features!</value></data>

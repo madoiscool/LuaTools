@@ -165,6 +165,17 @@ public static class Strings
     public static string Mode_Btn_Update => Get(nameof(Mode_Btn_Update));
     public static string Mode_Btn_Install => Get(nameof(Mode_Btn_Install));
     public static string Mode_Btn_Switch => Get(nameof(Mode_Btn_Switch));
+    public static string Mode_Revert_Title => Get(nameof(Mode_Revert_Title));
+    public static string Mode_Revert_Desc => Get(nameof(Mode_Revert_Desc));
+    public static string Mode_Revert_Button => Get(nameof(Mode_Revert_Button));
+    public static string Mode_Revert_Confirm_Body => Get(nameof(Mode_Revert_Confirm_Body));
+    public static string Mode_Revert_Opt_Lua => Get(nameof(Mode_Revert_Opt_Lua));
+    public static string Mode_Revert_Opt_Manifests => Get(nameof(Mode_Revert_Opt_Manifests));
+    public static string Mode_Revert_Toast_Done => Get(nameof(Mode_Revert_Toast_Done));
+    public static string Mode_Revert_Toast_Done_NoStart => Get(nameof(Mode_Revert_Toast_Done_NoStart));
+    public static string Mode_Revert_Failed_Body => Get(nameof(Mode_Revert_Failed_Body));
+    public static string Mode_Backup_Summary => Get(nameof(Mode_Backup_Summary));
+    public static string Mode_Backup_Summary_None => Get(nameof(Mode_Backup_Summary_None));
     public static string Mode_Confirm_Reinstall => Get(nameof(Mode_Confirm_Reinstall));
     public static string Mode_Confirm_Switch => Get(nameof(Mode_Confirm_Switch));
     public static string Mode_Toast_Updated => Get(nameof(Mode_Toast_Updated));

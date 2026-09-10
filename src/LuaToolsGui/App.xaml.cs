@@ -45,6 +45,7 @@ public partial class App : Application
                 services.AddSingleton<DepotDownloaderService>();
                 services.AddSingleton<DepotCacheMigrationService>();
                 services.AddSingleton<AppliedFixIndexService>();
+                services.AddSingleton<BackupService>(); // revert-to-vanilla-Steam feature (local)
                 services.AddSingleton<UnlockerService>();
                 services.AddSingleton<PluginInstallerService>();
                 services.AddTransient<DropInstallViewModel>(); // one per page (Home, Add)
