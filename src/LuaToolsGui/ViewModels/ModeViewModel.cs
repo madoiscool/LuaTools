@@ -66,6 +66,21 @@ public partial class ModeViewModel : ObservableObject
     [ObservableProperty] private string _confirmTitle = "";
     private ModeCardViewModel? _pendingCard;
 
+    // Revert-to-vanilla confirmation overlay state.
+    [ObservableProperty] private bool _isConfirmingRevert;
+
+    /// <summary>"Also remove game luas" checkbox on the revert confirmation.</summary>
+    [ObservableProperty] private bool _revertCleanLua;
+
+    /// <summary>"Also remove pinned manifests" checkbox on the revert confirmation.</summary>
+    [ObservableProperty] private bool _revertCleanManifests;
+
+    /// <summary>True when a backup exists AND mode artifacts are present → the Revert card is offered.</summary>
+    [ObservableProperty] private bool _canRevert;
+
+    /// <summary>Backup status line for the revert card, or null.</summary>
+    [ObservableProperty] private string? _backupSummary;
+
     public ModeViewModel(UnlockerService unlocker, ToastService toast, SteamService steam,
         CloudRedirectService cloudRedirect)
     {
@@ -289,6 +304,69 @@ public partial class ModeViewModel : ObservableObject
 
         // Bottom CloudRedirect add-on panel (locked unless Nightly BST is the active mode).
         await RefreshCloudRedirectAsync(forceRefresh);
+
+        // Revert card: visible only when a backup exists AND there are mode artifacts to undo.
+        CanRevert = _unlocker.CanRevert;
+        BackupSummary = _unlocker.BackupSummary;
+    }
+
+    // ── Revert to vanilla Steam ──────────────────────────────────────
+
+    /// <summary>"Revert to vanilla" button → show the confirmation overlay.</summary>
+    [RelayCommand]
+    private void StartRevert()
+    {
+        if (IsBusy || !_unlocker.CanRevert) return;
+        RevertCleanLua = false;
+        RevertCleanManifests = false;
+        IsConfirmingRevert = true;
+    }
+
+    [RelayCommand]
+    private void CancelRevert()
+    {
+        IsConfirmingRevert = false;
+    }
+
+    /// <summary>Confirmed revert: close Steam, restore/delete mode files, restart Steam, report.</summary>
+    [RelayCommand]
+    private async Task ConfirmRevert()
+    {
+        IsConfirmingRevert = false;
+        if (IsBusy) return;
+        IsBusy = true;
+        IsProgressIndeterminate = true;
+        Progress = 0;
+        try
+        {
+            // Files are locked while Steam runs; same choreography as install.
+            await Task.Run(_steam.StopSteam);
+
+            var result = await Task.Run(() =>
+                _unlocker.Revert(RevertCleanLua, RevertCleanManifests));
+
+            if (result.Success)
+            {
+                bool started = await Task.Run(_steam.StartSteam);
+                _toast.Show(Resources.Strings.Mode_Revert_Title, started
+                    ? Resources.Strings.Mode_Revert_Toast_Done
+                    : Resources.Strings.Mode_Revert_Toast_Done_NoStart);
+            }
+            else
+            {
+                // Revert (partially) failed: still bring Steam back up.
+                await Task.Run(_steam.StartSteam);
+                _toast.Show(Resources.Strings.Mode_Revert_Title,
+                    result.Error ?? Resources.Strings.Mode_Revert_Failed_Body, error: true);
+            }
+
+            await LoadAsync();
+        }
+        finally
+        {
+            IsBusy = false;
+            IsProgressIndeterminate = false;
+        }
     }
 
     private DateTime _lastCheck;
