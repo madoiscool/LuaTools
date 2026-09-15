@@ -344,7 +344,7 @@ Steam\config\stplug-in에서 .lua 파일을 삭제합니다.</value></data>
   <data name="Add_SignIn_Download" xml:space="preserve"><value>다운로드하려면 Discord로 로그인하세요.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>이 DLC의 본편 게임을 확인할 수 없습니다</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>문제가 발생했습니다 — 연결을 확인하고 다시 시도하세요.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>다운로드 실패 — 연결을 확인하고 다시 시도하세요.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>다운로드 실패 — "{0}" 버튼을 사용해 LuaTools 앱에 로그인한 후 다시 시도하세요.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>"{0}"을(를) 교체할까요?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>디포/DLC 변경 없음 — 동일한 콘텐츠입니다.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>설치가 취소되었습니다 — 기존 파일은 변경되지 않았습니다.</value></data>

@@ -344,7 +344,7 @@
   <data name="Add_SignIn_Download" xml:space="preserve"><value>使用 Discord 登入以下載。</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>無法確定此 DLC 的本體遊戲</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>發生錯誤——請檢查你的連線後重試。</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>下載失敗——請檢查你的連線後重試。</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>下載失敗——請使用「{0}」按鈕登入 LuaTools 應用程式後重試。</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>取代「{0}」？</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>倉庫/DLC 無變更——內容相同。</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>安裝已取消——現有檔案保持不變。</value></data>

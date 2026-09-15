@@ -344,7 +344,7 @@ Dette sletter .lua-filerne fra Steam\config\stplug-in.</value></data>
   <data name="Add_SignIn_Download" xml:space="preserve"><value>Log ind med Discord for at downloade.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Kunne ikke fastslå basisspillet for denne DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Noget gik galt — tjek din forbindelse og prøv igen.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>Download mislykkedes — tjek din forbindelse og prøv igen.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Download mislykkedes — log ind i LuaTools-appen ved hjælp af knappen „{0}" og prøv igen.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>Erstat "{0}"?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Ingen depot-/DLC-ændringer — samme indhold.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Installation annulleret — eksisterende filer er uændrede.</value></data>

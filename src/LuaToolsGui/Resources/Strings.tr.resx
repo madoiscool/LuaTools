@@ -344,7 +344,7 @@ Bu, .lua dosyalarını Steam\config\stplug-in konumundan siler.</value></data>
   <data name="Add_SignIn_Download" xml:space="preserve"><value>İndirmek için Discord ile giriş yapın.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Bu DLC'nin ana oyunu belirlenemedi</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Bir şeyler ters gitti — bağlantınızı kontrol edip tekrar deneyin.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>İndirme başarısız — bağlantınızı kontrol edip tekrar deneyin.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>İndirme başarısız — "{0}" düğmesini kullanarak LuaTools uygulamasına giriş yapıp tekrar deneyin.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>"{0}" değiştirilsin mi?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Depo/DLC değişikliği yok — aynı içerik.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Kurulum iptal edildi — mevcut dosyalar değiştirilmedi.</value></data>

@@ -344,7 +344,7 @@
   <data name="Add_SignIn_Download" xml:space="preserve"><value>Увійдіть через Discord, щоб завантажити.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Не вдалося визначити базову гру для цього DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Щось пішло не так — перевірте з'єднання і спробуйте ще раз.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>Помилка завантаження — перевірте з'єднання і спробуйте ще раз.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Помилка завантаження — увійдіть у застосунок LuaTools, використавши кнопку «{0}», і спробуйте ще раз.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>Замінити «{0}»?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Немає змін депо/DLC — той самий вміст.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Встановлення скасовано — наявні файли не змінено.</value></data>

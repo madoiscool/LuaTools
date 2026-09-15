@@ -344,7 +344,7 @@
   <data name="Add_SignIn_Download" xml:space="preserve"><value>Влезте с Discord, за да изтеглите.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Не може да се определи основната игра за това DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Нещо се обърка — проверете връзката си и опитайте отново.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>Изтеглянето е неуспешно — проверете връзката си и опитайте отново.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Изтеглянето е неуспешно — влезте в приложението LuaTools, като използвате бутона „{0}" и опитайте отново.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>Замяна на „{0}“?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Няма промени в депо/DLC — същото съдържание.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Инсталирането е отказано — съществуващите файлове са непроменени.</value></data>

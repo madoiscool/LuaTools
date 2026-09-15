@@ -344,7 +344,7 @@ Aceasta șterge fișierele .lua din Steam\config\stplug-in.</value></data>
   <data name="Add_SignIn_Download" xml:space="preserve"><value>Conectează-te cu Discord pentru a descărca.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Nu s-a putut determina jocul de bază pentru acest DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Ceva nu a mers bine — verifică-ți conexiunea și încearcă din nou.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>Descărcare eșuată — verifică-ți conexiunea și încearcă din nou.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Descărcare eșuată — autentifică-te în aplicația LuaTools folosind butonul „{0}" și încearcă din nou.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>Înlocuiești „{0}”?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Nicio modificare de depozit/DLC — același conținut.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Instalare anulată — fișierele existente au rămas neschimbate.</value></data>

@@ -362,7 +362,7 @@
   <data name="Add_SignIn_Download" xml:space="preserve"><value>使用 Discord 登录以下载。</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>无法确定此 DLC 的本体游戏</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>出了点问题——请检查你的网络连接后重试。</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>下载失败——请检查你的网络连接后重试。</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>下载失败——请使用「{0}」按钮登录 LuaTools 应用后重试。</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>替换"{0}"？</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>仓库/DLC 无变化——内容相同。</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>安装已取消——现有文件保持不变。</value></data>

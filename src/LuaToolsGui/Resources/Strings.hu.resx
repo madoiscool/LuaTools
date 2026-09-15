@@ -344,7 +344,7 @@ Ez törli a .lua fájlokat a Steam\config\stplug-in mappából.</value></data>
   <data name="Add_SignIn_Download" xml:space="preserve"><value>Jelentkezz be Discorddal a letöltéshez.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Nem sikerült meghatározni a DLC alapjátékát</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Hiba történt — ellenőrizd a kapcsolatot, és próbáld újra.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>Letöltés sikertelen — ellenőrizd a kapcsolatot, és próbáld újra.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Letöltés sikertelen — jelentkezz be a LuaTools alkalmazásba a „{0}" gombbal, és próbáld újra.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>Lecseréled a következőt: „{0}”?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Nincs depó-/DLC-változás — ugyanaz a tartalom.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Telepítés megszakítva — a meglévő fájlok változatlanok.</value></data>

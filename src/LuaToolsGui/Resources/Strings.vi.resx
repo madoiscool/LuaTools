@@ -344,7 +344,7 @@ Thao tác này xóa các tệp .lua khỏi Steam\config\stplug-in.</value></data
   <data name="Add_SignIn_Download" xml:space="preserve"><value>Đăng nhập bằng Discord để tải xuống.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Không thể xác định trò chơi gốc cho DLC này</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Đã xảy ra lỗi — kiểm tra kết nối và thử lại.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>Tải xuống thất bại — kiểm tra kết nối và thử lại.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Tải xuống thất bại — hãy đăng nhập vào ứng dụng LuaTools bằng nút "{0}" và thử lại.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>Thay thế "{0}"?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Không có thay đổi depot/DLC — cùng nội dung.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Đã hủy cài đặt — các tệp hiện có không thay đổi.</value></data>

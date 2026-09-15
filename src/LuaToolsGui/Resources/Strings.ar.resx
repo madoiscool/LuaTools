@@ -368,7 +368,7 @@
   <data name="Add_SignIn_Download" xml:space="preserve"><value>سجّل الدخول عبر Discord للتنزيل.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>تعذّر تحديد اللعبة الأساسية لمحتوى DLC هذا</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>حدث خطأ ما — تحقق من اتصالك وحاول مجددًا.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>فشل التنزيل — تحقق من اتصالك وحاول مجددًا.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>فشل التنزيل — سجّل الدخول إلى تطبيق LuaTools باستخدام زر "{0}" وحاول مجددًا.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>استبدال "{0}"؟</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>لا تغييرات في المستودع/DLC — المحتوى نفسه.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>أُلغي التثبيت — تُركت الملفات الحالية دون تغيير.</value></data>

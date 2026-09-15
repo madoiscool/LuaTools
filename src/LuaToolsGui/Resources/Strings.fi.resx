@@ -344,7 +344,7 @@ Tämä poistaa .lua-tiedostot kansiosta Steam\config\stplug-in.</value></data>
   <data name="Add_SignIn_Download" xml:space="preserve"><value>Kirjaudu Discordilla ladataksesi.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Tämän DLC:n peruspeliä ei voitu määrittää</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Jokin meni pieleen — tarkista yhteytesi ja yritä uudelleen.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>Lataus epäonnistui — tarkista yhteytesi ja yritä uudelleen.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Lataus epäonnistui — kirjaudu LuaTools-sovellukseen "{0}" -painikkeella ja yritä uudelleen.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>Korvataanko "{0}"?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Ei depo-/DLC-muutoksia — sama sisältö.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Asennus peruutettu — olemassa olevat tiedostot ennallaan.</value></data>
