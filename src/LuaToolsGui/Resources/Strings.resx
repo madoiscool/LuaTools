@@ -402,7 +402,7 @@ This deletes the .lua files from Steam\config\stplug-in.</value></data>
   <data name="Add_SignIn_Download" xml:space="preserve"><value>Sign in with Discord to download.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Could not resolve the base game for this DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Something went wrong. Check your connection and try again.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>Download failed. Check your connection and try again.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Download failed — Log in to the LuaTools app using the "{0}" button and try again.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>Replace "{0}"?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>No depot/DLC changes. Same content.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Install cancelled. Existing files left unchanged.</value></data>

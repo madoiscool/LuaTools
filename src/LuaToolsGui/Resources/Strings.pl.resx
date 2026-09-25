@@ -349,7 +349,7 @@ Spowoduje to usunięcie plików .lua z Steam\config\stplug-in.</value></data>
   <data name="Add_SignIn_Download" xml:space="preserve"><value>Zaloguj się przez Discord, aby pobierać.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Nie udało się ustalić gry podstawowej dla tego DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Coś poszło nie tak — sprawdź połączenie i spróbuj ponownie.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>Pobieranie nie powiodło się — sprawdź połączenie i spróbuj ponownie.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Pobieranie nie powiodło się — zaloguj się w aplikacji LuaTools przyciskiem „{0}" i spróbuj ponownie.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>Zastąpić „{0}”?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Brak zmian depotu/DLC — ta sama zawartość.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Anulowano instalację — istniejące pliki pozostały bez zmian.</value></data>

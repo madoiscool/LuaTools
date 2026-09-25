@@ -349,7 +349,7 @@ Ini menghapus berkas .lua dari Steam\config\stplug-in.</value></data>
   <data name="Add_SignIn_Download" xml:space="preserve"><value>Masuk dengan Discord untuk mengunduh.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Tidak dapat menentukan gim dasar untuk DLC ini</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Terjadi kesalahan — periksa koneksi Anda dan coba lagi.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>Unduhan gagal — periksa koneksi Anda dan coba lagi.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Unduhan gagal — masuk ke aplikasi LuaTools menggunakan tombol "{0}" lalu coba lagi.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>Ganti "{0}"?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Tidak ada perubahan depot/DLC — konten sama.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Pemasangan dibatalkan — file yang ada tidak berubah.</value></data>

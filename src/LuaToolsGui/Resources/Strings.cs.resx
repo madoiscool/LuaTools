@@ -349,7 +349,7 @@ Tím se smažou soubory .lua ze Steam\config\stplug-in.</value></data>
   <data name="Add_SignIn_Download" xml:space="preserve"><value>Pro stahování se přihlaste přes Discord.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Nepodařilo se určit základní hru pro toto DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Něco se pokazilo — zkontrolujte připojení a zkuste to znovu.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>Stahování se nezdařilo — zkontrolujte připojení a zkuste to znovu.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Stahování se nezdařilo — přihlaste se do aplikace LuaTools pomocí tlačítka „{0}" a zkuste to znovu.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>Nahradit „{0}“?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Žádné změny depotu/DLC — stejný obsah.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Instalace zrušena — stávající soubory zůstaly beze změny.</value></data>

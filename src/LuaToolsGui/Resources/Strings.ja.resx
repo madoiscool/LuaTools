@@ -349,7 +349,7 @@ Steam\config\stplug-in から .lua ファイルを削除します。</value></da
   <data name="Add_SignIn_Download" xml:space="preserve"><value>ダウンロードするにはDiscordでサインインしてください。</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>このDLCのベースゲームを特定できませんでした</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>問題が発生しました — 接続を確認してもう一度お試しください。</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>ダウンロードに失敗しました — 接続を確認してもう一度お試しください。</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>ダウンロードに失敗しました — 「{0}」ボタンでLuaToolsアプリにサインインして、もう一度お試しください。</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>「{0}」を置き換えますか？</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>デポ/DLCの変更なし — 同じ内容です。</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>インストールをキャンセルしました — 既存のファイルは変更されていません。</value></data>

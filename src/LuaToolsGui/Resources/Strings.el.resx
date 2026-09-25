@@ -349,7 +349,7 @@
   <data name="Add_SignIn_Download" xml:space="preserve"><value>Συνδεθείτε με Discord για λήψη.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Δεν ήταν δυνατός ο προσδιορισμός του βασικού παιχνιδιού για αυτό το DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Κάτι πήγε στραβά — ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>Η λήψη απέτυχε — ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Η λήψη απέτυχε — συνδεθείτε στην εφαρμογή LuaTools χρησιμοποιώντας το κουμπί «{0}» και δοκιμάστε ξανά.</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>Αντικατάσταση του «{0}»;</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Καμία αλλαγή depot/DLC — ίδιο περιεχόμενο.</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>Η εγκατάσταση ακυρώθηκε — τα υπάρχοντα αρχεία παρέμειναν αμετάβλητα.</value></data>

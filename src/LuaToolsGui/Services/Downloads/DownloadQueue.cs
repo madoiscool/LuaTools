@@ -383,7 +383,7 @@ public class DownloadQueue : IHostedService
             // the generic text and the detail goes to the log above.
             string message = ex is ApiException or DownloadAbortedException
                 ? ex.Message
-                : Resources.Strings.Add_Err_Download;
+                : string.Format(Resources.Strings.Add_Err_Download, Resources.Strings.Nav_SignInDiscord);
 
             // Some aborts are not failures — a declined elevation prompt, or a runtime that installed but
             // wants a reboot. Those settle as Cancelled so they don't read as something having broken.

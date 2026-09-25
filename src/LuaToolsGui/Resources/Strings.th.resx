@@ -349,7 +349,7 @@
   <data name="Add_SignIn_Download" xml:space="preserve"><value>เข้าสู่ระบบด้วย Discord เพื่อดาวน์โหลด</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>ไม่สามารถระบุเกมหลักของ DLC นี้ได้</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>มีบางอย่างผิดพลาด — ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง</value></data>
-  <data name="Add_Err_Download" xml:space="preserve"><value>การดาวน์โหลดล้มเหลว — ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>การดาวน์โหลดล้มเหลว — เข้าสู่ระบบแอป LuaTools ด้วยปุ่ม "{0}" แล้วลองอีกครั้ง</value></data>
   <data name="Add_Confirm_Replace" xml:space="preserve"><value>แทนที่ "{0}" หรือไม่?</value></data>
   <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>ไม่มีการเปลี่ยนแปลง depot/DLC — เนื้อหาเหมือนเดิม</value></data>
   <data name="Add_Status_Cancelled" xml:space="preserve"><value>ยกเลิกการติดตั้งแล้ว — ไฟล์ที่มีอยู่ไม่เปลี่ยนแปลง</value></data>
