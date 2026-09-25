@@ -30,6 +30,8 @@ public partial class App : Application
                 services.AddSingleton<CoverCache>();
                 services.AddSingleton<ToastService>();
                 services.AddSingleton<SteamDepotInfo>();
+                services.AddSingleton<Services.Sources.SourcePackRegistry>();
+                services.AddSingleton<Services.Sources.PackSourceService>();
                 services.AddSingleton<LuaVault>();
                 services.AddSingleton<Services.AppInfo.LaunchModStore>();
                 services.AddSingleton<Services.AppInfo.LaunchOptionsService>();
