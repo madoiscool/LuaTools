@@ -14,7 +14,7 @@ namespace LuaToolsGui.Services;
 /// files. Switching overwrites shared files but doesn't delete the previous mode's leftovers. The
 /// active mode persists in settings.
 /// </summary>
-public class UnlockerService(SteamService steam, SettingsService settings, CacheService cache, GithubProxy gh)
+public class UnlockerService(SteamService steam, SettingsService settings, CacheService cache, GithubProxy gh, BackupService backup)
 {
     private static readonly JsonSerializerOptions JsonOpts = new() { PropertyNameCaseInsensitive = true };
 
@@ -202,6 +202,148 @@ public class UnlockerService(SteamService steam, SettingsService settings, Cache
         return (ModeStatus.UpdateAvailable, latest.TagName);
     }
 
+    // ── Revert to vanilla ───────────────────────────────────────────
+
+    /// <summary>True when a revert has something to undo: any mode-managed artifact is present in
+    /// the Steam root. Works with OR without a backup — without one (installs made before backups
+    /// existed), the mode-placed files are removed instead of restored. Cheap, disk-only.</summary>
+    public bool CanRevert => ModeArtifactsPresent().Count > 0;
+
+    /// <summary>Human-readable backup summary for the Mode page. With a backup: when it was taken +
+    /// how many files. Without one: a note that the files will be removed rather than restored.</summary>
+    public string? BackupSummary
+    {
+        get
+        {
+            var info = backup.GetInfo();
+            return info.HasBackup
+                ? $"{Resources.Strings.Mode_Backup_Summary} · {info.CreatedText} · {info.FileCount}"
+                : Resources.Strings.Mode_Backup_Summary_None;
+        }
+    }
+
+    /// <summary>Mode-managed artifacts currently present in the Steam root: the loader DLLs, the
+    /// payload DLL, CloudRedirect and opensteamtool.toml. Used to decide if a revert has work to do.</summary>
+    private List<string> ModeArtifactsPresent()
+    {
+        var present = new List<string>();
+        string? root = steam.EffectivePath;
+        if (root is null) return present;
+
+        foreach (string f in new[]
+                 {
+                     BackupService.OpenSteamToolDll,
+                     BackupService.CloudRedirectDll,
+                     "dwmapi.dll", "xinput1_4.dll", "opensteamtool.toml",
+                 })
+            if (File.Exists(Path.Combine(root, f))) present.Add(f);
+        return present;
+    }
+
+    /// <summary>
+    /// Revert Steam to its pre-LuaTools state: Steam must already be stopped (the caller owns the
+    /// close/relaunch choreography). Restores every backed-up file (verified), removes mode payload
+    /// DLLs and opensteamtool.toml (restored by the backup when it existed before us), clears the
+    /// selected mode, and optionally cleans game luas + pinned manifests.
+    /// </summary>
+    /// <param name="cleanLua">Also delete &lt;Steam&gt;/config/stplug-in/*.lua (game unlocks).</param>
+    /// <param name="cleanManifests">Also delete &lt;Steam&gt;/config/depotcache/*.manifest (pins).</param>
+    public ModeInstallResult Revert(bool cleanLua = false, bool cleanManifests = false)
+    {
+        string? root = steam.EffectivePath;
+        if (root is null || !steam.IsValid)
+            return ModeInstallResult.Fail(Resources.Strings.Err_SteamNotFound);
+
+        var failed = new List<string>();
+
+        // 1. Restore backed-up files (loader DLLs + opensteamtool.toml as they were before us).
+        //    No backup (e.g. the mode was installed before backups existed) → the loader DLLs were
+        //    placed by the mode, so deleting them IS the revert: absent proxies, steam.exe loads the
+        //    real system DLLs from System32. (opensteamtool.toml is handled by step 3 below.)
+        if (backup.HasBackup)
+            failed.AddRange(backup.RestoreBackedUpFiles());
+        else
+            foreach (string f in new[] { "dwmapi.dll", "xinput1_4.dll" })
+            {
+                try { string p = Path.Combine(root, f); if (File.Exists(p)) File.Delete(p); }
+                catch { failed.Add(f); }
+            }
+
+        // 2. Remove mode payload files that have no backup to restore over them.
+        foreach (string f in new[] { BackupService.OpenSteamToolDll, BackupService.CloudRedirectDll })
+        {
+            try
+            {
+                string p = Path.Combine(root, f);
+                // Only delete when it's NOT covered by the backup (the restore already overwrote it).
+                if (backup.BackedUpFiles().Any(b => b.Equals(f, StringComparison.OrdinalIgnoreCase))) continue;
+                if (File.Exists(p)) File.Delete(p);
+            }
+            catch { failed.Add(f); }
+        }
+
+        // 3. opensteamtool.toml: if the backup has no copy, the file was created by us → delete it.
+        try
+        {
+            string toml = Path.Combine(root, "opensteamtool.toml");
+            if (!backup.BackedUpFiles().Any(b => b.Equals("opensteamtool.toml", StringComparison.OrdinalIgnoreCase))
+                && File.Exists(toml))
+                File.Delete(toml);
+        }
+        catch { failed.Add("opensteamtool.toml"); }
+
+        // 4. Optional: remove game luas (the user's unlocks).
+        if (cleanLua)
+        {
+            try
+            {
+                string? dir = steam.StPlugInDir;
+                if (dir is not null && Directory.Exists(dir))
+                    foreach (string f in Directory.GetFiles(dir, "*.lua"))
+                        File.Delete(f);
+            }
+            catch { failed.Add("*.lua"); }
+        }
+
+        // 5. Optional: remove pinned manifests.
+        if (cleanManifests)
+        {
+            try
+            {
+                string? dir = steam.DepotCacheDir;
+                if (dir is not null && Directory.Exists(dir))
+                    foreach (string f in Directory.GetFiles(dir, "*.manifest"))
+                        File.Delete(f);
+            }
+            catch { failed.Add("*.manifest"); }
+        }
+
+        // 6. Clear the active mode so the app reflects vanilla state (onboarding re-opens).
+        settings.SelectedMode = null;
+        cache.OpenSteamToolsInstalledVersion = null;
+        cache.OpenSteamToolsInstalledZipDigest = null;
+
+        return failed.Count > 0
+            ? new ModeInstallResult(false,
+                string.Format(Resources.Strings.Err_WriteFailedCount, failed.Count), failed)
+            : ModeInstallResult.Ok();
+    }
+
+    /// <summary>Delete stale lua files from stplug-in. Returns count removed (for UI), -1 on failure.
+    /// Used by the revert flow when the user opts into lua cleanup.</summary>
+    public int CleanLuaFiles()
+    {
+        try
+        {
+            string? dir = steam.StPlugInDir;
+            if (dir is null || !Directory.Exists(dir)) return 0;
+            int n = 0;
+            foreach (string f in Directory.GetFiles(dir, "*.lua")) { File.Delete(f); n++; }
+            return n;
+        }
+        catch { return -1; }
+    }
+
     // ── Install / switch ─────────────────────────────────────────────
 
     /// <summary>Download + verify a mode's files, place them in the Steam root, remove the other mode's
@@ -290,7 +432,12 @@ public class UnlockerService(SteamService steam, SettingsService settings, Cache
                     return ModeInstallResult.Fail(string.Format(Resources.Strings.Err_VerifyFailedFile, manifest.File));
             }
 
-            // 2. Copy verified files into the Steam root (overwrite). Locked files → Failed (Steam running).
+            // 2. SAFETY BACKUP (one-time): before the first managed install ever writes to the Steam
+            //    root, snapshot the current loader DLLs + opensteamtool.toml so a later revert can
+            //    restore this exact state. Never blocks install on failure.
+            try { backup.BackupIfNeeded(); } catch { /* best-effort safety net */ }
+
+            // 3. Copy verified files into the Steam root (overwrite). Locked files → Failed (Steam running).
             var failed = new List<string>();
             foreach (string file in def.PlaceFiles)
             {
@@ -306,7 +453,7 @@ public class UnlockerService(SteamService steam, SettingsService settings, Cache
                 }
             }
 
-            // 3. This mode is now the active one. (No cleanup of other modes' files. Just overwrite.)
+            // 4. This mode is now the active one. (No cleanup of other modes' files. Just overwrite.)
             settings.SelectedMode = mode.ToString();
 
             // Record the installed zip digest/version for reference (the up-to-date check uses per-DLL

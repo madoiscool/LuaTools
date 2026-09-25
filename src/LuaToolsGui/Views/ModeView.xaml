@@ -199,6 +199,61 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
 
+                <!-- Revert to vanilla Steam (only when a backup exists and there's something to undo) -->
+                <Border
+                    Margin="0,6,0,0"
+                    Padding="18"
+                    Background="#0DFFFFFF"
+                    BorderBrush="#1FFFFFFF"
+                    BorderThickness="1"
+                    CornerRadius="10"
+                    Visibility="{Binding CanRevert, Converter={StaticResource BoolToVis}}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:SymbolIcon
+                                    VerticalAlignment="Center"
+                                    Foreground="#f87171"
+                                    Symbol="ArrowUndo24" />
+                                <TextBlock
+                                    Margin="10,0,0,0"
+                                    VerticalAlignment="Center"
+                                    FontSize="15"
+                                    FontWeight="SemiBold"
+                                    Text="{x:Static res:Strings.Mode_Revert_Title}" />
+                            </StackPanel>
+                            <TextBlock
+                                Margin="0,6,0,0"
+                                FontSize="12"
+                                Foreground="#7c8593"
+                                Text="{x:Static res:Strings.Mode_Revert_Desc}"
+                                TextWrapping="Wrap" />
+                            <TextBlock
+                                Margin="0,6,0,0"
+                                FontSize="12.5"
+                                Foreground="#9ca3af"
+                                Text="{Binding BackupSummary}"
+                                TextWrapping="Wrap"
+                                Visibility="{Binding BackupSummary, Converter={StaticResource NullToCollapsed}}" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <ui:Button
+                                MinWidth="110"
+                                HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Center"
+                                Appearance="Danger"
+                                Command="{Binding StartRevertCommand}"
+                                Content="{x:Static res:Strings.Mode_Revert_Button}"
+                                Icon="{ui:SymbolIcon ArrowUndo24}"
+                                IsEnabled="{Binding NotBusy}" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
             </StackPanel>
         </ScrollViewer>
 
@@ -297,6 +352,62 @@
                     Visibility="{Binding IsBusy, Converter={StaticResource BoolToVis}}" />
 
         </StackPanel>
+
+        <!-- Revert-to-vanilla confirmation overlay (covers the whole page, both rows) -->
+        <Grid
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Background="#99000000"
+            Visibility="{Binding IsConfirmingRevert, Converter={StaticResource BoolToVis}}">
+            <Border
+                MaxWidth="440"
+                Margin="8"
+                Padding="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="#1c1c22"
+                BorderBrush="#33FFFFFF"
+                BorderThickness="1"
+                CornerRadius="12">
+                <StackPanel>
+                    <TextBlock
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Text="{x:Static res:Strings.Mode_Revert_Title}"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Margin="0,8,0,0"
+                        FontSize="12.5"
+                        Foreground="#9ca3af"
+                        Text="{x:Static res:Strings.Mode_Revert_Confirm_Body}"
+                        TextWrapping="Wrap" />
+                    <CheckBox
+                        Margin="0,12,0,0"
+                        Content="{x:Static res:Strings.Mode_Revert_Opt_Lua}"
+                        FontSize="12.5"
+                        IsChecked="{Binding RevertCleanLua}" />
+                    <CheckBox
+                        Margin="0,6,0,0"
+                        Content="{x:Static res:Strings.Mode_Revert_Opt_Manifests}"
+                        FontSize="12.5"
+                        IsChecked="{Binding RevertCleanManifests}" />
+                    <StackPanel
+                        Margin="0,16,0,0"
+                        HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+                        <ui:Button
+                            Margin="0,0,8,0"
+                            Command="{Binding CancelRevertCommand}"
+                            Content="{x:Static res:Strings.Mode_Cancel}" />
+                        <ui:Button
+                            Appearance="Danger"
+                            Command="{Binding ConfirmRevertCommand}"
+                            Content="{x:Static res:Strings.Mode_Revert_Button}"
+                            Icon="{ui:SymbolIcon ArrowUndo24}" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
 
         <!-- Steam-shutdown confirmation overlay (covers the whole page, both rows) -->
         <Grid
