@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.IO.Compression;
@@ -8,6 +8,8 @@ using System.Text.RegularExpressions;
 using LuaToolsGui.Models;
 using LuaToolsGui.Services.Downloads;
 using Microsoft.Extensions.Logging;
+using System.Threading;
+using System.Net.Http;
 
 namespace LuaToolsGui.Services;
 
@@ -169,6 +171,111 @@ public partial class DepotDownloaderService(
     /// an existing <c>ExePath</c>, so an offline user who already has the tool keeps downloading depots
     /// exactly as before. Returning null is reserved for "there is no usable tool at all".</para>
     /// </remarks>
+    /// <summary>
+    /// Baixa o pacote do DepotDownloader com attempts automáticas.
+    /// Uma falha temporária de rede não derruba imediatamente o processo inteiro.
+    /// </summary>
+    private async Task DownloadReleaseWithRetryAsync(
+        string url,
+        string destination,
+        IProgress<DownloadProgress>? progress,
+        CancellationToken ct,
+        int maxRetries = 4)
+    {
+        if (string.IsNullOrWhiteSpace(url))
+            throw new ArgumentException("A URL do download não pode ser vazia.", nameof(url));
+
+        if (string.IsNullOrWhiteSpace(destination))
+            throw new ArgumentException("O destino do download não pode ser vazio.", nameof(destination));
+
+        Exception? lastException = null;
+
+        for (int attempt = 1; attempt <= maxRetries; attempt++)
+        {
+            ct.ThrowIfCancellationRequested();
+
+            try
+            {
+                // Remove um arquivo parcial antes de uma new attempt.
+                // Isso evita que um ZIP incompleto seja tratado como um download válido.
+                if (attempt > 1)
+                {
+                    try
+                    {
+                        if (File.Exists(destination))
+                            File.Delete(destination);
+                    }
+                    catch (Exception cleanupEx)
+                    {
+                        log.LogDebug(
+                            cleanupEx,
+                            "[Network] Não foi possível remover o arquivo parcial antes da attempt {Attempt}.",
+                            attempt);
+                    }
+                }
+
+                log.LogInformation(
+                    "[Network] Download do DepotDownloader: attempt {Attempt}/{MaxRetries}.",
+                    attempt,
+                    maxRetries);
+
+                await gh.DownloadAsync(url, destination, progress, ct);
+
+                if (!File.Exists(destination))
+                {
+                    throw new IOException(
+                        "O download terminou sem criar o arquivo esperado.");
+                }
+
+                var length = new FileInfo(destination).Length;
+
+                if (length <= 0)
+                {
+                    throw new IOException(
+                        "O servidor retornou um arquivo vazio.");
+                }
+
+                log.LogInformation(
+                    "[Network] Download concluído na attempt {Attempt}. Tamanho: {Size} bytes.",
+                    attempt,
+                    length);
+
+                return;
+            }
+            catch (OperationCanceledException) when (ct.IsCancellationRequested)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                lastException = ex;
+
+                log.LogWarning(
+                    ex,
+                    "[Network] Falha no download na attempt {Attempt}/{MaxRetries}: {Message}",
+                    attempt,
+                    maxRetries,
+                    ex.Message);
+
+                if (attempt >= maxRetries)
+                    break;
+
+                // Backoff: 2s, 4s, 8s...
+                int delayMilliseconds = 2000 * (1 << (attempt - 1));
+
+                log.LogInformation(
+                    "[Network] Nova attempt em {Delay} ms.",
+                    delayMilliseconds);
+
+                await Task.Delay(delayMilliseconds, ct);
+            }
+        }
+
+        throw new HttpRequestException(
+            "Não foi possível baixar o DepotDownloader após várias attempts.",
+            lastException);
+    }
+
     public async Task<string?> EnsureToolAsync(IProgress<DownloadProgress>? progress, CancellationToken ct = default)
     {
         if (File.Exists(ExePath) && CheckedRecently(cache.DepotDownloaderCheckedAtMs)) return ExePath;
@@ -220,7 +327,7 @@ public partial class DepotDownloaderService(
             var sink = progress is null ? null : new ProgressRelay<double?>(f =>
                 progress.Report(new DownloadProgress(
                     (long)((f ?? 0) * asset.Size), asset.Size > 0 ? asset.Size : null)));
-            await gh.DownloadAsync(asset.DownloadUrl, zipPath, sink, ct);
+            await DownloadReleaseWithRetryAsync(asset.DownloadUrl, zipPath, sink, ct);
 
             // Verify before extracting over a working install: this is an executable we then run, and
             // both UnlockerService and PluginInstallerService check the same way.
