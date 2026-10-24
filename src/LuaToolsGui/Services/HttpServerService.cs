@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
@@ -103,7 +104,10 @@ public class HttpServerService : IHostedService
             _log.LogWarning("HttpListener could not start on 127.0.0.1:6767, attempting netsh reservation");
             try
             {
-                var psi = new System.Diagnostics.ProcessStartInfo("netsh", "http add urlacl url=http://127.0.0.1:6767/ user=Everyone")
+                // Reserve the URL for the current user only. "Everyone" let any other account on the
+                // machine bind this port if the app was not running.
+                string user = $"{Environment.UserDomainName}\\{Environment.UserName}";
+                var psi = new System.Diagnostics.ProcessStartInfo("netsh", $"http add urlacl url=http://127.0.0.1:6767/ user=\"{user}\"")
                 {
                     Verb = "runas",
                     UseShellExecute = true,
@@ -151,32 +155,40 @@ public class HttpServerService : IHostedService
         var req = ctx.Request;
         var resp = ctx.Response;
 
-        SetCors(resp);
         resp.ContentType = "application/json; charset=utf-8";
 
         try
         {
+            string? origin = req.Headers["Origin"];
+            if (!IsTrustedRequest(req.Headers["Host"], origin))
+            {
+                PluginLog.Log($"HTTP rejected {req.HttpMethod} {req.Url?.AbsolutePath} host='{req.Headers["Host"]}' origin='{origin}'");
+                resp.StatusCode = 403;
+                await resp.OutputStream.WriteAsync(Encoding.UTF8.GetBytes(JsonErr("Forbidden")));
+                return;
+            }
+            SetCors(resp, origin);
+
             string? path = req.Url?.AbsolutePath.TrimEnd('/');
+            string method = req.HttpMethod;
             // Log everything except the noisy status poll.
             if (path is not null && !path.StartsWith("/add-status/") && !path.StartsWith("/has/"))
-                PluginLog.Log($"HTTP {req.HttpMethod} {path}");
+                PluginLog.Log($"HTTP {method} {path}");
             (int status, string body) = path switch
             {
-                // Answer CORS preflight FIRST. Otherwise it matches a POST route (the
-                // matchers ignore method) and returns non-2xx, so the browser blocks the
-                // real request (this is why JSON POSTs like /add-source did nothing).
-                _ when req.HttpMethod == "OPTIONS" => (204, ""),
-                var p when MatchGet(p, "/has/{appid}", out var id) => await HandleHas(long.Parse(id)),
+                // Answer CORS preflight FIRST so it never falls through to a route.
+                _ when method == "OPTIONS" => (204, ""),
+                var p when Match(method, "GET", p, "/has/{appid}", out var id) => await HandleHas(id),
                 // Steam-plugin headless add: reflects the app's real DownloadViewModel.
-                var p when MatchPost(p, "/add/{appid}", out var id) => await HandleAdd(long.Parse(id), req),
-                var p when MatchGet(p, "/add-status/{appid}", out var id) => HandleAddStatus(long.Parse(id)),
-                var p when MatchPost(p, "/add-source/{appid}", out var id) => await HandleAddSource(long.Parse(id), req),
-                var p when MatchPost(p, "/check-sources/{appid}", out var id) => await HandleCheckSources(long.Parse(id)),
-                var p when MatchPost(p, "/download/{appid}", out var id) => await HandleDownload(long.Parse(id), req),
-                var p when MatchGet(p, "/download-status/{appid}", out var id) => HandleStatus(long.Parse(id)),
-                var p when MatchPost(p, "/cancel/{appid}", out var id) => HandleCancel(long.Parse(id)),
-                var p when MatchPost(p, "/remove/{appid}", out var id) => HandleRemove(long.Parse(id)),
-                var p when MatchPost(p, "/open/fix/{appid}", out var id) => HandleOpenFix(long.Parse(id)),
+                var p when Match(method, "POST", p, "/add/{appid}", out var id) => await HandleAdd(id, req),
+                var p when Match(method, "GET", p, "/add-status/{appid}", out var id) => HandleAddStatus(id),
+                var p when Match(method, "POST", p, "/add-source/{appid}", out var id) => await HandleAddSource(id, req),
+                var p when Match(method, "POST", p, "/check-sources/{appid}", out var id) => await HandleCheckSources(id),
+                var p when Match(method, "POST", p, "/download/{appid}", out var id) => await HandleDownload(id, req),
+                var p when Match(method, "GET", p, "/download-status/{appid}", out var id) => HandleStatus(id),
+                var p when Match(method, "POST", p, "/cancel/{appid}", out var id) => HandleCancel(id),
+                var p when Match(method, "POST", p, "/remove/{appid}", out var id) => HandleRemove(id),
+                var p when Match(method, "POST", p, "/open/fix/{appid}", out var id) => HandleOpenFix(id),
                 "/open/settings" when req.HttpMethod == "POST" => HandleOpenSettings(),
                 "/open-url" when req.HttpMethod == "POST" => await HandleOpenUrl(req),
                 "/restart-steam" when req.HttpMethod == "POST" => HandleRestartSteam(),
@@ -204,23 +216,53 @@ public class HttpServerService : IHostedService
         }
     }
 
-    private static bool MatchGet(string? path, string pattern, out string id)
+    /// <summary>
+    /// Match a route by HTTP method AND path, and parse its numeric {appid}. The method check matters:
+    /// without it a plain GET (an &lt;img src&gt; on any web page needs no CORS) reached state-changing
+    /// POST routes such as /remove/{appid}. A non-numeric id is simply not a match, so it ends in a
+    /// 404 instead of a 500 from long.Parse.
+    /// </summary>
+    internal static bool Match(string method, string expectedMethod, string? path, string pattern, out long id)
     {
-        id = "";
-        if (path is null) return false;
+        id = 0;
+        if (path is null || !string.Equals(method, expectedMethod, StringComparison.OrdinalIgnoreCase))
+            return false;
         var parts = pattern.TrimEnd('/').Split('/');
         var pathParts = path.Split('/');
         if (parts.Length != pathParts.Length) return false;
+        bool hasId = false;
         for (int i = 0; i < parts.Length; i++)
         {
-            if (parts[i].StartsWith("{")) { id = pathParts[i]; continue; }
+            if (parts[i].StartsWith("{"))
+            {
+                if (!long.TryParse(pathParts[i], NumberStyles.None, CultureInfo.InvariantCulture, out id))
+                    return false;
+                hasId = true;
+                continue;
+            }
             if (!string.Equals(parts[i], pathParts[i], StringComparison.OrdinalIgnoreCase)) return false;
         }
-        return !string.IsNullOrEmpty(id);
+        return hasId;
     }
 
-    private static bool MatchPost(string? path, string pattern, out string id) =>
-        MatchGet(path, pattern, out id);
+    // Steam's own surfaces that legitimately host the store-page plugin. Requests from the app itself
+    // (CefInjectorService's HttpClient) carry no Origin header at all.
+    private static readonly string[] TrustedOriginHosts =
+        ["store.steampowered.com", "steamcommunity.com", "steamloopback.host"];
+
+    /// <summary>
+    /// Reject what a hostile web page in the user's browser could send. The Host check defeats DNS
+    /// rebinding (a page whose own name resolves to 127.0.0.1 still sends its own name as Host); the
+    /// Origin check stops any other site's fetch/form from driving the backend.
+    /// </summary>
+    internal static bool IsTrustedRequest(string? host, string? origin)
+    {
+        if (host is not ("127.0.0.1:6767" or "localhost:6767")) return false;
+        if (string.IsNullOrEmpty(origin)) return true;
+        if (!Uri.TryCreate(origin, UriKind.Absolute, out var uri)) return false;
+        if (uri.Scheme != Uri.UriSchemeHttps) return false;
+        return TrustedOriginHosts.Any(h => string.Equals(uri.Host, h, StringComparison.OrdinalIgnoreCase));
+    }
 
     // ── Endpoint handlers ─────────────────────────────────────────────
 
@@ -601,9 +643,12 @@ public class HttpServerService : IHostedService
 
     // ── Helpers ───────────────────────────────────────────────────────
 
-    private static void SetCors(HttpListenerResponse resp)
+    /// <summary>Echo back only an origin that already passed <see cref="IsTrustedRequest"/>, never "*".</summary>
+    private static void SetCors(HttpListenerResponse resp, string? origin)
     {
-        resp.AddHeader("Access-Control-Allow-Origin", "*");
+        if (string.IsNullOrEmpty(origin)) return;
+        resp.AddHeader("Access-Control-Allow-Origin", origin);
+        resp.AddHeader("Vary", "Origin");
         resp.AddHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
         resp.AddHeader("Access-Control-Allow-Headers", "Content-Type");
     }

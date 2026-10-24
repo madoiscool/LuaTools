@@ -48,7 +48,12 @@ public class PluginAddService(
         public string? InstallStatus;
         public bool InstallFailed;
         public string? Error;
-        public bool Busy; // a download+install is running
+        // A download+install is running. An int behind Interlocked rather than a plain bool: Pick runs
+        // DownloadAsync on the thread pool, so two quick picks could both pass a read-then-write check.
+        private int _busy;
+        public bool Busy => Volatile.Read(ref _busy) == 1;
+        public bool TryEnterBusy() => Interlocked.CompareExchange(ref _busy, 1, 0) == 0;
+        public void ExitBusy() => Volatile.Write(ref _busy, 0);
     }
 
     private readonly ConcurrentDictionary<long, AddState> _states = new();
@@ -272,8 +277,7 @@ public class PluginAddService(
     /// </remarks>
     private async Task DownloadAsync(long appId, AddState state, SourceRow row)
     {
-        if (state.Busy) return;
-        state.Busy = true;
+        if (!state.TryEnterBusy()) return;
         state.Error = null;
         state.InstallStatus = null;
         state.InstallFailed = false;
@@ -324,7 +328,7 @@ public class PluginAddService(
         {
             row.Downloading = false;
             row.Indeterminate = false;
-            state.Busy = false;
+            state.ExitBusy();
         }
     }
 }

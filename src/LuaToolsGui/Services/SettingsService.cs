@@ -1,4 +1,5 @@
 using System.IO;
+using System.Reflection;
 using System.Text.Json;
 
 namespace LuaToolsGui.Services;
@@ -214,25 +215,40 @@ public class SettingsService
         catch { /* best effort */ }
     }
 
+    private static readonly PropertyInfo[] PersistedProperties =
+        typeof(AppSettings).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+    /// <summary>
+    /// True when no setting has been set. Derived from every public property rather than a hand-kept
+    /// list: a field missing from such a list made a user whose ONLY change was that setting lose it on
+    /// the next save (FixesPageSize, then DnsMode).
+    /// </summary>
+    internal static bool IsEmpty(AppSettings settings) =>
+        PersistedProperties.All(p => p.GetValue(settings) is null);
+
+    // Every setter saves, and setters run on the UI thread and on background services alike. All of them
+    // share one .tmp path, so two unsynchronized saves race on the final File.Move.
+    private readonly object _saveGate = new();
+
     private void Save()
     {
+        lock (_saveGate)
+        {
+            try { SaveCore(); }
+            // A failed write must not throw out of a property setter into whatever UI changed it. The
+            // in-memory value still applies for this session, and the .bak/.tmp scheme keeps the
+            // previous file intact.
+            catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+            {
+                PluginLog.Log($"Settings save failed: {ex.Message}");
+            }
+        }
+    }
+
+    private void SaveCore()
+    {
         // Nothing worth persisting → don't leave a settings file behind.
-        // Every persisted field must be listed here. A field left out is treated as "nothing worth
-        // keeping", so a user whose ONLY change was that setting gets the file deleted and the setting
-        // silently lost on the next save. (FixesPageSize was missing.)
-        bool empty = _settings.SteamPathOverride is null
-            && _settings.SelectedMode is null
-            && _settings.AutoUpdateApps is null
-            && _settings.DonateKeys is null
-            && _settings.ManagePageSize is null
-            && _settings.FixesPageSize is null
-            && _settings.BuildsPageSize is null
-            && _settings.Language is null
-            && _settings.HubcapApiKey is null
-            && _settings.StartWithWindows is null
-            && _settings.MinimizeToTray is null
-            && _settings.FastFetch is null;
-        if (empty)
+        if (IsEmpty(_settings))
         {
             foreach (var p in new[] { FilePath, BakPath, TmpPath })
                 try { if (File.Exists(p)) File.Delete(p); } catch { /* best effort */ }
