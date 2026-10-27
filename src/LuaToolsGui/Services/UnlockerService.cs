@@ -552,7 +552,7 @@ public class UnlockerService(SteamService steam, SettingsService settings, Cache
         if (!forceRefresh && _crReleaseCache is { } c && DateTime.UtcNow - c.fetchedAt < CacheTtl)
             return c.release;
 
-        string url = $"https://api.github.com/repos/{AppConfig.CloudRedirectRepo}/releases/latest";
+        string url = $"https://api.github.com/repos/{AppConfig.CloudRedirectRepo}/releases/tags/latest";
         try
         {
             using var res = await gh.SendAsync(url, ct);

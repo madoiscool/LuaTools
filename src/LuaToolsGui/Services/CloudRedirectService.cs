@@ -34,7 +34,7 @@ public class CloudRedirectService(GithubProxy gh)
         {
             if (File.Exists(ExePath)) return ExePath; // won the race
 
-            string url = $"https://api.github.com/repos/{AppConfig.CloudRedirectRepo}/releases/latest";
+            string url = $"https://api.github.com/repos/{AppConfig.CloudRedirectRepo}/releases/tags/latest";
             using var res = await gh.SendAsync(url, ct);
             if (res is null || !res.IsSuccessStatusCode) return null;
 
