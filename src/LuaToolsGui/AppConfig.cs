@@ -45,9 +45,9 @@ public static class AppConfig
     // cached locally; the "Remove Steam DRM" Manage action runs Steamless.CLI.exe against the game's exe.
     public const string SteamlessRepo = "atom0s/Steamless";
 
-    // CloudRedirect (Selectively11): the Mode page "Manage" button downloads the latest CloudRedirect.exe
+    // CloudRedirect: the Mode page "Manage" button downloads the latest CloudRedirect.exe
     // GUI manager from here and launches it. (Separate from the CLI fixer used by the mode install flow.)
-    public const string CloudRedirectRepo = "Selectively11/CloudRedirect";
+    public const string CloudRedirectRepo = "Vigno04/CloudRedirect";
 
     // SteamAutoCrack: the Downloads page button fetches this release and launches its GUI.
     //

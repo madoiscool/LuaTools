@@ -54,7 +54,7 @@ You can find release builds on the [luatools website](https://lua.tools/app) or 
 - [SteamAutoCrack](https://github.com/SteamAutoCracks/Steam-auto-crack): fetched and launched from the
   Downloads page
 - [Steamless](https://github.com/atom0s/Steamless): removes SteamStub from game executables
-- [CloudRedirect](https://github.com/Selectively11/CloudRedirect): Steam Cloud revival project, can be turned on via the mode page
+- [CloudRedirect](https://github.com/Vigno04/CloudRedirect): Steam Cloud revival project, can be turned on via the mode page
 
 ## Licence
 

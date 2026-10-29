@@ -6,7 +6,7 @@ using LuaToolsGui.Models;
 namespace LuaToolsGui.Services;
 
 /// <summary>
-/// Downloads + launches CloudRedirect.exe. The user-facing CloudRedirect GUI manager (Selectively11). The
+/// Downloads + launches CloudRedirect.exe. The user-facing CloudRedirect GUI manager. The
 /// exe is fetched once from the latest GitHub release (via <see cref="GithubProxy"/>, so it works in blocked
 /// regions) and cached under %AppData%\LuaToolsGui\cloudredirect. It self-updates, so we always grab the
 /// latest asset and don't track versions. The Mode page's "Manage" button (shown when CloudRedirect is the
