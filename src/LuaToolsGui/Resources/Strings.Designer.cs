@@ -296,6 +296,8 @@ public static class Strings
     public static string Fixes_Toast_FixInstalled_Body => Get(nameof(Fixes_Toast_FixInstalled_Body));
     public static string Fixes_Toast_GameNotFound => Get(nameof(Fixes_Toast_GameNotFound));
     public static string Fixes_Toast_GameNotFound_Body => Get(nameof(Fixes_Toast_GameNotFound_Body));
+    public static string Fixes_Toast_Installed => Get(nameof(Fixes_Toast_Installed));
+    public static string Fixes_Toast_Installed_Body => Get(nameof(Fixes_Toast_Installed_Body));
     public static string Fixes_Toast_PartiallyApplied => Get(nameof(Fixes_Toast_PartiallyApplied));
     public static string Fixes_Toast_PartiallyApplied_Body => Get(nameof(Fixes_Toast_PartiallyApplied_Body));
     public static string Fixes_Toast_FixApplied => Get(nameof(Fixes_Toast_FixApplied));

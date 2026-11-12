@@ -102,6 +102,13 @@ public class SteamService(SettingsService settings)
     public string? LegacyDepotCacheDir =>
         EffectivePath is { } p ? Path.Combine(p, "config", "depotcache") : null;
 
+    /// <summary>
+    /// Full path to appcache\appinfo.vdf, or null if Steam isn't located. Every app's install metadata
+    /// lives here, including <c>config.installdir</c> and the launch executables.
+    /// </summary>
+    public string? AppInfoPath =>
+        EffectivePath is { } p ? Path.Combine(p, "appcache", "appinfo.vdf") : null;
+
     /// <summary>Open a store/steam URL or file path with the shell (browser, Steam client, Explorer).</summary>
     public static void OpenUrl(string url) =>
         Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });

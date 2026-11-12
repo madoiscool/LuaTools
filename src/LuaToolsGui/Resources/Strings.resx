@@ -346,6 +346,8 @@ This deletes the .lua files from Steam\config\stplug-in.</value></data>
   <data name="Fixes_Toast_FixInstalled" xml:space="preserve"><value>Fix installed</value></data>
   <data name="Fixes_Toast_FixInstalled_Body" xml:space="preserve"><value>{0} manifest installed.</value></data>
   <data name="Fixes_Toast_GameNotFound" xml:space="preserve"><value>Game not found</value></data>
+  <data name="Fixes_Toast_Installed" xml:space="preserve"><value>Install repaired</value></data>
+  <data name="Fixes_Toast_Installed_Body" xml:space="preserve"><value>Steam could not find {0} where it expected it. It points at your existing folder now, so nothing gets downloaded again.</value></data>
   <data name="Fixes_Toast_GameNotFound_Body" xml:space="preserve"><value>Install {0} in Steam first, then apply the fix.</value></data>
   <data name="Fixes_Toast_PartiallyApplied" xml:space="preserve"><value>Fix partially applied</value></data>
   <data name="Fixes_Toast_PartiallyApplied_Body" xml:space="preserve"><value>{0} file(s) couldn't be written. Close the game and try again.</value></data>

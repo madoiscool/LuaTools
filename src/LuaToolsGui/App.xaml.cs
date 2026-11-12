@@ -35,6 +35,7 @@ public partial class App : Application
                 services.AddSingleton<Services.AppInfo.LaunchOptionsService>();
                 services.AddSingleton<LuaInstaller>();
                 services.AddSingleton<SteamLibraryService>();
+                services.AddSingleton<InstallStateRepairService>();
                 services.AddSingleton<DonateKeysService>();
                 services.AddSingleton<AnalyticsService>();
                 services.AddSingleton<GithubProxy>();

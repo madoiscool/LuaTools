@@ -1,5 +1,6 @@
 using System.IO;
 using System.Text.RegularExpressions;
+using LuaToolsGui.Services.AppInfo;
 
 namespace LuaToolsGui.Services;
 
@@ -33,6 +34,11 @@ public partial class SteamLibraryService(SteamService steam)
     /// Full path to the game's install folder (…\steamapps\common\&lt;installdir&gt;) if it exists on
     /// disk, else null (game not installed / Steam not found / unreadable).
     /// </summary>
+    /// <remarks>
+    /// Follows the appmanifest first. When none describes the game it falls back to
+    /// <see cref="GetInstallDirFallback"/>: a copied or unpacked folder is on disk whether or not Steam
+    /// was ever told about it, and callers care about the files, not the paperwork.
+    /// </remarks>
     public string? GetInstallDir(long appId)
     {
         try
@@ -52,6 +58,10 @@ public partial class SteamLibraryService(SteamService steam)
                 string full = Path.Combine(library, "steamapps", "common", installDir);
                 if (Directory.Exists(full)) return full;
             }
+
+            // No appmanifest described it. Before giving up, look for the folder itself: the files being
+            // on disk under a name nobody recorded is not the same as the game being absent.
+            return GetInstallDirFallback(appId);
         }
         catch { /* unreadable VDF/ACF or odd path. Treat as not found */ }
         return null;
@@ -108,7 +118,7 @@ public partial class SteamLibraryService(SteamService steam)
     }
 
     /// <summary>Every Steam library root (the main install plus any added libraries).</summary>
-    private static IEnumerable<string> GetLibraryRoots(string steamRoot)
+    public static IEnumerable<string> GetLibraryRoots(string steamRoot)
     {
         // The main install is always a library.
         yield return steamRoot;
@@ -126,6 +136,63 @@ public partial class SteamLibraryService(SteamService steam)
             if (!string.Equals(path, steamRoot, StringComparison.OrdinalIgnoreCase) && Directory.Exists(path))
                 yield return path;
         }
+    }
+
+    /// <summary>A game folder that Steam has no install row for, but which is plainly the game.</summary>
+    /// <param name="SteamAppsDir">The library's <c>steamapps</c> folder, where an appmanifest would go.</param>
+    /// <param name="FullPath">The install folder itself.</param>
+    public sealed record AdoptCandidate(string SteamAppsDir, string FullPath);
+
+    /// <summary>
+    /// The folder this app is sitting in with no appmanifest pointing at it, if there is one.
+    /// </summary>
+    /// <remarks>
+    /// Only reached when the manifest walk found nothing, which is the copy/repack case: the files are
+    /// there under a name an installdir does not agree with. The matching rule lives in
+    /// <see cref="InstallDirMatcher"/>; this only supplies the candidates.
+    /// </remarks>
+    public AdoptCandidate? FindAdoptable(string? installDir, string? launchExe)
+    {
+        if (steam.EffectivePath is not { } steamRoot) return null;
+
+        foreach (string library in GetLibraryRoots(steamRoot))
+        {
+            string steamapps = Path.Combine(library, "steamapps");
+            string common = Path.Combine(steamapps, "common");
+
+            string[] dirs;
+            try
+            {
+                if (!Directory.Exists(common)) continue;
+                dirs = Directory.GetDirectories(common);
+            }
+            catch { continue; }
+
+            if (InstallDirMatcher.Match(installDir, launchExe, dirs) is { } match)
+                return new AdoptCandidate(steamapps, match);
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// The install folder if it exists on disk. Falls back to the appinfo installdir when no appmanifest
+    /// describes the game, so a folder Steam has not been told about yet still resolves.
+    /// </summary>
+    public string? GetInstallDirFallback(long appId)
+    {
+        try
+        {
+            if (steam.AppInfoPath is not { } appInfoPath || !File.Exists(appInfoPath)) return null;
+
+            using var appInfo = new AppInfoFile(appInfoPath);
+            return appInfo.ReadAppBody((int)appId) is { } body
+                ? FindAdoptable(
+                    body.GetTable("config")?.GetText("installdir"),
+                    LaunchOption.ReadAll(body).FirstOrDefault()?.Executable)?.FullPath
+                : null;
+        }
+        catch { return null; }
     }
 
     /// <summary>VDF strings escape backslashes as "\\"; collapse to a real path.</summary>

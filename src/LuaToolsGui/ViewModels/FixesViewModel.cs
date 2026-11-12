@@ -119,11 +119,12 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
     private readonly ManifestJobFactory jobs;
     private readonly SteamLibraryService library;
     private readonly SteamService steam;
+    private readonly InstallStateRepairService repair;
 
     public FixesViewModel(
         LuaToolsApiClient api, AuthService auth, CoverCache covers, ToastService toast,
         SettingsService settings, DownloadQueue queue, ManifestJobFactory jobs,
-        SteamLibraryService library, SteamService steam)
+        SteamLibraryService library, SteamService steam, InstallStateRepairService repair)
     {
         this.api = api;
         this.auth = auth;
@@ -134,6 +135,7 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
         this.jobs = jobs;
         this.library = library;
         this.steam = steam;
+        this.repair = repair;
         InitPageSize(settings.FixesPageSize);
     }
 
@@ -373,6 +375,19 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
                 string? installDir = long.TryParse(game.AppId, out long gameAppId)
                     ? await Task.Run(() => library.GetInstallDir(gameAppId))
                     : null;
+
+                // Files can be sitting on disk with no install row pointing at them, which is what a
+                // copied or unpacked folder looks like. Fix that once here, instead of having every fix
+                // row below report "not installed" for a game the user is plainly looking at.
+                // Best-effort: if it fails, the old behaviour is untouched.
+                if (installDir is null && long.TryParse(game.AppId, out long repairAppId)
+                    && await repair.RepairAsync(repairAppId) is { Repaired: true } repaired)
+                {
+                    installDir = repaired.InstallDir;
+                    toast.Show(Resources.Strings.Fixes_Toast_Installed,
+                        string.Format(Resources.Strings.Fixes_Toast_Installed_Body, game.Name));
+                }
+
                 foreach (var f in _allFixes)
                 {
                     f.GameInstalled = installDir is not null;
