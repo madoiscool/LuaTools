@@ -1,0 +1,49 @@
+# Keep Claude (and other tools) focused on the UI when that's what the task is.
+#
+# These paths implement the app's backend behaviour — Steam depot/manifest handling, DRM removal,
+# plugin injection, and the API client. A UI task does not need them, and pulling them in drags a lot
+# of unrelated context along with them.
+#
+# Comment a line out if you're actually working on that part.
+
+# ── Download / manifest / depot machinery ─────────────────────────────
+Services/Downloads/
+Services/DepotDownloaderService.cs
+Services/ManifestFile.cs
+Services/SteamDepotInfo.cs
+Services/DepotCacheMigrationService.cs
+Services/HubcapService.cs
+Services/ProxiedFileDownloader.cs
+
+# ── DRM / unlocker tooling ────────────────────────────────────────────
+Services/SteamlessService.cs
+Services/SteamAutoCrackService.cs
+Services/CloudRedirectService.cs
+Services/AppliedFixIndexService.cs
+Services/DonateKeysService.cs
+
+# ── Steam plugin / injection ──────────────────────────────────────────
+Services/CefInjectorService.cs
+Services/PluginInstallerService.cs
+Services/HttpServerService.cs
+Services/PluginAddService.cs
+
+# ── API + auth plumbing (touch only when the task IS the auth/API work) ─
+Services/ApiClient.cs
+Services/AuthService.cs
+Services/GithubProxy.cs
+
+# ── Bulk data / caches ────────────────────────────────────────────────
+Services/SteamAppInfoCache.cs
+Services/SteamAppListCache.cs
+Services/CoverCache.cs
+Services/LuaVault.cs
+
+# ── Localization mass edits (work through Strings.resx + the Designer instead) ─
+Resources/Strings.*.resx
+!Resources/Strings.resx
+
+# ── Build output / tooling noise ──────────────────────────────────────
+bin/
+obj/
+.vs/

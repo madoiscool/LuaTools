@@ -1,3 +1,9 @@
+## Where to start
+
+- Doing **UI work** (layout, styling, text, states)? Read [`CLAUDE.md`](CLAUDE.md) — it lists the view
+  conventions, the localization rule, and which backend folders a UI task doesn't need to touch.
+- Doing backend work? The three non-negotiable rules below apply to everything.
+
 ## Building from source / Developing
 
 ```powershell

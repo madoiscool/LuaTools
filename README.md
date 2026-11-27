@@ -36,6 +36,12 @@
  </picture>
 </a>
 
+## Contributing
+
+Interface work is the easiest place to start: [`CLAUDE.md`](CLAUDE.md) documents the XAML/view-model
+conventions and the localization rule, and [`.claudeignore`](.claudeignore) keeps AI assistants focused on
+the views instead of the backend. See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the full guidelines.
+
 ## Requirements
 
 - Windows 10/11
