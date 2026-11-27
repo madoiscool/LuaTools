@@ -67,31 +67,27 @@
   <data name="Nav_Fixes" xml:space="preserve"><value>การแก้ไข</value></data>
   <data name="Nav_RestartSteam" xml:space="preserve"><value>รีสตาร์ท Steam</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>การตั้งค่า</value></data>
-  <data name="Nav_SignInDiscord" xml:space="preserve"><value>เข้าสู่ระบบด้วย Discord</value></data>
-  <data name="Nav_WaitingForBrowser" xml:space="preserve"><value>กำลังรอเบราว์เซอร์…</value></data>
-  <data name="Nav_Footer_Guest" xml:space="preserve"><value>กำลังเรียกดูแบบผู้เยี่ยมชม</value></data>
-  <data name="Nav_Footer_LoggedIn" xml:space="preserve"><value>เข้าสู่ระบบแล้ว</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
   <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>รีสตาร์ท Steam ตอนนี้ไหม? การดำเนินการนี้จะปิด Steam และเกมที่กำลังทำงานทั้งหมด แล้วเปิดใหม่อีกครั้ง</value></data>
   <data name="Settings_Title" xml:space="preserve"><value>การตั้งค่า</value></data>
-  <data name="Settings_Section_Account" xml:space="preserve"><value>บัญชี</value></data>
   <data name="Settings_Section_General" xml:space="preserve"><value>ทั่วไป</value></data>
   <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
   <data name="Settings_Section_Install" xml:space="preserve"><value>การติดตั้ง</value></data>
   <data name="Settings_Section_Community" xml:space="preserve"><value>ชุมชน</value></data>
-  <data name="Settings_SignOut" xml:space="preserve"><value>ออกจากระบบ</value></data>
-  <data name="Settings_BrowsingAsGuest" xml:space="preserve"><value>กำลังเรียกดูแบบผู้เยี่ยมชม</value></data>
-  <data name="Settings_GuestHint" xml:space="preserve"><value>เข้าสู่ระบบเพื่อดาวน์โหลด manifest และการปลดล็อก DLC</value></data>
-  <data name="Settings_SignInDiscord" xml:space="preserve"><value>เข้าสู่ระบบด้วย Discord</value></data>
-  <data name="Settings_BotCode_Hint" xml:space="preserve"><value>มีรหัสไหม? เรียกใช้ /login ใน Discord แล้วป้อนที่นี่</value></data>
-  <data name="Settings_BotCode_Placeholder" xml:space="preserve"><value>A3X9K2</value></data>
-  <data name="Settings_BotCode_Redeem" xml:space="preserve"><value>แลกรับ</value></data>
-  <data name="Settings_BotCode_Expired" xml:space="preserve"><value>รหัสหมดอายุ — เรียกใช้ /login อีกครั้ง</value></data>
-  <data name="Settings_BotCode_Invalid" xml:space="preserve"><value>รหัสไม่ถูกต้องหรือไม่รู้จัก</value></data>
-  <data name="Settings_BotCode_ServerError" xml:space="preserve"><value>เซิร์ฟเวอร์ผิดพลาด — ลองอีกครั้ง</value></data>
-  <data name="Settings_BotLink_Title" xml:space="preserve"><value>เชื่อมโยงบัญชีของคุณให้เสร็จสิ้น</value></data>
-  <data name="Settings_BotLink_Body" xml:space="preserve"><value>คุณลงชื่อเข้าใช้ด้วยบัญชี Discord ชั่วคราว ลงชื่อเข้าใช้ที่ lua.tools แล้วเรียกใช้ /login อีกครั้งและป้อนรหัสเพื่อเชื่อมโยงบัญชีเต็มของคุณ</value></data>
-  <data name="Settings_BotLink_Dismiss" xml:space="preserve"><value>ปิด</value></data>
-  <data name="Settings_LoginRequired" xml:space="preserve"><value>จำเป็นต้องเข้าสู่ระบบสำหรับการดำเนินการนี้</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
   <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>จัดการคีย์ API Hubcap และโปรไฟล์ของคุณที่</value></data>
   <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
   <data name="Settings_HubcapKey" xml:space="preserve"><value>คีย์ API ของ Hubcap</value></data>
@@ -140,9 +136,7 @@
   <data name="Home_CheckingSteam" xml:space="preserve"><value>กำลังตรวจสอบ Steam…</value></data>
   <data name="Home_SteamDetected" xml:space="preserve"><value>ตรวจพบ Steam · {0}</value></data>
   <data name="Home_SteamNotFound" xml:space="preserve"><value>ไม่พบ Steam — ตั้งค่าตำแหน่งในการตั้งค่า</value></data>
-  <data name="Home_BrowsingAsGuest" xml:space="preserve"><value>กำลังเรียกดูแบบผู้เยี่ยมชม</value></data>
-  <data name="Home_SignedIn" xml:space="preserve"><value>เข้าสู่ระบบแล้ว</value></data>
-  <data name="Home_SignedInAs" xml:space="preserve"><value>เข้าสู่ระบบเป็น {0}</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
   <data name="Home_NoModeSelected" xml:space="preserve"><value>ยังไม่ได้เลือกโหมด</value></data>
   <data name="Home_ModeIs" xml:space="preserve"><value>โหมด · {0}</value></data>
   <data name="Mode_Title" xml:space="preserve"><value>โหมด</value></data>
@@ -174,8 +168,6 @@
   <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>ปิดใช้งานแล้ว — รีสตาร์ท Steam เพื่อให้มีผล</value></data>
   <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>อัปเดตแล้ว — รีสตาร์ท Steam เพื่อให้มีผล</value></data>
   <data name="Onboarding_Title" xml:space="preserve"><value>ยินดีต้อนรับสู่แอป LuaTools!</value></data>
-  <data name="Onboarding_SignIn_Blurb" xml:space="preserve"><value>ลงชื่อเข้าใช้เพื่อปลดล็อกการเพิ่มเกมและแพตช์แก้ไข</value></data>
-  <data name="Onboarding_SignedIn" xml:space="preserve"><value>ลงชื่อเข้าใช้แล้ว ✓</value></data>
   <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>ใช้การตั้งค่าที่แนะนำ</value></data>
   <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>โหมด: BetterSteamTools · เปิด FastFetch</value></data>
   <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>ติดตั้งปลั๊กอินชื่อดังของเรา</value></data>
@@ -303,8 +295,8 @@
   <data name="Fixes_Count" xml:space="preserve"><value>{0} การแก้ไข</value></data>
   <data name="Fixes_Err_Load" xml:space="preserve"><value>ไม่สามารถโหลดการแก้ไขได้ — ตรวจสอบการเชื่อมต่อของคุณ</value></data>
   <data name="Fixes_Empty_None" xml:space="preserve"><value>ยังไม่มีการแก้ไขที่พร้อมใช้งาน</value></data>
-  <data name="Fixes_SignIn" xml:space="preserve"><value>เข้าสู่ระบบด้วย Discord เพื่อดาวน์โหลดการแก้ไข</value></data>
-  <data name="Fixes_SignInRequired" xml:space="preserve"><value>ต้องเข้าสู่ระบบ</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
   <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>การดาวน์โหลดล้มเหลว</value></data>
   <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>มีบางอย่างผิดพลาด — ลองอีกครั้ง</value></data>
   <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>การติดตั้งล้มเหลว</value></data>
@@ -345,8 +337,8 @@
   <data name="Add_Generating" xml:space="preserve"><value>กำลังสร้าง…</value></data>
   <data name="Add_DlcHint" xml:space="preserve"><value>วาง .lua ลงใน steam\config\stplug-in — ตรวจสอบให้แน่ใจว่าได้เพิ่มเกมหลักด้วย นับรวมในขีดจำกัดรายวันของคุณ (25/วัน)</value></data>
   <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>มีไฟล์อยู่แล้วใช่ไหม?</value></data>
-  <data name="Add_SignIn_Dlc" xml:space="preserve"><value>เข้าสู่ระบบด้วย Discord เพื่อดูการปลดล็อก DLC</value></data>
-  <data name="Add_SignIn_Download" xml:space="preserve"><value>เข้าสู่ระบบด้วย Discord เพื่อดาวน์โหลด</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>ไม่สามารถระบุเกมหลักของ DLC นี้ได้</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>มีบางอย่างผิดพลาด — ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง</value></data>
   <data name="Add_Err_Download" xml:space="preserve"><value>การดาวน์โหลดล้มเหลว — ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง</value></data>
@@ -514,16 +506,10 @@
   <data name="Err_WriteFailedFile" xml:space="preserve"><value>เขียน {0} ไม่สำเร็จ ปิด Steam แล้วลองใหม่</value></data>
   <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>เปิดไฟล์ที่ดาวน์โหลดไม่ได้: {0}</value></data>
   <data name="Err_NoSourceAvailable" xml:space="preserve"><value>ไม่มีแหล่งที่ใช้ได้สำหรับเกมนี้</value></data>
-  <data name="Auth_Err_Timeout" xml:space="preserve"><value>หมดเวลาเข้าสู่ระบบ ไม่มีการตอบกลับจากเบราว์เซอร์</value></data>
-  <data name="Auth_Err_TokenExchangeFailed" xml:space="preserve"><value>แลกเปลี่ยนโทเคนไม่สำเร็จ ({0}): {1}</value></data>
-  <data name="Auth_Err_TokenExchangeEmpty" xml:space="preserve"><value>การแลกเปลี่ยนโทเคนคืนค่าเซสชันว่าง</value></data>
-  <data name="Auth_Err_NotSignedIn" xml:space="preserve"><value>ยังไม่ได้เข้าสู่ระบบ</value></data>
-  <data name="Auth_Err_RefreshFailed" xml:space="preserve"><value>รีเฟรชเซสชันไม่สำเร็จ ({0})</value></data>
-  <data name="Auth_Err_RefreshEmpty" xml:space="preserve"><value>การรีเฟรชเซสชันคืนค่าเซสชันว่าง</value></data>
   <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>ลิงก์ดาวน์โหลดว่างเปล่า ลองใหม่อีกครั้ง</value></data>
   <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>ดาวน์โหลดไม่สำเร็จ ({0})</value></data>
   <data name="Api_Err_RequestFailed" xml:space="preserve"><value>คำขอไม่สำเร็จ ({0})</value></data>
-  <data name="Api_Err_SessionExpired" xml:space="preserve"><value>เซสชันหมดอายุ กรุณาเข้าสู่ระบบใหม่</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
   <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>คีย์ Hubcap ของคุณไม่ถูกต้องหรือหมดอายุ</value></data>
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>คุณใช้ Hubcap ครบตามขีดจำกัดรายวันแล้ว</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>ไม่มี manifest ของ Hubcap สำหรับแอปนี้</value></data>
@@ -573,8 +559,8 @@
   <data name="Depot_Err_NoSpace" xml:space="preserve"><value>พื้นที่ดิสก์ไม่พอ: ต้องการ {0} แต่เหลือเพียง {1}</value></data>
   <data name="Builds_Select_SaveTo" xml:space="preserve"><value>บันทึกไปที่</value></data>
   <data name="Builds_Select_Space" xml:space="preserve"><value>ต้องการ {0} · เหลือ {1} บน {2}</value></data>
-  <data name="Builds_Select_SignIn" xml:space="preserve"><value>ลงชื่อเข้าใช้เพื่อดาวน์โหลด depot นี้</value></data>
-  <data name="Depot_Err_SignIn" xml:space="preserve"><value>ลงชื่อเข้าใช้เพื่อดาวน์โหลด depot</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
   <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>กำลังดึง manifest</value></data>
   <data name="Depot_Err_NoManifest" xml:space="preserve"><value>ไม่สามารถดึง manifest ของ depot นี้ได้</value></data>
   <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>กำลังเตรียม · {0} จาก {1}</value></data>
@@ -624,4 +610,7 @@
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} มีการเปลี่ยนแปลงหลังจากใช้แพตช์นี้ การกู้คืนจะเขียนทับการเปลี่ยนแปลงนั้น หากคุณใช้แพตช์อื่นทับไว้ ให้ย้อนกลับแพตช์นั้นก่อน มีไฟล์ที่ได้รับผลกระทบ {1} ไฟล์</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>ย้อนกลับตัวแก้ไขได้บางส่วน</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>กู้คืนไฟล์ {0} รายการไม่สำเร็จ กรุณาปิดเกมแล้วลองใหม่</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
 </root>

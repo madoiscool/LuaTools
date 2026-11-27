@@ -67,31 +67,27 @@
   <data name="Nav_Fixes" xml:space="preserve"><value>Remedieri</value></data>
   <data name="Nav_RestartSteam" xml:space="preserve"><value>Repornește Steam</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>Setări</value></data>
-  <data name="Nav_SignInDiscord" xml:space="preserve"><value>Conectează-te cu Discord</value></data>
-  <data name="Nav_WaitingForBrowser" xml:space="preserve"><value>Se așteaptă browserul…</value></data>
-  <data name="Nav_Footer_Guest" xml:space="preserve"><value>Navigare ca invitat</value></data>
-  <data name="Nav_Footer_LoggedIn" xml:space="preserve"><value>Conectat</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
   <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>Repornești Steam acum? Aceasta închide Steam și toate jocurile care rulează, apoi îl relansează.</value></data>
   <data name="Settings_Title" xml:space="preserve"><value>Setări</value></data>
-  <data name="Settings_Section_Account" xml:space="preserve"><value>CONT</value></data>
   <data name="Settings_Section_General" xml:space="preserve"><value>GENERAL</value></data>
   <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
   <data name="Settings_Section_Install" xml:space="preserve"><value>INSTALARE</value></data>
   <data name="Settings_Section_Community" xml:space="preserve"><value>COMUNITATE</value></data>
-  <data name="Settings_SignOut" xml:space="preserve"><value>Deconectează-te</value></data>
-  <data name="Settings_BrowsingAsGuest" xml:space="preserve"><value>Navigare ca invitat</value></data>
-  <data name="Settings_GuestHint" xml:space="preserve"><value>Conectează-te pentru a descărca manifeste și deblocări DLC</value></data>
-  <data name="Settings_SignInDiscord" xml:space="preserve"><value>Conectează-te cu Discord</value></data>
-  <data name="Settings_BotCode_Hint" xml:space="preserve"><value>Ai un cod? Rulează /login pe Discord și introdu-l aici.</value></data>
-  <data name="Settings_BotCode_Placeholder" xml:space="preserve"><value>A3X9K2</value></data>
-  <data name="Settings_BotCode_Redeem" xml:space="preserve"><value>Revendică</value></data>
-  <data name="Settings_BotCode_Expired" xml:space="preserve"><value>Codul a expirat — rulează /login din nou.</value></data>
-  <data name="Settings_BotCode_Invalid" xml:space="preserve"><value>Cod nevalid sau necunoscut.</value></data>
-  <data name="Settings_BotCode_ServerError" xml:space="preserve"><value>Eroare de server — încearcă din nou.</value></data>
-  <data name="Settings_BotLink_Title" xml:space="preserve"><value>Finalizează asocierea contului</value></data>
-  <data name="Settings_BotLink_Body" xml:space="preserve"><value>Ești autentificat cu un cont Discord temporar. Autentifică-te pe lua.tools, apoi rulează din nou /login și introdu codul pentru a-ți asocia contul complet.</value></data>
-  <data name="Settings_BotLink_Dismiss" xml:space="preserve"><value>Închide</value></data>
-  <data name="Settings_LoginRequired" xml:space="preserve"><value>Autentificarea este necesară pentru această acțiune.</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
   <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Gestionează-ți cheia API Hubcap și profilul pe</value></data>
   <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
   <data name="Settings_HubcapKey" xml:space="preserve"><value>Cheie API Hubcap</value></data>
@@ -140,9 +136,7 @@
   <data name="Home_CheckingSteam" xml:space="preserve"><value>Se verifică Steam…</value></data>
   <data name="Home_SteamDetected" xml:space="preserve"><value>Steam detectat · {0}</value></data>
   <data name="Home_SteamNotFound" xml:space="preserve"><value>Steam nu a fost găsit — setează-i locația în Setări.</value></data>
-  <data name="Home_BrowsingAsGuest" xml:space="preserve"><value>Navigare ca invitat</value></data>
-  <data name="Home_SignedIn" xml:space="preserve"><value>Conectat</value></data>
-  <data name="Home_SignedInAs" xml:space="preserve"><value>Conectat ca {0}</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
   <data name="Home_NoModeSelected" xml:space="preserve"><value>Niciun mod selectat</value></data>
   <data name="Home_ModeIs" xml:space="preserve"><value>Mod · {0}</value></data>
   <data name="Mode_Title" xml:space="preserve"><value>Mod</value></data>
@@ -174,8 +168,6 @@
   <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>Dezactivat — repornește Steam pentru a aplica.</value></data>
   <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>Actualizat — repornește Steam pentru a aplica.</value></data>
   <data name="Onboarding_Title" xml:space="preserve"><value>Bine ai venit în aplicația LuaTools!</value></data>
-  <data name="Onboarding_SignIn_Blurb" xml:space="preserve"><value>Conectează-te pentru a debloca adăugarea de jocuri și remedieri.</value></data>
-  <data name="Onboarding_SignedIn" xml:space="preserve"><value>Conectat ✓</value></data>
   <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>Aplică setările recomandate</value></data>
   <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>Mod: BetterSteamTools · FastFetch activat</value></data>
   <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>Instalează faimosul nostru plugin</value></data>
@@ -303,8 +295,8 @@ Aceasta șterge fișierele .lua din Steam\config\stplug-in.</value></data>
   <data name="Fixes_Count" xml:space="preserve"><value>{0} remedieri</value></data>
   <data name="Fixes_Err_Load" xml:space="preserve"><value>Nu s-au putut încărca remedierile — verifică-ți conexiunea.</value></data>
   <data name="Fixes_Empty_None" xml:space="preserve"><value>Nicio remediere disponibilă încă.</value></data>
-  <data name="Fixes_SignIn" xml:space="preserve"><value>Conectează-te cu Discord pentru a descărca remedieri.</value></data>
-  <data name="Fixes_SignInRequired" xml:space="preserve"><value>Conectare necesară</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
   <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>Descărcare eșuată</value></data>
   <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>Ceva nu a mers bine — încearcă din nou.</value></data>
   <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>Instalare eșuată</value></data>
@@ -345,8 +337,8 @@ Aceasta șterge fișierele .lua din Steam\config\stplug-in.</value></data>
   <data name="Add_Generating" xml:space="preserve"><value>Se generează…</value></data>
   <data name="Add_DlcHint" xml:space="preserve"><value>Pune fișierul .lua în steam\config\stplug-in — asigură-te că este adăugat și jocul de bază. Se ia în calcul pentru limita ta zilnică (25/zi).</value></data>
   <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>Ai deja fișierele?</value></data>
-  <data name="Add_SignIn_Dlc" xml:space="preserve"><value>Conectează-te cu Discord pentru a vedea deblocările DLC.</value></data>
-  <data name="Add_SignIn_Download" xml:space="preserve"><value>Conectează-te cu Discord pentru a descărca.</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Nu s-a putut determina jocul de bază pentru acest DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Ceva nu a mers bine — verifică-ți conexiunea și încearcă din nou.</value></data>
   <data name="Add_Err_Download" xml:space="preserve"><value>Descărcare eșuată — verifică-ți conexiunea și încearcă din nou.</value></data>
@@ -514,16 +506,10 @@ Aceasta șterge fișierele .lua din Steam\config\stplug-in.</value></data>
   <data name="Err_WriteFailedFile" xml:space="preserve"><value>Nu s-a putut scrie {0}. Închide Steam și încearcă din nou.</value></data>
   <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>Nu s-a putut deschide descărcarea: {0}</value></data>
   <data name="Err_NoSourceAvailable" xml:space="preserve"><value>Nicio sursă disponibilă pentru acest joc.</value></data>
-  <data name="Auth_Err_Timeout" xml:space="preserve"><value>Autentificarea a expirat. Niciun răspuns de la browser.</value></data>
-  <data name="Auth_Err_TokenExchangeFailed" xml:space="preserve"><value>Schimbul de token a eșuat ({0}): {1}</value></data>
-  <data name="Auth_Err_TokenExchangeEmpty" xml:space="preserve"><value>Schimbul de token a returnat o sesiune goală.</value></data>
-  <data name="Auth_Err_NotSignedIn" xml:space="preserve"><value>Nu ești autentificat.</value></data>
-  <data name="Auth_Err_RefreshFailed" xml:space="preserve"><value>Reîmprospătarea sesiunii a eșuat ({0}).</value></data>
-  <data name="Auth_Err_RefreshEmpty" xml:space="preserve"><value>Reîmprospătarea sesiunii a returnat o sesiune goală.</value></data>
   <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>Linkul de descărcare era gol. Încearcă din nou.</value></data>
   <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>Descărcarea a eșuat ({0}).</value></data>
   <data name="Api_Err_RequestFailed" xml:space="preserve"><value>Cererea a eșuat ({0})</value></data>
-  <data name="Api_Err_SessionExpired" xml:space="preserve"><value>Sesiune expirată. Autentifică-te din nou.</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
   <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Cheia ta Hubcap este invalidă sau a expirat.</value></data>
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Ai atins limita zilnică Hubcap.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Nu există manifest Hubcap pentru această aplicație.</value></data>
@@ -573,8 +559,8 @@ Aceasta șterge fișierele .lua din Steam\config\stplug-in.</value></data>
   <data name="Depot_Err_NoSpace" xml:space="preserve"><value>Spațiu insuficient pe disc: necesită {0}, doar {1} liberi.</value></data>
   <data name="Builds_Select_SaveTo" xml:space="preserve"><value>Salvează în</value></data>
   <data name="Builds_Select_Space" xml:space="preserve"><value>Necesită {0} · {1} liberi pe {2}</value></data>
-  <data name="Builds_Select_SignIn" xml:space="preserve"><value>Autentifică-te ca să descarci acest depou.</value></data>
-  <data name="Depot_Err_SignIn" xml:space="preserve"><value>Autentifică-te ca să descarci depouri.</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
   <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>se obține manifestul</value></data>
   <data name="Depot_Err_NoManifest" xml:space="preserve"><value>Nu s-a putut obține manifestul acestui depou.</value></data>
   <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>Se pregătește · {0} din {1}</value></data>
@@ -624,4 +610,7 @@ Anulare - continuă descărcarea</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} s-a modificat de la aplicarea acestui fix, așa că restaurarea ar suprascrie acele modificări. Dacă ai aplicat alt fix peste, anulează-l mai întâi pe acela. {1} fișier(e) afectate.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Reparație anulată parțial</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} fișier(e) nu au putut fi restaurate. Închide jocul și încearcă din nou.</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
 </root>

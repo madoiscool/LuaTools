@@ -23,35 +23,19 @@ public partial class SettingsViewModel : ObservableObject
     private readonly SteamService _steam;
     private readonly HubcapService _hubcap;
 
-    [ObservableProperty] private string? _displayName;
-    [ObservableProperty] private string? _email;
-    [ObservableProperty] private string? _avatarUrl;
-
+    /// <summary>True when no authentication key is stored.</summary>
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(IsRealUser))]
+    [NotifyPropertyChangedFor(nameof(HasAuthKey))]
     private bool _isGuest = true;
 
-    public bool IsRealUser => !IsGuest;
+    public bool HasAuthKey => !IsGuest;
 
-    // ── Login-required redirect banner ─────────────────────────────
-    /// <summary>Set by App when navigating here from a protected action. Null = banner hidden.</summary>
-    [ObservableProperty] private string? _loginRequiredMessage;
+    // ── Key-required redirect banner ───────────────────────────────
+    /// <summary>Set by App when navigating here from a gated action. Null = banner hidden.</summary>
+    [ObservableProperty] private string? _authKeyRequiredMessage;
 
     [RelayCommand]
-    private void DismissLoginRequired() => LoginRequiredMessage = null;
-
-    // ── Bot-provisioned account re-link banner ──────────────────────
-    /// <summary>True when the signed-in session is a Discord bot placeholder (@bot.lua.tools).</summary>
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(ShowBotLinkBanner))]
-    private bool _isBotProvisioned;
-
-    /// <summary>Session-only. Resets next launch so the banner re-checks on every startup.</summary>
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(ShowBotLinkBanner))]
-    private bool _botBannerDismissed;
-
-    public bool ShowBotLinkBanner => false;
+    private void DismissAuthKeyRequired() => AuthKeyRequiredMessage = null;
 
     // ── Steam location ──────────────────────────────────────────────
     [ObservableProperty] private string _steamPath = "";
@@ -233,9 +217,6 @@ public partial class SettingsViewModel : ObservableObject
     /// <summary>Placeholder text shown until real stats load.</summary>
     public string HubcapStatsText => HubcapStatsDisplay ?? Resources.Strings.Common_Loading;
 
-    /// <summary>Set by App so the guest "Sign in" button can run the Discord flow.</summary>
-    public Func<Task>? RequestSignIn { get; set; }
-
     /// <summary>Set by App: actually relaunch the app (used after a language change).</summary>
     public Action? RequestRestart { get; set; }
 
@@ -259,6 +240,7 @@ public partial class SettingsViewModel : ObservableObject
         _startWithWindows = settings.StartWithWindows; // default OFF. Init without triggering the registry write
         _minimizeToTray = settings.MinimizeToTray;
         _hubcapIsKeyConfigured = !string.IsNullOrEmpty(settings.HubcapApiKey);
+        _authKeyIsConfigured = !string.IsNullOrEmpty(settings.AuthKey);
 
         // Select the saved language (or "System default") without firing the restart prompt.
         _suppressLanguagePrompt = true;
@@ -281,63 +263,59 @@ public partial class SettingsViewModel : ObservableObject
         SteamWarning = path is not null && !_steam.IsValid ? Resources.Strings.Settings_SteamWarning_NoExe : null;
     }
 
-    public void RefreshAccount()
+    private void RefreshAccount()
     {
         IsGuest = _auth.IsGuest;
-        DisplayName = _auth.DisplayName;
-        Email = _auth.Email;
-        AvatarUrl = _auth.AvatarUrl;
-        IsBotProvisioned = _auth.IsBotProvisioned;
-        if (!IsGuest) LoginRequiredMessage = null;
+        AuthKeyIsConfigured = !IsGuest;
+        if (!IsGuest) AuthKeyRequiredMessage = null;
     }
 
-    /// <summary>Hide the re-link banner for this session (returns next launch if still a bot account).</summary>
-    [RelayCommand]
-    private void DismissBotBanner() => BotBannerDismissed = true;
+    // ── Authentication key ──────────────────────────────────────────
 
-    [RelayCommand]
-    private async Task SignInAsync()
-    {
-        if (RequestSignIn is not null) await RequestSignIn();
-    }
+    /// <summary>The key the user is typing/pasting. Starts blank. The saved key is never shown back.</summary>
+    [ObservableProperty] private string _authKeyInput = "";
 
-    // ── Discord bot code sign-in ────────────────────────────────────
+    /// <summary>Status/error line under the key box. Null = hidden.</summary>
+    [ObservableProperty] private string? _authKeyStatus;
 
-    /// <summary>The 6-char code the user typed from the Discord <c>/login</c> DM.</summary>
-    [ObservableProperty] private string _codeInput = "";
-
-    /// <summary>True while redeeming. Disables the Redeem button via <see cref="CanRedeemCode"/>.</summary>
+    /// <summary>True when a key is saved (drives the "Key set" row + Clear button).</summary>
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(CanRedeemCode))]
-    private bool _isRedeemingCode;
+    [NotifyPropertyChangedFor(nameof(AuthKeyStatusText))]
+    private bool _authKeyIsConfigured;
 
-    /// <summary>Error shown under the code box (expired/invalid/server). Null = hidden.</summary>
-    [ObservableProperty] private string? _codeError;
+    /// <summary>"Key set" / "No key set", shown as the status row in the key section.</summary>
+    public string AuthKeyStatusText =>
+        AuthKeyIsConfigured ? Resources.Strings.Settings_AuthKeyActive : Resources.Strings.Settings_AuthKeyMissing;
 
-    public bool CanRedeemCode => !IsRedeemingCode;
-
-    /// <summary>Redeem the Discord bot code for a session (no browser needed).</summary>
+    /// <summary>Save the pasted key. Nothing to verify client-side, so this is stored as typed.</summary>
     [RelayCommand]
-    private async Task SignInWithCodeAsync()
+    private void SaveAuthKey()
     {
-        string code = CodeInput.Trim();
-        if (code.Length != 6) return;
+        string key = AuthKeyInput.Trim();
+        if (key.Length == 0)
+        {
+            AuthKeyStatus = Resources.Strings.Settings_AuthKeyEmptyError;
+            return;
+        }
 
-        IsRedeemingCode = true;
-        CodeError = null;
-        try
-        {
-            await _auth.SignInWithCodeAsync(code);
-            CodeInput = "";
-        }
-        catch (Exception ex)
-        {
-            CodeError = ex.Message;
-        }
-        finally
-        {
-            IsRedeemingCode = false;
-        }
+        _auth.SetKey(key);
+        AuthKeyInput = "";
+        AuthKeyStatus = null;
+        RefreshAccount();
+    }
+
+    /// <summary>Set by App: re-open the key prompt when the key is cleared, since the app requires one.</summary>
+    public Action? RequestAuthKeyGate { get; set; }
+
+    /// <summary>Forget the saved key. A key is required, so this also re-opens the key prompt.</summary>
+    [RelayCommand]
+    private void ClearAuthKey()
+    {
+        _auth.ClearKey();
+        RequestAuthKeyGate?.Invoke();
+        AuthKeyInput = "";
+        AuthKeyStatus = null;
+        RefreshAccount();
     }
 
     [RelayCommand]
@@ -377,9 +355,6 @@ public partial class SettingsViewModel : ObservableObject
     [RelayCommand]
     private void OpenHubcap() =>
         Process.Start(new ProcessStartInfo(AppConfig.HubcapBaseUrl) { UseShellExecute = true });
-
-    [RelayCommand]
-    private void SignOut() => _auth.SignOut();
 
     // ── Hubcap key management ───────────────────────────────────────
 

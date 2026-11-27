@@ -67,33 +67,29 @@
   <data name="Nav_Fixes" xml:space="preserve"><value>Fixes</value></data>
   <data name="Nav_RestartSteam" xml:space="preserve"><value>Restart Steam</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>Settings</value></data>
-  <data name="Nav_SignInDiscord" xml:space="preserve"><value>Sign in with Discord</value></data>
-  <data name="Nav_WaitingForBrowser" xml:space="preserve"><value>Waiting for browser…</value></data>
-  <data name="Nav_Footer_Guest" xml:space="preserve"><value>Browsing as Guest</value></data>
-  <data name="Nav_Footer_LoggedIn" xml:space="preserve"><value>Logged In</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
   <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>Restart Steam now? This closes Steam and any running games, then relaunches it.</value></data>
 
   <!-- ── Settings ── -->
   <data name="Settings_Title" xml:space="preserve"><value>Settings</value></data>
-  <data name="Settings_Section_Account" xml:space="preserve"><value>ACCOUNT</value></data>
   <data name="Settings_Section_General" xml:space="preserve"><value>GENERAL</value></data>
   <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
   <data name="Settings_Section_Install" xml:space="preserve"><value>INSTALL</value></data>
   <data name="Settings_Section_Community" xml:space="preserve"><value>COMMUNITY</value></data>
-  <data name="Settings_SignOut" xml:space="preserve"><value>Sign out</value></data>
-  <data name="Settings_BrowsingAsGuest" xml:space="preserve"><value>Browsing as guest</value></data>
-  <data name="Settings_GuestHint" xml:space="preserve"><value>Sign in to download manifests and DLC unlocks</value></data>
-  <data name="Settings_SignInDiscord" xml:space="preserve"><value>Sign in with Discord</value></data>
-  <data name="Settings_BotCode_Hint" xml:space="preserve"><value>Have a code? Run /login in Discord and enter it here.</value></data>
-  <data name="Settings_BotCode_Placeholder" xml:space="preserve"><value>A3X9K2</value></data>
-  <data name="Settings_BotCode_Redeem" xml:space="preserve"><value>Redeem</value></data>
-  <data name="Settings_BotCode_Expired" xml:space="preserve"><value>Code expired. Run /login again.</value></data>
-  <data name="Settings_BotCode_Invalid" xml:space="preserve"><value>Invalid or unknown code.</value></data>
-  <data name="Settings_BotCode_ServerError" xml:space="preserve"><value>Server error. Try again.</value></data>
-  <data name="Settings_BotLink_Title" xml:space="preserve"><value>Finish linking your account</value></data>
-  <data name="Settings_BotLink_Body" xml:space="preserve"><value>You're signed in with a temporary Discord account. Sign in at lua.tools, then run /login again and enter the code to link your full account.</value></data>
-  <data name="Settings_BotLink_Dismiss" xml:space="preserve"><value>Dismiss</value></data>
-  <data name="Settings_LoginRequired" xml:space="preserve"><value>Login is required for this action.</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
   <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Manage your Hubcap API key and profile on</value></data>
   <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
   <data name="Settings_HubcapKey" xml:space="preserve"><value>Hubcap API key</value></data>
@@ -153,9 +149,7 @@
   <data name="Home_CheckingSteam" xml:space="preserve"><value>Checking Steam…</value></data>
   <data name="Home_SteamDetected" xml:space="preserve"><value>Steam detected · {0}</value></data>
   <data name="Home_SteamNotFound" xml:space="preserve"><value>Steam not found. Set its location in Settings.</value></data>
-  <data name="Home_BrowsingAsGuest" xml:space="preserve"><value>Browsing as guest</value></data>
-  <data name="Home_SignedIn" xml:space="preserve"><value>Signed in</value></data>
-  <data name="Home_SignedInAs" xml:space="preserve"><value>Signed in as {0}</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
   <data name="Home_NoModeSelected" xml:space="preserve"><value>No mode selected</value></data>
   <data name="Home_ModeIs" xml:space="preserve"><value>Mode · {0}</value></data>
 
@@ -191,8 +185,6 @@
   <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>Updated. Restart Steam to apply.</value></data>
   <!-- First-run onboarding (English-only draft; translations deferred) -->
   <data name="Onboarding_Title" xml:space="preserve"><value>Welcome to the LuaTools App!</value></data>
-  <data name="Onboarding_SignIn_Blurb" xml:space="preserve"><value>Sign in to unlock adding games and fixes.</value></data>
-  <data name="Onboarding_SignedIn" xml:space="preserve"><value>Signed in ✓</value></data>
   <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>Apply recommended settings</value></data>
   <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>Mode: BetterSteamTools · FastFetch on</value></data>
   <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>Install our famous plugin</value></data>
@@ -337,8 +329,8 @@ This deletes the .lua files from Steam\config\stplug-in.</value></data>
   <data name="Fixes_Count" xml:space="preserve"><value>{0} fixes</value></data>
   <data name="Fixes_Err_Load" xml:space="preserve"><value>Couldn't load fixes. Check your connection.</value></data>
   <data name="Fixes_Empty_None" xml:space="preserve"><value>No fixes available yet.</value></data>
-  <data name="Fixes_SignIn" xml:space="preserve"><value>Sign in with Discord to download fixes.</value></data>
-  <data name="Fixes_SignInRequired" xml:space="preserve"><value>Sign in required</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
   <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>Download failed</value></data>
   <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>Something went wrong. Try again.</value></data>
   <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>Install failed</value></data>
@@ -398,8 +390,8 @@ This deletes the .lua files from Steam\config\stplug-in.</value></data>
   <data name="Add_DlcHint" xml:space="preserve"><value>Put the .lua into steam\config\stplug-in, and make sure the base game is added too. Counts toward your daily limit (25/day).</value></data>
   <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>Already have the files?</value></data>
   <!-- Add / Download C# strings -->
-  <data name="Add_SignIn_Dlc" xml:space="preserve"><value>Sign in with Discord to view DLC unlocks.</value></data>
-  <data name="Add_SignIn_Download" xml:space="preserve"><value>Sign in with Discord to download.</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Could not resolve the base game for this DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Something went wrong. Check your connection and try again.</value></data>
   <data name="Add_Err_Download" xml:space="preserve"><value>Download failed. Check your connection and try again.</value></data>
@@ -565,16 +557,10 @@ This deletes the .lua files from Steam\config\stplug-in.</value></data>
   <data name="Err_WriteFailedFile" xml:space="preserve"><value>Couldn't write {0}. Close Steam and try again.</value></data>
   <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>Couldn't open the download: {0}</value></data>
   <data name="Err_NoSourceAvailable" xml:space="preserve"><value>No available source for this game.</value></data>
-  <data name="Auth_Err_Timeout" xml:space="preserve"><value>Sign-in timed out. No response from the browser.</value></data>
-  <data name="Auth_Err_TokenExchangeFailed" xml:space="preserve"><value>Token exchange failed ({0}): {1}</value></data>
-  <data name="Auth_Err_TokenExchangeEmpty" xml:space="preserve"><value>Token exchange returned an empty session.</value></data>
-  <data name="Auth_Err_NotSignedIn" xml:space="preserve"><value>Not signed in.</value></data>
-  <data name="Auth_Err_RefreshFailed" xml:space="preserve"><value>Session refresh failed ({0}).</value></data>
-  <data name="Auth_Err_RefreshEmpty" xml:space="preserve"><value>Session refresh returned an empty session.</value></data>
   <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>The download link was empty. Try again.</value></data>
   <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>Download failed ({0}).</value></data>
   <data name="Api_Err_RequestFailed" xml:space="preserve"><value>Request failed ({0})</value></data>
-  <data name="Api_Err_SessionExpired" xml:space="preserve"><value>Session expired. Please sign in again.</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
   <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Your Hubcap key is invalid or expired.</value></data>
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Your Hubcap daily limit has been reached.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>No Hubcap manifest is available for this app.</value></data>
@@ -624,8 +610,8 @@ This deletes the .lua files from Steam\config\stplug-in.</value></data>
   <data name="Depot_Err_NoSpace" xml:space="preserve"><value>Not enough disk space: needs {0}, only {1} free.</value></data>
   <data name="Builds_Select_SaveTo" xml:space="preserve"><value>Save to</value></data>
   <data name="Builds_Select_Space" xml:space="preserve"><value>Needs {0} · {1} free on {2}</value></data>
-  <data name="Builds_Select_SignIn" xml:space="preserve"><value>Sign in to download this depot.</value></data>
-  <data name="Depot_Err_SignIn" xml:space="preserve"><value>Sign in to download depots.</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
   <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>fetching manifest</value></data>
   <data name="Depot_Err_NoManifest" xml:space="preserve"><value>Couldn't get this depot's manifest.</value></data>
   <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>Preparing · {0} of {1}</value></data>
@@ -659,4 +645,7 @@ Cancel - keep downloading</value></data>
   <data name="Depot_Err_NoKeyFor" xml:space="preserve"><value>No decryption key in Lua for depot {0}.</value></data>
   <data name="Builds_Select_SharedHint" xml:space="preserve"><value>Shared runtime — usually already installed. Tick to download anyway.</value></data>
   <data name="Downloads_ClearHistory_Confirm" xml:space="preserve"><value>Remove all {0} entries from the download history? Downloaded files are not affected.</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
 </root>

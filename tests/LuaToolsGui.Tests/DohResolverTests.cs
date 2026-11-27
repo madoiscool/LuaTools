@@ -100,7 +100,7 @@ public class DohResolverTests
     /// round-trip to every local call and leak the name, for an answer that could only be wrong.
     /// </summary>
     [Theory]
-    [InlineData("127.0.0.1")]      // the local HTTP server and the OAuth callback
+    [InlineData("127.0.0.1")]      // the local HTTP server the plugin talks to
     [InlineData("::1")]
     [InlineData("167.235.229.108")] // AppConfig.ManifestBackendUrl is already a bare IP
     [InlineData("localhost")]

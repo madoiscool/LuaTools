@@ -67,31 +67,27 @@
   <data name="Nav_Fixes" xml:space="preserve"><value>修正</value></data>
   <data name="Nav_RestartSteam" xml:space="preserve"><value>Steamを再起動</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>設定</value></data>
-  <data name="Nav_SignInDiscord" xml:space="preserve"><value>Discordでサインイン</value></data>
-  <data name="Nav_WaitingForBrowser" xml:space="preserve"><value>ブラウザを待機中…</value></data>
-  <data name="Nav_Footer_Guest" xml:space="preserve"><value>ゲストとして閲覧中</value></data>
-  <data name="Nav_Footer_LoggedIn" xml:space="preserve"><value>ログイン済み</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
   <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>今すぐSteamを再起動しますか？Steamと実行中のすべてのゲームを終了してから、再び起動します。</value></data>
   <data name="Settings_Title" xml:space="preserve"><value>設定</value></data>
-  <data name="Settings_Section_Account" xml:space="preserve"><value>アカウント</value></data>
   <data name="Settings_Section_General" xml:space="preserve"><value>一般</value></data>
   <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
   <data name="Settings_Section_Install" xml:space="preserve"><value>インストール</value></data>
   <data name="Settings_Section_Community" xml:space="preserve"><value>コミュニティ</value></data>
-  <data name="Settings_SignOut" xml:space="preserve"><value>サインアウト</value></data>
-  <data name="Settings_BrowsingAsGuest" xml:space="preserve"><value>ゲストとして閲覧中</value></data>
-  <data name="Settings_GuestHint" xml:space="preserve"><value>マニフェストとDLCのアンロックをダウンロードするにはサインインしてください</value></data>
-  <data name="Settings_SignInDiscord" xml:space="preserve"><value>Discordでサインイン</value></data>
-  <data name="Settings_BotCode_Hint" xml:space="preserve"><value>コードをお持ちですか？ Discord で /login を実行してここに入力してください。</value></data>
-  <data name="Settings_BotCode_Placeholder" xml:space="preserve"><value>A3X9K2</value></data>
-  <data name="Settings_BotCode_Redeem" xml:space="preserve"><value>引き換え</value></data>
-  <data name="Settings_BotCode_Expired" xml:space="preserve"><value>コードの有効期限が切れました — もう一度 /login を実行してください。</value></data>
-  <data name="Settings_BotCode_Invalid" xml:space="preserve"><value>無効または不明なコードです。</value></data>
-  <data name="Settings_BotCode_ServerError" xml:space="preserve"><value>サーバーエラー — もう一度お試しください。</value></data>
-  <data name="Settings_BotLink_Title" xml:space="preserve"><value>アカウントのリンクを完了してください</value></data>
-  <data name="Settings_BotLink_Body" xml:space="preserve"><value>一時的な Discord アカウントでサインインしています。lua.tools でサインインし、もう一度 /login を実行してコードを入力すると、完全なアカウントにリンクできます。</value></data>
-  <data name="Settings_BotLink_Dismiss" xml:space="preserve"><value>閉じる</value></data>
-  <data name="Settings_LoginRequired" xml:space="preserve"><value>この操作にはログインが必要です。</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
   <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Hubcap APIキーとプロフィールはこちらで管理：</value></data>
   <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
   <data name="Settings_HubcapKey" xml:space="preserve"><value>Hubcap APIキー</value></data>
@@ -140,9 +136,7 @@
   <data name="Home_CheckingSteam" xml:space="preserve"><value>Steamを確認中…</value></data>
   <data name="Home_SteamDetected" xml:space="preserve"><value>Steamを検出 · {0}</value></data>
   <data name="Home_SteamNotFound" xml:space="preserve"><value>Steamが見つかりません — 設定で場所を指定してください。</value></data>
-  <data name="Home_BrowsingAsGuest" xml:space="preserve"><value>ゲストとして閲覧中</value></data>
-  <data name="Home_SignedIn" xml:space="preserve"><value>ログイン済み</value></data>
-  <data name="Home_SignedInAs" xml:space="preserve"><value>{0} としてログイン中</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
   <data name="Home_NoModeSelected" xml:space="preserve"><value>モードが選択されていません</value></data>
   <data name="Home_ModeIs" xml:space="preserve"><value>モード · {0}</value></data>
   <data name="Mode_Title" xml:space="preserve"><value>モード</value></data>
@@ -174,8 +168,6 @@
   <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>無効化しました — 適用するには Steam を再起動してください。</value></data>
   <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>更新しました — 適用するには Steam を再起動してください。</value></data>
   <data name="Onboarding_Title" xml:space="preserve"><value>LuaTools アプリへようこそ！</value></data>
-  <data name="Onboarding_SignIn_Blurb" xml:space="preserve"><value>サインインして、ゲームや修正の追加を解放しましょう。</value></data>
-  <data name="Onboarding_SignedIn" xml:space="preserve"><value>サインイン済み ✓</value></data>
   <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>推奨設定を適用</value></data>
   <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>モード: BetterSteamTools · FastFetch オン</value></data>
   <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>人気のプラグインをインストール</value></data>
@@ -303,8 +295,8 @@ Steam\config\stplug-in から .lua ファイルを削除します。</value></da
   <data name="Fixes_Count" xml:space="preserve"><value>{0} 件の修正</value></data>
   <data name="Fixes_Err_Load" xml:space="preserve"><value>修正を読み込めませんでした — 接続を確認してください。</value></data>
   <data name="Fixes_Empty_None" xml:space="preserve"><value>利用可能な修正はまだありません。</value></data>
-  <data name="Fixes_SignIn" xml:space="preserve"><value>修正をダウンロードするにはDiscordでサインインしてください。</value></data>
-  <data name="Fixes_SignInRequired" xml:space="preserve"><value>サインインが必要です</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
   <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>ダウンロード失敗</value></data>
   <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>問題が発生しました — もう一度お試しください。</value></data>
   <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>インストール失敗</value></data>
@@ -345,8 +337,8 @@ Steam\config\stplug-in から .lua ファイルを削除します。</value></da
   <data name="Add_Generating" xml:space="preserve"><value>生成中…</value></data>
   <data name="Add_DlcHint" xml:space="preserve"><value>.lua を steam\config\stplug-in に入れてください — ベースゲームも追加されていることを確認してください。1日の上限（25件/日）に含まれます。</value></data>
   <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>すでにファイルをお持ちですか？</value></data>
-  <data name="Add_SignIn_Dlc" xml:space="preserve"><value>DLCのアンロックを表示するにはDiscordでサインインしてください。</value></data>
-  <data name="Add_SignIn_Download" xml:space="preserve"><value>ダウンロードするにはDiscordでサインインしてください。</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>このDLCのベースゲームを特定できませんでした</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>問題が発生しました — 接続を確認してもう一度お試しください。</value></data>
   <data name="Add_Err_Download" xml:space="preserve"><value>ダウンロードに失敗しました — 接続を確認してもう一度お試しください。</value></data>
@@ -514,16 +506,10 @@ Steam\config\stplug-in から .lua ファイルを削除します。</value></da
   <data name="Err_WriteFailedFile" xml:space="preserve"><value>{0} を書き込めませんでした。Steam を終了して再試行してください。</value></data>
   <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>ダウンロードを開けませんでした: {0}</value></data>
   <data name="Err_NoSourceAvailable" xml:space="preserve"><value>このゲームに利用できるソースがありません。</value></data>
-  <data name="Auth_Err_Timeout" xml:space="preserve"><value>サインインがタイムアウトしました。ブラウザーから応答がありません。</value></data>
-  <data name="Auth_Err_TokenExchangeFailed" xml:space="preserve"><value>トークン交換に失敗しました ({0}): {1}</value></data>
-  <data name="Auth_Err_TokenExchangeEmpty" xml:space="preserve"><value>トークン交換が空のセッションを返しました。</value></data>
-  <data name="Auth_Err_NotSignedIn" xml:space="preserve"><value>サインインしていません。</value></data>
-  <data name="Auth_Err_RefreshFailed" xml:space="preserve"><value>セッションの更新に失敗しました ({0})。</value></data>
-  <data name="Auth_Err_RefreshEmpty" xml:space="preserve"><value>セッションの更新が空のセッションを返しました。</value></data>
   <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>ダウンロードリンクが空でした。再試行してください。</value></data>
   <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>ダウンロードに失敗しました ({0})。</value></data>
   <data name="Api_Err_RequestFailed" xml:space="preserve"><value>リクエストに失敗しました ({0})</value></data>
-  <data name="Api_Err_SessionExpired" xml:space="preserve"><value>セッションの有効期限が切れました。もう一度サインインしてください。</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
   <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Hubcap のキーが無効か期限切れです。</value></data>
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Hubcap の 1 日の上限に達しました。</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>このアプリ用の Hubcap マニフェストはありません。</value></data>
@@ -573,8 +559,8 @@ Steam\config\stplug-in から .lua ファイルを削除します。</value></da
   <data name="Depot_Err_NoSpace" xml:space="preserve"><value>ディスク容量が足りません: {0} 必要ですが、空きは {1} だけです。</value></data>
   <data name="Builds_Select_SaveTo" xml:space="preserve"><value>保存先</value></data>
   <data name="Builds_Select_Space" xml:space="preserve"><value>{0} 必要 · {2} の空き {1}</value></data>
-  <data name="Builds_Select_SignIn" xml:space="preserve"><value>サインインするとこのデポをダウンロードできます。</value></data>
-  <data name="Depot_Err_SignIn" xml:space="preserve"><value>デポのダウンロードにはサインインが必要です。</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
   <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>manifest を取得中</value></data>
   <data name="Depot_Err_NoManifest" xml:space="preserve"><value>このデポの manifest を取得できませんでした。</value></data>
   <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>準備中 · {0} / {1}</value></data>
@@ -624,4 +610,7 @@ Steam\config\stplug-in から .lua ファイルを削除します。</value></da
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>この修正の適用後に {0} が変更されているため、復元するとその変更が上書きされます。別の修正を上に適用した場合は、先にそちらを元に戻してください。対象は {1} 個のファイルです。</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>修正は一部だけ元に戻りました</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} 個のファイルを復元できませんでした。ゲームを閉じてやり直してください。</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
 </root>

@@ -137,8 +137,8 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
         InitPageSize(settings.FixesPageSize);
     }
 
-    /// <summary>Set by App so a guest hitting a download is sent through the Discord sign-in flow.</summary>
-    public Func<Task>? RequestSignIn { get; set; }
+    /// <summary>Set by App so a download without a key is sent to Settings.</summary>
+    public Func<Task>? RequestAuthKey { get; set; }
 
     // The master list; the displayed page slice lives in the base's Items collection.
     private List<FixGameCardVm> _allGames = [];
@@ -469,7 +469,7 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
     /// </summary>
     private async Task RunDownload(FixItemVm fix, string slot)
     {
-        if (await PromptSignInIfGuestAsync(Resources.Strings.Fixes_SignIn)) return;
+        if (await PromptForAuthKeyAsync(Resources.Strings.Fixes_NeedAuthKey)) return;
         if (SelectedGame is not { } game) return;
         if (!long.TryParse(game.AppId, out long appId)) return;
 
@@ -509,11 +509,11 @@ public partial class FixesViewModel : PagedListViewModel<FixGameCardVm>
         else fix.FixItem = item;
     }
 
-    private async Task<bool> PromptSignInIfGuestAsync(string message)
+    private async Task<bool> PromptForAuthKeyAsync(string message)
     {
         if (!auth.IsGuest) return false;
-        toast.Show(Resources.Strings.Fixes_SignInRequired, message);
-        if (RequestSignIn is not null) await RequestSignIn();
+        toast.Show(Resources.Strings.Fixes_AuthKeyRequired, message);
+        if (RequestAuthKey is not null) await RequestAuthKey();
         return true;
     }
 }

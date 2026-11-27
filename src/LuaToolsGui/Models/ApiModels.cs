@@ -119,54 +119,6 @@ public class SupporterStatus
     [JsonPropertyName("isSupporter")] public bool IsSupporter { get; set; }
 }
 
-/// <summary>Response from /api/auth/code/redeem. A Discord bot login code exchanged for a magic-link token.</summary>
-public class CodeRedeemResponse
-{
-    [JsonPropertyName("user_id")] public string UserId { get; set; } = "";
-    [JsonPropertyName("token")] public string Token { get; set; } = "";
-}
-
-// ── Supabase auth DTOs ──────────────────────────────────────────────
-
-public class SupabaseSession
-{
-    [JsonPropertyName("access_token")] public string AccessToken { get; set; } = "";
-    [JsonPropertyName("refresh_token")] public string RefreshToken { get; set; } = "";
-    [JsonPropertyName("expires_in")] public int ExpiresIn { get; set; }
-    [JsonPropertyName("user")] public SupabaseUser? User { get; set; }
-}
-
-public class SupabaseUser
-{
-    [JsonPropertyName("id")] public string Id { get; set; } = "";
-    [JsonPropertyName("email")] public string? Email { get; set; }
-    [JsonPropertyName("user_metadata")] public UserMetadata? Metadata { get; set; }
-}
-
-public class UserMetadata
-{
-    [JsonPropertyName("full_name")] public string? FullName { get; set; }
-    [JsonPropertyName("name")] public string? Name { get; set; }
-    [JsonPropertyName("avatar_url")] public string? AvatarUrl { get; set; }
-    [JsonPropertyName("custom_claims")] public CustomClaims? CustomClaims { get; set; }
-}
-
-public class CustomClaims
-{
-    [JsonPropertyName("global_name")] public string? GlobalName { get; set; }
-}
-
-/// <summary>Persisted (DPAPI-encrypted) auth state.</summary>
-public class StoredAuth
-{
-    public string RefreshToken { get; set; } = "";
-    public string AccessToken { get; set; } = "";
-    public DateTimeOffset ExpiresAt { get; set; }
-    public string? DisplayName { get; set; }
-    public string? Email { get; set; }
-    public string? AvatarUrl { get; set; }
-}
-
 /// <summary>Per-source UI metadata, mirroring src/lib/source-meta.ts on the website.</summary>
 public static class SourceMeta
 {

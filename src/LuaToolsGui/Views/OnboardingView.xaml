@@ -41,36 +41,32 @@
                     Text="{x:Static res:Strings.Onboarding_Title}"
                     TextWrapping="Wrap" />
 
-                <!-- Sign in (guest only) -->
-                <StackPanel Visibility="{Binding IsGuest, Converter={StaticResource BoolToVis}}">
+                <!-- Authentication key (asked once; hidden if one is already stored) -->
+                <StackPanel Visibility="{Binding NeedsAuthKey, Converter={StaticResource BoolToVis}}">
                     <TextBlock
                         Margin="0,16,0,0"
                         FontSize="13"
                         Foreground="#9ca3af"
-                        Text="{x:Static res:Strings.Onboarding_SignIn_Blurb}"
+                        Text="{x:Static res:Strings.Onboarding_AuthKey_Blurb}"
                         TextWrapping="Wrap" />
-                    <ui:Button
-                        Margin="0,10,0,0"
-                        HorizontalAlignment="Left"
-                        Appearance="Primary"
-                        Command="{Binding SignInCommand}"
-                        Content="{x:Static res:Strings.Nav_SignInDiscord}"
-                        Icon="{ui:SymbolIcon Person24}"
-                        Visibility="{Binding IsSigningIn, Converter={StaticResource InverseBoolToVis}}" />
-                    <!-- Signing-in spinner -->
-                    <StackPanel
-                        Margin="0,10,0,0"
-                        Orientation="Horizontal"
-                        Visibility="{Binding IsSigningIn, Converter={StaticResource BoolToVis}}">
-                        <ui:ProgressRing Width="16" Height="16" IsIndeterminate="True" />
-                        <TextBlock
+                    <Grid Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <ui:TextBox
+                            FontFamily="Consolas"
+                            PlaceholderText="{x:Static res:Strings.Settings_AuthKeyPlaceholder}"
+                            Text="{Binding AuthKeyInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <ui:Button
+                            Grid.Column="1"
                             Margin="8,0,0,0"
-                            VerticalAlignment="Center"
-                            FontSize="12"
-                            Foreground="#9ca3af"
-                            Text="{x:Static res:Strings.Nav_WaitingForBrowser}" />
-                    </StackPanel>
-                    <!-- Sign-in error -->
+                            Appearance="Primary"
+                            Command="{Binding SaveAuthKeyCommand}"
+                            Content="{x:Static res:Strings.Settings_AuthKey_Save}"
+                            Icon="{ui:SymbolIcon Key24}"
+                            IsEnabled="{Binding CanSaveAuthKey}" />
+                    </Grid>
                     <TextBlock
                         Margin="0,8,0,0"
                         FontSize="11.5"
@@ -79,15 +75,16 @@
                         TextWrapping="Wrap"
                         Visibility="{Binding StatusLine, Converter={StaticResource NullToCollapsed}}" />
                 </StackPanel>
-                <!-- Signed-in confirmation -->
+                <!-- Key saved confirmation -->
                 <TextBlock
                     Margin="0,16,0,0"
                     FontSize="13"
                     FontWeight="SemiBold"
                     Foreground="#4ade80"
-                    Text="{x:Static res:Strings.Onboarding_SignedIn}"
+                    Text="{x:Static res:Strings.Onboarding_AuthKeySet}"
                     Visibility="{Binding IsSignedIn, Converter={StaticResource BoolToVis}}" />
 
+                <StackPanel Visibility="{Binding ShowChoices, Converter={StaticResource BoolToVis}}">
                 <Border Height="1" Margin="0,24,0,0" Background="#1FFFFFFF" />
 
                 <!-- Apply recommended settings -->
@@ -165,6 +162,7 @@
                         </ui:Button>
                     </StackPanel>
                 </Grid>
+                </StackPanel>
 
                 <!-- Let's go! -->
                 <ui:Button
@@ -176,7 +174,7 @@
                     Command="{Binding FinishCommand}"
                     Content="{x:Static res:Strings.Onboarding_Go}"
                     FontSize="14"
-                    IsEnabled="{Binding NotBusy}" />
+                    IsEnabled="{Binding CanFinish}" />
             </StackPanel>
         </Border>
     </Grid>

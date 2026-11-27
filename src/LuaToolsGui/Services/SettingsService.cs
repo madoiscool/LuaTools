@@ -41,6 +41,11 @@ public class AppSettings
     // sources stay locked until set. Stored locally. The app calls Hubcap directly with it.
     public string? HubcapApiKey { get; set; }
 
+    // The user's lua.tools authentication key. Null = not set; the app requires one before gated
+    // actions (manifest/DLC/fix downloads). Stored locally in settings.json; it is the credential
+    // attached to API requests (see AuthService / LuaToolsApiClient).
+    public string? AuthKey { get; set; }
+
     // When true, register the app to launch on Windows sign-in (HKCU …\Run). Nullable so "never set"
     // (→ default OFF) is distinguishable from an explicit choice.
     public bool? StartWithWindows { get; set; }
@@ -137,6 +142,14 @@ public class SettingsService
         set { _settings.HubcapApiKey = string.IsNullOrWhiteSpace(value) ? null : value; Save(); }
     }
 
+    /// <summary>The user's lua.tools authentication key, or null if not set. Required before gated
+    /// actions; see <see cref="AuthService"/>.</summary>
+    public string? AuthKey
+    {
+        get => _settings.AuthKey;
+        set { _settings.AuthKey = string.IsNullOrWhiteSpace(value) ? null : value; Save(); }
+    }
+
     /// <summary>When true, the app is registered to launch on Windows sign-in (default OFF).</summary>
     public bool StartWithWindows
     {
@@ -229,6 +242,7 @@ public class SettingsService
             && _settings.BuildsPageSize is null
             && _settings.Language is null
             && _settings.HubcapApiKey is null
+            && _settings.AuthKey is null
             && _settings.StartWithWindows is null
             && _settings.MinimizeToTray is null
             && _settings.FastFetch is null;

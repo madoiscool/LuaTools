@@ -27,51 +27,30 @@ public partial class MainViewModel : ObservableObject
         return plus >= 0 ? ver[..plus] : ver;
     }
 
+    /// <summary>True when no authentication key is stored. Drives the footer status line.</summary>
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(IsRealUser))]
     [NotifyPropertyChangedFor(nameof(FooterStatus))]
     private bool _isGuest = true;
 
-    public bool IsRealUser => !IsGuest;
-
-    /// <summary>Bottom-of-pane line: version plus auth state. No username shown (privacy).</summary>
-    public string FooterStatus => $"{VersionLabel} · {(IsGuest ? Resources.Strings.Nav_Footer_Guest : Resources.Strings.Nav_Footer_LoggedIn)}";
-
-    [ObservableProperty] private bool _isSigningIn;
-    [ObservableProperty] private string? _signInError;
+    /// <summary>Bottom-of-pane line: version plus key state. No account identity is involved.</summary>
+    public string FooterStatus => $"{VersionLabel} · {(IsGuest ? Resources.Strings.Nav_Footer_NoKey : Resources.Strings.Nav_Footer_AuthKey)}";
 
     public MainViewModel(AuthService auth, SteamService steam, OnboardingViewModel onboarding)
     {
         _auth = auth;
         _steam = steam;
         Onboarding = onboarding;
-        _auth.AuthStateChanged += () => IsGuest = _auth.IsGuest;
+        _auth.AuthStateChanged += () =>
+        {
+            IsGuest = _auth.IsGuest;
+            OnPropertyChanged(nameof(FooterStatus));
+        };
     }
 
     public async Task InitializeAsync()
     {
         await _auth.InitializeAsync();
         IsGuest = _auth.IsGuest;
-    }
-
-    [RelayCommand]
-    private async Task SignInAsync()
-    {
-        if (IsSigningIn) return;
-        IsSigningIn = true;
-        SignInError = null;
-        try
-        {
-            await _auth.SignInAsync();
-        }
-        catch (Exception ex)
-        {
-            SignInError = ex.Message;
-        }
-        finally
-        {
-            IsSigningIn = false;
-        }
     }
 
     /// <summary>Confirm, then kill + relaunch Steam so newly added/removed luas take effect.</summary>

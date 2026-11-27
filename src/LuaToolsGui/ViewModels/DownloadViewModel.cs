@@ -95,8 +95,8 @@ public partial class DownloadViewModel : ObservableObject
     // Per-confirm steamcmd lookup: depot/DLC id → its real depot info (name/size/os/lang).
     private IReadOnlyDictionary<long, ContentDepot> _depotsById = new Dictionary<long, ContentDepot>();
 
-    /// <summary>Set by App so a guest hitting "Download" can be sent through the Discord sign-in flow.</summary>
-    public Func<Task>? RequestSignIn { get; set; }
+    /// <summary>Set by App so a download attempt without a key can be sent to Settings.</summary>
+    public Func<Task>? RequestAuthKey { get; set; }
 
     /// <summary>Set by App: navigate to Manage and open this appid's detail (the install banner's "Reveal").</summary>
     public Action<long>? NavigateToGame { get; set; }
@@ -359,13 +359,14 @@ public partial class DownloadViewModel : ObservableObject
         _ = FetchDetailsDebouncedAsync(appId.ToString());
     }
 
-    /// <summary>Guests can browse but must sign in for gated actions. Returns true if a sign-in was triggered.</summary>
-    private async Task<bool> PromptSignInIfGuestAsync(string message)
+    /// <summary>Browsing works without a key, but gated actions need one. Returns true when the
+    /// attempt was diverted to the key prompt.</summary>
+    private async Task<bool> PromptForAuthKeyAsync(string message)
     {
         if (!_auth.IsGuest) return false;
         Error = message;
-        _toast.Show(Resources.Strings.Fixes_SignInRequired, message);
-        if (RequestSignIn is not null) await RequestSignIn();
+        _toast.Show(Resources.Strings.Fixes_AuthKeyRequired, message);
+        if (RequestAuthKey is not null) await RequestAuthKey();
         return true;
     }
 
@@ -512,8 +513,8 @@ public partial class DownloadViewModel : ObservableObject
     private async Task FetchAsync()
     {
         if (Details is null) return;
-        // DLC info is login-only; manifest source checking is public (guests allowed).
-        if (Details.IsDlc && await PromptSignInIfGuestAsync(Resources.Strings.Add_SignIn_Dlc)) return;
+        // DLC info needs a key; manifest source checking is public.
+        if (Details.IsDlc && await PromptForAuthKeyAsync(Resources.Strings.Add_NeedAuthKey_Dlc)) return;
         ResetResults();
         IsChecking = true;
         try
@@ -665,10 +666,10 @@ public partial class DownloadViewModel : ObservableObject
     {
         if (Details is null) return null;
 
-        // Hubcap downloads use the user's OWN key and never touch lua.tools, so a guest with a key
-        // configured can download without signing in. Every other source still needs a lua.tools account.
+        // Hubcap downloads use the user's OWN Hubcap key and never touch lua.tools, so they work
+        // without an authentication key. Every other source still needs one.
         bool hubcapWithKey = source.NeedsKey && !string.IsNullOrEmpty(_settings.HubcapApiKey);
-        if (!hubcapWithKey && await PromptSignInIfGuestAsync(Resources.Strings.Add_SignIn_Download)) return null;
+        if (!hubcapWithKey && await PromptForAuthKeyAsync(Resources.Strings.Add_NeedAuthKey_Download)) return null;
 
         Error = null;
         LastDownload = null;
@@ -698,7 +699,7 @@ public partial class DownloadViewModel : ObservableObject
     private async Task GenerateDlcAsync()
     {
         if (Details?.BaseAppId is null) return;
-        if (await PromptSignInIfGuestAsync(Resources.Strings.Add_SignIn_Download)) return;
+        if (await PromptForAuthKeyAsync(Resources.Strings.Add_NeedAuthKey_Download)) return;
 
         Error = null;
         LastDownload = null;

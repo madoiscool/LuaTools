@@ -67,33 +67,29 @@
   <data name="Nav_Fixes" xml:space="preserve"><value>修复</value></data>
   <data name="Nav_RestartSteam" xml:space="preserve"><value>重启 Steam</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>设置</value></data>
-  <data name="Nav_SignInDiscord" xml:space="preserve"><value>使用 Discord 登录</value></data>
-  <data name="Nav_WaitingForBrowser" xml:space="preserve"><value>正在等待浏览器…</value></data>
-  <data name="Nav_Footer_Guest" xml:space="preserve"><value>访客浏览中</value></data>
-  <data name="Nav_Footer_LoggedIn" xml:space="preserve"><value>已登录</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
   <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>立即重启 Steam？这将关闭 Steam 及所有正在运行的游戏，然后重新启动它。</value></data>
 
   <!-- ── 设置 ── -->
   <data name="Settings_Title" xml:space="preserve"><value>设置</value></data>
-  <data name="Settings_Section_Account" xml:space="preserve"><value>账户</value></data>
   <data name="Settings_Section_General" xml:space="preserve"><value>常规</value></data>
   <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
   <data name="Settings_Section_Install" xml:space="preserve"><value>安装</value></data>
   <data name="Settings_Section_Community" xml:space="preserve"><value>社区</value></data>
-  <data name="Settings_SignOut" xml:space="preserve"><value>退出登录</value></data>
-  <data name="Settings_BrowsingAsGuest" xml:space="preserve"><value>以访客身份浏览</value></data>
-  <data name="Settings_GuestHint" xml:space="preserve"><value>登录以下载清单和 DLC 解锁</value></data>
-  <data name="Settings_SignInDiscord" xml:space="preserve"><value>使用 Discord 登录</value></data>
-  <data name="Settings_BotCode_Hint" xml:space="preserve"><value>有代码吗？在 Discord 中运行 /login 并在此输入。</value></data>
-  <data name="Settings_BotCode_Placeholder" xml:space="preserve"><value>A3X9K2</value></data>
-  <data name="Settings_BotCode_Redeem" xml:space="preserve"><value>兑换</value></data>
-  <data name="Settings_BotCode_Expired" xml:space="preserve"><value>代码已过期 — 请重新运行 /login。</value></data>
-  <data name="Settings_BotCode_Invalid" xml:space="preserve"><value>无效或未知的代码。</value></data>
-  <data name="Settings_BotCode_ServerError" xml:space="preserve"><value>服务器错误 — 请重试。</value></data>
-  <data name="Settings_BotLink_Title" xml:space="preserve"><value>完成账户关联</value></data>
-  <data name="Settings_BotLink_Body" xml:space="preserve"><value>你正在使用临时 Discord 账户登录。请在 lua.tools 登录，然后再次运行 /login 并输入代码以关联你的完整账户。</value></data>
-  <data name="Settings_BotLink_Dismiss" xml:space="preserve"><value>忽略</value></data>
-  <data name="Settings_LoginRequired" xml:space="preserve"><value>此操作需要登录。</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
   <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>在以下网站管理你的 Hubcap API 密钥和个人资料：</value></data>
   <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
   <data name="Settings_HubcapKey" xml:space="preserve"><value>Hubcap API 密钥</value></data>
@@ -146,9 +142,7 @@
   <data name="Home_CheckingSteam" xml:space="preserve"><value>正在检查 Steam…</value></data>
   <data name="Home_SteamDetected" xml:space="preserve"><value>已检测到 Steam · {0}</value></data>
   <data name="Home_SteamNotFound" xml:space="preserve"><value>未找到 Steam——请在设置中设置其位置。</value></data>
-  <data name="Home_BrowsingAsGuest" xml:space="preserve"><value>以访客身份浏览</value></data>
-  <data name="Home_SignedIn" xml:space="preserve"><value>已登录</value></data>
-  <data name="Home_SignedInAs" xml:space="preserve"><value>已登录：{0}</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
   <data name="Home_NoModeSelected" xml:space="preserve"><value>未选择模式</value></data>
   <data name="Home_ModeIs" xml:space="preserve"><value>模式 · {0}</value></data>
 
@@ -182,8 +176,6 @@
   <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>已禁用 — 重启 Steam 以生效。</value></data>
   <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>已更新 — 重启 Steam 以生效。</value></data>
   <data name="Onboarding_Title" xml:space="preserve"><value>欢迎使用 LuaTools 应用！</value></data>
-  <data name="Onboarding_SignIn_Blurb" xml:space="preserve"><value>登录以解锁添加游戏和修复。</value></data>
-  <data name="Onboarding_SignedIn" xml:space="preserve"><value>已登录 ✓</value></data>
   <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>应用推荐设置</value></data>
   <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>模式：BetterSteamTools · 开启 FastFetch</value></data>
   <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>安装我们著名的插件</value></data>
@@ -319,8 +311,8 @@
   <data name="Fixes_Count" xml:space="preserve"><value>{0} 个修复</value></data>
   <data name="Fixes_Err_Load" xml:space="preserve"><value>无法加载修复——请检查你的网络连接。</value></data>
   <data name="Fixes_Empty_None" xml:space="preserve"><value>暂无可用的修复。</value></data>
-  <data name="Fixes_SignIn" xml:space="preserve"><value>使用 Discord 登录以下载修复。</value></data>
-  <data name="Fixes_SignInRequired" xml:space="preserve"><value>需要登录</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
   <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>下载失败</value></data>
   <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>出了点问题——请重试。</value></data>
   <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>安装失败</value></data>
@@ -363,8 +355,8 @@
   <data name="Add_Generating" xml:space="preserve"><value>正在生成…</value></data>
   <data name="Add_DlcHint" xml:space="preserve"><value>将 .lua 放入 steam\config\stplug-in——确保也已添加本体游戏。这会计入你的每日上限（25/天）。</value></data>
   <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>已经有文件了？</value></data>
-  <data name="Add_SignIn_Dlc" xml:space="preserve"><value>使用 Discord 登录以查看 DLC 解锁。</value></data>
-  <data name="Add_SignIn_Download" xml:space="preserve"><value>使用 Discord 登录以下载。</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>无法确定此 DLC 的本体游戏</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>出了点问题——请检查你的网络连接后重试。</value></data>
   <data name="Add_Err_Download" xml:space="preserve"><value>下载失败——请检查你的网络连接后重试。</value></data>
@@ -534,16 +526,10 @@
   <data name="Err_WriteFailedFile" xml:space="preserve"><value>无法写入 {0}。请关闭 Steam 后重试。</value></data>
   <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>无法打开下载的文件：{0}</value></data>
   <data name="Err_NoSourceAvailable" xml:space="preserve"><value>该游戏没有可用的来源。</value></data>
-  <data name="Auth_Err_Timeout" xml:space="preserve"><value>登录超时。浏览器没有响应。</value></data>
-  <data name="Auth_Err_TokenExchangeFailed" xml:space="preserve"><value>令牌交换失败（{0}）：{1}</value></data>
-  <data name="Auth_Err_TokenExchangeEmpty" xml:space="preserve"><value>令牌交换返回了空会话。</value></data>
-  <data name="Auth_Err_NotSignedIn" xml:space="preserve"><value>尚未登录。</value></data>
-  <data name="Auth_Err_RefreshFailed" xml:space="preserve"><value>会话刷新失败（{0}）。</value></data>
-  <data name="Auth_Err_RefreshEmpty" xml:space="preserve"><value>会话刷新返回了空会话。</value></data>
   <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>下载链接为空。请重试。</value></data>
   <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>下载失败（{0}）。</value></data>
   <data name="Api_Err_RequestFailed" xml:space="preserve"><value>请求失败（{0}）</value></data>
-  <data name="Api_Err_SessionExpired" xml:space="preserve"><value>会话已过期。请重新登录。</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
   <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>你的 Hubcap 密钥无效或已过期。</value></data>
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>已达到每日 Hubcap 限额。</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>此应用没有可用的 Hubcap 清单。</value></data>
@@ -593,8 +579,8 @@
   <data name="Depot_Err_NoSpace" xml:space="preserve"><value>磁盘空间不足：需要 {0}，仅剩 {1}。</value></data>
   <data name="Builds_Select_SaveTo" xml:space="preserve"><value>保存到</value></data>
   <data name="Builds_Select_Space" xml:space="preserve"><value>需要 {0} · {2} 剩余 {1}</value></data>
-  <data name="Builds_Select_SignIn" xml:space="preserve"><value>登录后可下载该仓库。</value></data>
-  <data name="Depot_Err_SignIn" xml:space="preserve"><value>登录后可下载仓库。</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
   <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>正在获取 manifest</value></data>
   <data name="Depot_Err_NoManifest" xml:space="preserve"><value>无法获取该仓库的 manifest。</value></data>
   <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>准备中 · {0} / {1}</value></data>
@@ -644,4 +630,7 @@
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>自应用此修复以来，{0} 已被更改，还原会覆盖这些更改。如果你在其上应用了另一个修复，请先还原那一个。共影响 {1} 个文件。</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>修复部分还原</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>有 {0} 个文件无法恢复。请关闭游戏后重试。</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
 </root>

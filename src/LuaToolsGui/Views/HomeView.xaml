@@ -153,7 +153,7 @@
 
                     <Separator Margin="0,10" Background="#14FFFFFF" />
 
-                    <!-- Account → Settings -->
+                    <!-- Authentication key → Settings -->
                     <Button Command="{Binding OpenSettingsCommand}" Style="{StaticResource StatusRowButton}">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -165,7 +165,7 @@
                                 VerticalAlignment="Center"
                                 FontSize="16"
                                 Foreground="#a78bfa"
-                                Symbol="Person24" />
+                                Symbol="Key24" />
                             <TextBlock
                                 Grid.Column="1"
                                 Margin="10,0,0,0"

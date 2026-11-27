@@ -59,12 +59,10 @@ public partial class HomeViewModel : ObservableObject
     [ObservableProperty] private bool _steamFound;
     [ObservableProperty] private string _steamStatus = Resources.Strings.Home_CheckingSteam;
 
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(IsGuest))]
-    private bool _isSignedIn;
+    /// <summary>True when an authentication key is stored (drives <see cref="AccountStatus"/>).</summary>
+    [ObservableProperty] private bool _isSignedIn;
 
-    public bool IsGuest => !IsSignedIn;
-    [ObservableProperty] private string _accountStatus = Resources.Strings.Home_BrowsingAsGuest;
+    [ObservableProperty] private string _accountStatus = Resources.Strings.Home_NoAuthKey;
 
     // ── Active unlocker mode ────────────────────────────────────────
     [ObservableProperty] private string _modeStatus = Resources.Strings.Home_NoModeSelected;
@@ -208,8 +206,7 @@ public partial class HomeViewModel : ObservableObject
     private void RefreshAccount()
     {
         IsSignedIn = _auth.IsSignedIn;
-        AccountStatus = IsSignedIn
-            ? (_auth.DisplayName is { } n ? string.Format(Resources.Strings.Home_SignedInAs, n) : Resources.Strings.Home_SignedIn)
-            : Resources.Strings.Home_BrowsingAsGuest;
+        // No account identity exists any more: the status line is key state only.
+        AccountStatus = IsSignedIn ? Resources.Strings.Settings_AuthKeyActive : Resources.Strings.Home_NoAuthKey;
     }
 }

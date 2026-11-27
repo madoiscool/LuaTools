@@ -27,7 +27,7 @@ public partial class MainWindow : Wpf.Ui.Controls.FluentWindow
         {
             RootNavigation.Navigate(typeof(HomeView));
             try { await viewModel.InitializeAsync(); }
-            catch { /* auth restore failed (e.g. offline). UI still loads as guest */ }
+            catch { /* key load failed (e.g. settings file unreadable). UI still loads without a key */ }
         };
     }
 
@@ -127,8 +127,11 @@ public partial class MainWindow : Wpf.Ui.Controls.FluentWindow
     /// <summary>Switch to Builds (used by the Manage flyout's "Manage Build"). Caller selects the game.</summary>
     public void NavigateToBuilds() => RootNavigation.Navigate(typeof(BuildsView));
 
-    /// <summary>Switch to Settings (used when a guest hits a protected action).</summary>
+    /// <summary>Switch to Settings (used when a protected action needs an authentication key).</summary>
     public void NavigateToSettings() => RootNavigation.Navigate(typeof(SettingsView));
+
+    /// <summary>Nav-footer "No key" button: Settings is where the key is entered.</summary>
+    private void OpenAuthKeySettings_Click(object sender, RoutedEventArgs e) => NavigateToSettings();
 
     /// <summary>Switch to Fixes (used by the protocol handler to open a specific game's fixes).</summary>
     public void NavigateToFixes() => RootNavigation.Navigate(typeof(FixesView));

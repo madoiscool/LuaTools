@@ -426,7 +426,7 @@ public class ManifestJobFactory(
         depotTool.DiscardCachedManifest(sel.DepotId, sel.ManifestId!);
 
         if (!depotTool.CanFetchManifests)
-            throw new DownloadAbortedException(Resources.Strings.Depot_Err_SignIn);
+            throw new DownloadAbortedException(Resources.Strings.Depot_Err_NeedAuthKey);
 
         OnUi(() => item.Detail = $"{step} · {Resources.Strings.Downloads_Depot_FetchingManifest}");
 
@@ -437,8 +437,8 @@ public class ManifestJobFactory(
         }
         catch (AuthException)
         {
-            // Signed out between opening the picker and the download starting.
-            throw new DownloadAbortedException(Resources.Strings.Depot_Err_SignIn);
+            // Key cleared between opening the picker and the download starting.
+            throw new DownloadAbortedException(Resources.Strings.Depot_Err_NeedAuthKey);
         }
 
         // The API is expected to serve raw manifest bytes, but has been observed returning them inside

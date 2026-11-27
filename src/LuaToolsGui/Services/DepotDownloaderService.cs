@@ -84,9 +84,9 @@ public partial class DepotDownloaderService(
     ILogger<DepotDownloaderService> log)
 {
     /// <summary>
-    /// Whether missing manifests can be fetched from the API. Guests can still download depots whose
-    /// manifest Steam already has — they just can't pull new ones. Checked locally so the picker never
-    /// needs a request to decide what to grey out.
+    /// Whether missing manifests can be fetched from the API. Without an authentication key the user can
+    /// still download depots whose manifest Steam already has — they just can't pull new ones. Checked
+    /// locally so the picker never needs a request to decide what to grey out.
     /// </summary>
     public bool CanFetchManifests => !auth.IsGuest;
 

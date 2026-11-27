@@ -7,8 +7,8 @@ namespace LuaToolsGui.ViewModels;
 
 /// <summary>
 /// First-run welcome overlay. Shown once (gated by <see cref="CacheService.OnboardingComplete"/>) over the
-/// whole app: offers Discord sign-in, "apply recommended settings" (BetterSteamTools + FastFetch) and
-/// "install the plugin", then applies the chosen actions on "Let's go!" and dismisses.
+/// whole app: asks for the authentication key, offers "apply recommended settings" (BetterSteamTools +
+/// FastFetch) and "install the plugin", then applies the chosen actions on "Let's go!" and dismisses.
 /// </summary>
 public partial class OnboardingViewModel : ObservableObject
 {
@@ -41,12 +41,40 @@ public partial class OnboardingViewModel : ObservableObject
     /// and plugin status tiles reflect the fresh install).</summary>
     public Func<Task>? RefreshHome { get; set; }
 
+    /// <summary>True when a key is already stored (skips the key-entry block).</summary>
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(IsGuest))]
+    [NotifyPropertyChangedFor(nameof(NeedsAuthKey))]
+    [NotifyPropertyChangedFor(nameof(CanFinish))]
     private bool _isSignedIn;
-    public bool IsGuest => !IsSignedIn;
+    public bool NeedsAuthKey => !IsSignedIn;
 
-    [ObservableProperty] private bool _isSigningIn;
+    /// <summary>What the user pasted into the onboarding key box.</summary>
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(CanSaveAuthKey))]
+    private string _authKeyInput = "";
+
+    public bool CanSaveAuthKey => !string.IsNullOrWhiteSpace(AuthKeyInput);
+
+    /// <summary>True when the overlay is only asking for the key (a key is required at startup and none is
+    /// stored yet): the recommended-settings / plugin choices are hidden so nothing gets reinstalled.</summary>
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(ShowChoices))]
+    private bool _keyOnly;
+
+    public bool ShowChoices => !KeyOnly;
+
+    /// <summary>Open the overlay as a key-only prompt (no first-run choices). Used when a key is required
+    /// but none is stored, so the returning user isn't shown the install questions again. A no-op while the
+    /// overlay is already up: the first-run flow shows the key box next to its choices, and the App calls
+    /// this again when the key is cleared.</summary>
+    public void OpenKeyOnly()
+    {
+        if (IsOpen) return;
+        KeyOnly = true;
+        ApplyRecommended = false;
+        InstallPlugin = false;
+        IsOpen = true;
+    }
 
     // The two yes/no choices: both default to "yes".
     [ObservableProperty] private bool _applyRecommended = true;
@@ -54,10 +82,14 @@ public partial class OnboardingViewModel : ObservableObject
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(NotBusy))]
+    [NotifyPropertyChangedFor(nameof(CanFinish))]
     private bool _isBusy;
     public bool NotBusy => !IsBusy;
 
-    /// <summary>Sign-in error text (shown under the sign-in button); null when none.</summary>
+    /// <summary>A key is required, so "Let's go!" stays disabled until one is saved.</summary>
+    public bool CanFinish => NotBusy && !NeedsAuthKey;
+
+    /// <summary>Error text shown under the key box; null when none.</summary>
     [ObservableProperty] private string? _statusLine;
 
     [RelayCommand]
@@ -66,26 +98,33 @@ public partial class OnboardingViewModel : ObservableObject
     [RelayCommand]
     private void SetInstallPlugin(bool value) => InstallPlugin = value;
 
-    [RelayCommand]
-    private async Task SignIn()
+    /// <summary>Store the pasted key. The overlay stays open so the user can finish the other choices.</summary>
+    [RelayCommand(CanExecute = nameof(CanSaveAuthKey))]
+    private void SaveAuthKey()
     {
-        if (IsSigningIn) return;
-        IsSigningIn = true;
+        if (string.IsNullOrWhiteSpace(AuthKeyInput)) return;
+        _auth.SetKey(AuthKeyInput);
+        AuthKeyInput = "";
         StatusLine = null;
-        try { await _auth.SignInAsync(); }
-        catch (Exception ex) { StatusLine = ex.Message; }
-        finally { IsSigningIn = false; }
+        IsSignedIn = _auth.IsSignedIn;
     }
+
+    partial void OnAuthKeyInputChanged(string value) => SaveAuthKeyCommand.NotifyCanExecuteChanged();
+
+    partial void OnIsSignedInChanged(bool value) => FinishCommand.NotifyCanExecuteChanged();
+
+    partial void OnIsBusyChanged(bool value) => FinishCommand.NotifyCanExecuteChanged();
 
     /// <summary>"Let's go!". Mark onboarding done, close the overlay immediately, then apply the chosen
     /// actions in the background. Closing first means a long-running (Steam-restarting) install can never
     /// leave the welcome dialog stuck.</summary>
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanFinish))]
     private void Finish()
     {
         if (IsBusy) return;
-        bool applyRecommended = ApplyRecommended;
-        bool installPlugin = InstallPlugin;
+        // Key-only runs never touch the install: its choices are hidden and both flags are false.
+        bool applyRecommended = ShowChoices && ApplyRecommended;
+        bool installPlugin = ShowChoices && InstallPlugin;
 
         _cache.OnboardingComplete = true; // seen, never show again
         IsOpen = false;                    // dismiss now, before any slow work

@@ -67,31 +67,27 @@
   <data name="Nav_Fixes" xml:space="preserve"><value>Opravy</value></data>
   <data name="Nav_RestartSteam" xml:space="preserve"><value>Restartovat Steam</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>Nastavení</value></data>
-  <data name="Nav_SignInDiscord" xml:space="preserve"><value>Přihlásit se přes Discord</value></data>
-  <data name="Nav_WaitingForBrowser" xml:space="preserve"><value>Čekání na prohlížeč…</value></data>
-  <data name="Nav_Footer_Guest" xml:space="preserve"><value>Procházení jako host</value></data>
-  <data name="Nav_Footer_LoggedIn" xml:space="preserve"><value>Přihlášeno</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
   <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>Restartovat Steam nyní? Tím se zavře Steam i všechny spuštěné hry a poté se znovu spustí.</value></data>
   <data name="Settings_Title" xml:space="preserve"><value>Nastavení</value></data>
-  <data name="Settings_Section_Account" xml:space="preserve"><value>ÚČET</value></data>
   <data name="Settings_Section_General" xml:space="preserve"><value>OBECNÉ</value></data>
   <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
   <data name="Settings_Section_Install" xml:space="preserve"><value>INSTALACE</value></data>
   <data name="Settings_Section_Community" xml:space="preserve"><value>KOMUNITA</value></data>
-  <data name="Settings_SignOut" xml:space="preserve"><value>Odhlásit se</value></data>
-  <data name="Settings_BrowsingAsGuest" xml:space="preserve"><value>Procházení jako host</value></data>
-  <data name="Settings_GuestHint" xml:space="preserve"><value>Přihlaste se ke stažení manifestů a odemknutí DLC</value></data>
-  <data name="Settings_SignInDiscord" xml:space="preserve"><value>Přihlásit se přes Discord</value></data>
-  <data name="Settings_BotCode_Hint" xml:space="preserve"><value>Máte kód? Spusťte /login na Discordu a zadejte ho zde.</value></data>
-  <data name="Settings_BotCode_Placeholder" xml:space="preserve"><value>A3X9K2</value></data>
-  <data name="Settings_BotCode_Redeem" xml:space="preserve"><value>Uplatnit</value></data>
-  <data name="Settings_BotCode_Expired" xml:space="preserve"><value>Kód vypršel — spusťte /login znovu.</value></data>
-  <data name="Settings_BotCode_Invalid" xml:space="preserve"><value>Neplatný nebo neznámý kód.</value></data>
-  <data name="Settings_BotCode_ServerError" xml:space="preserve"><value>Chyba serveru — zkuste to znovu.</value></data>
-  <data name="Settings_BotLink_Title" xml:space="preserve"><value>Dokončete propojení účtu</value></data>
-  <data name="Settings_BotLink_Body" xml:space="preserve"><value>Jste přihlášeni dočasným účtem Discord. Přihlaste se na lua.tools, poté znovu spusťte /login a zadejte kód pro propojení svého plného účtu.</value></data>
-  <data name="Settings_BotLink_Dismiss" xml:space="preserve"><value>Zavřít</value></data>
-  <data name="Settings_LoginRequired" xml:space="preserve"><value>Pro tuto akci je vyžadováno přihlášení.</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
   <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Spravujte svůj klíč API Hubcap a profil na</value></data>
   <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
   <data name="Settings_HubcapKey" xml:space="preserve"><value>Klíč API Hubcap</value></data>
@@ -140,9 +136,7 @@
   <data name="Home_CheckingSteam" xml:space="preserve"><value>Kontrola Steamu…</value></data>
   <data name="Home_SteamDetected" xml:space="preserve"><value>Steam zjištěn · {0}</value></data>
   <data name="Home_SteamNotFound" xml:space="preserve"><value>Steam nenalezen — nastavte jeho umístění v Nastavení.</value></data>
-  <data name="Home_BrowsingAsGuest" xml:space="preserve"><value>Procházení jako host</value></data>
-  <data name="Home_SignedIn" xml:space="preserve"><value>Přihlášeno</value></data>
-  <data name="Home_SignedInAs" xml:space="preserve"><value>Přihlášeno jako {0}</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
   <data name="Home_NoModeSelected" xml:space="preserve"><value>Není vybrán žádný režim</value></data>
   <data name="Home_ModeIs" xml:space="preserve"><value>Režim · {0}</value></data>
   <data name="Mode_Title" xml:space="preserve"><value>Režim</value></data>
@@ -174,8 +168,6 @@
   <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>Vypnuto — restartujte Steam pro použití.</value></data>
   <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>Aktualizováno — restartujte Steam pro použití.</value></data>
   <data name="Onboarding_Title" xml:space="preserve"><value>Vítejte v aplikaci LuaTools!</value></data>
-  <data name="Onboarding_SignIn_Blurb" xml:space="preserve"><value>Přihlaste se a odemkněte přidávání her a oprav.</value></data>
-  <data name="Onboarding_SignedIn" xml:space="preserve"><value>Přihlášeno ✓</value></data>
   <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>Použít doporučená nastavení</value></data>
   <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>Režim: BetterSteamTools · FastFetch zapnutý</value></data>
   <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>Nainstalovat náš slavný plugin</value></data>
@@ -303,8 +295,8 @@ Tím se smažou soubory .lua ze Steam\config\stplug-in.</value></data>
   <data name="Fixes_Count" xml:space="preserve"><value>{0} oprav</value></data>
   <data name="Fixes_Err_Load" xml:space="preserve"><value>Opravy se nepodařilo načíst — zkontrolujte připojení.</value></data>
   <data name="Fixes_Empty_None" xml:space="preserve"><value>Zatím nejsou k dispozici žádné opravy.</value></data>
-  <data name="Fixes_SignIn" xml:space="preserve"><value>Pro stahování oprav se přihlaste přes Discord.</value></data>
-  <data name="Fixes_SignInRequired" xml:space="preserve"><value>Vyžadováno přihlášení</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
   <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>Stahování se nezdařilo</value></data>
   <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>Něco se pokazilo — zkuste to znovu.</value></data>
   <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>Instalace se nezdařila</value></data>
@@ -345,8 +337,8 @@ Tím se smažou soubory .lua ze Steam\config\stplug-in.</value></data>
   <data name="Add_Generating" xml:space="preserve"><value>Generování…</value></data>
   <data name="Add_DlcHint" xml:space="preserve"><value>Umístěte soubor .lua do steam\config\stplug-in — ujistěte se, že je přidána i základní hra. Započítává se do vašeho denního limitu (25/den).</value></data>
   <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>Už soubory máte?</value></data>
-  <data name="Add_SignIn_Dlc" xml:space="preserve"><value>Pro zobrazení odemknutí DLC se přihlaste přes Discord.</value></data>
-  <data name="Add_SignIn_Download" xml:space="preserve"><value>Pro stahování se přihlaste přes Discord.</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Nepodařilo se určit základní hru pro toto DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Něco se pokazilo — zkontrolujte připojení a zkuste to znovu.</value></data>
   <data name="Add_Err_Download" xml:space="preserve"><value>Stahování se nezdařilo — zkontrolujte připojení a zkuste to znovu.</value></data>
@@ -514,16 +506,10 @@ Tím se smažou soubory .lua ze Steam\config\stplug-in.</value></data>
   <data name="Err_WriteFailedFile" xml:space="preserve"><value>Nepodařilo se zapsat {0}. Zavři Steam a zkus to znovu.</value></data>
   <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>Nepodařilo se otevřít stažený soubor: {0}</value></data>
   <data name="Err_NoSourceAvailable" xml:space="preserve"><value>Pro tuto hru není dostupný žádný zdroj.</value></data>
-  <data name="Auth_Err_Timeout" xml:space="preserve"><value>Vypršel časový limit přihlášení. Prohlížeč neodpověděl.</value></data>
-  <data name="Auth_Err_TokenExchangeFailed" xml:space="preserve"><value>Výměna tokenu selhala ({0}): {1}</value></data>
-  <data name="Auth_Err_TokenExchangeEmpty" xml:space="preserve"><value>Výměna tokenu vrátila prázdnou relaci.</value></data>
-  <data name="Auth_Err_NotSignedIn" xml:space="preserve"><value>Nejsi přihlášen.</value></data>
-  <data name="Auth_Err_RefreshFailed" xml:space="preserve"><value>Obnovení relace selhalo ({0}).</value></data>
-  <data name="Auth_Err_RefreshEmpty" xml:space="preserve"><value>Obnovení relace vrátilo prázdnou relaci.</value></data>
   <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>Odkaz ke stažení byl prázdný. Zkus to znovu.</value></data>
   <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>Stahování selhalo ({0}).</value></data>
   <data name="Api_Err_RequestFailed" xml:space="preserve"><value>Požadavek selhal ({0})</value></data>
-  <data name="Api_Err_SessionExpired" xml:space="preserve"><value>Relace vypršela. Přihlas se znovu.</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
   <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Tvůj klíč Hubcap je neplatný nebo vypršel.</value></data>
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Dosáhl jsi denního limitu Hubcap.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Pro tuto aplikaci není dostupný žádný manifest Hubcap.</value></data>
@@ -573,8 +559,8 @@ Tím se smažou soubory .lua ze Steam\config\stplug-in.</value></data>
   <data name="Depot_Err_NoSpace" xml:space="preserve"><value>Nedostatek místa na disku: potřeba {0}, volných jen {1}.</value></data>
   <data name="Builds_Select_SaveTo" xml:space="preserve"><value>Uložit do</value></data>
   <data name="Builds_Select_Space" xml:space="preserve"><value>Potřeba {0} · volných {1} na {2}</value></data>
-  <data name="Builds_Select_SignIn" xml:space="preserve"><value>Přihlas se pro stažení tohoto depotu.</value></data>
-  <data name="Depot_Err_SignIn" xml:space="preserve"><value>Pro stahování depotů se přihlas.</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
   <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>načítání manifestu</value></data>
   <data name="Depot_Err_NoManifest" xml:space="preserve"><value>Nepodařilo se získat manifest tohoto depotu.</value></data>
   <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>Příprava · {0} z {1}</value></data>
@@ -624,4 +610,7 @@ Zrušit - pokračovat ve stahování</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>Soubor {0} se od použití této opravy změnil, takže obnovení by tyto změny přepsalo. Pokud jste navrch použili jinou opravu, vraťte nejprve ji. Dotčeno {1} souborů.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Oprava vrácena zpět částečně</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} soubor(ů) se nepodařilo obnovit. Zavřete hru a zkuste to znovu.</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
 </root>

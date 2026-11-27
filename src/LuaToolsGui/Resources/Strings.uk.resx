@@ -67,31 +67,27 @@
   <data name="Nav_Fixes" xml:space="preserve"><value>Фікси</value></data>
   <data name="Nav_RestartSteam" xml:space="preserve"><value>Перезапустити Steam</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>Налаштування</value></data>
-  <data name="Nav_SignInDiscord" xml:space="preserve"><value>Увійти через Discord</value></data>
-  <data name="Nav_WaitingForBrowser" xml:space="preserve"><value>Очікування браузера…</value></data>
-  <data name="Nav_Footer_Guest" xml:space="preserve"><value>Перегляд як гість</value></data>
-  <data name="Nav_Footer_LoggedIn" xml:space="preserve"><value>Виконано вхід</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
   <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>Перезапустити Steam зараз? Це закриє Steam і всі запущені ігри, а потім запустить його знову.</value></data>
   <data name="Settings_Title" xml:space="preserve"><value>Налаштування</value></data>
-  <data name="Settings_Section_Account" xml:space="preserve"><value>ОБЛІКОВИЙ ЗАПИС</value></data>
   <data name="Settings_Section_General" xml:space="preserve"><value>ЗАГАЛЬНЕ</value></data>
   <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
   <data name="Settings_Section_Install" xml:space="preserve"><value>ВСТАНОВЛЕННЯ</value></data>
   <data name="Settings_Section_Community" xml:space="preserve"><value>СПІЛЬНОТА</value></data>
-  <data name="Settings_SignOut" xml:space="preserve"><value>Вийти</value></data>
-  <data name="Settings_BrowsingAsGuest" xml:space="preserve"><value>Перегляд як гість</value></data>
-  <data name="Settings_GuestHint" xml:space="preserve"><value>Увійдіть, щоб завантажувати маніфести та розблокування DLC</value></data>
-  <data name="Settings_SignInDiscord" xml:space="preserve"><value>Увійти через Discord</value></data>
-  <data name="Settings_BotCode_Hint" xml:space="preserve"><value>Маєте код? Виконайте /login у Discord і введіть його тут.</value></data>
-  <data name="Settings_BotCode_Placeholder" xml:space="preserve"><value>A3X9K2</value></data>
-  <data name="Settings_BotCode_Redeem" xml:space="preserve"><value>Активувати</value></data>
-  <data name="Settings_BotCode_Expired" xml:space="preserve"><value>Термін дії коду минув — виконайте /login знову.</value></data>
-  <data name="Settings_BotCode_Invalid" xml:space="preserve"><value>Недійсний або невідомий код.</value></data>
-  <data name="Settings_BotCode_ServerError" xml:space="preserve"><value>Помилка сервера — спробуйте ще раз.</value></data>
-  <data name="Settings_BotLink_Title" xml:space="preserve"><value>Завершіть прив'язку облікового запису</value></data>
-  <data name="Settings_BotLink_Body" xml:space="preserve"><value>Ви ввійшли через тимчасовий обліковий запис Discord. Увійдіть на lua.tools, потім знову виконайте /login і введіть код, щоб прив'язати повний обліковий запис.</value></data>
-  <data name="Settings_BotLink_Dismiss" xml:space="preserve"><value>Відхилити</value></data>
-  <data name="Settings_LoginRequired" xml:space="preserve"><value>Для виконання цієї дії потрібно увійти.</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
   <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Керуйте своїм ключем API Hubcap і профілем на</value></data>
   <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
   <data name="Settings_HubcapKey" xml:space="preserve"><value>Ключ API Hubcap</value></data>
@@ -140,9 +136,7 @@
   <data name="Home_CheckingSteam" xml:space="preserve"><value>Перевірка Steam…</value></data>
   <data name="Home_SteamDetected" xml:space="preserve"><value>Steam виявлено · {0}</value></data>
   <data name="Home_SteamNotFound" xml:space="preserve"><value>Steam не знайдено — укажіть його розташування в Налаштуваннях.</value></data>
-  <data name="Home_BrowsingAsGuest" xml:space="preserve"><value>Перегляд як гість</value></data>
-  <data name="Home_SignedIn" xml:space="preserve"><value>Виконано вхід</value></data>
-  <data name="Home_SignedInAs" xml:space="preserve"><value>Виконано вхід як {0}</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
   <data name="Home_NoModeSelected" xml:space="preserve"><value>Режим не вибрано</value></data>
   <data name="Home_ModeIs" xml:space="preserve"><value>Режим · {0}</value></data>
   <data name="Mode_Title" xml:space="preserve"><value>Режим</value></data>
@@ -174,8 +168,6 @@
   <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>Вимкнено — перезапустіть Steam, щоб застосувати.</value></data>
   <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>Оновлено — перезапустіть Steam, щоб застосувати.</value></data>
   <data name="Onboarding_Title" xml:space="preserve"><value>Ласкаво просимо до застосунку LuaTools!</value></data>
-  <data name="Onboarding_SignIn_Blurb" xml:space="preserve"><value>Увійдіть, щоб розблокувати додавання ігор і фіксів.</value></data>
-  <data name="Onboarding_SignedIn" xml:space="preserve"><value>Вхід виконано ✓</value></data>
   <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>Застосувати рекомендовані налаштування</value></data>
   <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>Режим: BetterSteamTools · FastFetch увімкнено</value></data>
   <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>Установити наш знаменитий плагін</value></data>
@@ -303,8 +295,8 @@
   <data name="Fixes_Count" xml:space="preserve"><value>Фіксів: {0}</value></data>
   <data name="Fixes_Err_Load" xml:space="preserve"><value>Не вдалося завантажити фікси — перевірте з'єднання.</value></data>
   <data name="Fixes_Empty_None" xml:space="preserve"><value>Фіксів поки немає.</value></data>
-  <data name="Fixes_SignIn" xml:space="preserve"><value>Увійдіть через Discord, щоб завантажувати фікси.</value></data>
-  <data name="Fixes_SignInRequired" xml:space="preserve"><value>Потрібен вхід</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
   <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>Помилка завантаження</value></data>
   <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>Щось пішло не так — спробуйте ще раз.</value></data>
   <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>Помилка встановлення</value></data>
@@ -345,8 +337,8 @@
   <data name="Add_Generating" xml:space="preserve"><value>Генерування…</value></data>
   <data name="Add_DlcHint" xml:space="preserve"><value>Помістіть .lua у steam\config\stplug-in — переконайтеся, що базову гру також додано. Зараховується до вашого денного ліміту (25/день).</value></data>
   <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>Уже маєте файли?</value></data>
-  <data name="Add_SignIn_Dlc" xml:space="preserve"><value>Увійдіть через Discord, щоб переглянути розблокування DLC.</value></data>
-  <data name="Add_SignIn_Download" xml:space="preserve"><value>Увійдіть через Discord, щоб завантажити.</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Не вдалося визначити базову гру для цього DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Щось пішло не так — перевірте з'єднання і спробуйте ще раз.</value></data>
   <data name="Add_Err_Download" xml:space="preserve"><value>Помилка завантаження — перевірте з'єднання і спробуйте ще раз.</value></data>
@@ -514,16 +506,10 @@
   <data name="Err_WriteFailedFile" xml:space="preserve"><value>Не вдалося записати {0}. Закрийте Steam і повторіть спробу.</value></data>
   <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>Не вдалося відкрити завантаження: {0}</value></data>
   <data name="Err_NoSourceAvailable" xml:space="preserve"><value>Для цієї гри немає доступних джерел.</value></data>
-  <data name="Auth_Err_Timeout" xml:space="preserve"><value>Час входу вичерпано. Браузер не відповів.</value></data>
-  <data name="Auth_Err_TokenExchangeFailed" xml:space="preserve"><value>Не вдалося обміняти токен ({0}): {1}</value></data>
-  <data name="Auth_Err_TokenExchangeEmpty" xml:space="preserve"><value>Обмін токена повернув порожню сесію.</value></data>
-  <data name="Auth_Err_NotSignedIn" xml:space="preserve"><value>Вхід не виконано.</value></data>
-  <data name="Auth_Err_RefreshFailed" xml:space="preserve"><value>Не вдалося оновити сесію ({0}).</value></data>
-  <data name="Auth_Err_RefreshEmpty" xml:space="preserve"><value>Оновлення сесії повернуло порожню сесію.</value></data>
   <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>Посилання на завантаження виявилося порожнім. Повторіть спробу.</value></data>
   <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>Не вдалося завантажити ({0}).</value></data>
   <data name="Api_Err_RequestFailed" xml:space="preserve"><value>Запит не виконано ({0})</value></data>
-  <data name="Api_Err_SessionExpired" xml:space="preserve"><value>Сесія завершилася. Увійдіть знову.</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
   <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Ваш ключ Hubcap недійсний або прострочений.</value></data>
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Досягнуто денний ліміт Hubcap.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Для цього застосунку немає маніфесту Hubcap.</value></data>
@@ -573,8 +559,8 @@
   <data name="Depot_Err_NoSpace" xml:space="preserve"><value>Недостатньо місця на диску: потрібно {0}, вільно лише {1}.</value></data>
   <data name="Builds_Select_SaveTo" xml:space="preserve"><value>Зберегти в</value></data>
   <data name="Builds_Select_Space" xml:space="preserve"><value>Потрібно {0} · вільно {1} на {2}</value></data>
-  <data name="Builds_Select_SignIn" xml:space="preserve"><value>Увійдіть, щоб завантажити це депо.</value></data>
-  <data name="Depot_Err_SignIn" xml:space="preserve"><value>Увійдіть, щоб завантажувати депо.</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
   <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>отримання manifest</value></data>
   <data name="Depot_Err_NoManifest" xml:space="preserve"><value>Не вдалося отримати manifest цього депо.</value></data>
   <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>Підготовка · {0} з {1}</value></data>
@@ -624,4 +610,7 @@
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>Файл {0} змінився після застосування цього фікса, тож відновлення перезапише ці зміни. Якщо згори застосовано інший фікс, спершу скасуйте його. Порушено файлів: {1}.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Виправлення відкочено частково</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>Не вдалося відновити файлів: {0}. Закрийте гру та спробуйте ще раз.</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
 </root>

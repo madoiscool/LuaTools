@@ -67,31 +67,27 @@
   <data name="Nav_Fixes" xml:space="preserve"><value>수정</value></data>
   <data name="Nav_RestartSteam" xml:space="preserve"><value>Steam 재시작</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>설정</value></data>
-  <data name="Nav_SignInDiscord" xml:space="preserve"><value>Discord로 로그인</value></data>
-  <data name="Nav_WaitingForBrowser" xml:space="preserve"><value>브라우저 대기 중…</value></data>
-  <data name="Nav_Footer_Guest" xml:space="preserve"><value>게스트로 탐색 중</value></data>
-  <data name="Nav_Footer_LoggedIn" xml:space="preserve"><value>로그인됨</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
   <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>지금 Steam을 재시작할까요? Steam과 실행 중인 모든 게임을 종료한 후 다시 시작합니다.</value></data>
   <data name="Settings_Title" xml:space="preserve"><value>설정</value></data>
-  <data name="Settings_Section_Account" xml:space="preserve"><value>계정</value></data>
   <data name="Settings_Section_General" xml:space="preserve"><value>일반</value></data>
   <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
   <data name="Settings_Section_Install" xml:space="preserve"><value>설치</value></data>
   <data name="Settings_Section_Community" xml:space="preserve"><value>커뮤니티</value></data>
-  <data name="Settings_SignOut" xml:space="preserve"><value>로그아웃</value></data>
-  <data name="Settings_BrowsingAsGuest" xml:space="preserve"><value>게스트로 탐색 중</value></data>
-  <data name="Settings_GuestHint" xml:space="preserve"><value>매니페스트와 DLC 잠금 해제를 다운로드하려면 로그인하세요</value></data>
-  <data name="Settings_SignInDiscord" xml:space="preserve"><value>Discord로 로그인</value></data>
-  <data name="Settings_BotCode_Hint" xml:space="preserve"><value>코드가 있나요? Discord에서 /login을 실행하고 여기에 입력하세요.</value></data>
-  <data name="Settings_BotCode_Placeholder" xml:space="preserve"><value>A3X9K2</value></data>
-  <data name="Settings_BotCode_Redeem" xml:space="preserve"><value>사용</value></data>
-  <data name="Settings_BotCode_Expired" xml:space="preserve"><value>코드가 만료되었습니다 — /login을 다시 실행하세요.</value></data>
-  <data name="Settings_BotCode_Invalid" xml:space="preserve"><value>유효하지 않거나 알 수 없는 코드입니다.</value></data>
-  <data name="Settings_BotCode_ServerError" xml:space="preserve"><value>서버 오류 — 다시 시도하세요.</value></data>
-  <data name="Settings_BotLink_Title" xml:space="preserve"><value>계정 연결을 완료하세요</value></data>
-  <data name="Settings_BotLink_Body" xml:space="preserve"><value>임시 Discord 계정으로 로그인되어 있습니다. lua.tools에서 로그인한 다음 /login을 다시 실행하고 코드를 입력하여 정식 계정을 연결하세요.</value></data>
-  <data name="Settings_BotLink_Dismiss" xml:space="preserve"><value>닫기</value></data>
-  <data name="Settings_LoginRequired" xml:space="preserve"><value>이 작업을 수행하려면 로그인이 필요합니다.</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
   <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Hubcap API 키와 프로필을 다음에서 관리하세요:</value></data>
   <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
   <data name="Settings_HubcapKey" xml:space="preserve"><value>Hubcap API 키</value></data>
@@ -140,9 +136,7 @@
   <data name="Home_CheckingSteam" xml:space="preserve"><value>Steam 확인 중…</value></data>
   <data name="Home_SteamDetected" xml:space="preserve"><value>Steam 감지됨 · {0}</value></data>
   <data name="Home_SteamNotFound" xml:space="preserve"><value>Steam을 찾을 수 없습니다 — 설정에서 위치를 지정하세요.</value></data>
-  <data name="Home_BrowsingAsGuest" xml:space="preserve"><value>게스트로 탐색 중</value></data>
-  <data name="Home_SignedIn" xml:space="preserve"><value>로그인됨</value></data>
-  <data name="Home_SignedInAs" xml:space="preserve"><value>{0} 으로 로그인됨</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
   <data name="Home_NoModeSelected" xml:space="preserve"><value>선택된 모드 없음</value></data>
   <data name="Home_ModeIs" xml:space="preserve"><value>모드 · {0}</value></data>
   <data name="Mode_Title" xml:space="preserve"><value>모드</value></data>
@@ -174,8 +168,6 @@
   <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>사용 해제됨 — 적용하려면 Steam을 다시 시작하세요.</value></data>
   <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>업데이트됨 — 적용하려면 Steam을 다시 시작하세요.</value></data>
   <data name="Onboarding_Title" xml:space="preserve"><value>LuaTools 앱에 오신 것을 환영합니다!</value></data>
-  <data name="Onboarding_SignIn_Blurb" xml:space="preserve"><value>로그인하여 게임 및 수정 추가 기능을 잠금 해제하세요.</value></data>
-  <data name="Onboarding_SignedIn" xml:space="preserve"><value>로그인됨 ✓</value></data>
   <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>권장 설정 적용</value></data>
   <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>모드: BetterSteamTools · FastFetch 켜짐</value></data>
   <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>우리의 유명한 플러그인 설치</value></data>
@@ -303,8 +295,8 @@ Steam\config\stplug-in에서 .lua 파일을 삭제합니다.</value></data>
   <data name="Fixes_Count" xml:space="preserve"><value>수정 {0}개</value></data>
   <data name="Fixes_Err_Load" xml:space="preserve"><value>수정을 로드할 수 없습니다 — 연결을 확인하세요.</value></data>
   <data name="Fixes_Empty_None" xml:space="preserve"><value>아직 사용 가능한 수정이 없습니다.</value></data>
-  <data name="Fixes_SignIn" xml:space="preserve"><value>수정을 다운로드하려면 Discord로 로그인하세요.</value></data>
-  <data name="Fixes_SignInRequired" xml:space="preserve"><value>로그인 필요</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
   <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>다운로드 실패</value></data>
   <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>문제가 발생했습니다 — 다시 시도하세요.</value></data>
   <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>설치 실패</value></data>
@@ -345,8 +337,8 @@ Steam\config\stplug-in에서 .lua 파일을 삭제합니다.</value></data>
   <data name="Add_Generating" xml:space="preserve"><value>생성 중…</value></data>
   <data name="Add_DlcHint" xml:space="preserve"><value>.lua를 steam\config\stplug-in에 넣으세요 — 본편 게임도 추가되어 있는지 확인하세요. 일일 한도(25개/일)에 포함됩니다.</value></data>
   <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>이미 파일이 있으신가요?</value></data>
-  <data name="Add_SignIn_Dlc" xml:space="preserve"><value>DLC 잠금 해제를 보려면 Discord로 로그인하세요.</value></data>
-  <data name="Add_SignIn_Download" xml:space="preserve"><value>다운로드하려면 Discord로 로그인하세요.</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>이 DLC의 본편 게임을 확인할 수 없습니다</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>문제가 발생했습니다 — 연결을 확인하고 다시 시도하세요.</value></data>
   <data name="Add_Err_Download" xml:space="preserve"><value>다운로드 실패 — 연결을 확인하고 다시 시도하세요.</value></data>
@@ -514,16 +506,10 @@ Steam\config\stplug-in에서 .lua 파일을 삭제합니다.</value></data>
   <data name="Err_WriteFailedFile" xml:space="preserve"><value>{0}을(를) 쓰지 못했습니다. Steam을 종료하고 다시 시도하세요.</value></data>
   <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>다운로드를 열지 못했습니다: {0}</value></data>
   <data name="Err_NoSourceAvailable" xml:space="preserve"><value>이 게임에 사용할 수 있는 소스가 없습니다.</value></data>
-  <data name="Auth_Err_Timeout" xml:space="preserve"><value>로그인 시간이 초과되었습니다. 브라우저에서 응답이 없습니다.</value></data>
-  <data name="Auth_Err_TokenExchangeFailed" xml:space="preserve"><value>토큰 교환 실패 ({0}): {1}</value></data>
-  <data name="Auth_Err_TokenExchangeEmpty" xml:space="preserve"><value>토큰 교환이 빈 세션을 반환했습니다.</value></data>
-  <data name="Auth_Err_NotSignedIn" xml:space="preserve"><value>로그인되어 있지 않습니다.</value></data>
-  <data name="Auth_Err_RefreshFailed" xml:space="preserve"><value>세션 갱신 실패 ({0}).</value></data>
-  <data name="Auth_Err_RefreshEmpty" xml:space="preserve"><value>세션 갱신이 빈 세션을 반환했습니다.</value></data>
   <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>다운로드 링크가 비어 있습니다. 다시 시도하세요.</value></data>
   <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>다운로드 실패 ({0}).</value></data>
   <data name="Api_Err_RequestFailed" xml:space="preserve"><value>요청 실패 ({0})</value></data>
-  <data name="Api_Err_SessionExpired" xml:space="preserve"><value>세션이 만료되었습니다. 다시 로그인하세요.</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
   <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Hubcap 키가 유효하지 않거나 만료되었습니다.</value></data>
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>일일 Hubcap 한도에 도달했습니다.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>이 앱에 사용할 수 있는 Hubcap 매니페스트가 없습니다.</value></data>
@@ -573,8 +559,8 @@ Steam\config\stplug-in에서 .lua 파일을 삭제합니다.</value></data>
   <data name="Depot_Err_NoSpace" xml:space="preserve"><value>디스크 공간이 부족합니다: {0} 필요, 여유 공간은 {1}뿐입니다.</value></data>
   <data name="Builds_Select_SaveTo" xml:space="preserve"><value>저장 위치</value></data>
   <data name="Builds_Select_Space" xml:space="preserve"><value>{0} 필요 · {2} 여유 공간 {1}</value></data>
-  <data name="Builds_Select_SignIn" xml:space="preserve"><value>로그인하면 이 디포를 다운로드할 수 있습니다.</value></data>
-  <data name="Depot_Err_SignIn" xml:space="preserve"><value>디포를 다운로드하려면 로그인하세요.</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
   <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>manifest 가져오는 중</value></data>
   <data name="Depot_Err_NoManifest" xml:space="preserve"><value>이 디포의 manifest를 가져오지 못했습니다.</value></data>
   <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>준비 중 · {0} / {1}</value></data>
@@ -624,4 +610,7 @@ Steam\config\stplug-in에서 .lua 파일을 삭제합니다.</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>이 픽스를 적용한 뒤 {0} 이(가) 변경되어, 복원하면 해당 변경 사항을 덮어씁니다. 다른 픽스를 위에 적용했다면 그것부터 되돌리세요. {1}개 파일이 영향을 받습니다.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>수정이 일부만 되돌려졌습니다</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0}개 파일을 복원하지 못했습니다. 게임을 닫고 다시 시도하세요.</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
 </root>

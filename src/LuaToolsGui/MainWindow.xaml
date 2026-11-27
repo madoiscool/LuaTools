@@ -112,44 +112,20 @@
                     </ui:NavigationViewItem>
                 </ui:NavigationView.FooterMenuItems>
 
-                <!-- Guest sign-in CTA + always-visible version tag at the very bottom of the pane -->
+                <!-- Key status + always-visible version tag at the very bottom of the pane -->
                 <ui:NavigationView.PaneFooter>
                   <StackPanel>
-                    <StackPanel
-                        Margin="10,4,10,8"
-                        Visibility="{Binding IsGuest, Converter={StaticResource BoolToVis}}">
-                        <ui:Button
-                            HorizontalAlignment="Stretch"
-                            Appearance="Primary"
-                            Command="{Binding SignInCommand}"
-                            Content="{x:Static res:Strings.Nav_SignInDiscord}"
-                            Icon="{ui:SymbolIcon Person24}"
-                            Visibility="{Binding IsSigningIn, Converter={StaticResource InverseBoolToVis}}" />
-                        <StackPanel
-                            HorizontalAlignment="Center"
-                            Orientation="Horizontal"
-                            Visibility="{Binding IsSigningIn, Converter={StaticResource BoolToVis}}">
-                            <ui:ProgressRing
-                                Width="16"
-                                Height="16"
-                                IsIndeterminate="True" />
-                            <TextBlock
-                                Margin="8,0,0,0"
-                                VerticalAlignment="Center"
-                                FontSize="11.5"
-                                Foreground="#9ca3af"
-                                Text="{x:Static res:Strings.Nav_WaitingForBrowser}" />
-                        </StackPanel>
-                        <TextBlock
-                            Margin="2,8,0,0"
-                            FontSize="11.5"
-                            Foreground="#f87171"
-                            Text="{Binding SignInError}"
-                            TextWrapping="Wrap"
-                            Visibility="{Binding SignInError, Converter={StaticResource NullToCollapsed}}" />
-                    </StackPanel>
+                    <!-- No key yet: a compact prompt that opens Settings, where the key is entered. -->
+                    <ui:Button
+                        Margin="10,4,10,10"
+                        HorizontalAlignment="Stretch"
+                        Appearance="Secondary"
+                        Click="OpenAuthKeySettings_Click"
+                        Content="{x:Static res:Strings.Nav_Footer_NoKey}"
+                        Icon="{ui:SymbolIcon Key24}"
+                        Visibility="{Binding IsGuest, Converter={StaticResource BoolToVis}}" />
 
-                    <!-- Bottom line: "Signed in as …" when logged in, else the version tag. -->
+                    <!-- Bottom line: key state + version. -->
                     <TextBlock
                         Margin="12,0,10,8"
                         FontSize="11"

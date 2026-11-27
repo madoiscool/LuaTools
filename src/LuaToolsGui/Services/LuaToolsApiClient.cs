@@ -14,7 +14,8 @@ public class ApiException(string message, HttpStatusCode? status = null) : Excep
 
 public record DownloadedFile(string FilePath, string FileName);
 
-/// <summary>Typed client for the lua.tools web API, authenticated with a Supabase bearer token.</summary>
+/// <summary>Typed client for the lua.tools web API, authenticated with the user's auth key as a
+/// bearer token (see <see cref="AuthService"/>).</summary>
 public class LuaToolsApiClient(AuthService auth, SteamAppInfoCache appInfo, CoverCache covers)
 {
     private readonly HttpClient _http = AppHttp.Create(
@@ -87,7 +88,7 @@ public class LuaToolsApiClient(AuthService auth, SteamAppInfoCache appInfo, Cove
     public async Task<Dictionary<string, string>> CheckSourcesAsync(string appid, CancellationToken ct = default)
     {
         // Calls the manifest backend directly (no lua.tools, no auth). The backend is gated
-        // by a fixed User-Agent rather than a token, so guests can check availability.
+        // by a fixed User-Agent rather than a key, so availability checks need no authentication.
         var req = new HttpRequestMessage(HttpMethod.Get, $"{AppConfig.ManifestBackendUrl}/check_apis?appid={appid}");
         req.Headers.TryAddWithoutValidation("User-Agent", AppConfig.ManifestBackendUserAgent);
         var res = await _http.SendAsync(req, ct);
@@ -96,39 +97,17 @@ public class LuaToolsApiClient(AuthService auth, SteamAppInfoCache appInfo, Cove
     }
 
     /// <summary>
-    /// The standard lua.tools daily download usage (25/day), counted live from the user_downloads
-    /// table via Supabase REST. The same source the website reads. RLS scopes it to the signed-in
-    /// user, so no user id is needed. Null on failure / not signed in.
+    /// The standard lua.tools daily download usage (25/day). Read through the app API with the user's
+    /// authentication key, which scopes the count to that key. Null on failure / no key set.
     /// </summary>
     public async Task<StandardUsage?> GetStandardUsageAsync(CancellationToken ct = default)
     {
         try
         {
-            // Count today's rows without fetching them: HEAD + Prefer: count=exact → Content-Range header.
-            var todayUtc = DateTime.UtcNow.Date.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'");
-            string url = $"{AppConfig.SupabaseUrl}/rest/v1/user_downloads" +
-                         $"?select=appid&downloaded_at=gte.{Uri.EscapeDataString(todayUtc)}";
-
-            var req = new HttpRequestMessage(HttpMethod.Head, url);
-            req.Headers.TryAddWithoutValidation("apikey", AppConfig.SupabaseAnonKey);
-            req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", await auth.GetValidAccessTokenAsync());
-            req.Headers.TryAddWithoutValidation("Prefer", "count=exact");
-
-            using var res = await _http.SendAsync(req, ct);
-            if (!res.IsSuccessStatusCode) return null;
-
-            // Content-Range: "0-24/25"  (or "*/0" when empty). The count is after the slash.
-            string? range = res.Content.Headers.TryGetValues("Content-Range", out var v) ? v.FirstOrDefault()
-                          : (res.Headers.TryGetValues("Content-Range", out var hv) ? hv.FirstOrDefault() : null);
-            int used = 0;
-            if (range is not null && range.Split('/') is [_, var countStr] && int.TryParse(countStr, out int c))
-                used = c;
-            return new StandardUsage(used, AppConfig.DailyDownloadLimit);
+            var res = await SendAsync(HttpMethod.Get, "/api/me/standard-usage", ct);
+            return await ReadJsonAsync<StandardUsage>(res, ct);
         }
-        catch
-        {
-            return null; // decorative, never block on it
-        }
+        catch { return null; } // decorative, never block on it
     }
 
     public async Task<SupporterStatus?> GetSupporterStatusAsync(CancellationToken ct = default)
@@ -205,7 +184,7 @@ public class LuaToolsApiClient(AuthService auth, SteamAppInfoCache appInfo, Cove
 
     /// <summary>
     /// Auth: download a fix's "manifest" or "fix" slot. The endpoint returns a short-lived signed
-    /// R2 URL (counts toward 25/day); we then fetch the file from that URL. Caller must be signed in.
+    /// R2 URL (counts toward 25/day); we then fetch the file from that URL. Caller must have a key.
     /// </summary>
     public async Task<DownloadedFile> DownloadDenuvoAsync(
         string fixId, string slot, string fallbackName,
@@ -228,7 +207,7 @@ public class LuaToolsApiClient(AuthService auth, SteamAppInfoCache appInfo, Cove
         HttpMethod method, string url, CancellationToken ct,
         HttpCompletionOption completion = HttpCompletionOption.ResponseContentRead)
     {
-        // All callers of SendAsync are login-gated endpoints; the caller ensures the user is signed in.
+        // All callers of SendAsync are key-gated endpoints; the caller ensures a key is stored.
         var req = new HttpRequestMessage(method, url);
         req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", await auth.GetValidAccessTokenAsync());
 
@@ -246,7 +225,7 @@ public class LuaToolsApiClient(AuthService auth, SteamAppInfoCache appInfo, Cove
         }
         catch { /* non-JSON error body */ }
 
-        if (res.StatusCode == HttpStatusCode.Unauthorized) message = Resources.Strings.Api_Err_SessionExpired;
+        if (res.StatusCode == HttpStatusCode.Unauthorized) message = Resources.Strings.Api_Err_InvalidKey;
         throw new ApiException(message, res.StatusCode);
     }
 

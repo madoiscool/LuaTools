@@ -1,35 +1,19 @@
 namespace LuaToolsGui;
 
-/// <summary>
-/// Compiled-in client configuration. The Supabase URL and anon key are public
-/// client values (they also ship in the lua.tools web bundle).
-/// </summary>
+/// <summary>Compiled-in client configuration.</summary>
 public static class AppConfig
 {
-    public const string SupabaseUrl = "https://db.lua.tools";
-
-    public const string SupabaseAnonKey =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzYwMzkzNzYsImV4cCI6MTg5MzQ1NjAwMCwicm9sZSI6ImFub24iLCJpc3MiOiJzdXBhYmFzZSJ9.f_-K38u3odjltP-g_67FVmG32Vg-_-k-lNBvIaVUVBM";
-
     public const string ApiBaseUrl = "https://lua.tools";
-
-    // Bot-provisioned (Discord /login placeholder) accounts use this email domain. Detecting it on
-    // startup lets the app prompt the user to re-link their full lua.tools account.
-    public const string BotAccountEmailDomain = "@bot.lua.tools";
 
     // Hubcap (hubcapmanifest.com): the app talks to this directly with the user's own API key
     // (no lua.tools proxy). Key + stats are managed in Settings; key-gated source downloads hit it.
     public const string HubcapBaseUrl = "https://hubcapmanifest.com";
 
-    /// <summary>Must be registered in Supabase Auth → Redirect URLs.</summary>
-    public const int OAuthCallbackPort = 53789;
-    public const string OAuthCallbackUrl = "http://localhost:53789/callback";
-
     // The standard lua.tools daily download cap (Hubcap-keyed downloads are exempt). Hardcoded here
     // because the web app enforces it inline with no API field exposing it; change in one place if it moves.
     public const int DailyDownloadLimit = 25;
 
-    // Public upstream APIs the app calls directly (no lua.tools proxy needed for guest browsing).
+    // Public upstream APIs the app calls directly (browsing needs no authentication key).
     public const string SteamStoreSearchUrl = "https://store.steampowered.com/api/storesearch/";
     // Steam's storefront "featured categories" (top sellers, new releases, etc.). Drives the Add page's
     // featured strips. Public, no auth.

@@ -313,21 +313,22 @@ public partial class App : Application
         // Expose the same flow to non-UI callers (the /check-updates HTTP handler).
         RunUpdateFlow = RunUpdateFlowAsync;
 
-        // Settings' own "Sign in with Discord" button → browser OAuth (unchanged).
-        settingsVm.RequestSignIn = () => main.SignInCommand.ExecuteAsync(null);
-
-        // Guests hitting a protected action on other pages → navigate to Settings with context banner.
-        Func<Task> navigateToSignIn = () =>
+        // Gated actions on other pages → navigate to Settings with a context banner, where the
+        // authentication key is entered.
+        Func<Task> navigateToAuthKey = () =>
         {
             Dispatcher.Invoke(() =>
             {
-                settingsVm.LoginRequiredMessage = LuaToolsGui.Resources.Strings.Settings_LoginRequired;
+                settingsVm.AuthKeyRequiredMessage = LuaToolsGui.Resources.Strings.Settings_AuthKeyRequired;
                 window.NavigateToSettings();
             });
             return Task.CompletedTask;
         };
-        _host.Services.GetRequiredService<DownloadViewModel>().RequestSignIn = navigateToSignIn;
-        _host.Services.GetRequiredService<FixesViewModel>().RequestSignIn = navigateToSignIn;
+        _host.Services.GetRequiredService<DownloadViewModel>().RequestAuthKey = navigateToAuthKey;
+        _host.Services.GetRequiredService<FixesViewModel>().RequestAuthKey = navigateToAuthKey;
+
+        // Clearing the key re-arms the startup gate: the overlay comes back asking for one.
+        settingsVm.RequestAuthKeyGate = () => main.Onboarding.OpenKeyOnly();
         var toast = _host.Services.GetRequiredService<ToastService>();
         toast.Attach(window.RootSnackbar); // wire the presenter before anything can raise a toast
 
@@ -431,8 +432,8 @@ public partial class App : Application
         string? url = Program.StartupUrl ?? ProtocolService.TryReadPending();
 
         // A silent install launch (luatools://install/silent/<id>) runs headless: stay in the tray and
-        // never surface the window. The window's Loaded handler (which restores auth) won't fire when we
-        // skip Show(), so restore the session explicitly before the install runs.
+        // never surface the window. The window's Loaded handler (which loads the key state) won't fire when
+        // we skip Show(), so load it explicitly before the install runs.
         bool silentStartup = (url is not null && ProtocolService.Parse(url).Silent) || Program.StartMinimized;
 
         // Auto-exit after a silent install only when this was a COLD launch for it (StartupUrl came on the
@@ -445,7 +446,7 @@ public partial class App : Application
         if (silentStartup)
         {
             window.StartSilent();
-            try { await main.InitializeAsync(); } catch { /* offline → install proceeds as guest */ }
+            try { await main.InitializeAsync(); } catch { /* settings unreadable → install proceeds without a key */ }
         }
         else
         {
@@ -468,6 +469,11 @@ public partial class App : Application
                 if (configured) cache.OnboardingComplete = true;
                 else main.Onboarding.IsOpen = true;
             }
+
+            // An authentication key is REQUIRED: with none stored, the overlay comes back as a key-only
+            // prompt (no first-run install choices) and its "Let's go!" stays disabled until a key is
+            // saved. Same overlay, so there is one place that asks for the key.
+            if (main.Onboarding.NeedsAuthKey) main.Onboarding.OpenKeyOnly();
         }
 
         if (url is not null)

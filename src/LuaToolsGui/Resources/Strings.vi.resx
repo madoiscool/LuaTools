@@ -67,31 +67,27 @@
   <data name="Nav_Fixes" xml:space="preserve"><value>Bản sửa lỗi</value></data>
   <data name="Nav_RestartSteam" xml:space="preserve"><value>Khởi động lại Steam</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>Cài đặt</value></data>
-  <data name="Nav_SignInDiscord" xml:space="preserve"><value>Đăng nhập bằng Discord</value></data>
-  <data name="Nav_WaitingForBrowser" xml:space="preserve"><value>Đang chờ trình duyệt…</value></data>
-  <data name="Nav_Footer_Guest" xml:space="preserve"><value>Đang duyệt với tư cách khách</value></data>
-  <data name="Nav_Footer_LoggedIn" xml:space="preserve"><value>Đã đăng nhập</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
   <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>Khởi động lại Steam ngay bây giờ? Thao tác này sẽ đóng Steam và mọi trò chơi đang chạy, sau đó khởi chạy lại.</value></data>
   <data name="Settings_Title" xml:space="preserve"><value>Cài đặt</value></data>
-  <data name="Settings_Section_Account" xml:space="preserve"><value>TÀI KHOẢN</value></data>
   <data name="Settings_Section_General" xml:space="preserve"><value>CHUNG</value></data>
   <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
   <data name="Settings_Section_Install" xml:space="preserve"><value>CÀI ĐẶT</value></data>
   <data name="Settings_Section_Community" xml:space="preserve"><value>CỘNG ĐỒNG</value></data>
-  <data name="Settings_SignOut" xml:space="preserve"><value>Đăng xuất</value></data>
-  <data name="Settings_BrowsingAsGuest" xml:space="preserve"><value>Đang duyệt với tư cách khách</value></data>
-  <data name="Settings_GuestHint" xml:space="preserve"><value>Đăng nhập để tải manifest và mở khóa DLC</value></data>
-  <data name="Settings_SignInDiscord" xml:space="preserve"><value>Đăng nhập bằng Discord</value></data>
-  <data name="Settings_BotCode_Hint" xml:space="preserve"><value>Bạn có mã? Chạy /login trong Discord và nhập vào đây.</value></data>
-  <data name="Settings_BotCode_Placeholder" xml:space="preserve"><value>A3X9K2</value></data>
-  <data name="Settings_BotCode_Redeem" xml:space="preserve"><value>Đổi</value></data>
-  <data name="Settings_BotCode_Expired" xml:space="preserve"><value>Mã đã hết hạn — chạy /login lại.</value></data>
-  <data name="Settings_BotCode_Invalid" xml:space="preserve"><value>Mã không hợp lệ hoặc không xác định.</value></data>
-  <data name="Settings_BotCode_ServerError" xml:space="preserve"><value>Lỗi máy chủ — vui lòng thử lại.</value></data>
-  <data name="Settings_BotLink_Title" xml:space="preserve"><value>Hoàn tất liên kết tài khoản của bạn</value></data>
-  <data name="Settings_BotLink_Body" xml:space="preserve"><value>Bạn đã đăng nhập bằng tài khoản Discord tạm thời. Đăng nhập tại lua.tools, sau đó chạy /login lại và nhập mã để liên kết tài khoản đầy đủ của bạn.</value></data>
-  <data name="Settings_BotLink_Dismiss" xml:space="preserve"><value>Bỏ qua</value></data>
-  <data name="Settings_LoginRequired" xml:space="preserve"><value>Cần đăng nhập để thực hiện thao tác này.</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
   <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Quản lý khóa API Hubcap và hồ sơ của bạn tại</value></data>
   <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
   <data name="Settings_HubcapKey" xml:space="preserve"><value>Khóa API Hubcap</value></data>
@@ -140,9 +136,7 @@
   <data name="Home_CheckingSteam" xml:space="preserve"><value>Đang kiểm tra Steam…</value></data>
   <data name="Home_SteamDetected" xml:space="preserve"><value>Đã phát hiện Steam · {0}</value></data>
   <data name="Home_SteamNotFound" xml:space="preserve"><value>Không tìm thấy Steam — đặt vị trí của nó trong Cài đặt.</value></data>
-  <data name="Home_BrowsingAsGuest" xml:space="preserve"><value>Đang duyệt với tư cách khách</value></data>
-  <data name="Home_SignedIn" xml:space="preserve"><value>Đã đăng nhập</value></data>
-  <data name="Home_SignedInAs" xml:space="preserve"><value>Đã đăng nhập với tên {0}</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
   <data name="Home_NoModeSelected" xml:space="preserve"><value>Chưa chọn chế độ</value></data>
   <data name="Home_ModeIs" xml:space="preserve"><value>Chế độ · {0}</value></data>
   <data name="Mode_Title" xml:space="preserve"><value>Chế độ</value></data>
@@ -174,8 +168,6 @@
   <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>Đã tắt — khởi động lại Steam để áp dụng.</value></data>
   <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>Đã cập nhật — khởi động lại Steam để áp dụng.</value></data>
   <data name="Onboarding_Title" xml:space="preserve"><value>Chào mừng đến với ứng dụng LuaTools!</value></data>
-  <data name="Onboarding_SignIn_Blurb" xml:space="preserve"><value>Đăng nhập để mở khóa thêm trò chơi và bản sửa lỗi.</value></data>
-  <data name="Onboarding_SignedIn" xml:space="preserve"><value>Đã đăng nhập ✓</value></data>
   <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>Áp dụng cài đặt được đề xuất</value></data>
   <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>Chế độ: BetterSteamTools · Bật FastFetch</value></data>
   <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>Cài đặt plugin nổi tiếng của chúng tôi</value></data>
@@ -303,8 +295,8 @@ Thao tác này xóa các tệp .lua khỏi Steam\config\stplug-in.</value></data
   <data name="Fixes_Count" xml:space="preserve"><value>{0} bản sửa lỗi</value></data>
   <data name="Fixes_Err_Load" xml:space="preserve"><value>Không thể tải bản sửa lỗi — kiểm tra kết nối của bạn.</value></data>
   <data name="Fixes_Empty_None" xml:space="preserve"><value>Chưa có bản sửa lỗi nào.</value></data>
-  <data name="Fixes_SignIn" xml:space="preserve"><value>Đăng nhập bằng Discord để tải bản sửa lỗi.</value></data>
-  <data name="Fixes_SignInRequired" xml:space="preserve"><value>Yêu cầu đăng nhập</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
   <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>Tải xuống thất bại</value></data>
   <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>Đã xảy ra lỗi — thử lại.</value></data>
   <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>Cài đặt thất bại</value></data>
@@ -345,8 +337,8 @@ Thao tác này xóa các tệp .lua khỏi Steam\config\stplug-in.</value></data
   <data name="Add_Generating" xml:space="preserve"><value>Đang tạo…</value></data>
   <data name="Add_DlcHint" xml:space="preserve"><value>Đặt tệp .lua vào steam\config\stplug-in — đảm bảo trò chơi gốc cũng đã được thêm. Tính vào giới hạn hàng ngày của bạn (25/ngày).</value></data>
   <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>Đã có tệp rồi?</value></data>
-  <data name="Add_SignIn_Dlc" xml:space="preserve"><value>Đăng nhập bằng Discord để xem các mở khóa DLC.</value></data>
-  <data name="Add_SignIn_Download" xml:space="preserve"><value>Đăng nhập bằng Discord để tải xuống.</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Không thể xác định trò chơi gốc cho DLC này</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Đã xảy ra lỗi — kiểm tra kết nối và thử lại.</value></data>
   <data name="Add_Err_Download" xml:space="preserve"><value>Tải xuống thất bại — kiểm tra kết nối và thử lại.</value></data>
@@ -514,16 +506,10 @@ Thao tác này xóa các tệp .lua khỏi Steam\config\stplug-in.</value></data
   <data name="Err_WriteFailedFile" xml:space="preserve"><value>Không ghi được {0}. Hãy đóng Steam và thử lại.</value></data>
   <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>Không mở được tệp tải xuống: {0}</value></data>
   <data name="Err_NoSourceAvailable" xml:space="preserve"><value>Không có nguồn nào khả dụng cho trò chơi này.</value></data>
-  <data name="Auth_Err_Timeout" xml:space="preserve"><value>Đăng nhập đã hết thời gian chờ. Trình duyệt không phản hồi.</value></data>
-  <data name="Auth_Err_TokenExchangeFailed" xml:space="preserve"><value>Trao đổi token thất bại ({0}): {1}</value></data>
-  <data name="Auth_Err_TokenExchangeEmpty" xml:space="preserve"><value>Trao đổi token trả về phiên rỗng.</value></data>
-  <data name="Auth_Err_NotSignedIn" xml:space="preserve"><value>Chưa đăng nhập.</value></data>
-  <data name="Auth_Err_RefreshFailed" xml:space="preserve"><value>Làm mới phiên thất bại ({0}).</value></data>
-  <data name="Auth_Err_RefreshEmpty" xml:space="preserve"><value>Làm mới phiên trả về phiên rỗng.</value></data>
   <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>Liên kết tải xuống trống. Hãy thử lại.</value></data>
   <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>Tải xuống thất bại ({0}).</value></data>
   <data name="Api_Err_RequestFailed" xml:space="preserve"><value>Yêu cầu thất bại ({0})</value></data>
-  <data name="Api_Err_SessionExpired" xml:space="preserve"><value>Phiên đã hết hạn. Vui lòng đăng nhập lại.</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
   <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Khóa Hubcap của bạn không hợp lệ hoặc đã hết hạn.</value></data>
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Bạn đã đạt giới hạn Hubcap hằng ngày.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Không có manifest Hubcap cho ứng dụng này.</value></data>
@@ -573,8 +559,8 @@ Thao tác này xóa các tệp .lua khỏi Steam\config\stplug-in.</value></data
   <data name="Depot_Err_NoSpace" xml:space="preserve"><value>Không đủ dung lượng đĩa: cần {0}, chỉ còn trống {1}.</value></data>
   <data name="Builds_Select_SaveTo" xml:space="preserve"><value>Lưu vào</value></data>
   <data name="Builds_Select_Space" xml:space="preserve"><value>Cần {0} · còn trống {1} trên {2}</value></data>
-  <data name="Builds_Select_SignIn" xml:space="preserve"><value>Đăng nhập để tải depot này.</value></data>
-  <data name="Depot_Err_SignIn" xml:space="preserve"><value>Đăng nhập để tải depot.</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
   <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>đang lấy manifest</value></data>
   <data name="Depot_Err_NoManifest" xml:space="preserve"><value>Không lấy được manifest của depot này.</value></data>
   <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>Đang chuẩn bị · {0} trên {1}</value></data>
@@ -624,4 +610,7 @@ Hủy - tiếp tục tải</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} đã thay đổi kể từ khi bản vá này được áp dụng, nên khôi phục sẽ ghi đè các thay đổi đó. Nếu bạn đã áp dụng bản vá khác lên trên, hãy hoàn tác bản đó trước. {1} tệp bị ảnh hưởng.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Bản sửa lỗi được hoàn tác một phần</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>Không thể khôi phục {0} tệp. Hãy đóng trò chơi và thử lại.</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
 </root>

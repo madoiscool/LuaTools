@@ -966,7 +966,7 @@ public partial class BuildsViewModel : PagedListViewModel<LuaTileViewModel>
                 string? blocked =
                     mid is null && r.FromAppId is null ? Resources.Strings.Builds_Select_NoManifest
                     : !keys.ContainsKey(r.Id) ? Resources.Strings.Builds_Select_NoKey
-                    : path is null && !_depotTool.CanFetchManifests ? Resources.Strings.Builds_Select_SignIn
+                    : path is null && !_depotTool.CanFetchManifests ? Resources.Strings.Builds_Select_NeedAuthKey
                     : null;
 
                 var pick = new DepotPickRow

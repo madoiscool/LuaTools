@@ -67,31 +67,27 @@
   <data name="Nav_Fixes" xml:space="preserve"><value>Poprawki</value></data>
   <data name="Nav_RestartSteam" xml:space="preserve"><value>Uruchom ponownie Steam</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>Ustawienia</value></data>
-  <data name="Nav_SignInDiscord" xml:space="preserve"><value>Zaloguj się przez Discord</value></data>
-  <data name="Nav_WaitingForBrowser" xml:space="preserve"><value>Oczekiwanie na przeglądarkę…</value></data>
-  <data name="Nav_Footer_Guest" xml:space="preserve"><value>Przeglądanie jako gość</value></data>
-  <data name="Nav_Footer_LoggedIn" xml:space="preserve"><value>Zalogowano</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
   <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>Uruchomić ponownie Steam teraz? Spowoduje to zamknięcie Steam i wszystkich uruchomionych gier, a następnie ponowne uruchomienie.</value></data>
   <data name="Settings_Title" xml:space="preserve"><value>Ustawienia</value></data>
-  <data name="Settings_Section_Account" xml:space="preserve"><value>KONTO</value></data>
   <data name="Settings_Section_General" xml:space="preserve"><value>OGÓLNE</value></data>
   <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
   <data name="Settings_Section_Install" xml:space="preserve"><value>INSTALACJA</value></data>
   <data name="Settings_Section_Community" xml:space="preserve"><value>SPOŁECZNOŚĆ</value></data>
-  <data name="Settings_SignOut" xml:space="preserve"><value>Wyloguj się</value></data>
-  <data name="Settings_BrowsingAsGuest" xml:space="preserve"><value>Przeglądanie jako gość</value></data>
-  <data name="Settings_GuestHint" xml:space="preserve"><value>Zaloguj się, aby pobierać manifesty i odblokowania DLC</value></data>
-  <data name="Settings_SignInDiscord" xml:space="preserve"><value>Zaloguj się przez Discord</value></data>
-  <data name="Settings_BotCode_Hint" xml:space="preserve"><value>Masz kod? Uruchom /login na Discordzie i wprowadź go tutaj.</value></data>
-  <data name="Settings_BotCode_Placeholder" xml:space="preserve"><value>A3X9K2</value></data>
-  <data name="Settings_BotCode_Redeem" xml:space="preserve"><value>Zrealizuj</value></data>
-  <data name="Settings_BotCode_Expired" xml:space="preserve"><value>Kod wygasł — uruchom /login ponownie.</value></data>
-  <data name="Settings_BotCode_Invalid" xml:space="preserve"><value>Nieprawidłowy lub nieznany kod.</value></data>
-  <data name="Settings_BotCode_ServerError" xml:space="preserve"><value>Błąd serwera — spróbuj ponownie.</value></data>
-  <data name="Settings_BotLink_Title" xml:space="preserve"><value>Dokończ łączenie konta</value></data>
-  <data name="Settings_BotLink_Body" xml:space="preserve"><value>Jesteś zalogowany tymczasowym kontem Discord. Zaloguj się na lua.tools, następnie uruchom /login ponownie i wprowadź kod, aby połączyć pełne konto.</value></data>
-  <data name="Settings_BotLink_Dismiss" xml:space="preserve"><value>Odrzuć</value></data>
-  <data name="Settings_LoginRequired" xml:space="preserve"><value>Ta akcja wymaga zalogowania.</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
   <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Zarządzaj swoim kluczem API Hubcap i profilem na</value></data>
   <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
   <data name="Settings_HubcapKey" xml:space="preserve"><value>Klucz API Hubcap</value></data>
@@ -140,9 +136,7 @@
   <data name="Home_CheckingSteam" xml:space="preserve"><value>Sprawdzanie Steam…</value></data>
   <data name="Home_SteamDetected" xml:space="preserve"><value>Wykryto Steam · {0}</value></data>
   <data name="Home_SteamNotFound" xml:space="preserve"><value>Nie znaleziono Steam — ustaw jego lokalizację w Ustawieniach.</value></data>
-  <data name="Home_BrowsingAsGuest" xml:space="preserve"><value>Przeglądanie jako gość</value></data>
-  <data name="Home_SignedIn" xml:space="preserve"><value>Zalogowano</value></data>
-  <data name="Home_SignedInAs" xml:space="preserve"><value>Zalogowano jako {0}</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
   <data name="Home_NoModeSelected" xml:space="preserve"><value>Nie wybrano trybu</value></data>
   <data name="Home_ModeIs" xml:space="preserve"><value>Tryb · {0}</value></data>
   <data name="Mode_Title" xml:space="preserve"><value>Tryb</value></data>
@@ -174,8 +168,6 @@
   <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>Wyłączono — uruchom ponownie Steam, aby zastosować.</value></data>
   <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>Zaktualizowano — uruchom ponownie Steam, aby zastosować.</value></data>
   <data name="Onboarding_Title" xml:space="preserve"><value>Witaj w aplikacji LuaTools!</value></data>
-  <data name="Onboarding_SignIn_Blurb" xml:space="preserve"><value>Zaloguj się, aby odblokować dodawanie gier i poprawek.</value></data>
-  <data name="Onboarding_SignedIn" xml:space="preserve"><value>Zalogowano ✓</value></data>
   <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>Zastosuj zalecane ustawienia</value></data>
   <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>Tryb: BetterSteamTools · FastFetch włączony</value></data>
   <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>Zainstaluj naszą słynną wtyczkę</value></data>
@@ -303,8 +295,8 @@ Spowoduje to usunięcie plików .lua z Steam\config\stplug-in.</value></data>
   <data name="Fixes_Count" xml:space="preserve"><value>Poprawki: {0}</value></data>
   <data name="Fixes_Err_Load" xml:space="preserve"><value>Nie udało się załadować poprawek — sprawdź połączenie.</value></data>
   <data name="Fixes_Empty_None" xml:space="preserve"><value>Brak dostępnych poprawek.</value></data>
-  <data name="Fixes_SignIn" xml:space="preserve"><value>Zaloguj się przez Discord, aby pobierać poprawki.</value></data>
-  <data name="Fixes_SignInRequired" xml:space="preserve"><value>Wymagane logowanie</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
   <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>Pobieranie nie powiodło się</value></data>
   <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>Coś poszło nie tak — spróbuj ponownie.</value></data>
   <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>Instalacja nie powiodła się</value></data>
@@ -345,8 +337,8 @@ Spowoduje to usunięcie plików .lua z Steam\config\stplug-in.</value></data>
   <data name="Add_Generating" xml:space="preserve"><value>Generowanie…</value></data>
   <data name="Add_DlcHint" xml:space="preserve"><value>Umieść plik .lua w steam\config\stplug-in — upewnij się, że gra podstawowa również jest dodana. Liczy się do twojego dziennego limitu (25/dzień).</value></data>
   <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>Masz już pliki?</value></data>
-  <data name="Add_SignIn_Dlc" xml:space="preserve"><value>Zaloguj się przez Discord, aby zobaczyć odblokowania DLC.</value></data>
-  <data name="Add_SignIn_Download" xml:space="preserve"><value>Zaloguj się przez Discord, aby pobierać.</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Nie udało się ustalić gry podstawowej dla tego DLC</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Coś poszło nie tak — sprawdź połączenie i spróbuj ponownie.</value></data>
   <data name="Add_Err_Download" xml:space="preserve"><value>Pobieranie nie powiodło się — sprawdź połączenie i spróbuj ponownie.</value></data>
@@ -514,16 +506,10 @@ Spowoduje to usunięcie plików .lua z Steam\config\stplug-in.</value></data>
   <data name="Err_WriteFailedFile" xml:space="preserve"><value>Nie udało się zapisać {0}. Zamknij Steam i spróbuj ponownie.</value></data>
   <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>Nie udało się otworzyć pobranego pliku: {0}</value></data>
   <data name="Err_NoSourceAvailable" xml:space="preserve"><value>Brak dostępnego źródła dla tej gry.</value></data>
-  <data name="Auth_Err_Timeout" xml:space="preserve"><value>Upłynął limit czasu logowania. Brak odpowiedzi z przeglądarki.</value></data>
-  <data name="Auth_Err_TokenExchangeFailed" xml:space="preserve"><value>Wymiana tokenu nie powiodła się ({0}): {1}</value></data>
-  <data name="Auth_Err_TokenExchangeEmpty" xml:space="preserve"><value>Wymiana tokenu zwróciła pustą sesję.</value></data>
-  <data name="Auth_Err_NotSignedIn" xml:space="preserve"><value>Nie zalogowano.</value></data>
-  <data name="Auth_Err_RefreshFailed" xml:space="preserve"><value>Odświeżenie sesji nie powiodło się ({0}).</value></data>
-  <data name="Auth_Err_RefreshEmpty" xml:space="preserve"><value>Odświeżenie sesji zwróciło pustą sesję.</value></data>
   <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>Link do pobrania był pusty. Spróbuj ponownie.</value></data>
   <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>Pobieranie nie powiodło się ({0}).</value></data>
   <data name="Api_Err_RequestFailed" xml:space="preserve"><value>Żądanie nie powiodło się ({0})</value></data>
-  <data name="Api_Err_SessionExpired" xml:space="preserve"><value>Sesja wygasła. Zaloguj się ponownie.</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
   <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Twój klucz Hubcap jest nieprawidłowy lub wygasł.</value></data>
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Osiągnięto dzienny limit Hubcap.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Brak manifestu Hubcap dla tej aplikacji.</value></data>
@@ -573,8 +559,8 @@ Spowoduje to usunięcie plików .lua z Steam\config\stplug-in.</value></data>
   <data name="Depot_Err_NoSpace" xml:space="preserve"><value>Za mało miejsca na dysku: potrzeba {0}, wolne tylko {1}.</value></data>
   <data name="Builds_Select_SaveTo" xml:space="preserve"><value>Zapisz w</value></data>
   <data name="Builds_Select_Space" xml:space="preserve"><value>Potrzeba {0} · wolne {1} na {2}</value></data>
-  <data name="Builds_Select_SignIn" xml:space="preserve"><value>Zaloguj się, aby pobrać ten depot.</value></data>
-  <data name="Depot_Err_SignIn" xml:space="preserve"><value>Zaloguj się, aby pobierać depoty.</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
   <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>pobieranie manifestu</value></data>
   <data name="Depot_Err_NoManifest" xml:space="preserve"><value>Nie udało się pobrać manifestu tego depotu.</value></data>
   <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>Przygotowywanie · {0} z {1}</value></data>
@@ -624,4 +610,7 @@ Anuluj - kontynuuj pobieranie</value></data>
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>Plik {0} zmienił się od zastosowania tej poprawki, więc przywrócenie nadpisałoby te zmiany. Jeśli zastosowano na wierzchu inną poprawkę, cofnij najpierw ją. Dotyczy {1} plik(ów).</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Poprawka cofnięta częściowo</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>Nie udało się przywrócić {0} plików. Zamknij grę i spróbuj ponownie.</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
 </root>

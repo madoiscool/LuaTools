@@ -67,31 +67,27 @@
   <data name="Nav_Fixes" xml:space="preserve"><value>Düzeltmeler</value></data>
   <data name="Nav_RestartSteam" xml:space="preserve"><value>Steam'i Yeniden Başlat</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>Ayarlar</value></data>
-  <data name="Nav_SignInDiscord" xml:space="preserve"><value>Discord ile giriş yap</value></data>
-  <data name="Nav_WaitingForBrowser" xml:space="preserve"><value>Tarayıcı bekleniyor…</value></data>
-  <data name="Nav_Footer_Guest" xml:space="preserve"><value>Misafir olarak geziniyor</value></data>
-  <data name="Nav_Footer_LoggedIn" xml:space="preserve"><value>Giriş yapıldı</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
   <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>Steam şimdi yeniden başlatılsın mı? Bu, Steam'i ve çalışan tüm oyunları kapatır, ardından yeniden başlatır.</value></data>
   <data name="Settings_Title" xml:space="preserve"><value>Ayarlar</value></data>
-  <data name="Settings_Section_Account" xml:space="preserve"><value>HESAP</value></data>
   <data name="Settings_Section_General" xml:space="preserve"><value>GENEL</value></data>
   <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
   <data name="Settings_Section_Install" xml:space="preserve"><value>KURULUM</value></data>
   <data name="Settings_Section_Community" xml:space="preserve"><value>TOPLULUK</value></data>
-  <data name="Settings_SignOut" xml:space="preserve"><value>Çıkış yap</value></data>
-  <data name="Settings_BrowsingAsGuest" xml:space="preserve"><value>Misafir olarak geziniyor</value></data>
-  <data name="Settings_GuestHint" xml:space="preserve"><value>Manifestoları ve DLC kilit açmalarını indirmek için giriş yapın</value></data>
-  <data name="Settings_SignInDiscord" xml:space="preserve"><value>Discord ile giriş yap</value></data>
-  <data name="Settings_BotCode_Hint" xml:space="preserve"><value>Kodun var mı? Discord'da /login komutunu çalıştır ve buraya gir.</value></data>
-  <data name="Settings_BotCode_Placeholder" xml:space="preserve"><value>A3X9K2</value></data>
-  <data name="Settings_BotCode_Redeem" xml:space="preserve"><value>Kullan</value></data>
-  <data name="Settings_BotCode_Expired" xml:space="preserve"><value>Kodun süresi doldu — /login komutunu tekrar çalıştır.</value></data>
-  <data name="Settings_BotCode_Invalid" xml:space="preserve"><value>Geçersiz veya bilinmeyen kod.</value></data>
-  <data name="Settings_BotCode_ServerError" xml:space="preserve"><value>Sunucu hatası — tekrar dene.</value></data>
-  <data name="Settings_BotLink_Title" xml:space="preserve"><value>Hesabını bağlamayı tamamla</value></data>
-  <data name="Settings_BotLink_Body" xml:space="preserve"><value>Geçici bir Discord hesabıyla giriş yaptın. lua.tools'ta oturum aç, ardından /login komutunu tekrar çalıştır ve tam hesabını bağlamak için kodu gir.</value></data>
-  <data name="Settings_BotLink_Dismiss" xml:space="preserve"><value>Kapat</value></data>
-  <data name="Settings_LoginRequired" xml:space="preserve"><value>Bu işlem için giriş yapmanız gerekiyor.</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
   <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Hubcap API anahtarınızı ve profilinizi şurada yönetin:</value></data>
   <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
   <data name="Settings_HubcapKey" xml:space="preserve"><value>Hubcap API anahtarı</value></data>
@@ -140,9 +136,7 @@
   <data name="Home_CheckingSteam" xml:space="preserve"><value>Steam denetleniyor…</value></data>
   <data name="Home_SteamDetected" xml:space="preserve"><value>Steam algılandı · {0}</value></data>
   <data name="Home_SteamNotFound" xml:space="preserve"><value>Steam bulunamadı — konumunu Ayarlar'da belirtin.</value></data>
-  <data name="Home_BrowsingAsGuest" xml:space="preserve"><value>Misafir olarak geziniyor</value></data>
-  <data name="Home_SignedIn" xml:space="preserve"><value>Giriş yapıldı</value></data>
-  <data name="Home_SignedInAs" xml:space="preserve"><value>{0} olarak giriş yapıldı</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
   <data name="Home_NoModeSelected" xml:space="preserve"><value>Hiçbir mod seçilmedi</value></data>
   <data name="Home_ModeIs" xml:space="preserve"><value>Mod · {0}</value></data>
   <data name="Mode_Title" xml:space="preserve"><value>Mod</value></data>
@@ -174,8 +168,6 @@
   <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>Devre dışı bırakıldı — uygulamak için Steam'i yeniden başlatın.</value></data>
   <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>Güncellendi — uygulamak için Steam'i yeniden başlatın.</value></data>
   <data name="Onboarding_Title" xml:space="preserve"><value>LuaTools uygulamasına hoş geldiniz!</value></data>
-  <data name="Onboarding_SignIn_Blurb" xml:space="preserve"><value>Oyun ve düzeltme eklemeyi açmak için giriş yapın.</value></data>
-  <data name="Onboarding_SignedIn" xml:space="preserve"><value>Giriş yapıldı ✓</value></data>
   <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>Önerilen ayarları uygula</value></data>
   <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>Mod: BetterSteamTools · FastFetch açık</value></data>
   <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>Ünlü eklentimizi yükle</value></data>
@@ -303,8 +295,8 @@ Bu, .lua dosyalarını Steam\config\stplug-in konumundan siler.</value></data>
   <data name="Fixes_Count" xml:space="preserve"><value>{0} düzeltme</value></data>
   <data name="Fixes_Err_Load" xml:space="preserve"><value>Düzeltmeler yüklenemedi — bağlantınızı kontrol edin.</value></data>
   <data name="Fixes_Empty_None" xml:space="preserve"><value>Henüz kullanılabilir düzeltme yok.</value></data>
-  <data name="Fixes_SignIn" xml:space="preserve"><value>Düzeltmeleri indirmek için Discord ile giriş yapın.</value></data>
-  <data name="Fixes_SignInRequired" xml:space="preserve"><value>Giriş gerekli</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
   <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>İndirme başarısız</value></data>
   <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>Bir şeyler ters gitti — tekrar deneyin.</value></data>
   <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>Kurulum başarısız</value></data>
@@ -345,8 +337,8 @@ Bu, .lua dosyalarını Steam\config\stplug-in konumundan siler.</value></data>
   <data name="Add_Generating" xml:space="preserve"><value>Oluşturuluyor…</value></data>
   <data name="Add_DlcHint" xml:space="preserve"><value>.lua dosyasını steam\config\stplug-in içine koyun — ana oyunun da eklendiğinden emin olun. Günlük sınırınıza dahildir (25/gün).</value></data>
   <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>Dosyalar zaten sizde mi?</value></data>
-  <data name="Add_SignIn_Dlc" xml:space="preserve"><value>DLC kilit açmalarını görüntülemek için Discord ile giriş yapın.</value></data>
-  <data name="Add_SignIn_Download" xml:space="preserve"><value>İndirmek için Discord ile giriş yapın.</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
   <data name="Add_Err_BaseGame" xml:space="preserve"><value>Bu DLC'nin ana oyunu belirlenemedi</value></data>
   <data name="Add_Err_Generic" xml:space="preserve"><value>Bir şeyler ters gitti — bağlantınızı kontrol edip tekrar deneyin.</value></data>
   <data name="Add_Err_Download" xml:space="preserve"><value>İndirme başarısız — bağlantınızı kontrol edip tekrar deneyin.</value></data>
@@ -514,16 +506,10 @@ Bu, .lua dosyalarını Steam\config\stplug-in konumundan siler.</value></data>
   <data name="Err_WriteFailedFile" xml:space="preserve"><value>{0} yazılamadı. Steam'i kapatıp tekrar dene.</value></data>
   <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>İndirme açılamadı: {0}</value></data>
   <data name="Err_NoSourceAvailable" xml:space="preserve"><value>Bu oyun için kullanılabilir kaynak yok.</value></data>
-  <data name="Auth_Err_Timeout" xml:space="preserve"><value>Oturum açma zaman aşımına uğradı. Tarayıcıdan yanıt gelmedi.</value></data>
-  <data name="Auth_Err_TokenExchangeFailed" xml:space="preserve"><value>Token değişimi başarısız ({0}): {1}</value></data>
-  <data name="Auth_Err_TokenExchangeEmpty" xml:space="preserve"><value>Token değişimi boş bir oturum döndürdü.</value></data>
-  <data name="Auth_Err_NotSignedIn" xml:space="preserve"><value>Oturum açılmadı.</value></data>
-  <data name="Auth_Err_RefreshFailed" xml:space="preserve"><value>Oturum yenileme başarısız ({0}).</value></data>
-  <data name="Auth_Err_RefreshEmpty" xml:space="preserve"><value>Oturum yenileme boş bir oturum döndürdü.</value></data>
   <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>İndirme bağlantısı boştu. Tekrar dene.</value></data>
   <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>İndirme başarısız ({0}).</value></data>
   <data name="Api_Err_RequestFailed" xml:space="preserve"><value>İstek başarısız ({0})</value></data>
-  <data name="Api_Err_SessionExpired" xml:space="preserve"><value>Oturum süresi doldu. Lütfen tekrar giriş yap.</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
   <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Hubcap anahtarın geçersiz veya süresi dolmuş.</value></data>
   <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Günlük Hubcap sınırına ulaştın.</value></data>
   <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Bu uygulama için Hubcap manifesti yok.</value></data>
@@ -573,8 +559,8 @@ Bu, .lua dosyalarını Steam\config\stplug-in konumundan siler.</value></data>
   <data name="Depot_Err_NoSpace" xml:space="preserve"><value>Yeterli disk alanı yok: {0} gerekiyor, yalnızca {1} boş.</value></data>
   <data name="Builds_Select_SaveTo" xml:space="preserve"><value>Kaydedilecek yer</value></data>
   <data name="Builds_Select_Space" xml:space="preserve"><value>{0} gerekiyor · {2} sürücüsünde {1} boş</value></data>
-  <data name="Builds_Select_SignIn" xml:space="preserve"><value>Bu depotu indirmek için giriş yap.</value></data>
-  <data name="Depot_Err_SignIn" xml:space="preserve"><value>Depot indirmek için giriş yap.</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
   <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>manifest alınıyor</value></data>
   <data name="Depot_Err_NoManifest" xml:space="preserve"><value>Bu depotun manifest dosyası alınamadı.</value></data>
   <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>Hazırlanıyor · {0} / {1}</value></data>
@@ -624,4 +610,7 @@ Hayır - durdur ama dosyaları koru
   <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>Bu düzeltme uygulandıktan sonra {0} değişti; geri yüklemek bu değişikliklerin üzerine yazar. Üstüne başka bir düzeltme uyguladıysanız önce onu geri alın. {1} dosya etkilendi.</value></data>
   <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Düzeltme kısmen geri alındı</value></data>
   <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} dosya geri yüklenemedi. Oyunu kapatıp tekrar deneyin.</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
 </root>

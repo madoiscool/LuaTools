@@ -69,7 +69,7 @@ public class PluginAddService(
             GameName = string.IsNullOrWhiteSpace(gameName) ? null : gameName.Trim(),
         };
         _states[appId] = state;
-        PluginLog.Log($"PluginAdd.Start appid={appId} fastFetch={state.FastFetch} guest={auth.IsGuest}");
+        PluginLog.Log($"PluginAdd.Start appid={appId} fastFetch={state.FastFetch} hasKey={!auth.IsGuest}");
         _ = Task.Run(() => CheckAsync(appId, state));
     }
 
