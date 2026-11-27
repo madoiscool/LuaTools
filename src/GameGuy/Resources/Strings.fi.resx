@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- fi -->
+    <data name="App_Name" xml:space="preserve"><value>GameGuy</value></data>
+  <data name="Nav_Home" xml:space="preserve"><value>Etusivu</value></data>
+  <data name="Nav_Add" xml:space="preserve"><value>Lisää</value></data>
+  <data name="Nav_Manage" xml:space="preserve"><value>Hallinta</value></data>
+  <data name="Nav_Mode" xml:space="preserve"><value>Tila</value></data>
+  <data name="Nav_Fixes" xml:space="preserve"><value>Korjaukset</value></data>
+  <data name="Nav_RestartSteam" xml:space="preserve"><value>Käynnistä Steam uudelleen</value></data>
+  <data name="Nav_Settings" xml:space="preserve"><value>Asetukset</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
+  <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>Käynnistetäänkö Steam nyt uudelleen? Tämä sulkee Steamin ja kaikki käynnissä olevat pelit ja käynnistää sen sitten uudelleen.</value></data>
+  <data name="Settings_Title" xml:space="preserve"><value>Asetukset</value></data>
+  <data name="Settings_Section_General" xml:space="preserve"><value>YLEISET</value></data>
+  <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
+  <data name="Settings_Section_Install" xml:space="preserve"><value>ASENNUS</value></data>
+  <data name="Settings_Section_Community" xml:space="preserve"><value>YHTEISÖ</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
+  <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Hallinnoi Hubcap API -avaintasi ja profiiliasi osoitteessa</value></data>
+  <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
+  <data name="Settings_HubcapKey" xml:space="preserve"><value>Hubcap API -avain</value></data>
+  <data name="Settings_HubcapKey_Hint" xml:space="preserve"><value>Liitä henkilökohtainen Hubcap API -avaimesi avataksesi Hubcap-manifestit. Sovellus yhdistää Hubcapiin suoraan avaimellasi.</value></data>
+  <data name="Settings_HubcapKeyPlaceholder" xml:space="preserve"><value>Liitä API-avaimesi (smm_…)</value></data>
+  <data name="Settings_HubcapValidate" xml:space="preserve"><value>Vahvista ja tallenna</value></data>
+  <data name="Settings_HubcapClear" xml:space="preserve"><value>Tyhjennä</value></data>
+  <data name="Settings_HubcapGetKey" xml:space="preserve"><value>Hanki avain osoitteesta</value></data>
+  <data name="Settings_HubcapKeyOk" xml:space="preserve"><value>{0}/{1} pyyntöä tänään</value></data>
+  <data name="Settings_HubcapKeyOkExpiry" xml:space="preserve"><value>{0}/{1} tänään · vanhenee {2}</value></data>
+  <data name="Settings_HubcapKeyBad" xml:space="preserve"><value>Tämä ei näytä kelvolliselta avaimelta (smm_…).</value></data>
+  <data name="Settings_HubcapKeyError" xml:space="preserve"><value>Avainta ei voitu vahvistaa — se voi olla virheellinen, vanhentunut, tai Hubcapiin ei saada yhteyttä.</value></data>
+  <data name="Settings_HubcapActive" xml:space="preserve"><value>Aktiivinen</value></data>
+  <data name="Settings_HubcapRefresh" xml:space="preserve"><value>Päivitä</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>Kieli</value></data>
+  <data name="Settings_Language_Hint" xml:space="preserve"><value>Valitse sovelluksen näyttökieli. Otetaan käyttöön uudelleenkäynnistyksen jälkeen.</value></data>
+  <data name="Settings_Language_SystemDefault" xml:space="preserve"><value>Järjestelmän oletus</value></data>
+  <data name="Settings_Dns" xml:space="preserve"><value>DNS-selvitys</value></data>
+  <data name="Settings_Dns_Hint" xml:space="preserve"><value>Jos operaattorisi estää lua.tools-sivuston, sovellus voi selvittää osoitteet Cloudflaren (1.1.1.1) kautta järjestelmän selvittäjän sijaan. ”Automaattinen” vaihtaa vasta, kun tavallinen DNS epäonnistuu.</value></data>
+  <data name="Settings_Dns_Auto" xml:space="preserve"><value>Automaattinen</value></data>
+  <data name="Settings_Dns_Always" xml:space="preserve"><value>Käytä aina Cloudflarea</value></data>
+  <data name="Settings_Dns_Never" xml:space="preserve"><value>Käytä vain järjestelmän DNS:ää</value></data>
+  <data name="Settings_SteamLocation" xml:space="preserve"><value>Steamin sijainti</value></data>
+  <data name="Settings_Change" xml:space="preserve"><value>Muuta…</value></data>
+  <data name="Settings_Open" xml:space="preserve"><value>Avaa</value></data>
+  <data name="Settings_ResetToAuto" xml:space="preserve"><value>Palauta automaattiseksi</value></data>
+  <data name="Settings_AutoUpdateApps" xml:space="preserve"><value>Päivitä pelit automaattisesti (älä lukitse manifesteja)</value></data>
+  <data name="Settings_AutoUpdateApps_Hint" xml:space="preserve"><value>Asentaa kiinnittämättä versiota, joten Steam pitää pelit ajan tasalla. Poista käytöstä lukitaksesi pelit ladattuun versioon.</value></data>
+  <data name="Settings_DonateKeys" xml:space="preserve"><value>Lahjoita salauksenpurkuavaimia</value></data>
+  <data name="Settings_DonateKeys_Hint" xml:space="preserve"><value>Jaa ylimääräiset Steamin depo-salauksenpurkuavaimet kasvattaaksesi yhteisön varantoa. Vain vahvistetut avaimet lähetetään — ei tilitietoja tai henkilötietoja.</value></data>
+  <data name="Settings_SteamNotFound" xml:space="preserve"><value>Steamia ei löytynyt</value></data>
+  <data name="Settings_SteamSource_Custom" xml:space="preserve"><value>Mukautettu sijainti</value></data>
+  <data name="Settings_SteamSource_NotFound" xml:space="preserve"><value>Ei löytynyt</value></data>
+  <data name="Settings_SteamSource_Auto" xml:space="preserve"><value>Tunnistettu automaattisesti rekisteristä</value></data>
+  <data name="Settings_SteamWarning_NoExe" xml:space="preserve"><value>steam.exe-tiedostoa ei löytynyt tästä kansiosta.</value></data>
+  <data name="Settings_ChooseSteamFolder" xml:space="preserve"><value>Valitse Steam-kansiosi</value></data>
+  <data name="Lang_Changed_Title" xml:space="preserve"><value>Kieli vaihdettu</value></data>
+  <data name="Lang_Changed_Body" xml:space="preserve"><value>Käynnistä sovellus uudelleen ottaaksesi uuden kielen käyttöön.</value></data>
+  <data name="Lang_Changed_Restart" xml:space="preserve"><value>Käynnistä nyt uudelleen</value></data>
+  <data name="Home_Welcome" xml:space="preserve"><value>Tervetuloa GameGuyiin</value></data>
+  <data name="Home_LuasOnBoard" xml:space="preserve"><value>Lua-tiedostoja</value></data>
+  <data name="Home_LastAdded" xml:space="preserve"><value>VIIMEKSI LISÄTTY</value></data>
+  <data name="Home_PluginStatus" xml:space="preserve"><value>Laajennuksen tila</value></data>
+  <data name="Home_RecentlyAdded" xml:space="preserve"><value>Äskettäin lisätyt</value></data>
+  <data name="Home_ViewDetails" xml:space="preserve"><value>Näytä tiedot</value></data>
+  <data name="Home_CheckingSteam" xml:space="preserve"><value>Tarkistetaan Steamia…</value></data>
+  <data name="Home_SteamDetected" xml:space="preserve"><value>Steam havaittu · {0}</value></data>
+  <data name="Home_SteamNotFound" xml:space="preserve"><value>Steamia ei löytynyt — määritä sen sijainti Asetuksissa.</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
+  <data name="Home_NoModeSelected" xml:space="preserve"><value>Tilaa ei ole valittu</value></data>
+  <data name="Home_ModeIs" xml:space="preserve"><value>Tila · {0}</value></data>
+  <data name="Mode_Title" xml:space="preserve"><value>Tila</value></data>
+  <data name="Mode_Subtitle" xml:space="preserve"><value>Vaihda taustajärjestelmää, jota käytetään GameGuyilla lisättyjen pelien avaamiseen — vain yksi aktiivinen kerrallaan.</value></data>
+  <data name="Mode_CheckForUpdates" xml:space="preserve"><value>Tarkista päivitykset</value></data>
+  <data name="Mode_Active" xml:space="preserve"><value>AKTIIVINEN</value></data>
+  <data name="Mode_Recommended" xml:space="preserve"><value>SUOSITELTU</value></data>
+  <data name="Mode_Confirm_Body" xml:space="preserve"><value>Steam suljetaan, jotta sen tiedostoja voidaan muuttaa, ja käynnistetään sitten automaattisesti uudelleen. Kaikki käynnissä olevat pelit tai lataukset pysähtyvät.</value></data>
+  <data name="Mode_Cancel" xml:space="preserve"><value>Peruuta</value></data>
+  <data name="Mode_CloseSteamContinue" xml:space="preserve"><value>Sulje Steam ja jatka</value></data>
+  <data name="Mode_Desc_Bst" xml:space="preserve"><value>Avoimen lähdekoodin fork OpenSteamToolsista, jota GameGuy-tiimi ylläpitää aktiivisesti. Korjauksia ja uusia ominaisuuksia!</value></data>
+  <data name="Mode_CloudRedirect_Manage" xml:space="preserve"><value>Hallinta</value></data>
+  <data name="Mode_CloudRedirect_LaunchFailed" xml:space="preserve"><value>CloudRedirectin lataaminen tai käynnistäminen epäonnistui.</value></data>
+  <data name="Mode_Desc_Ost" xml:space="preserve"><value>OpenSteamToolsin yöllinen koontiversio uusimmasta lähdekoodista. Uusimmat korjaukset, mutta voi olla epävakaampi.</value></data>
+  <data name="Mode_UserManaged" xml:space="preserve"><value>Nyt olet omillasi</value></data>
+  <data name="Mode_Desc_Custom" xml:space="preserve"><value>Käytä omaa avausratkaisuasi, me emme koske siihen</value></data>
+  <data name="Mode_Name_Custom" xml:space="preserve"><value>Oma unlocker</value></data>
+  <data name="Mode_Experimental" xml:space="preserve"><value>KOKEELLINEN</value></data>
+  <data name="Mode_CloudRedirectSupport" xml:space="preserve"><value>CLOUDREDIRECT-TUKI</value></data>
+  <data name="Mode_CloudRedirect_AddonDesc" xml:space="preserve"><value>Palauttaa natiivin Steam Cloud -tuen kolmannen osapuolen tallennuspalveluiden, kuten Google Drive / OneDrive / Cloudflare R2 ja muiden, kautta. Toistaiseksi yhteensopiva vain OpenSteamTools / BetterSteamToolsin kanssa. Muista määrittää se napsauttamalla "Hallinta" käyttöönoton jälkeen ja käynnistä sitten Steam uudelleen!</value></data>
+  <data name="Mode_CloudRedirect_Locked" xml:space="preserve"><value>Valitse OpenSteamTools / BetterSteamTools käyttääksesi CloudRedirectiä.</value></data>
+  <data name="Mode_CloudRedirect_Enable" xml:space="preserve"><value>Ota käyttöön</value></data>
+  <data name="Mode_CloudRedirect_Disable" xml:space="preserve"><value>Poista käytöstä</value></data>
+  <data name="Mode_CloudRedirect_Status_Enabled" xml:space="preserve"><value>Käytössä.</value></data>
+  <data name="Mode_CloudRedirect_Status_Disabled" xml:space="preserve"><value>Asennettu, mutta pois käytöstä.</value></data>
+  <data name="Mode_CloudRedirect_Status_NotInstalled" xml:space="preserve"><value>Ei vielä asennettu.</value></data>
+  <data name="Mode_CloudRedirect_Status_UpdateAvailable" xml:space="preserve"><value>Päivitys saatavilla.</value></data>
+  <data name="Mode_CloudRedirect_Toast_Enabled" xml:space="preserve"><value>Otettu käyttöön — käynnistä Steam uudelleen ottaaksesi käyttöön.</value></data>
+  <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>Poistettu käytöstä — käynnistä Steam uudelleen ottaaksesi käyttöön.</value></data>
+  <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>Päivitetty — käynnistä Steam uudelleen ottaaksesi käyttöön.</value></data>
+  <data name="Onboarding_Title" xml:space="preserve"><value>Tervetuloa GameGuy-sovellukseen!</value></data>
+  <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>Ota suositellut asetukset käyttöön</value></data>
+  <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>Tila: BetterSteamTools · FastFetch päällä</value></data>
+  <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>Asenna kuuluisa lisäosamme</value></data>
+  <data name="Onboarding_Plugin_Detail" xml:space="preserve"><value>Lisää "Add via LuaTools" -painikkeen Steamin kauppasivuille.</value></data>
+  <data name="Onboarding_Yes" xml:space="preserve"><value>Kyllä kiitos</value></data>
+  <data name="Onboarding_No" xml:space="preserve"><value>Ei kiitos</value></data>
+  <data name="Onboarding_Go" xml:space="preserve"><value>Aloitetaan!</value></data>
+  <data name="Onboarding_Applying" xml:space="preserve"><value>Valmistellaan…</value></data>
+  <data name="Mode_Checking" xml:space="preserve"><value>Tarkistetaan…</value></data>
+  <data name="Mode_StatusUnavailable" xml:space="preserve"><value>Tila ei käytettävissä (offline?)</value></data>
+  <data name="Mode_NotActive" xml:space="preserve"><value>Ei aktiivinen</value></data>
+  <data name="Mode_NotInstalled" xml:space="preserve"><value>Ei asennettu</value></data>
+  <data name="Mode_UpToDate" xml:space="preserve"><value>Ajan tasalla</value></data>
+  <data name="Mode_UpdateAvailable" xml:space="preserve"><value>Päivitys saatavilla</value></data>
+  <data name="Mode_Btn_Reinstall" xml:space="preserve"><value>Asenna uudelleen</value></data>
+  <data name="Mode_Btn_Update" xml:space="preserve"><value>Päivitä</value></data>
+  <data name="Mode_Btn_Install" xml:space="preserve"><value>Asenna</value></data>
+  <data name="Mode_Btn_Switch" xml:space="preserve"><value>Vaihda tähän</value></data>
+  <data name="Mode_Confirm_Reinstall" xml:space="preserve"><value>Asennetaanko {0} uudelleen?</value></data>
+  <data name="Mode_Confirm_Switch" xml:space="preserve"><value>Vaihdetaanko tilaan {0}?</value></data>
+  <data name="Mode_Toast_Updated" xml:space="preserve"><value>Tila päivitetty</value></data>
+  <data name="Mode_Toast_Updated_Restarting" xml:space="preserve"><value>{0} on asennettu — Steam käynnistyy uudelleen.</value></data>
+  <data name="Mode_Toast_Updated_Start" xml:space="preserve"><value>{0} on asennettu. Käynnistä Steam käyttääksesi sitä.</value></data>
+  <data name="Mode_Toast_InstallFailed" xml:space="preserve"><value>Asennus epäonnistui</value></data>
+  <data name="Mode_Toast_InstallFailed_Body" xml:space="preserve"><value>Jokin meni pieleen.</value></data>
+  <data name="Drop_Title" xml:space="preserve"><value>Pudota .lua-, .manifest- tai .zip-tiedostoja tähän</value></data>
+  <data name="Drop_BrowseFiles" xml:space="preserve"><value>Selaa tiedostoja…</value></data>
+  <data name="Drop_Picker_Title" xml:space="preserve"><value>Valitse .lua- / .manifest- / .zip-tiedostoja</value></data>
+  <data name="Drop_Picker_Filter" xml:space="preserve"><value>Lua / manifest / zip|*.lua;*.manifest;*.zip|Kaikki tiedostot|*.*</value></data>
+  <data name="Drop_Nothing" xml:space="preserve"><value>Ei mitään asennettavaa — pudota .lua-, .manifest- tai .zip-tiedostoja.</value></data>
+  <data name="Drop_Confirm_Replace" xml:space="preserve"><value>Korvataanko "{0}"?</value></data>
+  <data name="Drop_Confirm_NoChanges" xml:space="preserve"><value>Ei depo-/DLC-muutoksia — sama sisältö.</value></data>
+  <data name="Drop_NothingInstalled" xml:space="preserve"><value>Mitään ei asennettu (peruutettu tai tunnistamattomat tiedostonimet).</value></data>
+  <data name="Drop_Count_Luas" xml:space="preserve"><value>{0} lua</value></data>
+  <data name="Drop_Count_Manifests" xml:space="preserve"><value>{0} manifestia</value></data>
+  <data name="Drop_Result_Installed" xml:space="preserve"><value>{0} asennettu Steamiin.</value></data>
+  <data name="Drop_Result_Failed" xml:space="preserve"><value> {0} tiedostoa epäonnistui — sulje Steam ja yritä uudelleen.</value></data>
+  <data name="Common_SearchPlaceholder" xml:space="preserve"><value>Hae nimellä tai App ID:llä...</value></data>
+  <data name="Common_Loading" xml:space="preserve"><value>Ladataan…</value></data>
+  <data name="Common_AppId" xml:space="preserve"><value>App ID: {0}</value></data>
+  <data name="Common_AppFallback" xml:space="preserve"><value>Sovellus {0}</value></data>
+  <data name="Manage_Title" xml:space="preserve"><value>Hallinta</value></data>
+  <data name="Manage_Refresh" xml:space="preserve"><value>Päivitä</value></data>
+  <data name="Manage_Filters" xml:space="preserve"><value>Suodattimet</value></data>
+  <data name="Manage_Filter_Type" xml:space="preserve"><value>Tyyppi</value></data>
+  <data name="Manage_Filter_Genre" xml:space="preserve"><value>Lajityyppi</value></data>
+  <data name="Manage_Filter_Year" xml:space="preserve"><value>Vuosi</value></data>
+  <data name="Manage_Filter_Price" xml:space="preserve"><value>Hinta</value></data>
+  <data name="Manage_Filter_Content" xml:space="preserve"><value>Sisältö</value></data>
+  <data name="Manage_Content_HideAdult" xml:space="preserve"><value>Piilota aikuissisältö (18+)</value></data>
+  <data name="Manage_Content_AdultOnly" xml:space="preserve"><value>Vain aikuisille</value></data>
+  <data name="Manage_Filter_SortBy" xml:space="preserve"><value>Lajittele</value></data>
+  <data name="Manage_ClearFilters" xml:space="preserve"><value>Tyhjennä suodattimet</value></data>
+  <data name="Manage_Select" xml:space="preserve"><value>Valitse</value></data>
+  <data name="Manage_DeleteThisLua" xml:space="preserve"><value>Poista tämä lua</value></data>
+  <data name="Manage_ResultsPerPage" xml:space="preserve"><value>Tuloksia sivulla</value></data>
+  <data name="Manage_Action_ViewDetails" xml:space="preserve"><value>Näytä tiedot</value></data>
+  <data name="Manage_Action_Update" xml:space="preserve"><value>Päivitä / lataa uudelleen</value></data>
+  <data name="Manage_Action_OpenStore" xml:space="preserve"><value>Avaa kauppasivu</value></data>
+  <data name="Manage_Action_OpenInSteam" xml:space="preserve"><value>Avaa Steamissa</value></data>
+  <data name="Manage_Action_Reveal" xml:space="preserve"><value>Näytä .lua</value></data>
+  <data name="Manage_Action_CopyAppId" xml:space="preserve"><value>Kopioi App ID</value></data>
+  <data name="Manage_Action_RemoveDrm" xml:space="preserve"><value>Poista Steam-DRM</value></data>
+  <data name="Manage_ActionsHeader" xml:space="preserve"><value>Toiminnot</value></data>
+  <data name="Manage_Steamless_Confirm_Title" xml:space="preserve"><value>Poistetaanko Steam-DRM?</value></data>
+  <data name="Manage_Steamless_Confirm_Body" xml:space="preserve"><value>Tämä suorittaa Steamlessin pelin suoritettavaan tiedostoon SteamStub-DRM:n poistamiseksi. Alkuperäinen .exe varmuuskopioidaan ensin .bak-tiedostoksi. Jotkin pelit voivat vaatia jälkeenpäin tiedostojen vahvistuksen Steamissa. Jatketaanko?</value></data>
+  <data name="Manage_Steamless_Working" xml:space="preserve"><value>Poistetaan Steam-DRM:ää…</value></data>
+  <data name="Manage_Toast_Steamless_Done" xml:space="preserve"><value>{0} käsitelty, {1} ennallaan.</value></data>
+  <data name="Manage_Steamless_NoInstall" xml:space="preserve"><value>Pelikansiota ei löytynyt — onko se asennettu?</value></data>
+  <data name="Manage_Steamless_Failed" xml:space="preserve"><value>DRM:n poistaminen epäonnistui. {0}</value></data>
+  <data name="Manage_CopyAppIdTip" xml:space="preserve"><value>Napsauta kopioidaksesi App ID:n</value></data>
+  <data name="Manage_LoadingDepotInfo" xml:space="preserve"><value>Ladataan depo-tietoja…</value></data>
+  <data name="Manage_MissingHint" xml:space="preserve"><value>Steamissa mutta ei luassasi (usein sensuroituja tai mustalle listalle asetettuja depoja)</value></data>
+  <data name="Manage_UnknownHint" xml:space="preserve"><value>Rikkinäisiä, julkaisemattomia tai jaettuja uudelleenjaettavia depoja — yleensä ei syytä huoleen</value></data>
+  <data name="Manage_Clear" xml:space="preserve"><value>Tyhjennä</value></data>
+  <data name="Manage_DeleteSelected" xml:space="preserve"><value>Poista valitut</value></data>
+  <data name="Manage_LoadingGames" xml:space="preserve"><value>Ladataan pelejäsi…</value></data>
+  <data name="Manage_Opt_Any" xml:space="preserve"><value>Mikä tahansa</value></data>
+  <data name="Manage_Opt_Free" xml:space="preserve"><value>Ilmainen</value></data>
+  <data name="Manage_Opt_Paid" xml:space="preserve"><value>Maksullinen</value></data>
+  <data name="Manage_Sort_RecentlyAdded" xml:space="preserve"><value>Äskettäin lisätyt</value></data>
+  <data name="Manage_Sort_NameAZ" xml:space="preserve"><value>Nimi (A–Z)</value></data>
+  <data name="Manage_Sort_ReleaseNewest" xml:space="preserve"><value>Julkaisupäivä (uusin)</value></data>
+  <data name="Manage_Sort_Metacritic" xml:space="preserve"><value>Metacritic</value></data>
+  <data name="Manage_Sort_MostReviewed" xml:space="preserve"><value>Eniten arvosteluja</value></data>
+  <data name="Manage_PageSize_All" xml:space="preserve"><value>Kaikki</value></data>
+  <data name="Manage_PageLabel" xml:space="preserve"><value>Sivu {0} / {1}</value></data>
+  <data name="Manage_SelectionLabel" xml:space="preserve"><value>{0} valittu</value></data>
+  <data name="Manage_FetchingDetails" xml:space="preserve"><value>Haetaan tietoja {0} sovellukselle</value></data>
+  <data name="Manage_Empty_NoMatch" xml:space="preserve"><value>Mikään peli ei vastaa suodattimiasi.</value></data>
+  <data name="Manage_Empty_NoLuas" xml:space="preserve"><value>Lua-tiedostoja ei vielä löytynyt. Lisää peli Lisää-välilehdeltä.</value></data>
+  <data name="Manage_Empty_NoSteam" xml:space="preserve"><value>Steamin sijaintia ei löytynyt — määritä se Asetuksissa.</value></data>
+  <data name="Manage_Toast_NotFound_Title" xml:space="preserve"><value>Ei löytynyt</value></data>
+  <data name="Manage_Toast_NotFound_Body" xml:space="preserve"><value>Kyseinen peli ei ole enää kirjastossasi.</value></data>
+  <data name="Manage_Toast_Refreshed_Title" xml:space="preserve"><value>Kirjasto päivitetty</value></data>
+  <data name="Manage_Toast_Refreshed_Body" xml:space="preserve"><value>{0} peliä mukana.</value></data>
+  <data name="Manage_DepotError" xml:space="preserve"><value>Depo-tietoja ei voitu ladata (offline tai tuntematon sovellus).</value></data>
+  <data name="Manage_Toggle_InLua" xml:space="preserve"><value>Luassa</value></data>
+  <data name="Manage_Toggle_Missing" xml:space="preserve"><value>Puuttuvat depot / DLC</value></data>
+  <data name="Manage_Toggle_Unknown" xml:space="preserve"><value>Tuntemattomat</value></data>
+  <data name="Manage_Depot" xml:space="preserve"><value>Depo</value></data>
+  <data name="Manage_SharedDepot" xml:space="preserve"><value>Jaettu depo</value></data>
+  <data name="Manage_DlcName" xml:space="preserve"><value>DLC {0}</value></data>
+  <data name="Manage_Delete_Title" xml:space="preserve"><value>Poista lua-tiedosto</value></data>
+  <data name="Manage_Delete_Body" xml:space="preserve"><value>Poistetaanko ”{0}” (App ID {1})?
+
+Tämä poistaa sen .lua-tiedoston kansiosta Steam\config\stplug-in.</value></data>
+  <data name="Manage_DeleteMany_Title" xml:space="preserve"><value>Poista lua-tiedostot</value></data>
+  <data name="Manage_DeleteMany_Body" xml:space="preserve"><value>Poistetaanko {0} lua-tiedostoa?
+
+Tämä poistaa .lua-tiedostot kansiosta Steam\config\stplug-in.</value></data>
+  <data name="Manage_RemoveFailed_Title" xml:space="preserve"><value>Poisto epäonnistui</value></data>
+  <data name="Manage_RemoveFailed_File" xml:space="preserve"><value>Tiedostoa ei voitu poistaa:
+{0}</value></data>
+  <data name="Manage_RemoveFailed_Named" xml:space="preserve"><value>"{0}" ei voitu poistaa:
+{1}</value></data>
+  <data name="Manage_RemoveFailed_Count" xml:space="preserve"><value>{0} tiedostoa ei voitu poistaa.</value></data>
+  <data name="Manage_RestartSteam_Title" xml:space="preserve"><value>Käynnistä Steam uudelleen</value></data>
+  <data name="Manage_RestartSteam_Failed" xml:space="preserve"><value>Steamia ei voitu löytää tai käynnistää. Määritä sen sijainti Asetuksissa.</value></data>
+  <data name="Fixes_Title" xml:space="preserve"><value>Korjaukset</value></data>
+  <data name="Fixes_Loading" xml:space="preserve"><value>Ladataan korjauksia…</value></data>
+  <data name="Fixes_Build" xml:space="preserve"><value>Koontiversio {0}</value></data>
+  <data name="Fixes_Manifest" xml:space="preserve"><value>Manifest</value></data>
+  <data name="Fixes_Fix" xml:space="preserve"><value>Korjaus</value></data>
+  <data name="Fixes_Count" xml:space="preserve"><value>{0} korjausta</value></data>
+  <data name="Fixes_Err_Load" xml:space="preserve"><value>Korjauksia ei voitu ladata — tarkista yhteytesi.</value></data>
+  <data name="Fixes_Empty_None" xml:space="preserve"><value>Korjauksia ei ole vielä saatavilla.</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
+  <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>Lataus epäonnistui</value></data>
+  <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>Jokin meni pieleen — yritä uudelleen.</value></data>
+  <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>Asennus epäonnistui</value></data>
+  <data name="Fixes_Toast_InstallFailed_Body" xml:space="preserve"><value>Ei voitu asentaa — sulje Steam (tai käynnistä Steam uudelleen) ja yritä uudelleen.</value></data>
+  <data name="Fixes_Toast_FixInstalled" xml:space="preserve"><value>Korjaus asennettu</value></data>
+  <data name="Fixes_Toast_FixInstalled_Body" xml:space="preserve"><value>{0}:n manifesti asennettu.</value></data>
+  <data name="Fixes_Toast_GameNotFound" xml:space="preserve"><value>Peliä ei löytynyt</value></data>
+  <data name="Fixes_Toast_GameNotFound_Body" xml:space="preserve"><value>Asenna ensin {0} Steamiin ja käytä sitten korjausta.</value></data>
+  <data name="Fixes_Toast_PartiallyApplied" xml:space="preserve"><value>Korjaus osittain käytetty</value></data>
+  <data name="Fixes_Toast_PartiallyApplied_Body" xml:space="preserve"><value>{0} tiedostoa ei voitu kirjoittaa — sulje peli ja yritä uudelleen.</value></data>
+  <data name="Fixes_Toast_FixApplied" xml:space="preserve"><value>Korjaus käytetty</value></data>
+  <data name="Fixes_Toast_FixApplied_Body" xml:space="preserve"><value>{0}:n korjaus purettu pelikansioon.</value></data>
+  <data name="Fixes_Toast_CouldntApply" xml:space="preserve"><value>Korjausta ei voitu käyttää</value></data>
+  <data name="Fixes_Toast_Refreshed_Title" xml:space="preserve"><value>Päivitetty</value></data>
+  <data name="Fixes_Toast_Refreshed_Body" xml:space="preserve"><value>{0} peliä, joissa on fix.</value></data>
+  <data name="Add_Title" xml:space="preserve"><value>Haetaan Luaa™!</value></data>
+  <data name="Add_Subtitle" xml:space="preserve"><value>Syötä App ID, liitä Steam-linkki tai hae pelin nimellä</value></data>
+  <data name="Add_SearchPlaceholder" xml:space="preserve"><value>Syötä App ID tai hae pelejä...</value></data>
+  <data name="Add_Featured_TopSellers" xml:space="preserve"><value>Myydyimmät</value></data>
+  <data name="Add_Featured_NewReleases" xml:space="preserve"><value>Uutuudet</value></data>
+  <data name="Add_Released" xml:space="preserve"><value>Julkaistu {0}</value></data>
+  <data name="Add_Fetch" xml:space="preserve"><value>Hae</value></data>
+  <data name="Add_Checking" xml:space="preserve"><value>Tarkistetaan…</value></data>
+  <data name="Add_Reveal" xml:space="preserve"><value>Näytä</value></data>
+  <data name="Add_Supporter" xml:space="preserve"><value>Supporter</value></data>
+  <data name="Add_Unlimited" xml:space="preserve"><value>Rajoittamaton</value></data>
+  <data name="Add_RequiresOwnKey" xml:space="preserve"><value>Vaatii oman API-avaimesi</value></data>
+  <data name="Add_Discord" xml:space="preserve"><value>Discord</value></data>
+  <data name="Add_JoinDiscord" xml:space="preserve"><value>Liity tämän lähteen Discordiin</value></data>
+  <data name="Add_Download" xml:space="preserve"><value>Lataa</value></data>
+  <data name="Add_NeedsHubcapKey" xml:space="preserve"><value>Tarvitsee Hubcap-avaimen</value></data>
+  <data name="Add_NeedsHubcapKey_Tip" xml:space="preserve"><value>Aseta Hubcap API -avaimesi Asetuksissa avataksesi tämän lähteen</value></data>
+  <data name="Add_Depots" xml:space="preserve"><value>DEPOT</value></data>
+  <data name="Add_Available" xml:space="preserve"><value>SAATAVILLA</value></data>
+  <data name="Add_Missing" xml:space="preserve"><value>PUUTTUU</value></data>
+  <data name="Add_NoKey" xml:space="preserve"><value>EI AVAINTA</value></data>
+  <data name="Add_DownloadLua" xml:space="preserve"><value>Lataa .lua</value></data>
+  <data name="Add_Generating" xml:space="preserve"><value>Luodaan…</value></data>
+  <data name="Add_DlcHint" xml:space="preserve"><value>Sijoita .lua-tiedosto kansioon steam\config\stplug-in — varmista, että myös peruspeli on lisätty. Lasketaan päivittäiseen rajaasi (25/päivä).</value></data>
+  <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>Onko sinulla jo tiedostot?</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
+  <data name="Add_Err_BaseGame" xml:space="preserve"><value>Tämän DLC:n peruspeliä ei voitu määrittää</value></data>
+  <data name="Add_Err_Generic" xml:space="preserve"><value>Jokin meni pieleen — tarkista yhteytesi ja yritä uudelleen.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Lataus epäonnistui — tarkista yhteytesi ja yritä uudelleen.</value></data>
+  <data name="Add_Confirm_Replace" xml:space="preserve"><value>Korvataanko "{0}"?</value></data>
+  <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Ei depo-/DLC-muutoksia — sama sisältö.</value></data>
+  <data name="Add_Status_Cancelled" xml:space="preserve"><value>Asennus peruutettu — olemassa olevat tiedostot ennallaan.</value></data>
+  <data name="Add_Status_InstallFailed" xml:space="preserve"><value>{0} tiedostoa ei voitu asentaa — sulje Steam (tai käytä Käynnistä Steam uudelleen) ja yritä uudelleen.</value></data>
+  <data name="Add_Status_AddedManifests" xml:space="preserve"><value>Lisätty {0}: lua + {1} manifestia.</value></data>
+  <data name="Add_Status_AddedFetch" xml:space="preserve"><value>Lisätty {0}. Steam hakee manifestit.</value></data>
+  <data name="Confirm_OpenSteamDb" xml:space="preserve"><value>Avaa SteamDB:ssä</value></data>
+  <data name="Confirm_Shared" xml:space="preserve"><value>JAETTU</value></data>
+  <data name="Confirm_ReviewChanges" xml:space="preserve"><value>Tämä korvaa asennetun luan. Tarkista, mikä muuttuu:</value></data>
+  <data name="Confirm_Adding" xml:space="preserve"><value>Lisätään ({0})</value></data>
+  <data name="Confirm_Removing" xml:space="preserve"><value>Poistetaan ({0})</value></data>
+  <data name="Confirm_Skip" xml:space="preserve"><value>Ohita</value></data>
+  <data name="Confirm_Replace" xml:space="preserve"><value>Korvaa</value></data>
+  <data name="Settings_Section_Startup" xml:space="preserve"><value>KÄYNNISTYS</value></data>
+  <data name="Settings_StartWithWindows" xml:space="preserve"><value>Käynnistä Windowsin mukana</value></data>
+  <data name="Settings_StartWithWindows_Hint" xml:space="preserve"><value>Käynnistä GameGuy automaattisesti, kun Windows käynnistyy.</value></data>
+  <data name="Settings_MinimizeToTray" xml:space="preserve"><value>Pienennä ilmaisinalueelle</value></data>
+  <data name="Settings_MinimizeToTray_Hint" xml:space="preserve"><value>Kun suljet ikkunan, pidä GameGuy käynnissä ilmaisinalueella sen sijaan, että ohjelma suljetaan. Palauta kaksoisnapsauttamalla kuvaketta.</value></data>
+  <data name="Tray_Open" xml:space="preserve"><value>Avaa GameGuy</value></data>
+  <data name="Tray_Exit" xml:space="preserve"><value>Lopeta</value></data>
+
+  <data name="Add_FastFetch" xml:space="preserve"><value>FastFetch™️</value></data>
+  <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Automaattinen lataus ensimmäisestä saatavilla olevasta lähteestä</value></data>
+  <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Tälle pelille ei löytynyt saatavilla olevia lähteitä</value></data>
+  <data name="Add_FastFetch_Via" xml:space="preserve"><value>· kautta {0}</value></data>
+  <data name="Plugin_Title" xml:space="preserve"><value>GameGuy-laajennus</value></data>
+  <data name="Plugin_Subtitle" xml:space="preserve"><value>GameGuy-Steam-laajennus! — Käyttää nyt LuaLoaderia Shitteniumin sijaan</value></data>
+  <data name="Plugin_CardTitle" xml:space="preserve"><value>Tila</value></data>
+  <data name="Plugin_Badge_UpdateAvailable" xml:space="preserve"><value>Päivitys saatavilla</value></data>
+  <data name="Plugin_Row_InstalledVersion" xml:space="preserve"><value>Asennettu versio</value></data>
+  <data name="Plugin_Row_LatestVersion" xml:space="preserve"><value>Uusin versio</value></data>
+  <data name="Plugin_Row_Frontend" xml:space="preserve"><value>Käyttöliittymä</value></data>
+  <data name="Plugin_Row_Loader" xml:space="preserve"><value>Lataaja (winmm.dll)</value></data>
+  <data name="Plugin_Millennium_Coexisting" xml:space="preserve"><value>Millennium havaittu — GameGuy toimii sen rinnalla. Asennus poistaa käytöstä Millenniumin oman kopion tästä laajennuksesta, jotta vain LuaLoader injektoi.</value></data>
+  <data name="Plugin_Footer" xml:space="preserve"><value>LuaLoader asennetaan Steam-kansioosi. Tämä sovellus toimii taustajärjestelmänä — jos suljet sen ilmaisinalueelta, laajennus lakkaa toimimasta!</value></data>
+  <data name="Plugin_Btn_Install" xml:space="preserve"><value>Asenna</value></data>
+  <data name="Plugin_Btn_Update" xml:space="preserve"><value>Päivitä</value></data>
+  <data name="Plugin_Btn_Reinstall" xml:space="preserve"><value>Asenna uudelleen</value></data>
+  <data name="Plugin_Btn_Uninstall" xml:space="preserve"><value>Poista asennus</value></data>
+  <data name="Plugin_Btn_CheckForUpdates" xml:space="preserve"><value>Tarkista päivitykset</value></data>
+  <data name="Plugin_Checking" xml:space="preserve"><value>Tarkistetaan…</value></data>
+  <data name="Plugin_Status_Installed" xml:space="preserve"><value>Asennettu</value></data>
+  <data name="Plugin_Status_NotInstalled" xml:space="preserve"><value>Ei asennettu</value></data>
+  <data name="Plugin_Status_UpToDate" xml:space="preserve"><value>Ajan tasalla</value></data>
+  <data name="Plugin_Status_OutOfDate" xml:space="preserve"><value>Vanhentunut</value></data>
+  <data name="Plugin_Version_Unknown" xml:space="preserve"><value>tuntematon</value></data>
+  <data name="Plugin_Version_Offline" xml:space="preserve"><value>offline</value></data>
+  <data name="Plugin_Status_OfflineCheck" xml:space="preserve"><value>GitHubiin ei saatu yhteyttä päivitysten tarkistamiseksi.</value></data>
+  <data name="Plugin_Status_Port8080Busy" xml:space="preserve"><value>Toinen ohjelma käyttää jo porttia 8080 — laajennuksen selainsilta ei ehkä toimi. Sulje kyseistä porttia käyttävä ohjelma ja asenna uudelleen tai käynnistä Steam uudelleen.</value></data>
+  <data name="Plugin_Confirm_RestartBody" xml:space="preserve"><value>Tämä sulkee ja käynnistää Steamin uudelleen lataajan käyttöönottamiseksi. Jatketaanko?</value></data>
+  <data name="Plugin_Confirm_RestartCaption" xml:space="preserve"><value>Käynnistä Steam uudelleen</value></data>
+  <data name="Plugin_Toast_Title" xml:space="preserve"><value>Laajennus</value></data>
+  <data name="Plugin_Toast_Installed" xml:space="preserve"><value>Laajennus asennettu. Steam käynnistyy uudelleen ladatakseen sen.</value></data>
+  <data name="Plugin_Toast_InstallFailed" xml:space="preserve"><value>Asennus epäonnistui: {0}</value></data>
+  <data name="Plugin_Toast_Removed" xml:space="preserve"><value>Laajennus poistettu. Steam käynnistyy uudelleen.</value></data>
+  <data name="Plugin_Toast_UninstallFailed" xml:space="preserve"><value>Asennuksen poisto epäonnistui: {0}</value></data>
+  <data name="Plugin_Toast_UpdateAvailable" xml:space="preserve"><value>Päivitys on saatavilla.</value></data>
+  <data name="Plugin_Toast_UpToDate" xml:space="preserve"><value>Olet ajan tasalla.</value></data>
+  <data name="Plugin_Err_SteamNotFound" xml:space="preserve"><value>Steam-asennusta ei löytynyt.</value></data>
+  <data name="Plugin_Err_GithubUnreachable" xml:space="preserve"><value>GitHubiin ei saatu yhteyttä uusimman julkaisun hakemiseksi.</value></data>
+  <data name="Plugin_Err_MissingAssets" xml:space="preserve"><value>Julkaisusta {0} puuttuu {1} tai {2}.</value></data>
+  <data name="Plugin_Err_VerifyFailed" xml:space="preserve"><value>Kohteen {0} tiivisteen tarkistus epäonnistui.</value></data>
+  <data name="Plugin_Err_NoLuatoolsJs" xml:space="preserve"><value>plugin.zip ei sisältänyt tiedostoa public/luatools.js.</value></data>
+  <data name="Plugin_About_Header" xml:space="preserve"><value>Keskeiset ominaisuudet</value></data>
+  <data name="Plugin_Feature_StoreButton" xml:space="preserve"><value>Lisää “Add via LuaTools” -painikkeen Steam-kaupan sivuille</value></data>
+  <data name="Plugin_Feature_AutoUpdate" xml:space="preserve"><value>Päivittää itsensä automaattisesti</value></data>
+  <data name="Plugin_Feature_Millennium" xml:space="preserve"><value>Toimii Millenniumin kanssa tai ilman</value></data>
+  <data name="Drop_LinkHint" xml:space="preserve"><value>…tai vedä tähän SteamDB- tai Steam-kauppalinkki lisätäksesi kyseisen pelin.</value></data>
+  <data name="Manage_Action_ManageBuild" xml:space="preserve"><value>Hallitse varastoja</value></data>
+  <data name="Manage_AboutHeader" xml:space="preserve"><value>Tietoja</value></data>
+  <data name="Manage_Info_Developer" xml:space="preserve"><value>Kehittäjä</value></data>
+  <data name="Manage_Info_Publisher" xml:space="preserve"><value>Julkaisija</value></data>
+  <data name="Nav_Builds" xml:space="preserve"><value>Varastot</value></data>
+  <data name="Builds_Title" xml:space="preserve"><value>Varastot</value></data>
+  <data name="Builds_Subtitle" xml:space="preserve"><value>Säilytä pelin lua-tiedostosta useita versioita ja valitse, mitä Steam käyttää.</value></data>
+  <data name="Builds_NoSelection" xml:space="preserve"><value>Valitse peli vasemmalta nähdäksesi sen esiasetukset.</value></data>
+  <data name="Builds_ActiveBuild" xml:space="preserve"><value>Aktiivinen esiasetus</value></data>
+  <data name="Builds_Active" xml:space="preserve"><value>AKTIIVINEN</value></data>
+  <data name="Builds_Variant_Default" xml:space="preserve"><value>Oletus</value></data>
+  <data name="Builds_Variant_Build" xml:space="preserve"><value>Kooste {0}</value></data>
+  <data name="Builds_Variant_Preset" xml:space="preserve"><value>Tallennettu · {0}</value></data>
+  <data name="Builds_Pinned" xml:space="preserve"><value>Lukittu</value></data>
+  <data name="Builds_AutoUpdating" xml:space="preserve"><value>Päivittyy automaattisesti</value></data>
+  <data name="Builds_LatestBuild" xml:space="preserve"><value>Uusin kooste Steamissa: {0}</value></data>
+  <data name="Builds_Manifest" xml:space="preserve"><value>manifesti {0}</value></data>
+  <data name="Builds_ManifestLatest" xml:space="preserve"><value>uusin on {0}</value></data>
+  <data name="Builds_PinDisabled" xml:space="preserve"><value>lukitus pois (automaattipäivitys)</value></data>
+  <data name="Builds_Meta_Depots" xml:space="preserve"><value>{0} varastoa · {1} DLC</value></data>
+  <data name="Builds_Meta_Unsaved" xml:space="preserve"><value>tallentamaton</value></data>
+  <data name="Builds_Source" xml:space="preserve"><value>lähteestä {0}</value></data>
+  <data name="Builds_Action_Apply" xml:space="preserve"><value>Ota käyttöön</value></data>
+  <data name="Builds_Action_Rename" xml:space="preserve"><value>Nimeä uudelleen</value></data>
+  <data name="Builds_Action_Edit" xml:space="preserve"><value>Muokkaa</value></data>
+  <data name="Builds_Action_Delete" xml:space="preserve"><value>Poista</value></data>
+  <data name="Builds_Action_Save" xml:space="preserve"><value>Tallenna</value></data>
+  <data name="Builds_Action_SaveAsPreset" xml:space="preserve"><value>Tallenna esiasetuksena</value></data>
+  <data name="Builds_Action_Cancel" xml:space="preserve"><value>Peruuta</value></data>
+  <data name="Builds_RenamePlaceholder" xml:space="preserve"><value>Anna tälle esiasetukselle nimi…</value></data>
+  <data name="Builds_Editor_Title" xml:space="preserve"><value>Muokataan lua-tiedostoa, jota Steam käyttää</value></data>
+  <data name="Builds_Delete_Title" xml:space="preserve"><value>Poistetaanko tämä esiasetus?</value></data>
+  <data name="Builds_Delete_Body" xml:space="preserve"><value>”{0}” poistetaan tallennetuista esiasetuksistasi. Tämä ei vaikuta itse peliin.</value></data>
+  <data name="Builds_Delete_ActiveTip" xml:space="preserve"><value>Käytössä olevaa esiasetusta ei voi poistaa.</value></data>
+  <data name="Builds_Apply_Done" xml:space="preserve"><value>Käytössä on nyt ”{0}”.</value></data>
+  <data name="Builds_Apply_Failed" xml:space="preserve"><value>Esiasetusta ei voitu vaihtaa — lua-tiedosto saattaa olla käytössä.</value></data>
+  <data name="Builds_Save_Done" xml:space="preserve"><value>Tallennettu.</value></data>
+  <data name="Builds_Save_Failed" xml:space="preserve"><value>Tallennus epäonnistui — lua-tiedosto saattaa olla käytössä.</value></data>
+  <data name="Builds_Preset_Saved" xml:space="preserve"><value>Tallennettu esiasetuksena.</value></data>
+  <data name="Builds_Action_SaveTo" xml:space="preserve"><value>Tallenna kohteeseen ”{0}”</value></data>
+  <data name="Builds_Action_SaveAsNew" xml:space="preserve"><value>Tallenna uutena</value></data>
+  <data name="Builds_Save_Updated" xml:space="preserve"><value>”{0}” päivitetty.</value></data>
+  <data name="Builds_Depot_Lock" xml:space="preserve"><value>Lukitse</value></data>
+  <data name="Builds_Depot_LockTip" xml:space="preserve"><value>Lukittu: tämä varasto pysyy yllä olevassa manifestissa. Lukitsematon: Steam päivittää sen uusimpaan versioon. (Kommentoi setManifestid-rivin käyttöön tai pois.)</value></data>
+  <data name="Builds_Depot_EnableTip" xml:space="preserve"><value>Päällä: tämän varaston salauksenpurkuavain on käytössä. Pois: varastoa ei avata lainkaan. (Kommentoi addappid-rivin käyttöön tai pois.)</value></data>
+  <data name="Builds_Depot_Search" xml:space="preserve"><value>Hae varastoja nimen, ID:n tai tyypin mukaan…</value></data>
+  <data name="Builds_Depot_NoMatch" xml:space="preserve"><value>Mikään varasto ei vastaa hakuasi.</value></data>
+  <data name="Builds_Depot_InactiveNote" xml:space="preserve"><value>Muokkaat esiasetusta, joka ei ole käytössä — muutokset tallentuvat suoraan siihen, ja Steam käyttää edelleen käyttöön otettua esiasetusta, kunnes painat Ota käyttöön.</value></data>
+  <data name="Manage_Action_LaunchOptions" xml:space="preserve"><value>Käynnistysvalinnat…</value></data>
+  <data name="Launch_Title" xml:space="preserve"><value>Käynnistysvalinnat</value></data>
+  <data name="Launch_Loading" xml:space="preserve"><value>Luetaan Steamin sovellusvälimuistia…</value></data>
+  <data name="Launch_NotFound" xml:space="preserve"><value>Steamilla ei ole vielä välimuistissa tietoja tästä pelistä. Käynnistä Steam kerran ja yritä uudelleen.</value></data>
+  <data name="Launch_UnsupportedFormat" xml:space="preserve"><value>Steamin sovellusvälimuisti on muodossa, jota tämä versio ei ymmärrä ({0}). Päivitä GameGuy.</value></data>
+  <data name="Launch_ReadFailed" xml:space="preserve"><value>Steamin sovellusvälimuistia ei voitu lukea. {0}</value></data>
+  <data name="Launch_ExecutableRequired" xml:space="preserve"><value>Jokainen käynnistysvalinta tarvitsee suoritettavan tiedoston.</value></data>
+  <data name="Launch_Add" xml:space="preserve"><value>Lisää</value></data>
+  <data name="Launch_Delete" xml:space="preserve"><value>Poista</value></data>
+  <data name="Launch_Field_Executable" xml:space="preserve"><value>Suoritettava tiedosto</value></data>
+  <data name="Launch_Field_Arguments" xml:space="preserve"><value>Argumentit</value></data>
+  <data name="Launch_Field_WorkingDir" xml:space="preserve"><value>Työhakemisto</value></data>
+  <data name="Launch_Field_Description" xml:space="preserve"><value>Nimike (näkyy Steamin pelivalikossa)</value></data>
+  <data name="Launch_Field_Os" xml:space="preserve"><value>Käyttöjärjestelmä</value></data>
+  <data name="Launch_Field_Type" xml:space="preserve"><value>Tyyppi</value></data>
+  <data name="Launch_Field_BetaKey" xml:space="preserve"><value>Vain haarassa</value></data>
+  <data name="Launch_Field_BetaKey_Tip" xml:space="preserve"><value>Haaran nimi, johon tämä valinta on rajattu — esimerkiksi beta, default, development. Jätä tyhjäksi, jos haluat sen näkyvän kaikissa haaroissa.</value></data>
+  <data name="Launch_Field_OwnsDlc" xml:space="preserve"><value>Vain jos DLC omistetaan (App ID)</value></data>
+  <data name="Launch_InstallPath" xml:space="preserve"><value>Asennuspolku: {0}</value></data>
+  <data name="Launch_SteamRestartNote" xml:space="preserve"><value>Muutosten käyttöönotto sulkee Steamin ja avaa sen uudelleen.</value></data>
+  <data name="Launch_Restore" xml:space="preserve"><value>Palauta alkuperäiset</value></data>
+  <data name="Launch_Restore_Tip" xml:space="preserve"><value>Palauttaa käynnistysvalinnat, jotka Steamissa olivat ennen kuin GameGuy muutti niitä.</value></data>
+  <data name="Launch_Restore_Title" xml:space="preserve"><value>Palautetaanko alkuperäiset käynnistysvalinnat?</value></data>
+  <data name="Launch_Restore_Body" xml:space="preserve"><value>Tämä palauttaa käynnistysvalinnat sellaisiksi kuin ne Steamissa olivat ja hylkää muutoksesi. Steam suljetaan ja avataan uudelleen. Jatketaanko?</value></data>
+  <data name="Launch_NothingToRestore" xml:space="preserve"><value>Tätä peliä ei ole muutettu, joten palautettavaa ei ole.</value></data>
+  <data name="Launch_ApplyNow_Title" xml:space="preserve"><value>Otetaanko käyttöön Steamissa nyt?</value></data>
+  <data name="Launch_ApplyNow_Body" xml:space="preserve"><value>Muutoksesi on tallennettu. Niiden kirjoittaminen Steamiin edellyttää Steamin sulkemista ja uudelleenavaamista — tehdäänkö se nyt? Valitse Peruuta ottaaksesi ne käyttöön myöhemmin.</value></data>
+  <data name="Launch_Staged" xml:space="preserve"><value>Tallennettu. Ota ne käyttöön tästä ikkunasta, kun voit käynnistää Steamin uudelleen.</value></data>
+  <data name="Launch_Applied" xml:space="preserve"><value>Käynnistysvalinnat otettu käyttöön.</value></data>
+  <data name="Launch_Applied_Restarted" xml:space="preserve"><value>Käynnistysvalinnat otettu käyttöön. Steam käynnistettiin uudelleen.</value></data>
+  <data name="Launch_ApplyFailed" xml:space="preserve"><value>Käynnistysvalintoja ei voitu ottaa käyttöön. {0}</value></data>
+  <data name="Launch_Drift_Title" xml:space="preserve"><value>Käynnistysvalinnat nollattiin</value></data>
+  <data name="Launch_Drift_Body" xml:space="preserve"><value>Steam on korvannut käynnistysvalintasi {0} pelin osalta. Uudelleen käyttöönotto sulkee Steamin ja avaa sen uudelleen.</value></data>
+  <data name="Launch_Drift_Action" xml:space="preserve"><value>Ota käyttöön uudelleen</value></data>
+  <data name="Err_SteamNotFound" xml:space="preserve"><value>Steamin sijaintia ei löytynyt. Aseta se asetuksissa.</value></data>
+  <data name="Err_GithubUnreachable" xml:space="preserve"><value>GitHubiin ei saatu yhteyttä. Tarkista yhteytesi ja yritä uudelleen.</value></data>
+  <data name="Err_UpdateServerUnreachable" xml:space="preserve"><value>Päivityspalvelimeen ei saatu yhteyttä. Tarkista yhteytesi ja yritä uudelleen.</value></data>
+  <data name="Err_Cancelled" xml:space="preserve"><value>Peruutettu.</value></data>
+  <data name="Err_CancelledByUser" xml:space="preserve"><value>Käyttäjä peruutti</value></data>
+  <data name="Err_ReleaseMissingDownload" xml:space="preserve"><value>Julkaisusta puuttuu odotettu lataus.</value></data>
+  <data name="Err_ReleaseMissingFile" xml:space="preserve"><value>Julkaisusta puuttuu {0}.</value></data>
+  <data name="Err_VerifyFailed" xml:space="preserve"><value>Lataus ei läpäissyt varmennusta (sha256 ei täsmää).</value></data>
+  <data name="Err_VerifyFailedFile" xml:space="preserve"><value>{0} ei läpäissyt varmennusta (sha256 ei täsmää).</value></data>
+  <data name="Err_DownloadMissingFiles" xml:space="preserve"><value>Latauksesta puuttuu: {0}.</value></data>
+  <data name="Err_WriteFailedCount" xml:space="preserve"><value>{0} tiedoston kirjoitus epäonnistui. Sulje Steam ja yritä uudelleen.</value></data>
+  <data name="Err_WriteFailedFile" xml:space="preserve"><value>Tiedoston {0} kirjoitus epäonnistui. Sulje Steam ja yritä uudelleen.</value></data>
+  <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>Latausta ei voitu avata: {0}</value></data>
+  <data name="Err_NoSourceAvailable" xml:space="preserve"><value>Tälle pelille ei ole saatavilla lähdettä.</value></data>
+  <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>Latauslinkki oli tyhjä. Yritä uudelleen.</value></data>
+  <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>Lataus epäonnistui ({0}).</value></data>
+  <data name="Api_Err_RequestFailed" xml:space="preserve"><value>Pyyntö epäonnistui ({0})</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
+  <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Hubcap-avaimesi on virheellinen tai vanhentunut.</value></data>
+  <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Päivittäinen Hubcap-rajasi on täynnä.</value></data>
+  <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Tälle sovellukselle ei ole Hubcap-manifestia.</value></data>
+  <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Hubcap-lataus epäonnistui ({0}).</value></data>
+  <data name="Nav_Downloads" xml:space="preserve"><value>Lataukset</value></data>
+  <data name="Downloads_Title" xml:space="preserve"><value>Lataukset</value></data>
+  <data name="Downloads_Empty" xml:space="preserve"><value>Ei latauksia juuri nyt. Lataa nyt jotain!</value></data>
+  <data name="Downloads_Section_Active" xml:space="preserve"><value>Jono</value></data>
+  <data name="Downloads_Section_History" xml:space="preserve"><value>Historia</value></data>
+  <data name="Downloads_Status_Queued" xml:space="preserve"><value>Jonossa</value></data>
+  <data name="Downloads_Status_Downloading" xml:space="preserve"><value>Ladataan</value></data>
+  <data name="Downloads_Status_AwaitingConfirm" xml:space="preserve"><value>Odottaa sinua</value></data>
+  <data name="Downloads_Status_Installing" xml:space="preserve"><value>Asennetaan</value></data>
+  <data name="Downloads_Status_Completed" xml:space="preserve"><value>Valmis</value></data>
+  <data name="Downloads_Status_Failed" xml:space="preserve"><value>Epäonnistui</value></data>
+  <data name="Downloads_Status_Cancelled" xml:space="preserve"><value>Peruutettu</value></data>
+  <data name="Downloads_Action_Cancel" xml:space="preserve"><value>Peruuta</value></data>
+  <data name="Downloads_Action_Retry" xml:space="preserve"><value>Yritä uudelleen</value></data>
+  <data name="Downloads_Action_Remove" xml:space="preserve"><value>Poista</value></data>
+  <data name="Downloads_Action_MoveUp" xml:space="preserve"><value>Siirrä ylös</value></data>
+  <data name="Downloads_Action_MoveDown" xml:space="preserve"><value>Siirrä alas</value></data>
+  <data name="Downloads_Action_ClearHistory" xml:space="preserve"><value>Tyhjennä historia</value></data>
+  <data name="Downloads_Action_Review" xml:space="preserve"><value>Tarkista</value></data>
+  <data name="Downloads_Of" xml:space="preserve"><value>{0} / {1}</value></data>
+  <data name="Downloads_Eta" xml:space="preserve"><value>{0} jäljellä</value></data>
+  <data name="Downloads_ActionRequired" xml:space="preserve"><value>Vaatii toimenpiteen</value></data>
+  <data name="Downloads_Err_Interrupted" xml:space="preserve"><value>Keskeytyi, kun sovellus suljettiin.</value></data>
+  <data name="Downloads_Kind_Dlc" xml:space="preserve"><value>DLC:n avaus</value></data>
+  <data name="Fixes_NotInstalled_Hint" xml:space="preserve"><value>Asenna peli ensin, jotta voit ottaa korjauksen käyttöön.</value></data>
+  <data name="Downloads_Status_Paused" xml:space="preserve"><value>Keskeytetty</value></data>
+  <data name="Downloads_Status_Verifying" xml:space="preserve"><value>Tarkistetaan…</value></data>
+  <data name="Downloads_Action_Pause" xml:space="preserve"><value>Keskeytä</value></data>
+  <data name="Downloads_Action_Resume" xml:space="preserve"><value>Jatka</value></data>
+  <data name="Downloads_Kind_Depot" xml:space="preserve"><value>Depot-tiedostot</value></data>
+  <data name="Downloads_Depots_Progress" xml:space="preserve"><value>Depotit · {0}/{1}</value></data>
+  <data name="Depot_Err_Tool" xml:space="preserve"><value>Depot-latainta ei saatu haettua.</value></data>
+  <data name="Depot_Err_NoKeys" xml:space="preserve"><value>Tälle pelille ei löytynyt salauksenpurkuavaimia.</value></data>
+  <data name="Depot_Err_Failed" xml:space="preserve"><value>Depot {0} epäonnistui: {1}</value></data>
+  <data name="Depot_Status_Done" xml:space="preserve"><value>Ladattiin {0} depotia kohteeseen {1}.</value></data>
+  <data name="Builds_Action_Download" xml:space="preserve"><value>Lataa</value></data>
+  <data name="Builds_Select_Title" xml:space="preserve"><value>Valitse ladattavat depotit</value></data>
+  <data name="Builds_Select_Confirm" xml:space="preserve"><value>Lataa {0} depotia ({1})</value></data>
+  <data name="Builds_Select_NoManifest" xml:space="preserve"><value>Tämä depot ei ilmoita ladattavaa versiota.</value></data>
+  <data name="Builds_Select_All" xml:space="preserve"><value>Valitse kaikki</value></data>
+  <data name="Builds_Select_None" xml:space="preserve"><value>Ei valittuja depoteja</value></data>
+  <data name="Builds_Select_ChooseFolder" xml:space="preserve"><value>Valitse, minne depot-tiedostot tallennetaan</value></data>
+  <data name="Depot_Err_NoSpace" xml:space="preserve"><value>Levytila ei riitä: tarvitaan {0}, vapaana vain {1}.</value></data>
+  <data name="Builds_Select_SaveTo" xml:space="preserve"><value>Tallenna kohteeseen</value></data>
+  <data name="Builds_Select_Space" xml:space="preserve"><value>Tarvitaan {0} · vapaana {1} asemassa {2}</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
+  <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>haetaan manifestia</value></data>
+  <data name="Depot_Err_NoManifest" xml:space="preserve"><value>Tämän depotin manifestia ei saatu haettua.</value></data>
+  <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>Valmistellaan · {0}/{1}</value></data>
+  <data name="Downloads_Depots_GettingTool" xml:space="preserve"><value>Haetaan lataustyökalua</value></data>
+  <data name="Downloads_Kind_Tool" xml:space="preserve"><value>Työkalu</value></data>
+  <data name="Downloads_SteamAutoCrack" xml:space="preserve"><value>SteamAutoCrack</value></data>
+  <data name="Downloads_SAC_GettingRuntime" xml:space="preserve"><value>Tarkistetaan .NET-ajonaikaa</value></data>
+  <data name="Downloads_SAC_GettingTool" xml:space="preserve"><value>Haetaan SteamAutoCrackia</value></data>
+  <data name="Downloads_SAC_Launched" xml:space="preserve"><value>SteamAutoCrack avattiin.</value></data>
+  <data name="Downloads_SAC_Err_Runtime" xml:space="preserve"><value>SteamAutoCrackin tarvitsemaa .NET-ajonaikaa ei voitu asentaa.</value></data>
+  <data name="Downloads_SAC_Err_Restart" xml:space="preserve"><value>.NET-ajonaika asennettiin, mutta Windows on käynnistettävä uudelleen ennen SteamAutoCrackin suorittamista.</value></data>
+  <data name="Downloads_SAC_Err_Tool" xml:space="preserve"><value>SteamAutoCrackia ei voitu ladata.</value></data>
+  <data name="Downloads_SAC_Err_Launch" xml:space="preserve"><value>SteamAutoCrackia ei voitu käynnistää.</value></data>
+  <data name="Downloads_SAC_Updated" xml:space="preserve"><value>SteamAutoCrack päivitettiin.</value></data>
+  <data name="Downloads_Depot_PreAllocating" xml:space="preserve"><value>varataan tiedostoja</value></data>
+  <data name="Downloads_Depot_Validating" xml:space="preserve"><value>tarkistetaan olemassa olevia tiedostoja</value></data>
+  <data name="Depot_Cancel_Title" xml:space="preserve"><value>Peruuta lataus</value></data>
+  <data name="Depot_Cancel_Body" xml:space="preserve"><value>Kohteeseen on jo kirjoitettu {0}:
+{1}
+
+Kyllä - pysäytä ja poista tiedostot
+Ei - pysäytä mutta säilytä ne
+Peruuta - jatka lataamista</value></data>
+  <data name="Depot_Cancel_DeleteFailed" xml:space="preserve"><value>Ladattuja tiedostoja ei voitu poistaa. Ne ovat yhä kohteessa {0}.</value></data>
+  <data name="Common_CopyAppId" xml:space="preserve"><value>Kopioi App ID</value></data>
+  <data name="Common_ShowInFolder" xml:space="preserve"><value>Näytä kansiossa</value></data>
+  <data name="Err_ClipboardBusy" xml:space="preserve"><value>Kopiointi epäonnistui — toinen sovellus käyttää leikepöytää.</value></data>
+  <data name="Err_PathMissing" xml:space="preserve"><value>Kohdetta {0} ei voitu avata — se on ehkä siirretty tai poistettu.</value></data>
+  <data name="Builds_Select_NoKey" xml:space="preserve"><value>Lua-tiedostossa ei ole salauksenpurkuavainta tälle depotille.</value></data>
+  <data name="Depot_Err_BadKey" xml:space="preserve"><value>Depotin {0} salauksenpurkuavain on väärä.</value></data>
+  <data name="Depot_Err_NoKeyFor" xml:space="preserve"><value>Lua-tiedostossa ei ole salauksenpurkuavainta depotille {0}.</value></data>
+  <data name="Builds_Select_SharedHint" xml:space="preserve"><value>Jaettu suoritusympäristö — yleensä jo asennettu. Valitse ladataksesi silti.</value></data>
+  <data name="Downloads_ClearHistory_Confirm" xml:space="preserve"><value>Poistetaanko kaikki {0} merkintää lataushistoriasta? Ladattuihin tiedostoihin tämä ei vaikuta.</value></data>
+  <data name="Fixes_Applied_Hint" xml:space="preserve"><value>Tämä korjaus on jo käytössä. Peru se, jos haluat asentaa toisen.</value></data>
+  <data name="Fixes_MyGames" xml:space="preserve"><value>Omat pelit</value></data>
+  <data name="Fixes_MyGames_Count" xml:space="preserve"><value>{0} pelilläsi on korjauksia. Vieritä luetteloa nähdäksesi loput.</value></data>
+  <data name="Fixes_MyGames_NotInstalled" xml:space="preserve"><value>Lua-tiedostoja ei ole vielä lisätty. Lisää (tai asenna) peli, niin se näkyy tässä.</value></data>
+  <data name="Fixes_Revert" xml:space="preserve"><value>Peru</value></data>
+  <data name="Fixes_Revert_Cancel" xml:space="preserve"><value>Peruuta</value></data>
+  <data name="Fixes_Revert_Confirm_Body" xml:space="preserve"><value>Perutaanko ”{0}”? Muokatut tiedostot palautetaan varmuuskopiosta ja korjauksen lisäämät tiedostot poistetaan.</value></data>
+  <data name="Fixes_Revert_Confirm_Title" xml:space="preserve"><value>Perutaanko pelin {0} korjaus?</value></data>
+  <data name="Fixes_Revert_Done" xml:space="preserve"><value>Korjaus peruttu</value></data>
+  <data name="Fixes_Revert_Done_Body" xml:space="preserve"><value>{0} palautettu, {1} lisättyä tiedostoa poistettu.</value></data>
+  <data name="Fixes_Revert_Failed" xml:space="preserve"><value>Korjausta ei voitu perua</value></data>
+  <data name="Fixes_Revert_NoRecord" xml:space="preserve"><value>Ei merkintää siitä, että tämä korjaus olisi käytössä. Se on ehkä jo peruttu.</value></data>
+  <data name="Fixes_Revert_Conflict" xml:space="preserve"><value>Korjausta ei voi peruuttaa turvallisesti</value></data>
+  <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} on muuttunut tämän korjauksen käyttöönoton jälkeen, joten palauttaminen korvaisi nuo muutokset. Jos otit päälle toisen korjauksen, peru ensin se. {1} tiedosto(a) koskee.</value></data>
+  <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Korjaus peruttu osittain</value></data>
+  <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} tiedostoa ei voitu palauttaa. Sulje peli ja yritä uudelleen.</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
+</root>

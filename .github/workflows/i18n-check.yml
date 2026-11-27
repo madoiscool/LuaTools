@@ -6,12 +6,12 @@ name: i18n check
 on:
   pull_request:
     paths:
-      - 'src/LuaToolsGui/Resources/Strings*.resx'
+      - 'src/GameGuy/Resources/Strings*.resx'
       - 'scripts/check-i18n.py'
   push:
     branches: [master, main]
     paths:
-      - 'src/LuaToolsGui/Resources/Strings*.resx'
+      - 'src/GameGuy/Resources/Strings*.resx'
 
 jobs:
   check:

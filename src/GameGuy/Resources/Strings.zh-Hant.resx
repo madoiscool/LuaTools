@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- zh-Hant -->
+    <data name="App_Name" xml:space="preserve"><value>GameGuy</value></data>
+  <data name="Nav_Home" xml:space="preserve"><value>首頁</value></data>
+  <data name="Nav_Add" xml:space="preserve"><value>新增</value></data>
+  <data name="Nav_Manage" xml:space="preserve"><value>管理</value></data>
+  <data name="Nav_Mode" xml:space="preserve"><value>模式</value></data>
+  <data name="Nav_Fixes" xml:space="preserve"><value>修正</value></data>
+  <data name="Nav_RestartSteam" xml:space="preserve"><value>重新啟動 Steam</value></data>
+  <data name="Nav_Settings" xml:space="preserve"><value>設定</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
+  <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>立即重新啟動 Steam？這會關閉 Steam 及所有執行中的遊戲，然後重新啟動它。</value></data>
+  <data name="Settings_Title" xml:space="preserve"><value>設定</value></data>
+  <data name="Settings_Section_General" xml:space="preserve"><value>一般</value></data>
+  <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
+  <data name="Settings_Section_Install" xml:space="preserve"><value>安裝</value></data>
+  <data name="Settings_Section_Community" xml:space="preserve"><value>社群</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
+  <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>在以下網站管理你的 Hubcap API 金鑰與個人檔案：</value></data>
+  <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
+  <data name="Settings_HubcapKey" xml:space="preserve"><value>Hubcap API 金鑰</value></data>
+  <data name="Settings_HubcapKey_Hint" xml:space="preserve"><value>貼上你的個人 Hubcap API 金鑰以解鎖 Hubcap 清單。應用程式會使用你的金鑰直接連線到 Hubcap。</value></data>
+  <data name="Settings_HubcapKeyPlaceholder" xml:space="preserve"><value>貼上你的 API 金鑰（smm_…）</value></data>
+  <data name="Settings_HubcapValidate" xml:space="preserve"><value>驗證並儲存</value></data>
+  <data name="Settings_HubcapClear" xml:space="preserve"><value>清除</value></data>
+  <data name="Settings_HubcapGetKey" xml:space="preserve"><value>取得金鑰：</value></data>
+  <data name="Settings_HubcapKeyOk" xml:space="preserve"><value>今日 {0}/{1} 次請求</value></data>
+  <data name="Settings_HubcapKeyOkExpiry" xml:space="preserve"><value>今日 {0}/{1} · 到期 {2}</value></data>
+  <data name="Settings_HubcapKeyBad" xml:space="preserve"><value>這看起來不是有效的金鑰（smm_…）。</value></data>
+  <data name="Settings_HubcapKeyError" xml:space="preserve"><value>無法驗證金鑰 — 可能無效、已過期，或無法連線到 Hubcap。</value></data>
+  <data name="Settings_HubcapActive" xml:space="preserve"><value>已啟用</value></data>
+  <data name="Settings_HubcapRefresh" xml:space="preserve"><value>重新整理</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>語言</value></data>
+  <data name="Settings_Language_Hint" xml:space="preserve"><value>選擇應用程式的顯示語言。重新啟動後生效。</value></data>
+  <data name="Settings_Language_SystemDefault" xml:space="preserve"><value>跟隨系統</value></data>
+  <data name="Settings_Dns" xml:space="preserve"><value>DNS 解析</value></data>
+  <data name="Settings_Dns_Hint" xml:space="preserve"><value>如果你的網路業者封鎖了 lua.tools，應用程式可以改用 Cloudflare (1.1.1.1) 查詢位址，而不使用系統解析器。「自動」僅在一般 DNS 失敗後才切換。</value></data>
+  <data name="Settings_Dns_Auto" xml:space="preserve"><value>自動</value></data>
+  <data name="Settings_Dns_Always" xml:space="preserve"><value>一律使用 Cloudflare</value></data>
+  <data name="Settings_Dns_Never" xml:space="preserve"><value>僅使用系統 DNS</value></data>
+  <data name="Settings_SteamLocation" xml:space="preserve"><value>Steam 位置</value></data>
+  <data name="Settings_Change" xml:space="preserve"><value>變更…</value></data>
+  <data name="Settings_Open" xml:space="preserve"><value>開啟</value></data>
+  <data name="Settings_ResetToAuto" xml:space="preserve"><value>重設為自動</value></data>
+  <data name="Settings_AutoUpdateApps" xml:space="preserve"><value>自動更新遊戲（不鎖定資訊清單）</value></data>
+  <data name="Settings_AutoUpdateApps_Hint" xml:space="preserve"><value>安裝時不固定版本，讓 Steam 保持遊戲更新。關閉後會將遊戲鎖定在已下載的版本。</value></data>
+  <data name="Settings_DonateKeys" xml:space="preserve"><value>捐贈解密金鑰</value></data>
+  <data name="Settings_DonateKeys_Hint" xml:space="preserve"><value>分享多餘的 Steam 倉庫解密金鑰以擴充社群金鑰池。僅傳送已驗證的金鑰——不含帳戶資訊或個人資料。</value></data>
+  <data name="Settings_SteamNotFound" xml:space="preserve"><value>找不到 Steam</value></data>
+  <data name="Settings_SteamSource_Custom" xml:space="preserve"><value>自訂位置</value></data>
+  <data name="Settings_SteamSource_NotFound" xml:space="preserve"><value>找不到</value></data>
+  <data name="Settings_SteamSource_Auto" xml:space="preserve"><value>已從登錄檔自動偵測</value></data>
+  <data name="Settings_SteamWarning_NoExe" xml:space="preserve"><value>此資料夾中找不到 steam.exe。</value></data>
+  <data name="Settings_ChooseSteamFolder" xml:space="preserve"><value>選擇你的 Steam 資料夾</value></data>
+  <data name="Lang_Changed_Title" xml:space="preserve"><value>語言已變更</value></data>
+  <data name="Lang_Changed_Body" xml:space="preserve"><value>重新啟動應用程式以套用新語言。</value></data>
+  <data name="Lang_Changed_Restart" xml:space="preserve"><value>立即重新啟動</value></data>
+  <data name="Home_Welcome" xml:space="preserve"><value>歡迎使用 GameGuy</value></data>
+  <data name="Home_LuasOnBoard" xml:space="preserve"><value>已新增的 Lua</value></data>
+  <data name="Home_LastAdded" xml:space="preserve"><value>最近新增</value></data>
+  <data name="Home_PluginStatus" xml:space="preserve"><value>外掛狀態</value></data>
+  <data name="Home_RecentlyAdded" xml:space="preserve"><value>最近新增</value></data>
+  <data name="Home_ViewDetails" xml:space="preserve"><value>檢視詳細資料</value></data>
+  <data name="Home_CheckingSteam" xml:space="preserve"><value>正在檢查 Steam…</value></data>
+  <data name="Home_SteamDetected" xml:space="preserve"><value>已偵測到 Steam · {0}</value></data>
+  <data name="Home_SteamNotFound" xml:space="preserve"><value>找不到 Steam——請在設定中設定其位置。</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
+  <data name="Home_NoModeSelected" xml:space="preserve"><value>未選擇模式</value></data>
+  <data name="Home_ModeIs" xml:space="preserve"><value>模式 · {0}</value></data>
+  <data name="Mode_Title" xml:space="preserve"><value>模式</value></data>
+  <data name="Mode_Subtitle" xml:space="preserve"><value>切換用於解鎖透過 GameGuy 新增的遊戲的後端——同一時間僅有一個生效。</value></data>
+  <data name="Mode_CheckForUpdates" xml:space="preserve"><value>檢查更新</value></data>
+  <data name="Mode_Active" xml:space="preserve"><value>已啟用</value></data>
+  <data name="Mode_Recommended" xml:space="preserve"><value>推薦</value></data>
+  <data name="Mode_Confirm_Body" xml:space="preserve"><value>將關閉 Steam 以便變更其檔案，隨後自動重新啟動。所有執行中的遊戲或下載都會停止。</value></data>
+  <data name="Mode_Cancel" xml:space="preserve"><value>取消</value></data>
+  <data name="Mode_CloseSteamContinue" xml:space="preserve"><value>關閉 Steam 並繼續</value></data>
+  <data name="Mode_Desc_Bst" xml:space="preserve"><value>OpenSteamTools 的開源分支，由 GameGuy 團隊積極維護。帶來各種修正和新功能！</value></data>
+  <data name="Mode_CloudRedirect_Manage" xml:space="preserve"><value>管理</value></data>
+  <data name="Mode_CloudRedirect_LaunchFailed" xml:space="preserve"><value>無法下載或啟動 CloudRedirect。</value></data>
+  <data name="Mode_Desc_Ost" xml:space="preserve"><value>從最新原始碼建置的 OpenSteamTools 每夜版。包含最新修正，但可能較不穩定。</value></data>
+  <data name="Mode_UserManaged" xml:space="preserve"><value>全靠你自己了</value></data>
+  <data name="Mode_Desc_Custom" xml:space="preserve"><value>使用你自己的解鎖方案，我們不會插手</value></data>
+  <data name="Mode_Name_Custom" xml:space="preserve"><value>自訂解鎖器</value></data>
+  <data name="Mode_Experimental" xml:space="preserve"><value>實驗性</value></data>
+  <data name="Mode_CloudRedirectSupport" xml:space="preserve"><value>支援 CloudRedirect</value></data>
+  <data name="Mode_CloudRedirect_AddonDesc" xml:space="preserve"><value>透過 Google Drive / OneDrive / Cloudflare R2 等第三方儲存服務，恢復原生 Steam 雲端存檔支援。目前僅相容於 OpenSteamTools / BetterSteamTools。啟用後別忘了點擊「管理」進行設定，然後重新啟動 Steam！</value></data>
+  <data name="Mode_CloudRedirect_Locked" xml:space="preserve"><value>選擇 OpenSteamTools / BetterSteamTools 以使用 CloudRedirect。</value></data>
+  <data name="Mode_CloudRedirect_Enable" xml:space="preserve"><value>啟用</value></data>
+  <data name="Mode_CloudRedirect_Disable" xml:space="preserve"><value>停用</value></data>
+  <data name="Mode_CloudRedirect_Status_Enabled" xml:space="preserve"><value>已啟用。</value></data>
+  <data name="Mode_CloudRedirect_Status_Disabled" xml:space="preserve"><value>已安裝，但已停用。</value></data>
+  <data name="Mode_CloudRedirect_Status_NotInstalled" xml:space="preserve"><value>尚未安裝。</value></data>
+  <data name="Mode_CloudRedirect_Status_UpdateAvailable" xml:space="preserve"><value>有可用更新。</value></data>
+  <data name="Mode_CloudRedirect_Toast_Enabled" xml:space="preserve"><value>已啟用 — 重新啟動 Steam 以生效。</value></data>
+  <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>已停用 — 重新啟動 Steam 以生效。</value></data>
+  <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>已更新 — 重新啟動 Steam 以生效。</value></data>
+  <data name="Onboarding_Title" xml:space="preserve"><value>歡迎使用 GameGuy 應用程式！</value></data>
+  <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>套用建議設定</value></data>
+  <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>模式：BetterSteamTools · 開啟 FastFetch</value></data>
+  <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>安裝我們著名的外掛</value></data>
+  <data name="Onboarding_Plugin_Detail" xml:space="preserve"><value>在 Steam 商店頁面新增「Add via LuaTools」按鈕。</value></data>
+  <data name="Onboarding_Yes" xml:space="preserve"><value>好的</value></data>
+  <data name="Onboarding_No" xml:space="preserve"><value>不用了</value></data>
+  <data name="Onboarding_Go" xml:space="preserve"><value>開始吧！</value></data>
+  <data name="Onboarding_Applying" xml:space="preserve"><value>正在設定…</value></data>
+  <data name="Mode_Checking" xml:space="preserve"><value>正在檢查…</value></data>
+  <data name="Mode_StatusUnavailable" xml:space="preserve"><value>狀態不可用（離線？）</value></data>
+  <data name="Mode_NotActive" xml:space="preserve"><value>未啟用</value></data>
+  <data name="Mode_NotInstalled" xml:space="preserve"><value>未安裝</value></data>
+  <data name="Mode_UpToDate" xml:space="preserve"><value>已是最新</value></data>
+  <data name="Mode_UpdateAvailable" xml:space="preserve"><value>有可用更新</value></data>
+  <data name="Mode_Btn_Reinstall" xml:space="preserve"><value>重新安裝</value></data>
+  <data name="Mode_Btn_Update" xml:space="preserve"><value>更新</value></data>
+  <data name="Mode_Btn_Install" xml:space="preserve"><value>安裝</value></data>
+  <data name="Mode_Btn_Switch" xml:space="preserve"><value>切換到此項</value></data>
+  <data name="Mode_Confirm_Reinstall" xml:space="preserve"><value>重新安裝 {0}？</value></data>
+  <data name="Mode_Confirm_Switch" xml:space="preserve"><value>切換到 {0}？</value></data>
+  <data name="Mode_Toast_Updated" xml:space="preserve"><value>模式已更新</value></data>
+  <data name="Mode_Toast_Updated_Restarting" xml:space="preserve"><value>{0} 已安裝——Steam 正在重新啟動。</value></data>
+  <data name="Mode_Toast_Updated_Start" xml:space="preserve"><value>{0} 已安裝。啟動 Steam 即可使用。</value></data>
+  <data name="Mode_Toast_InstallFailed" xml:space="preserve"><value>安裝失敗</value></data>
+  <data name="Mode_Toast_InstallFailed_Body" xml:space="preserve"><value>發生錯誤。</value></data>
+  <data name="Drop_Title" xml:space="preserve"><value>將 .lua、.manifest 或 .zip 檔案拖放到此處</value></data>
+  <data name="Drop_BrowseFiles" xml:space="preserve"><value>瀏覽檔案…</value></data>
+  <data name="Drop_Picker_Title" xml:space="preserve"><value>選擇 .lua / .manifest / .zip 檔案</value></data>
+  <data name="Drop_Picker_Filter" xml:space="preserve"><value>Lua / manifest / zip|*.lua;*.manifest;*.zip|所有檔案|*.*</value></data>
+  <data name="Drop_Nothing" xml:space="preserve"><value>沒有可安裝的內容——請拖入 .lua、.manifest 或 .zip 檔案。</value></data>
+  <data name="Drop_Confirm_Replace" xml:space="preserve"><value>取代「{0}」？</value></data>
+  <data name="Drop_Confirm_NoChanges" xml:space="preserve"><value>倉庫/DLC 無變更——內容相同。</value></data>
+  <data name="Drop_NothingInstalled" xml:space="preserve"><value>未安裝任何內容（已取消或檔名無法辨識）。</value></data>
+  <data name="Drop_Count_Luas" xml:space="preserve"><value>{0} 個 lua</value></data>
+  <data name="Drop_Count_Manifests" xml:space="preserve"><value>{0} 個資訊清單</value></data>
+  <data name="Drop_Result_Installed" xml:space="preserve"><value>已安裝 {0} 到 Steam。</value></data>
+  <data name="Drop_Result_Failed" xml:space="preserve"><value> {0} 個檔案失敗——請關閉 Steam 後重試。</value></data>
+  <data name="Common_SearchPlaceholder" xml:space="preserve"><value>依名稱或 App ID 搜尋...</value></data>
+  <data name="Common_Loading" xml:space="preserve"><value>載入中…</value></data>
+  <data name="Common_AppId" xml:space="preserve"><value>App ID：{0}</value></data>
+  <data name="Common_AppFallback" xml:space="preserve"><value>應用程式 {0}</value></data>
+  <data name="Manage_Title" xml:space="preserve"><value>管理</value></data>
+  <data name="Manage_Refresh" xml:space="preserve"><value>重新整理</value></data>
+  <data name="Manage_Filters" xml:space="preserve"><value>篩選</value></data>
+  <data name="Manage_Filter_Type" xml:space="preserve"><value>類型</value></data>
+  <data name="Manage_Filter_Genre" xml:space="preserve"><value>類別</value></data>
+  <data name="Manage_Filter_Year" xml:space="preserve"><value>年份</value></data>
+  <data name="Manage_Filter_Price" xml:space="preserve"><value>價格</value></data>
+  <data name="Manage_Filter_Content" xml:space="preserve"><value>內容</value></data>
+  <data name="Manage_Content_HideAdult" xml:space="preserve"><value>隱藏成人內容 (18+)</value></data>
+  <data name="Manage_Content_AdultOnly" xml:space="preserve"><value>僅成人內容</value></data>
+  <data name="Manage_Filter_SortBy" xml:space="preserve"><value>排序方式</value></data>
+  <data name="Manage_ClearFilters" xml:space="preserve"><value>清除篩選</value></data>
+  <data name="Manage_Select" xml:space="preserve"><value>選取</value></data>
+  <data name="Manage_DeleteThisLua" xml:space="preserve"><value>刪除此 lua</value></data>
+  <data name="Manage_ResultsPerPage" xml:space="preserve"><value>每頁結果數</value></data>
+  <data name="Manage_Action_ViewDetails" xml:space="preserve"><value>檢視詳細資料</value></data>
+  <data name="Manage_Action_Update" xml:space="preserve"><value>更新 / 重新下載</value></data>
+  <data name="Manage_Action_OpenStore" xml:space="preserve"><value>開啟商店頁面</value></data>
+  <data name="Manage_Action_OpenInSteam" xml:space="preserve"><value>在 Steam 中開啟</value></data>
+  <data name="Manage_Action_Reveal" xml:space="preserve"><value>顯示 .lua</value></data>
+  <data name="Manage_Action_CopyAppId" xml:space="preserve"><value>複製 App ID</value></data>
+  <data name="Manage_Action_RemoveDrm" xml:space="preserve"><value>移除 Steam DRM</value></data>
+  <data name="Manage_ActionsHeader" xml:space="preserve"><value>操作</value></data>
+  <data name="Manage_Steamless_Confirm_Title" xml:space="preserve"><value>移除 Steam DRM？</value></data>
+  <data name="Manage_Steamless_Confirm_Body" xml:space="preserve"><value>這會對遊戲的執行檔執行 Steamless 以移除 SteamStub DRM。原始 .exe 會先備份為 .bak。某些遊戲之後可能需要在 Steam 中驗證檔案。要繼續嗎？</value></data>
+  <data name="Manage_Steamless_Working" xml:space="preserve"><value>正在移除 Steam DRM…</value></data>
+  <data name="Manage_Toast_Steamless_Done" xml:space="preserve"><value>已處理 {0} 個，{1} 個未變更。</value></data>
+  <data name="Manage_Steamless_NoInstall" xml:space="preserve"><value>找不到遊戲資料夾——是否已安裝？</value></data>
+  <data name="Manage_Steamless_Failed" xml:space="preserve"><value>無法移除 DRM。{0}</value></data>
+  <data name="Manage_CopyAppIdTip" xml:space="preserve"><value>點擊以複製 App ID</value></data>
+  <data name="Manage_LoadingDepotInfo" xml:space="preserve"><value>正在載入倉庫資訊…</value></data>
+  <data name="Manage_MissingHint" xml:space="preserve"><value>Steam 上有但你的 lua 中沒有（通常是被審查或列入黑名單的倉庫）</value></data>
+  <data name="Manage_UnknownHint" xml:space="preserve"><value>損壞、未發行或共享的可轉散發倉庫——通常無需擔心</value></data>
+  <data name="Manage_Clear" xml:space="preserve"><value>清除</value></data>
+  <data name="Manage_DeleteSelected" xml:space="preserve"><value>刪除所選</value></data>
+  <data name="Manage_LoadingGames" xml:space="preserve"><value>正在載入你的遊戲…</value></data>
+  <data name="Manage_Opt_Any" xml:space="preserve"><value>任意</value></data>
+  <data name="Manage_Opt_Free" xml:space="preserve"><value>免費</value></data>
+  <data name="Manage_Opt_Paid" xml:space="preserve"><value>付費</value></data>
+  <data name="Manage_Sort_RecentlyAdded" xml:space="preserve"><value>最近新增</value></data>
+  <data name="Manage_Sort_NameAZ" xml:space="preserve"><value>名稱 (A–Z)</value></data>
+  <data name="Manage_Sort_ReleaseNewest" xml:space="preserve"><value>發行日期（最新）</value></data>
+  <data name="Manage_Sort_Metacritic" xml:space="preserve"><value>Metacritic 評分</value></data>
+  <data name="Manage_Sort_MostReviewed" xml:space="preserve"><value>評論最多</value></data>
+  <data name="Manage_PageSize_All" xml:space="preserve"><value>全部</value></data>
+  <data name="Manage_PageLabel" xml:space="preserve"><value>第 {0} / {1} 頁</value></data>
+  <data name="Manage_SelectionLabel" xml:space="preserve"><value>已選取 {0} 個</value></data>
+  <data name="Manage_FetchingDetails" xml:space="preserve"><value>正在擷取 {0} 個應用程式的詳細資料</value></data>
+  <data name="Manage_Empty_NoMatch" xml:space="preserve"><value>沒有符合篩選條件的遊戲。</value></data>
+  <data name="Manage_Empty_NoLuas" xml:space="preserve"><value>尚未找到 lua 檔案。請在「新增」分頁中新增遊戲。</value></data>
+  <data name="Manage_Empty_NoSteam" xml:space="preserve"><value>找不到 Steam 位置——請在設定中設定。</value></data>
+  <data name="Manage_Toast_NotFound_Title" xml:space="preserve"><value>找不到</value></data>
+  <data name="Manage_Toast_NotFound_Body" xml:space="preserve"><value>該遊戲已不在你的收藏庫中。</value></data>
+  <data name="Manage_Toast_Refreshed_Title" xml:space="preserve"><value>收藏庫已重新整理</value></data>
+  <data name="Manage_Toast_Refreshed_Body" xml:space="preserve"><value>共 {0} 個遊戲。</value></data>
+  <data name="Manage_DepotError" xml:space="preserve"><value>無法載入倉庫資訊（離線或未知應用程式）。</value></data>
+  <data name="Manage_Toggle_InLua" xml:space="preserve"><value>Lua 中</value></data>
+  <data name="Manage_Toggle_Missing" xml:space="preserve"><value>缺少的倉庫 / DLC</value></data>
+  <data name="Manage_Toggle_Unknown" xml:space="preserve"><value>未知項目</value></data>
+  <data name="Manage_Depot" xml:space="preserve"><value>倉庫</value></data>
+  <data name="Manage_SharedDepot" xml:space="preserve"><value>共享倉庫</value></data>
+  <data name="Manage_DlcName" xml:space="preserve"><value>DLC {0}</value></data>
+  <data name="Manage_Delete_Title" xml:space="preserve"><value>刪除 lua 檔案</value></data>
+  <data name="Manage_Delete_Body" xml:space="preserve"><value>移除「{0}」（App ID {1}）？
+
+這會從 Steam\config\stplug-in 刪除它的 .lua 檔案。</value></data>
+  <data name="Manage_DeleteMany_Title" xml:space="preserve"><value>刪除 lua 檔案</value></data>
+  <data name="Manage_DeleteMany_Body" xml:space="preserve"><value>移除 {0} 個 lua 檔案？
+
+這會從 Steam\config\stplug-in 刪除這些 .lua 檔案。</value></data>
+  <data name="Manage_RemoveFailed_Title" xml:space="preserve"><value>刪除失敗</value></data>
+  <data name="Manage_RemoveFailed_File" xml:space="preserve"><value>無法刪除檔案：
+{0}</value></data>
+  <data name="Manage_RemoveFailed_Named" xml:space="preserve"><value>無法刪除「{0}」：
+{1}</value></data>
+  <data name="Manage_RemoveFailed_Count" xml:space="preserve"><value>有 {0} 個檔案無法刪除。</value></data>
+  <data name="Manage_RestartSteam_Title" xml:space="preserve"><value>重新啟動 Steam</value></data>
+  <data name="Manage_RestartSteam_Failed" xml:space="preserve"><value>無法找到或啟動 Steam。請在設定中設定其位置。</value></data>
+  <data name="Fixes_Title" xml:space="preserve"><value>修正</value></data>
+  <data name="Fixes_Loading" xml:space="preserve"><value>正在載入修正…</value></data>
+  <data name="Fixes_Build" xml:space="preserve"><value>組建 {0}</value></data>
+  <data name="Fixes_Manifest" xml:space="preserve"><value>資訊清單</value></data>
+  <data name="Fixes_Fix" xml:space="preserve"><value>修正</value></data>
+  <data name="Fixes_Count" xml:space="preserve"><value>{0} 個修正</value></data>
+  <data name="Fixes_Err_Load" xml:space="preserve"><value>無法載入修正——請檢查你的連線。</value></data>
+  <data name="Fixes_Empty_None" xml:space="preserve"><value>暫無可用的修正。</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
+  <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>下載失敗</value></data>
+  <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>發生錯誤——請重試。</value></data>
+  <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>安裝失敗</value></data>
+  <data name="Fixes_Toast_InstallFailed_Body" xml:space="preserve"><value>無法安裝——請關閉 Steam（或使用「重新啟動 Steam」）後重試。</value></data>
+  <data name="Fixes_Toast_FixInstalled" xml:space="preserve"><value>修正已安裝</value></data>
+  <data name="Fixes_Toast_FixInstalled_Body" xml:space="preserve"><value>已安裝 {0} 的資訊清單。</value></data>
+  <data name="Fixes_Toast_GameNotFound" xml:space="preserve"><value>找不到遊戲</value></data>
+  <data name="Fixes_Toast_GameNotFound_Body" xml:space="preserve"><value>請先在 Steam 中安裝 {0}，然後再套用修正。</value></data>
+  <data name="Fixes_Toast_PartiallyApplied" xml:space="preserve"><value>修正部分套用</value></data>
+  <data name="Fixes_Toast_PartiallyApplied_Body" xml:space="preserve"><value>有 {0} 個檔案無法寫入——請關閉遊戲後重試。</value></data>
+  <data name="Fixes_Toast_FixApplied" xml:space="preserve"><value>修正已套用</value></data>
+  <data name="Fixes_Toast_FixApplied_Body" xml:space="preserve"><value>{0} 的修正已解壓縮到遊戲資料夾。</value></data>
+  <data name="Fixes_Toast_CouldntApply" xml:space="preserve"><value>無法套用修正</value></data>
+  <data name="Fixes_Toast_Refreshed_Title" xml:space="preserve"><value>已重新整理</value></data>
+  <data name="Fixes_Toast_Refreshed_Body" xml:space="preserve"><value>{0} 個含修復的遊戲。</value></data>
+  <data name="Add_Title" xml:space="preserve"><value>開始新增 Lua 吧™！</value></data>
+  <data name="Add_Subtitle" xml:space="preserve"><value>輸入 App ID、貼上 Steam 連結，或依遊戲名稱搜尋</value></data>
+  <data name="Add_SearchPlaceholder" xml:space="preserve"><value>輸入 App ID 或搜尋遊戲...</value></data>
+  <data name="Add_Featured_TopSellers" xml:space="preserve"><value>暢銷商品</value></data>
+  <data name="Add_Featured_NewReleases" xml:space="preserve"><value>最新與熱門</value></data>
+  <data name="Add_Released" xml:space="preserve"><value>發行於 {0}</value></data>
+  <data name="Add_Fetch" xml:space="preserve"><value>擷取</value></data>
+  <data name="Add_Checking" xml:space="preserve"><value>正在檢查…</value></data>
+  <data name="Add_Reveal" xml:space="preserve"><value>顯示</value></data>
+  <data name="Add_Supporter" xml:space="preserve"><value>Supporter</value></data>
+  <data name="Add_Unlimited" xml:space="preserve"><value>無限制</value></data>
+  <data name="Add_RequiresOwnKey" xml:space="preserve"><value>需要你自己的 API 金鑰</value></data>
+  <data name="Add_Discord" xml:space="preserve"><value>Discord</value></data>
+  <data name="Add_JoinDiscord" xml:space="preserve"><value>加入此來源的 Discord</value></data>
+  <data name="Add_Download" xml:space="preserve"><value>下載</value></data>
+  <data name="Add_NeedsHubcapKey" xml:space="preserve"><value>需要 Hubcap 金鑰</value></data>
+  <data name="Add_NeedsHubcapKey_Tip" xml:space="preserve"><value>在設定中填寫你的 Hubcap API 金鑰以解鎖此來源</value></data>
+  <data name="Add_Depots" xml:space="preserve"><value>倉庫</value></data>
+  <data name="Add_Available" xml:space="preserve"><value>可用</value></data>
+  <data name="Add_Missing" xml:space="preserve"><value>缺少</value></data>
+  <data name="Add_NoKey" xml:space="preserve"><value>無金鑰</value></data>
+  <data name="Add_DownloadLua" xml:space="preserve"><value>下載 .lua</value></data>
+  <data name="Add_Generating" xml:space="preserve"><value>正在產生…</value></data>
+  <data name="Add_DlcHint" xml:space="preserve"><value>將 .lua 放入 steam\config\stplug-in——請確保也已新增本體遊戲。這會計入你的每日上限（25/天）。</value></data>
+  <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>已經有檔案了？</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
+  <data name="Add_Err_BaseGame" xml:space="preserve"><value>無法確定此 DLC 的本體遊戲</value></data>
+  <data name="Add_Err_Generic" xml:space="preserve"><value>發生錯誤——請檢查你的連線後重試。</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>下載失敗——請檢查你的連線後重試。</value></data>
+  <data name="Add_Confirm_Replace" xml:space="preserve"><value>取代「{0}」？</value></data>
+  <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>倉庫/DLC 無變更——內容相同。</value></data>
+  <data name="Add_Status_Cancelled" xml:space="preserve"><value>安裝已取消——現有檔案保持不變。</value></data>
+  <data name="Add_Status_InstallFailed" xml:space="preserve"><value>無法安裝 {0} 個檔案——請關閉 Steam（或使用「重新啟動 Steam」）後重試。</value></data>
+  <data name="Add_Status_AddedManifests" xml:space="preserve"><value>已新增 {0}：lua + {1} 個資訊清單。</value></data>
+  <data name="Add_Status_AddedFetch" xml:space="preserve"><value>已新增 {0}。Steam 將擷取資訊清單。</value></data>
+  <data name="Confirm_OpenSteamDb" xml:space="preserve"><value>在 SteamDB 中開啟</value></data>
+  <data name="Confirm_Shared" xml:space="preserve"><value>共享</value></data>
+  <data name="Confirm_ReviewChanges" xml:space="preserve"><value>這將取代已安裝的 lua。請檢視變更內容：</value></data>
+  <data name="Confirm_Adding" xml:space="preserve"><value>新增 ({0})</value></data>
+  <data name="Confirm_Removing" xml:space="preserve"><value>移除 ({0})</value></data>
+  <data name="Confirm_Skip" xml:space="preserve"><value>略過</value></data>
+  <data name="Confirm_Replace" xml:space="preserve"><value>取代</value></data>
+  <data name="Settings_Section_Startup" xml:space="preserve"><value>啟動</value></data>
+  <data name="Settings_StartWithWindows" xml:space="preserve"><value>隨 Windows 啟動</value></data>
+  <data name="Settings_StartWithWindows_Hint" xml:space="preserve"><value>在 Windows 啟動時自動執行 GameGuy。</value></data>
+  <data name="Settings_MinimizeToTray" xml:space="preserve"><value>最小化至系統匣</value></data>
+  <data name="Settings_MinimizeToTray_Hint" xml:space="preserve"><value>關閉視窗時讓 GameGuy 留在系統匣繼續執行，而非結束程式。雙擊系統匣圖示即可還原。</value></data>
+  <data name="Tray_Open" xml:space="preserve"><value>開啟 GameGuy</value></data>
+  <data name="Tray_Exit" xml:space="preserve"><value>結束</value></data>
+
+  <data name="Add_FastFetch" xml:space="preserve"><value>FastFetch™️</value></data>
+  <data name="Add_FastFetch_Hint" xml:space="preserve"><value>自動從首個可用來源下載</value></data>
+  <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>未找到此遊戲的可用來源</value></data>
+  <data name="Add_FastFetch_Via" xml:space="preserve"><value>· 來源：{0}</value></data>
+  <data name="Plugin_Title" xml:space="preserve"><value>GameGuy 外掛</value></data>
+  <data name="Plugin_Subtitle" xml:space="preserve"><value>GameGuy 的 Steam 外掛！ — 現已改用 LuaLoader 取代 Shittenium</value></data>
+  <data name="Plugin_CardTitle" xml:space="preserve"><value>狀態</value></data>
+  <data name="Plugin_Badge_UpdateAvailable" xml:space="preserve"><value>有可用更新</value></data>
+  <data name="Plugin_Row_InstalledVersion" xml:space="preserve"><value>已安裝版本</value></data>
+  <data name="Plugin_Row_LatestVersion" xml:space="preserve"><value>最新版本</value></data>
+  <data name="Plugin_Row_Frontend" xml:space="preserve"><value>前端</value></data>
+  <data name="Plugin_Row_Loader" xml:space="preserve"><value>載入器 (winmm.dll)</value></data>
+  <data name="Plugin_Millennium_Coexisting" xml:space="preserve"><value>偵測到 Millennium——GameGuy 與其並行執行。安裝會停用 Millennium 自帶的此外掛副本，以便僅由 LuaLoader 注入。</value></data>
+  <data name="Plugin_Footer" xml:space="preserve"><value>LuaLoader 會安裝到你的 Steam 資料夾。此應用程式作為後端運行——如果你從系統匣關閉它，外掛將無法再運作！</value></data>
+  <data name="Plugin_Btn_Install" xml:space="preserve"><value>安裝</value></data>
+  <data name="Plugin_Btn_Update" xml:space="preserve"><value>更新</value></data>
+  <data name="Plugin_Btn_Reinstall" xml:space="preserve"><value>重新安裝</value></data>
+  <data name="Plugin_Btn_Uninstall" xml:space="preserve"><value>解除安裝</value></data>
+  <data name="Plugin_Btn_CheckForUpdates" xml:space="preserve"><value>檢查更新</value></data>
+  <data name="Plugin_Checking" xml:space="preserve"><value>正在檢查…</value></data>
+  <data name="Plugin_Status_Installed" xml:space="preserve"><value>已安裝</value></data>
+  <data name="Plugin_Status_NotInstalled" xml:space="preserve"><value>未安裝</value></data>
+  <data name="Plugin_Status_UpToDate" xml:space="preserve"><value>已是最新</value></data>
+  <data name="Plugin_Status_OutOfDate" xml:space="preserve"><value>已過期</value></data>
+  <data name="Plugin_Version_Unknown" xml:space="preserve"><value>未知</value></data>
+  <data name="Plugin_Version_Offline" xml:space="preserve"><value>離線</value></data>
+  <data name="Plugin_Status_OfflineCheck" xml:space="preserve"><value>無法連線 GitHub 以檢查更新。</value></data>
+  <data name="Plugin_Status_Port8080Busy" xml:space="preserve"><value>另一個程式已在使用連接埠 8080 — 外掛的瀏覽器橋接可能無法運作。請關閉佔用該連接埠的程式，然後重新安裝或重新啟動 Steam。</value></data>
+  <data name="Plugin_Confirm_RestartBody" xml:space="preserve"><value>這將關閉並重新啟動 Steam 以套用載入器。是否繼續？</value></data>
+  <data name="Plugin_Confirm_RestartCaption" xml:space="preserve"><value>重新啟動 Steam</value></data>
+  <data name="Plugin_Toast_Title" xml:space="preserve"><value>外掛</value></data>
+  <data name="Plugin_Toast_Installed" xml:space="preserve"><value>外掛已安裝。Steam 正在重新啟動以載入它。</value></data>
+  <data name="Plugin_Toast_InstallFailed" xml:space="preserve"><value>安裝失敗：{0}</value></data>
+  <data name="Plugin_Toast_Removed" xml:space="preserve"><value>外掛已移除。Steam 正在重新啟動。</value></data>
+  <data name="Plugin_Toast_UninstallFailed" xml:space="preserve"><value>解除安裝失敗：{0}</value></data>
+  <data name="Plugin_Toast_UpdateAvailable" xml:space="preserve"><value>有可用更新。</value></data>
+  <data name="Plugin_Toast_UpToDate" xml:space="preserve"><value>你已是最新版本。</value></data>
+  <data name="Plugin_Err_SteamNotFound" xml:space="preserve"><value>找不到 Steam 安裝。</value></data>
+  <data name="Plugin_Err_GithubUnreachable" xml:space="preserve"><value>無法連線 GitHub 以取得最新版本。</value></data>
+  <data name="Plugin_Err_MissingAssets" xml:space="preserve"><value>版本 {0} 缺少 {1} 或 {2}。</value></data>
+  <data name="Plugin_Err_VerifyFailed" xml:space="preserve"><value>{0} 的雜湊驗證失敗。</value></data>
+  <data name="Plugin_Err_NoLuatoolsJs" xml:space="preserve"><value>plugin.zip 未包含 public/luatools.js。</value></data>
+  <data name="Plugin_About_Header" xml:space="preserve"><value>主要功能</value></data>
+  <data name="Plugin_Feature_StoreButton" xml:space="preserve"><value>在 Steam 商店頁面新增「Add via LuaTools」按鈕</value></data>
+  <data name="Plugin_Feature_AutoUpdate" xml:space="preserve"><value>自動保持更新</value></data>
+  <data name="Plugin_Feature_Millennium" xml:space="preserve"><value>無論是否安裝 Millennium 都能使用</value></data>
+  <data name="Drop_LinkHint" xml:space="preserve"><value>…也可以拖入 SteamDB / Steam 商店連結來新增該遊戲。</value></data>
+  <data name="Manage_Action_ManageBuild" xml:space="preserve"><value>管理倉庫</value></data>
+  <data name="Manage_AboutHeader" xml:space="preserve"><value>關於</value></data>
+  <data name="Manage_Info_Developer" xml:space="preserve"><value>開發商</value></data>
+  <data name="Manage_Info_Publisher" xml:space="preserve"><value>發行商</value></data>
+  <data name="Nav_Builds" xml:space="preserve"><value>倉庫</value></data>
+  <data name="Builds_Title" xml:space="preserve"><value>倉庫</value></data>
+  <data name="Builds_Subtitle" xml:space="preserve"><value>為一款遊戲保留多個 lua 版本，並隨時切換 Steam 使用哪一個。</value></data>
+  <data name="Builds_NoSelection" xml:space="preserve"><value>在左側選擇一款遊戲以檢視它的預設集。</value></data>
+  <data name="Builds_ActiveBuild" xml:space="preserve"><value>目前預設集</value></data>
+  <data name="Builds_Active" xml:space="preserve"><value>使用中</value></data>
+  <data name="Builds_Variant_Default" xml:space="preserve"><value>預設</value></data>
+  <data name="Builds_Variant_Build" xml:space="preserve"><value>版本 {0}</value></data>
+  <data name="Builds_Variant_Preset" xml:space="preserve"><value>已儲存 · {0}</value></data>
+  <data name="Builds_Pinned" xml:space="preserve"><value>已鎖定</value></data>
+  <data name="Builds_AutoUpdating" xml:space="preserve"><value>自動更新</value></data>
+  <data name="Builds_LatestBuild" xml:space="preserve"><value>Steam 上的最新版本：{0}</value></data>
+  <data name="Builds_Manifest" xml:space="preserve"><value>資訊清單 {0}</value></data>
+  <data name="Builds_ManifestLatest" xml:space="preserve"><value>最新為 {0}</value></data>
+  <data name="Builds_PinDisabled" xml:space="preserve"><value>鎖定已關閉（自動更新）</value></data>
+  <data name="Builds_Meta_Depots" xml:space="preserve"><value>{0} 個倉庫 · {1} 個 DLC</value></data>
+  <data name="Builds_Meta_Unsaved" xml:space="preserve"><value>未儲存</value></data>
+  <data name="Builds_Source" xml:space="preserve"><value>來自 {0}</value></data>
+  <data name="Builds_Action_Apply" xml:space="preserve"><value>套用</value></data>
+  <data name="Builds_Action_Rename" xml:space="preserve"><value>重新命名</value></data>
+  <data name="Builds_Action_Edit" xml:space="preserve"><value>編輯</value></data>
+  <data name="Builds_Action_Delete" xml:space="preserve"><value>刪除</value></data>
+  <data name="Builds_Action_Save" xml:space="preserve"><value>儲存</value></data>
+  <data name="Builds_Action_SaveAsPreset" xml:space="preserve"><value>另存為預設集</value></data>
+  <data name="Builds_Action_Cancel" xml:space="preserve"><value>取消</value></data>
+  <data name="Builds_RenamePlaceholder" xml:space="preserve"><value>為這個預設集命名…</value></data>
+  <data name="Builds_Editor_Title" xml:space="preserve"><value>正在編輯 Steam 使用的 lua</value></data>
+  <data name="Builds_Delete_Title" xml:space="preserve"><value>刪除這個預設集？</value></data>
+  <data name="Builds_Delete_Body" xml:space="preserve"><value>「{0}」將從你儲存的預設集中移除。這不會影響遊戲本身。</value></data>
+  <data name="Builds_Delete_ActiveTip" xml:space="preserve"><value>無法刪除正在使用的預設集。</value></data>
+  <data name="Builds_Apply_Done" xml:space="preserve"><value>現在使用「{0}」。</value></data>
+  <data name="Builds_Apply_Failed" xml:space="preserve"><value>切換預設集失敗 — lua 檔案可能正被占用。</value></data>
+  <data name="Builds_Save_Done" xml:space="preserve"><value>已儲存。</value></data>
+  <data name="Builds_Save_Failed" xml:space="preserve"><value>儲存失敗 — lua 檔案可能正被占用。</value></data>
+  <data name="Builds_Preset_Saved" xml:space="preserve"><value>已另存為預設集。</value></data>
+  <data name="Builds_Action_SaveTo" xml:space="preserve"><value>儲存到「{0}」</value></data>
+  <data name="Builds_Action_SaveAsNew" xml:space="preserve"><value>另存為新的</value></data>
+  <data name="Builds_Save_Updated" xml:space="preserve"><value>已更新「{0}」。</value></data>
+  <data name="Builds_Depot_Lock" xml:space="preserve"><value>鎖定</value></data>
+  <data name="Builds_Depot_LockTip" xml:space="preserve"><value>鎖定：該倉庫維持在上方的資訊清單版本。解鎖：Steam 會將其更新到最新版本。（即註解或取消註解 setManifestid 那一行。）</value></data>
+  <data name="Builds_Depot_EnableTip" xml:space="preserve"><value>開：該倉庫的解密金鑰生效。關：該倉庫完全不會被解鎖。（即註解或取消註解 addappid 那一行。）</value></data>
+  <data name="Builds_Depot_Search" xml:space="preserve"><value>依名稱、ID 或類型搜尋倉庫…</value></data>
+  <data name="Builds_Depot_NoMatch" xml:space="preserve"><value>沒有符合的倉庫。</value></data>
+  <data name="Builds_Depot_InactiveNote" xml:space="preserve"><value>你正在編輯一個尚未套用的預設集 — 修改會直接儲存到它裡面，在你按下「套用」之前，Steam 仍會使用目前已套用的預設集。</value></data>
+  <data name="Manage_Action_LaunchOptions" xml:space="preserve"><value>啟動選項…</value></data>
+  <data name="Launch_Title" xml:space="preserve"><value>啟動選項</value></data>
+  <data name="Launch_Loading" xml:space="preserve"><value>正在讀取 Steam 的應用程式快取…</value></data>
+  <data name="Launch_NotFound" xml:space="preserve"><value>Steam 尚未有這款遊戲的快取資訊。請先啟動一次 Steam，然後再試一次。</value></data>
+  <data name="Launch_UnsupportedFormat" xml:space="preserve"><value>Steam 的應用程式快取格式目前版本無法識別（{0}）。請更新 GameGuy。</value></data>
+  <data name="Launch_ReadFailed" xml:space="preserve"><value>無法讀取 Steam 的應用程式快取。{0}</value></data>
+  <data name="Launch_ExecutableRequired" xml:space="preserve"><value>每個啟動選項都必須填寫執行檔。</value></data>
+  <data name="Launch_Add" xml:space="preserve"><value>新增</value></data>
+  <data name="Launch_Delete" xml:space="preserve"><value>刪除</value></data>
+  <data name="Launch_Field_Executable" xml:space="preserve"><value>執行檔</value></data>
+  <data name="Launch_Field_Arguments" xml:space="preserve"><value>啟動參數</value></data>
+  <data name="Launch_Field_WorkingDir" xml:space="preserve"><value>工作目錄</value></data>
+  <data name="Launch_Field_Description" xml:space="preserve"><value>名稱（顯示於 Steam 的開始選單）</value></data>
+  <data name="Launch_Field_Os" xml:space="preserve"><value>作業系統</value></data>
+  <data name="Launch_Field_Type" xml:space="preserve"><value>類型</value></data>
+  <data name="Launch_Field_BetaKey" xml:space="preserve"><value>僅限特定分支</value></data>
+  <data name="Launch_Field_BetaKey_Tip" xml:space="preserve"><value>此選項所限定的分支名稱 — 例如 beta、default、development。留空則會在所有分支上顯示。</value></data>
+  <data name="Launch_Field_OwnsDlc" xml:space="preserve"><value>僅在擁有 DLC 時（App ID）</value></data>
+  <data name="Launch_InstallPath" xml:space="preserve"><value>安裝路徑：{0}</value></data>
+  <data name="Launch_SteamRestartNote" xml:space="preserve"><value>套用變更會關閉並重新開啟 Steam。</value></data>
+  <data name="Launch_Restore" xml:space="preserve"><value>還原成原始設定</value></data>
+  <data name="Launch_Restore_Tip" xml:space="preserve"><value>還原 GameGuy 修改之前、Steam 隨附的啟動選項。</value></data>
+  <data name="Launch_Restore_Title" xml:space="preserve"><value>還原原始啟動選項？</value></data>
+  <data name="Launch_Restore_Body" xml:space="preserve"><value>這會把啟動選項還原成 Steam 原本的樣子，並捨棄你的變更。Steam 將被關閉並重新開啟。是否繼續？</value></data>
+  <data name="Launch_NothingToRestore" xml:space="preserve"><value>這款遊戲沒有被修改過，因此沒有可還原的內容。</value></data>
+  <data name="Launch_ApplyNow_Title" xml:space="preserve"><value>立即套用到 Steam？</value></data>
+  <data name="Launch_ApplyNow_Body" xml:space="preserve"><value>變更已儲存。要寫入 Steam 需要關閉並重新開啟 Steam — 現在就做嗎？選擇「取消」可稍後再套用。</value></data>
+  <data name="Launch_Staged" xml:space="preserve"><value>已儲存。準備好重新啟動 Steam 時，可在此視窗中套用。</value></data>
+  <data name="Launch_Applied" xml:space="preserve"><value>啟動選項已套用。</value></data>
+  <data name="Launch_Applied_Restarted" xml:space="preserve"><value>啟動選項已套用。Steam 已重新啟動。</value></data>
+  <data name="Launch_ApplyFailed" xml:space="preserve"><value>無法套用啟動選項。{0}</value></data>
+  <data name="Launch_Drift_Title" xml:space="preserve"><value>啟動選項已被重設</value></data>
+  <data name="Launch_Drift_Body" xml:space="preserve"><value>Steam 覆寫了你為 {0} 款遊戲設定的啟動選項。重新套用會關閉並重新開啟 Steam。</value></data>
+  <data name="Launch_Drift_Action" xml:space="preserve"><value>重新套用</value></data>
+  <data name="Err_SteamNotFound" xml:space="preserve"><value>找不到 Steam 位置。請在設定中指定。</value></data>
+  <data name="Err_GithubUnreachable" xml:space="preserve"><value>無法連線至 GitHub。請檢查網路連線後重試。</value></data>
+  <data name="Err_UpdateServerUnreachable" xml:space="preserve"><value>無法連線至更新伺服器。請檢查網路連線後重試。</value></data>
+  <data name="Err_Cancelled" xml:space="preserve"><value>已取消。</value></data>
+  <data name="Err_CancelledByUser" xml:space="preserve"><value>使用者已取消</value></data>
+  <data name="Err_ReleaseMissingDownload" xml:space="preserve"><value>此版本缺少所需的下載檔案。</value></data>
+  <data name="Err_ReleaseMissingFile" xml:space="preserve"><value>此版本缺少 {0}。</value></data>
+  <data name="Err_VerifyFailed" xml:space="preserve"><value>下載未通過驗證（sha256 不符）。</value></data>
+  <data name="Err_VerifyFailedFile" xml:space="preserve"><value>{0} 未通過驗證（sha256 不符）。</value></data>
+  <data name="Err_DownloadMissingFiles" xml:space="preserve"><value>下載內容缺少：{0}。</value></data>
+  <data name="Err_WriteFailedCount" xml:space="preserve"><value>有 {0} 個檔案無法寫入。請關閉 Steam 後重試。</value></data>
+  <data name="Err_WriteFailedFile" xml:space="preserve"><value>無法寫入 {0}。請關閉 Steam 後重試。</value></data>
+  <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>無法開啟下載的檔案：{0}</value></data>
+  <data name="Err_NoSourceAvailable" xml:space="preserve"><value>此遊戲沒有可用的來源。</value></data>
+  <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>下載連結是空的。請重試。</value></data>
+  <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>下載失敗（{0}）。</value></data>
+  <data name="Api_Err_RequestFailed" xml:space="preserve"><value>要求失敗（{0}）</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
+  <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>你的 Hubcap 金鑰無效或已過期。</value></data>
+  <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>已達到每日 Hubcap 上限。</value></data>
+  <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>此應用程式沒有可用的 Hubcap 資訊清單。</value></data>
+  <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Hubcap 下載失敗（{0}）。</value></data>
+  <data name="Nav_Downloads" xml:space="preserve"><value>下載</value></data>
+  <data name="Downloads_Title" xml:space="preserve"><value>下載</value></data>
+  <data name="Downloads_Empty" xml:space="preserve"><value>目前沒有下載。快去下載點什麼吧！</value></data>
+  <data name="Downloads_Section_Active" xml:space="preserve"><value>佇列</value></data>
+  <data name="Downloads_Section_History" xml:space="preserve"><value>歷史紀錄</value></data>
+  <data name="Downloads_Status_Queued" xml:space="preserve"><value>排隊中</value></data>
+  <data name="Downloads_Status_Downloading" xml:space="preserve"><value>下載中</value></data>
+  <data name="Downloads_Status_AwaitingConfirm" xml:space="preserve"><value>等待你確認</value></data>
+  <data name="Downloads_Status_Installing" xml:space="preserve"><value>安裝中</value></data>
+  <data name="Downloads_Status_Completed" xml:space="preserve"><value>已完成</value></data>
+  <data name="Downloads_Status_Failed" xml:space="preserve"><value>失敗</value></data>
+  <data name="Downloads_Status_Cancelled" xml:space="preserve"><value>已取消</value></data>
+  <data name="Downloads_Action_Cancel" xml:space="preserve"><value>取消</value></data>
+  <data name="Downloads_Action_Retry" xml:space="preserve"><value>重試</value></data>
+  <data name="Downloads_Action_Remove" xml:space="preserve"><value>移除</value></data>
+  <data name="Downloads_Action_MoveUp" xml:space="preserve"><value>上移</value></data>
+  <data name="Downloads_Action_MoveDown" xml:space="preserve"><value>下移</value></data>
+  <data name="Downloads_Action_ClearHistory" xml:space="preserve"><value>清除歷史紀錄</value></data>
+  <data name="Downloads_Action_Review" xml:space="preserve"><value>檢視</value></data>
+  <data name="Downloads_Of" xml:space="preserve"><value>{0} / {1}</value></data>
+  <data name="Downloads_Eta" xml:space="preserve"><value>剩餘 {0}</value></data>
+  <data name="Downloads_ActionRequired" xml:space="preserve"><value>需要操作</value></data>
+  <data name="Downloads_Err_Interrupted" xml:space="preserve"><value>應用程式關閉時被中斷。</value></data>
+  <data name="Downloads_Kind_Dlc" xml:space="preserve"><value>DLC 解鎖</value></data>
+  <data name="Fixes_NotInstalled_Hint" xml:space="preserve"><value>請先安裝遊戲，才能套用修正。</value></data>
+  <data name="Downloads_Status_Paused" xml:space="preserve"><value>已暫停</value></data>
+  <data name="Downloads_Status_Verifying" xml:space="preserve"><value>正在驗證…</value></data>
+  <data name="Downloads_Action_Pause" xml:space="preserve"><value>暫停</value></data>
+  <data name="Downloads_Action_Resume" xml:space="preserve"><value>繼續</value></data>
+  <data name="Downloads_Kind_Depot" xml:space="preserve"><value>倉庫檔案</value></data>
+  <data name="Downloads_Depots_Progress" xml:space="preserve"><value>倉庫 · 第 {0} 個，共 {1} 個</value></data>
+  <data name="Depot_Err_Tool" xml:space="preserve"><value>無法取得倉庫下載器。</value></data>
+  <data name="Depot_Err_NoKeys" xml:space="preserve"><value>找不到這款遊戲的解密金鑰。</value></data>
+  <data name="Depot_Err_Failed" xml:space="preserve"><value>倉庫 {0} 失敗：{1}</value></data>
+  <data name="Depot_Status_Done" xml:space="preserve"><value>已將 {0} 個倉庫下載到 {1}。</value></data>
+  <data name="Builds_Action_Download" xml:space="preserve"><value>下載</value></data>
+  <data name="Builds_Select_Title" xml:space="preserve"><value>選擇要下載的倉庫</value></data>
+  <data name="Builds_Select_Confirm" xml:space="preserve"><value>下載 {0} 個倉庫（{1}）</value></data>
+  <data name="Builds_Select_NoManifest" xml:space="preserve"><value>這個倉庫未宣告可下載的版本。</value></data>
+  <data name="Builds_Select_All" xml:space="preserve"><value>全選</value></data>
+  <data name="Builds_Select_None" xml:space="preserve"><value>未選擇倉庫</value></data>
+  <data name="Builds_Select_ChooseFolder" xml:space="preserve"><value>選擇倉庫檔案的儲存位置</value></data>
+  <data name="Depot_Err_NoSpace" xml:space="preserve"><value>磁碟空間不足：需要 {0}，僅剩 {1}。</value></data>
+  <data name="Builds_Select_SaveTo" xml:space="preserve"><value>儲存至</value></data>
+  <data name="Builds_Select_Space" xml:space="preserve"><value>需要 {0} · {2} 剩餘 {1}</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
+  <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>正在取得 manifest</value></data>
+  <data name="Depot_Err_NoManifest" xml:space="preserve"><value>無法取得這個倉庫的 manifest。</value></data>
+  <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>準備中 · {0} / {1}</value></data>
+  <data name="Downloads_Depots_GettingTool" xml:space="preserve"><value>正在取得下載器</value></data>
+  <data name="Downloads_Kind_Tool" xml:space="preserve"><value>工具</value></data>
+  <data name="Downloads_SteamAutoCrack" xml:space="preserve"><value>SteamAutoCrack</value></data>
+  <data name="Downloads_SAC_GettingRuntime" xml:space="preserve"><value>正在檢查 .NET 執行階段</value></data>
+  <data name="Downloads_SAC_GettingTool" xml:space="preserve"><value>正在取得 SteamAutoCrack</value></data>
+  <data name="Downloads_SAC_Launched" xml:space="preserve"><value>已開啟 SteamAutoCrack。</value></data>
+  <data name="Downloads_SAC_Err_Runtime" xml:space="preserve"><value>無法安裝 SteamAutoCrack 所需的 .NET 執行階段。</value></data>
+  <data name="Downloads_SAC_Err_Restart" xml:space="preserve"><value>.NET 執行階段已安裝，但需要重新啟動 Windows 後 SteamAutoCrack 才能執行。</value></data>
+  <data name="Downloads_SAC_Err_Tool" xml:space="preserve"><value>無法下載 SteamAutoCrack。</value></data>
+  <data name="Downloads_SAC_Err_Launch" xml:space="preserve"><value>無法啟動 SteamAutoCrack。</value></data>
+  <data name="Downloads_SAC_Updated" xml:space="preserve"><value>SteamAutoCrack 已更新。</value></data>
+  <data name="Downloads_Depot_PreAllocating" xml:space="preserve"><value>正在配置檔案</value></data>
+  <data name="Downloads_Depot_Validating" xml:space="preserve"><value>正在驗證既有檔案</value></data>
+  <data name="Depot_Cancel_Title" xml:space="preserve"><value>取消下載</value></data>
+  <data name="Depot_Cancel_Body" xml:space="preserve"><value>已寫入 {0} 到：
+{1}
+
+是 - 停止並刪除這些檔案
+否 - 停止但保留檔案
+取消 - 繼續下載</value></data>
+  <data name="Depot_Cancel_DeleteFailed" xml:space="preserve"><value>無法刪除已下載的檔案。它們仍在 {0}。</value></data>
+  <data name="Common_CopyAppId" xml:space="preserve"><value>複製 App ID</value></data>
+  <data name="Common_ShowInFolder" xml:space="preserve"><value>在資料夾中顯示</value></data>
+  <data name="Err_ClipboardBusy" xml:space="preserve"><value>無法複製 — 另一個應用程式正佔用剪貼簿。</value></data>
+  <data name="Err_PathMissing" xml:space="preserve"><value>無法開啟 {0} — 可能已被移動或刪除。</value></data>
+  <data name="Builds_Select_NoKey" xml:space="preserve"><value>Lua 中沒有此 depot 的解密金鑰。</value></data>
+  <data name="Depot_Err_BadKey" xml:space="preserve"><value>depot {0} 的解密金鑰不正確。</value></data>
+  <data name="Depot_Err_NoKeyFor" xml:space="preserve"><value>Lua 中沒有 depot {0} 的解密金鑰。</value></data>
+  <data name="Builds_Select_SharedHint" xml:space="preserve"><value>共用執行階段 — 通常已安裝。如仍需下載請勾選。</value></data>
+  <data name="Downloads_ClearHistory_Confirm" xml:space="preserve"><value>要從下載紀錄中移除全部 {0} 筆記錄嗎？已下載的檔案不會受影響。</value></data>
+  <data name="Fixes_Applied_Hint" xml:space="preserve"><value>此修復已套用。若要安裝其他修復，請先還原。</value></data>
+  <data name="Fixes_MyGames" xml:space="preserve"><value>我的遊戲</value></data>
+  <data name="Fixes_MyGames_Count" xml:space="preserve"><value>你的 {0} 款遊戲有可用修復。捲動清單可瀏覽其餘內容。</value></data>
+  <data name="Fixes_MyGames_NotInstalled" xml:space="preserve"><value>尚未新增 lua，新增或安裝一款遊戲後會顯示在這裡。</value></data>
+  <data name="Fixes_Revert" xml:space="preserve"><value>還原</value></data>
+  <data name="Fixes_Revert_Cancel" xml:space="preserve"><value>取消</value></data>
+  <data name="Fixes_Revert_Confirm_Body" xml:space="preserve"><value>要還原「{0}」嗎？修改過的檔案將從備份復原，修復新增的檔案將被刪除。</value></data>
+  <data name="Fixes_Revert_Confirm_Title" xml:space="preserve"><value>還原 {0} 的修復？</value></data>
+  <data name="Fixes_Revert_Done" xml:space="preserve"><value>修復已還原</value></data>
+  <data name="Fixes_Revert_Done_Body" xml:space="preserve"><value>已復原 {0} 個，已刪除 {1} 個新增檔案。</value></data>
+  <data name="Fixes_Revert_Failed" xml:space="preserve"><value>無法還原修復</value></data>
+  <data name="Fixes_Revert_NoRecord" xml:space="preserve"><value>沒有套用此修復的紀錄，可能已經還原過了。</value></data>
+  <data name="Fixes_Revert_Conflict" xml:space="preserve"><value>無法安全還原此修復</value></data>
+  <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>自套用此修復以來，{0} 已被變更，還原會覆寫這些變更。如果你在其上套用了另一個修復，請先還原那一個。共影響 {1} 個檔案。</value></data>
+  <data name="Fixes_Revert_Partial" xml:space="preserve"><value>修復部分還原</value></data>
+  <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>有 {0} 個檔案無法復原。請關閉遊戲後重試。</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
+</root>

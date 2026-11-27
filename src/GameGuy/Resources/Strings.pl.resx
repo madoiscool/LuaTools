@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- pl -->
+    <data name="App_Name" xml:space="preserve"><value>GameGuy</value></data>
+  <data name="Nav_Home" xml:space="preserve"><value>Główna</value></data>
+  <data name="Nav_Add" xml:space="preserve"><value>Dodaj</value></data>
+  <data name="Nav_Manage" xml:space="preserve"><value>Zarządzaj</value></data>
+  <data name="Nav_Mode" xml:space="preserve"><value>Tryb</value></data>
+  <data name="Nav_Fixes" xml:space="preserve"><value>Poprawki</value></data>
+  <data name="Nav_RestartSteam" xml:space="preserve"><value>Uruchom ponownie Steam</value></data>
+  <data name="Nav_Settings" xml:space="preserve"><value>Ustawienia</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
+  <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>Uruchomić ponownie Steam teraz? Spowoduje to zamknięcie Steam i wszystkich uruchomionych gier, a następnie ponowne uruchomienie.</value></data>
+  <data name="Settings_Title" xml:space="preserve"><value>Ustawienia</value></data>
+  <data name="Settings_Section_General" xml:space="preserve"><value>OGÓLNE</value></data>
+  <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
+  <data name="Settings_Section_Install" xml:space="preserve"><value>INSTALACJA</value></data>
+  <data name="Settings_Section_Community" xml:space="preserve"><value>SPOŁECZNOŚĆ</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
+  <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Zarządzaj swoim kluczem API Hubcap i profilem na</value></data>
+  <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
+  <data name="Settings_HubcapKey" xml:space="preserve"><value>Klucz API Hubcap</value></data>
+  <data name="Settings_HubcapKey_Hint" xml:space="preserve"><value>Wklej swój osobisty klucz API Hubcap, aby odblokować manifesty Hubcap. Aplikacja łączy się z Hubcap bezpośrednio przy użyciu Twojego klucza.</value></data>
+  <data name="Settings_HubcapKeyPlaceholder" xml:space="preserve"><value>Wklej swój klucz API (smm_…)</value></data>
+  <data name="Settings_HubcapValidate" xml:space="preserve"><value>Sprawdź i zapisz</value></data>
+  <data name="Settings_HubcapClear" xml:space="preserve"><value>Wyczyść</value></data>
+  <data name="Settings_HubcapGetKey" xml:space="preserve"><value>Zdobądź klucz na</value></data>
+  <data name="Settings_HubcapKeyOk" xml:space="preserve"><value>{0}/{1} żądań dzisiaj</value></data>
+  <data name="Settings_HubcapKeyOkExpiry" xml:space="preserve"><value>{0}/{1} dzisiaj · wygasa {2}</value></data>
+  <data name="Settings_HubcapKeyBad" xml:space="preserve"><value>To nie wygląda na prawidłowy klucz (smm_…).</value></data>
+  <data name="Settings_HubcapKeyError" xml:space="preserve"><value>Nie udało się zweryfikować klucza — może być nieprawidłowy, wygasły lub Hubcap jest nieosiągalny.</value></data>
+  <data name="Settings_HubcapActive" xml:space="preserve"><value>Aktywny</value></data>
+  <data name="Settings_HubcapRefresh" xml:space="preserve"><value>Odswiez</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>Język</value></data>
+  <data name="Settings_Language_Hint" xml:space="preserve"><value>Wybierz język wyświetlania aplikacji. Stosowane po ponownym uruchomieniu.</value></data>
+  <data name="Settings_Language_SystemDefault" xml:space="preserve"><value>Domyślny systemu</value></data>
+  <data name="Settings_Dns" xml:space="preserve"><value>Rozwiązywanie DNS</value></data>
+  <data name="Settings_Dns_Hint" xml:space="preserve"><value>Jeśli Twój dostawca blokuje lua.tools, aplikacja może rozwiązywać adresy przez Cloudflare (1.1.1.1) zamiast resolwera systemowego. „Automatycznie” przełącza się dopiero po awarii zwykłego DNS.</value></data>
+  <data name="Settings_Dns_Auto" xml:space="preserve"><value>Automatycznie</value></data>
+  <data name="Settings_Dns_Always" xml:space="preserve"><value>Zawsze używaj Cloudflare</value></data>
+  <data name="Settings_Dns_Never" xml:space="preserve"><value>Używaj tylko systemowego DNS</value></data>
+  <data name="Settings_SteamLocation" xml:space="preserve"><value>Lokalizacja Steam</value></data>
+  <data name="Settings_Change" xml:space="preserve"><value>Zmień…</value></data>
+  <data name="Settings_Open" xml:space="preserve"><value>Otwórz</value></data>
+  <data name="Settings_ResetToAuto" xml:space="preserve"><value>Przywróć automatyczne</value></data>
+  <data name="Settings_AutoUpdateApps" xml:space="preserve"><value>Automatycznie aktualizuj gry (nie blokuj manifestów)</value></data>
+  <data name="Settings_AutoUpdateApps_Hint" xml:space="preserve"><value>Instaluje bez przypinania wersji, dzięki czemu Steam aktualizuje gry. Wyłącz, aby zablokować gry na pobranej wersji.</value></data>
+  <data name="Settings_DonateKeys" xml:space="preserve"><value>Przekaż klucze deszyfrujące</value></data>
+  <data name="Settings_DonateKeys_Hint" xml:space="preserve"><value>Udostępnij zbędne klucze deszyfrujące depotów Steam, aby powiększyć pulę społeczności. Wysyłane są tylko zweryfikowane klucze — bez informacji o koncie ani danych osobowych.</value></data>
+  <data name="Settings_SteamNotFound" xml:space="preserve"><value>Nie znaleziono Steam</value></data>
+  <data name="Settings_SteamSource_Custom" xml:space="preserve"><value>Lokalizacja niestandardowa</value></data>
+  <data name="Settings_SteamSource_NotFound" xml:space="preserve"><value>Nie znaleziono</value></data>
+  <data name="Settings_SteamSource_Auto" xml:space="preserve"><value>Wykryto automatycznie z rejestru</value></data>
+  <data name="Settings_SteamWarning_NoExe" xml:space="preserve"><value>Nie znaleziono steam.exe w tym folderze.</value></data>
+  <data name="Settings_ChooseSteamFolder" xml:space="preserve"><value>Wybierz swój folder Steam</value></data>
+  <data name="Lang_Changed_Title" xml:space="preserve"><value>Zmieniono język</value></data>
+  <data name="Lang_Changed_Body" xml:space="preserve"><value>Uruchom ponownie aplikację, aby zastosować nowy język.</value></data>
+  <data name="Lang_Changed_Restart" xml:space="preserve"><value>Uruchom ponownie teraz</value></data>
+  <data name="Home_Welcome" xml:space="preserve"><value>Witamy w GameGuy</value></data>
+  <data name="Home_LuasOnBoard" xml:space="preserve"><value>Lua na pokładzie</value></data>
+  <data name="Home_LastAdded" xml:space="preserve"><value>OSTATNIO DODANE</value></data>
+  <data name="Home_PluginStatus" xml:space="preserve"><value>Stan wtyczki</value></data>
+  <data name="Home_RecentlyAdded" xml:space="preserve"><value>Ostatnio dodane</value></data>
+  <data name="Home_ViewDetails" xml:space="preserve"><value>Zobacz szczegóły</value></data>
+  <data name="Home_CheckingSteam" xml:space="preserve"><value>Sprawdzanie Steam…</value></data>
+  <data name="Home_SteamDetected" xml:space="preserve"><value>Wykryto Steam · {0}</value></data>
+  <data name="Home_SteamNotFound" xml:space="preserve"><value>Nie znaleziono Steam — ustaw jego lokalizację w Ustawieniach.</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
+  <data name="Home_NoModeSelected" xml:space="preserve"><value>Nie wybrano trybu</value></data>
+  <data name="Home_ModeIs" xml:space="preserve"><value>Tryb · {0}</value></data>
+  <data name="Mode_Title" xml:space="preserve"><value>Tryb</value></data>
+  <data name="Mode_Subtitle" xml:space="preserve"><value>Przełącz backend używany do odblokowywania gier dodanych za pomocą GameGuy — tylko jeden aktywny naraz.</value></data>
+  <data name="Mode_CheckForUpdates" xml:space="preserve"><value>Sprawdź aktualizacje</value></data>
+  <data name="Mode_Active" xml:space="preserve"><value>AKTYWNY</value></data>
+  <data name="Mode_Recommended" xml:space="preserve"><value>POLECANE</value></data>
+  <data name="Mode_Confirm_Body" xml:space="preserve"><value>Steam zostanie zamknięty, aby można było zmienić jego pliki, a następnie automatycznie uruchomiony ponownie. Wszystkie uruchomione gry i pobierania zostaną zatrzymane.</value></data>
+  <data name="Mode_Cancel" xml:space="preserve"><value>Anuluj</value></data>
+  <data name="Mode_CloseSteamContinue" xml:space="preserve"><value>Zamknij Steam i kontynuuj</value></data>
+  <data name="Mode_Desc_Bst" xml:space="preserve"><value>Otwartoźródłowy fork OpenSteamTools aktywnie rozwijany przez zespół GameGuy. Z poprawkami i nowymi funkcjami!</value></data>
+  <data name="Mode_CloudRedirect_Manage" xml:space="preserve"><value>Zarządzaj</value></data>
+  <data name="Mode_CloudRedirect_LaunchFailed" xml:space="preserve"><value>Nie udało się pobrać ani uruchomić CloudRedirect.</value></data>
+  <data name="Mode_Desc_Ost" xml:space="preserve"><value>Nocna kompilacja OpenSteamTools z najnowszego źródła. Najnowsze poprawki, ale może być mniej stabilna.</value></data>
+  <data name="Mode_UserManaged" xml:space="preserve"><value>Radzisz sobie sam</value></data>
+  <data name="Mode_Desc_Custom" xml:space="preserve"><value>Użyj własnego rozwiązania do odblokowania, nie będziemy w nim grzebać</value></data>
+  <data name="Mode_Name_Custom" xml:space="preserve"><value>Własny unlocker</value></data>
+  <data name="Mode_Experimental" xml:space="preserve"><value>EKSPERYMENTALNE</value></data>
+  <data name="Mode_CloudRedirectSupport" xml:space="preserve"><value>OBSŁUGA CLOUDREDIRECT</value></data>
+  <data name="Mode_CloudRedirect_AddonDesc" xml:space="preserve"><value>Przywraca natywną obsługę Steam Cloud za pośrednictwem zewnętrznych dostawców pamięci, takich jak Google Drive / OneDrive / Cloudflare R2 i inne. Obecnie zgodne tylko z OpenSteamTools / BetterSteamTools. Nie zapomnij skonfigurować go, klikając "Zarządzaj" po włączeniu, a następnie uruchom ponownie Steam!</value></data>
+  <data name="Mode_CloudRedirect_Locked" xml:space="preserve"><value>Wybierz OpenSteamTools / BetterSteamTools, aby użyć CloudRedirect.</value></data>
+  <data name="Mode_CloudRedirect_Enable" xml:space="preserve"><value>Włącz</value></data>
+  <data name="Mode_CloudRedirect_Disable" xml:space="preserve"><value>Wyłącz</value></data>
+  <data name="Mode_CloudRedirect_Status_Enabled" xml:space="preserve"><value>Włączone.</value></data>
+  <data name="Mode_CloudRedirect_Status_Disabled" xml:space="preserve"><value>Zainstalowane, ale wyłączone.</value></data>
+  <data name="Mode_CloudRedirect_Status_NotInstalled" xml:space="preserve"><value>Jeszcze nie zainstalowano.</value></data>
+  <data name="Mode_CloudRedirect_Status_UpdateAvailable" xml:space="preserve"><value>Dostępna aktualizacja.</value></data>
+  <data name="Mode_CloudRedirect_Toast_Enabled" xml:space="preserve"><value>Włączono — uruchom ponownie Steam, aby zastosować.</value></data>
+  <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>Wyłączono — uruchom ponownie Steam, aby zastosować.</value></data>
+  <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>Zaktualizowano — uruchom ponownie Steam, aby zastosować.</value></data>
+  <data name="Onboarding_Title" xml:space="preserve"><value>Witaj w aplikacji GameGuy!</value></data>
+  <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>Zastosuj zalecane ustawienia</value></data>
+  <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>Tryb: BetterSteamTools · FastFetch włączony</value></data>
+  <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>Zainstaluj naszą słynną wtyczkę</value></data>
+  <data name="Onboarding_Plugin_Detail" xml:space="preserve"><value>Dodaje przycisk „Add via LuaTools” do stron sklepu Steam.</value></data>
+  <data name="Onboarding_Yes" xml:space="preserve"><value>Tak, poproszę</value></data>
+  <data name="Onboarding_No" xml:space="preserve"><value>Nie, dziękuję</value></data>
+  <data name="Onboarding_Go" xml:space="preserve"><value>Zaczynajmy!</value></data>
+  <data name="Onboarding_Applying" xml:space="preserve"><value>Przygotowywanie…</value></data>
+  <data name="Mode_Checking" xml:space="preserve"><value>Sprawdzanie…</value></data>
+  <data name="Mode_StatusUnavailable" xml:space="preserve"><value>Status niedostępny (offline?)</value></data>
+  <data name="Mode_NotActive" xml:space="preserve"><value>Nieaktywny</value></data>
+  <data name="Mode_NotInstalled" xml:space="preserve"><value>Niezainstalowany</value></data>
+  <data name="Mode_UpToDate" xml:space="preserve"><value>Aktualny</value></data>
+  <data name="Mode_UpdateAvailable" xml:space="preserve"><value>Dostępna aktualizacja</value></data>
+  <data name="Mode_Btn_Reinstall" xml:space="preserve"><value>Zainstaluj ponownie</value></data>
+  <data name="Mode_Btn_Update" xml:space="preserve"><value>Aktualizuj</value></data>
+  <data name="Mode_Btn_Install" xml:space="preserve"><value>Zainstaluj</value></data>
+  <data name="Mode_Btn_Switch" xml:space="preserve"><value>Przełącz na ten</value></data>
+  <data name="Mode_Confirm_Reinstall" xml:space="preserve"><value>Zainstalować ponownie {0}?</value></data>
+  <data name="Mode_Confirm_Switch" xml:space="preserve"><value>Przełączyć na {0}?</value></data>
+  <data name="Mode_Toast_Updated" xml:space="preserve"><value>Zaktualizowano tryb</value></data>
+  <data name="Mode_Toast_Updated_Restarting" xml:space="preserve"><value>{0} jest zainstalowany — Steam uruchamia się ponownie.</value></data>
+  <data name="Mode_Toast_Updated_Start" xml:space="preserve"><value>{0} jest zainstalowany. Uruchom Steam, aby go używać.</value></data>
+  <data name="Mode_Toast_InstallFailed" xml:space="preserve"><value>Instalacja nie powiodła się</value></data>
+  <data name="Mode_Toast_InstallFailed_Body" xml:space="preserve"><value>Coś poszło nie tak.</value></data>
+  <data name="Drop_Title" xml:space="preserve"><value>Upuść tutaj pliki .lua, .manifest lub .zip</value></data>
+  <data name="Drop_BrowseFiles" xml:space="preserve"><value>Przeglądaj pliki…</value></data>
+  <data name="Drop_Picker_Title" xml:space="preserve"><value>Wybierz pliki .lua / .manifest / .zip</value></data>
+  <data name="Drop_Picker_Filter" xml:space="preserve"><value>Lua / manifest / zip|*.lua;*.manifest;*.zip|Wszystkie pliki|*.*</value></data>
+  <data name="Drop_Nothing" xml:space="preserve"><value>Nie ma nic do zainstalowania — upuść pliki .lua, .manifest lub .zip.</value></data>
+  <data name="Drop_Confirm_Replace" xml:space="preserve"><value>Zastąpić „{0}”?</value></data>
+  <data name="Drop_Confirm_NoChanges" xml:space="preserve"><value>Brak zmian depotu/DLC — ta sama zawartość.</value></data>
+  <data name="Drop_NothingInstalled" xml:space="preserve"><value>Nic nie zainstalowano (anulowano lub nierozpoznane nazwy plików).</value></data>
+  <data name="Drop_Count_Luas" xml:space="preserve"><value>{0} lua</value></data>
+  <data name="Drop_Count_Manifests" xml:space="preserve"><value>{0} manifest(ów)</value></data>
+  <data name="Drop_Result_Installed" xml:space="preserve"><value>Zainstalowano {0} w Steam.</value></data>
+  <data name="Drop_Result_Failed" xml:space="preserve"><value> {0} plik(ów) nie powiodło się — zamknij Steam i spróbuj ponownie.</value></data>
+  <data name="Common_SearchPlaceholder" xml:space="preserve"><value>Szukaj według nazwy lub App ID...</value></data>
+  <data name="Common_Loading" xml:space="preserve"><value>Ładowanie…</value></data>
+  <data name="Common_AppId" xml:space="preserve"><value>App ID: {0}</value></data>
+  <data name="Common_AppFallback" xml:space="preserve"><value>Aplikacja {0}</value></data>
+  <data name="Manage_Title" xml:space="preserve"><value>Zarządzaj</value></data>
+  <data name="Manage_Refresh" xml:space="preserve"><value>Odśwież</value></data>
+  <data name="Manage_Filters" xml:space="preserve"><value>Filtry</value></data>
+  <data name="Manage_Filter_Type" xml:space="preserve"><value>Typ</value></data>
+  <data name="Manage_Filter_Genre" xml:space="preserve"><value>Gatunek</value></data>
+  <data name="Manage_Filter_Year" xml:space="preserve"><value>Rok</value></data>
+  <data name="Manage_Filter_Price" xml:space="preserve"><value>Cena</value></data>
+  <data name="Manage_Filter_Content" xml:space="preserve"><value>Treść</value></data>
+  <data name="Manage_Content_HideAdult" xml:space="preserve"><value>Ukryj treści dla dorosłych (18+)</value></data>
+  <data name="Manage_Content_AdultOnly" xml:space="preserve"><value>Tylko dla dorosłych</value></data>
+  <data name="Manage_Filter_SortBy" xml:space="preserve"><value>Sortuj według</value></data>
+  <data name="Manage_ClearFilters" xml:space="preserve"><value>Wyczyść filtry</value></data>
+  <data name="Manage_Select" xml:space="preserve"><value>Zaznacz</value></data>
+  <data name="Manage_DeleteThisLua" xml:space="preserve"><value>Usuń ten lua</value></data>
+  <data name="Manage_ResultsPerPage" xml:space="preserve"><value>Wyników na stronę</value></data>
+  <data name="Manage_Action_ViewDetails" xml:space="preserve"><value>Zobacz szczegóły</value></data>
+  <data name="Manage_Action_Update" xml:space="preserve"><value>Aktualizuj / pobierz ponownie</value></data>
+  <data name="Manage_Action_OpenStore" xml:space="preserve"><value>Otwórz stronę sklepu</value></data>
+  <data name="Manage_Action_OpenInSteam" xml:space="preserve"><value>Otwórz w Steam</value></data>
+  <data name="Manage_Action_Reveal" xml:space="preserve"><value>Pokaż .lua</value></data>
+  <data name="Manage_Action_CopyAppId" xml:space="preserve"><value>Kopiuj App ID</value></data>
+  <data name="Manage_Action_RemoveDrm" xml:space="preserve"><value>Usuń DRM Steam</value></data>
+  <data name="Manage_ActionsHeader" xml:space="preserve"><value>Akcje</value></data>
+  <data name="Manage_Steamless_Confirm_Title" xml:space="preserve"><value>Usunąć DRM Steam?</value></data>
+  <data name="Manage_Steamless_Confirm_Body" xml:space="preserve"><value>To uruchomi Steamless na pliku wykonywalnym gry, aby usunąć DRM SteamStub. Oryginalny .exe zostanie najpierw zapisany jako .bak. Niektóre gry mogą wymagać później weryfikacji plików w Steam. Kontynuować?</value></data>
+  <data name="Manage_Steamless_Working" xml:space="preserve"><value>Usuwanie DRM Steam…</value></data>
+  <data name="Manage_Toast_Steamless_Done" xml:space="preserve"><value>{0} zmienione, {1} bez zmian.</value></data>
+  <data name="Manage_Steamless_NoInstall" xml:space="preserve"><value>Nie znaleziono folderu gry — czy jest zainstalowana?</value></data>
+  <data name="Manage_Steamless_Failed" xml:space="preserve"><value>Nie udało się usunąć DRM. {0}</value></data>
+  <data name="Manage_CopyAppIdTip" xml:space="preserve"><value>Kliknij, aby skopiować App ID</value></data>
+  <data name="Manage_LoadingDepotInfo" xml:space="preserve"><value>Ładowanie informacji o depocie…</value></data>
+  <data name="Manage_MissingHint" xml:space="preserve"><value>W Steam, ale nie w twoim lua (często ocenzurowane lub objęte czarną listą depoty)</value></data>
+  <data name="Manage_UnknownHint" xml:space="preserve"><value>Uszkodzone, niewydane lub współdzielone depoty redystrybucyjne — zwykle nie ma się czym martwić</value></data>
+  <data name="Manage_Clear" xml:space="preserve"><value>Wyczyść</value></data>
+  <data name="Manage_DeleteSelected" xml:space="preserve"><value>Usuń zaznaczone</value></data>
+  <data name="Manage_LoadingGames" xml:space="preserve"><value>Ładowanie twoich gier…</value></data>
+  <data name="Manage_Opt_Any" xml:space="preserve"><value>Dowolny</value></data>
+  <data name="Manage_Opt_Free" xml:space="preserve"><value>Darmowe</value></data>
+  <data name="Manage_Opt_Paid" xml:space="preserve"><value>Płatne</value></data>
+  <data name="Manage_Sort_RecentlyAdded" xml:space="preserve"><value>Ostatnio dodane</value></data>
+  <data name="Manage_Sort_NameAZ" xml:space="preserve"><value>Nazwa (A–Z)</value></data>
+  <data name="Manage_Sort_ReleaseNewest" xml:space="preserve"><value>Data wydania (najnowsze)</value></data>
+  <data name="Manage_Sort_Metacritic" xml:space="preserve"><value>Metacritic</value></data>
+  <data name="Manage_Sort_MostReviewed" xml:space="preserve"><value>Najczęściej oceniane</value></data>
+  <data name="Manage_PageSize_All" xml:space="preserve"><value>Wszystkie</value></data>
+  <data name="Manage_PageLabel" xml:space="preserve"><value>Strona {0} z {1}</value></data>
+  <data name="Manage_SelectionLabel" xml:space="preserve"><value>Zaznaczono: {0}</value></data>
+  <data name="Manage_FetchingDetails" xml:space="preserve"><value>Pobieranie szczegółów dla {0} aplikacji</value></data>
+  <data name="Manage_Empty_NoMatch" xml:space="preserve"><value>Żadna gra nie pasuje do twoich filtrów.</value></data>
+  <data name="Manage_Empty_NoLuas" xml:space="preserve"><value>Nie znaleziono jeszcze plików lua. Dodaj grę z karty Dodaj.</value></data>
+  <data name="Manage_Empty_NoSteam" xml:space="preserve"><value>Nie znaleziono lokalizacji Steam — ustaw ją w Ustawieniach.</value></data>
+  <data name="Manage_Toast_NotFound_Title" xml:space="preserve"><value>Nie znaleziono</value></data>
+  <data name="Manage_Toast_NotFound_Body" xml:space="preserve"><value>Tej gry nie ma już w twojej bibliotece.</value></data>
+  <data name="Manage_Toast_Refreshed_Title" xml:space="preserve"><value>Odświeżono bibliotekę</value></data>
+  <data name="Manage_Toast_Refreshed_Body" xml:space="preserve"><value>{0} gier na pokładzie.</value></data>
+  <data name="Manage_DepotError" xml:space="preserve"><value>Nie udało się załadować informacji o depocie (offline lub nieznana aplikacja).</value></data>
+  <data name="Manage_Toggle_InLua" xml:space="preserve"><value>W lua</value></data>
+  <data name="Manage_Toggle_Missing" xml:space="preserve"><value>Brakujące depoty / DLC</value></data>
+  <data name="Manage_Toggle_Unknown" xml:space="preserve"><value>Nieznane rzeczy</value></data>
+  <data name="Manage_Depot" xml:space="preserve"><value>Depot</value></data>
+  <data name="Manage_SharedDepot" xml:space="preserve"><value>Współdzielony depot</value></data>
+  <data name="Manage_DlcName" xml:space="preserve"><value>DLC {0}</value></data>
+  <data name="Manage_Delete_Title" xml:space="preserve"><value>Usuń plik lua</value></data>
+  <data name="Manage_Delete_Body" xml:space="preserve"><value>Usunąć „{0}” (App ID {1})?
+
+Spowoduje to usunięcie pliku .lua z Steam\config\stplug-in.</value></data>
+  <data name="Manage_DeleteMany_Title" xml:space="preserve"><value>Usuń pliki lua</value></data>
+  <data name="Manage_DeleteMany_Body" xml:space="preserve"><value>Usunąć {0} plików lua?
+
+Spowoduje to usunięcie plików .lua z Steam\config\stplug-in.</value></data>
+  <data name="Manage_RemoveFailed_Title" xml:space="preserve"><value>Usuwanie nie powiodło się</value></data>
+  <data name="Manage_RemoveFailed_File" xml:space="preserve"><value>Nie udało się usunąć pliku:
+{0}</value></data>
+  <data name="Manage_RemoveFailed_Named" xml:space="preserve"><value>Nie udało się usunąć „{0}”:
+{1}</value></data>
+  <data name="Manage_RemoveFailed_Count" xml:space="preserve"><value>Nie udało się usunąć {0} plików.</value></data>
+  <data name="Manage_RestartSteam_Title" xml:space="preserve"><value>Uruchom ponownie Steam</value></data>
+  <data name="Manage_RestartSteam_Failed" xml:space="preserve"><value>Nie udało się znaleźć ani uruchomić Steam. Ustaw jego lokalizację w Ustawieniach.</value></data>
+  <data name="Fixes_Title" xml:space="preserve"><value>Poprawki</value></data>
+  <data name="Fixes_Loading" xml:space="preserve"><value>Ładowanie poprawek…</value></data>
+  <data name="Fixes_Build" xml:space="preserve"><value>Kompilacja {0}</value></data>
+  <data name="Fixes_Manifest" xml:space="preserve"><value>Manifest</value></data>
+  <data name="Fixes_Fix" xml:space="preserve"><value>Poprawka</value></data>
+  <data name="Fixes_Count" xml:space="preserve"><value>Poprawki: {0}</value></data>
+  <data name="Fixes_Err_Load" xml:space="preserve"><value>Nie udało się załadować poprawek — sprawdź połączenie.</value></data>
+  <data name="Fixes_Empty_None" xml:space="preserve"><value>Brak dostępnych poprawek.</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
+  <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>Pobieranie nie powiodło się</value></data>
+  <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>Coś poszło nie tak — spróbuj ponownie.</value></data>
+  <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>Instalacja nie powiodła się</value></data>
+  <data name="Fixes_Toast_InstallFailed_Body" xml:space="preserve"><value>Nie udało się zainstalować — zamknij Steam (lub uruchom go ponownie) i spróbuj ponownie.</value></data>
+  <data name="Fixes_Toast_FixInstalled" xml:space="preserve"><value>Zainstalowano poprawkę</value></data>
+  <data name="Fixes_Toast_FixInstalled_Body" xml:space="preserve"><value>Zainstalowano manifest {0}.</value></data>
+  <data name="Fixes_Toast_GameNotFound" xml:space="preserve"><value>Nie znaleziono gry</value></data>
+  <data name="Fixes_Toast_GameNotFound_Body" xml:space="preserve"><value>Najpierw zainstaluj {0} w Steam, a następnie zastosuj poprawkę.</value></data>
+  <data name="Fixes_Toast_PartiallyApplied" xml:space="preserve"><value>Poprawka zastosowana częściowo</value></data>
+  <data name="Fixes_Toast_PartiallyApplied_Body" xml:space="preserve"><value>Nie udało się zapisać {0} plik(ów) — zamknij grę i spróbuj ponownie.</value></data>
+  <data name="Fixes_Toast_FixApplied" xml:space="preserve"><value>Zastosowano poprawkę</value></data>
+  <data name="Fixes_Toast_FixApplied_Body" xml:space="preserve"><value>Poprawka {0} wypakowana do folderu gry.</value></data>
+  <data name="Fixes_Toast_CouldntApply" xml:space="preserve"><value>Nie udało się zastosować poprawki</value></data>
+  <data name="Fixes_Toast_Refreshed_Title" xml:space="preserve"><value>Odświeżono</value></data>
+  <data name="Fixes_Toast_Refreshed_Body" xml:space="preserve"><value>{0} gier z fixami.</value></data>
+  <data name="Add_Title" xml:space="preserve"><value>Bierzemy się za Lua™!</value></data>
+  <data name="Add_Subtitle" xml:space="preserve"><value>Wpisz App ID, wklej link Steam lub wyszukaj według nazwy gry</value></data>
+  <data name="Add_SearchPlaceholder" xml:space="preserve"><value>Wpisz App ID lub wyszukaj gry...</value></data>
+  <data name="Add_Featured_TopSellers" xml:space="preserve"><value>Najlepiej sprzedające się</value></data>
+  <data name="Add_Featured_NewReleases" xml:space="preserve"><value>Nowości</value></data>
+  <data name="Add_Released" xml:space="preserve"><value>Wydano {0}</value></data>
+  <data name="Add_Fetch" xml:space="preserve"><value>Pobierz</value></data>
+  <data name="Add_Checking" xml:space="preserve"><value>Sprawdzanie…</value></data>
+  <data name="Add_Reveal" xml:space="preserve"><value>Pokaż</value></data>
+  <data name="Add_Supporter" xml:space="preserve"><value>Supporter</value></data>
+  <data name="Add_Unlimited" xml:space="preserve"><value>Nieograniczony</value></data>
+  <data name="Add_RequiresOwnKey" xml:space="preserve"><value>Wymaga własnego klucza API</value></data>
+  <data name="Add_Discord" xml:space="preserve"><value>Discord</value></data>
+  <data name="Add_JoinDiscord" xml:space="preserve"><value>Dołącz do Discorda tego źródła</value></data>
+  <data name="Add_Download" xml:space="preserve"><value>Pobierz</value></data>
+  <data name="Add_NeedsHubcapKey" xml:space="preserve"><value>Wymaga klucza Hubcap</value></data>
+  <data name="Add_NeedsHubcapKey_Tip" xml:space="preserve"><value>Ustaw swój klucz API Hubcap w Ustawieniach, aby odblokować to źródło</value></data>
+  <data name="Add_Depots" xml:space="preserve"><value>DEPOTY</value></data>
+  <data name="Add_Available" xml:space="preserve"><value>DOSTĘPNE</value></data>
+  <data name="Add_Missing" xml:space="preserve"><value>BRAKUJĄCE</value></data>
+  <data name="Add_NoKey" xml:space="preserve"><value>BRAK KLUCZA</value></data>
+  <data name="Add_DownloadLua" xml:space="preserve"><value>Pobierz .lua</value></data>
+  <data name="Add_Generating" xml:space="preserve"><value>Generowanie…</value></data>
+  <data name="Add_DlcHint" xml:space="preserve"><value>Umieść plik .lua w steam\config\stplug-in — upewnij się, że gra podstawowa również jest dodana. Liczy się do twojego dziennego limitu (25/dzień).</value></data>
+  <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>Masz już pliki?</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
+  <data name="Add_Err_BaseGame" xml:space="preserve"><value>Nie udało się ustalić gry podstawowej dla tego DLC</value></data>
+  <data name="Add_Err_Generic" xml:space="preserve"><value>Coś poszło nie tak — sprawdź połączenie i spróbuj ponownie.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Pobieranie nie powiodło się — sprawdź połączenie i spróbuj ponownie.</value></data>
+  <data name="Add_Confirm_Replace" xml:space="preserve"><value>Zastąpić „{0}”?</value></data>
+  <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Brak zmian depotu/DLC — ta sama zawartość.</value></data>
+  <data name="Add_Status_Cancelled" xml:space="preserve"><value>Anulowano instalację — istniejące pliki pozostały bez zmian.</value></data>
+  <data name="Add_Status_InstallFailed" xml:space="preserve"><value>Nie udało się zainstalować {0} plik(ów) — zamknij Steam (lub użyj Uruchom ponownie Steam) i spróbuj ponownie.</value></data>
+  <data name="Add_Status_AddedManifests" xml:space="preserve"><value>Dodano {0}: lua + {1} manifest(ów).</value></data>
+  <data name="Add_Status_AddedFetch" xml:space="preserve"><value>Dodano {0}. Steam pobierze manifesty.</value></data>
+  <data name="Confirm_OpenSteamDb" xml:space="preserve"><value>Otwórz w SteamDB</value></data>
+  <data name="Confirm_Shared" xml:space="preserve"><value>WSPÓŁDZIELONY</value></data>
+  <data name="Confirm_ReviewChanges" xml:space="preserve"><value>To zastąpi zainstalowany lua. Sprawdź, co się zmienia:</value></data>
+  <data name="Confirm_Adding" xml:space="preserve"><value>Dodawanie ({0})</value></data>
+  <data name="Confirm_Removing" xml:space="preserve"><value>Usuwanie ({0})</value></data>
+  <data name="Confirm_Skip" xml:space="preserve"><value>Pomiń</value></data>
+  <data name="Confirm_Replace" xml:space="preserve"><value>Zastąp</value></data>
+  <data name="Settings_Section_Startup" xml:space="preserve"><value>URUCHAMIANIE</value></data>
+  <data name="Settings_StartWithWindows" xml:space="preserve"><value>Uruchamiaj z systemem Windows</value></data>
+  <data name="Settings_StartWithWindows_Hint" xml:space="preserve"><value>Automatycznie uruchamiaj GameGuy przy starcie systemu Windows.</value></data>
+  <data name="Settings_MinimizeToTray" xml:space="preserve"><value>Minimalizuj do zasobnika systemowego</value></data>
+  <data name="Settings_MinimizeToTray_Hint" xml:space="preserve"><value>Po zamknięciu okna pozostaw GameGuy działające w zasobniku systemowym zamiast kończyć program. Kliknij dwukrotnie ikonę, aby przywrócić.</value></data>
+  <data name="Tray_Open" xml:space="preserve"><value>Otwórz GameGuy</value></data>
+  <data name="Tray_Exit" xml:space="preserve"><value>Zakończ</value></data>
+
+  <data name="Add_FastFetch" xml:space="preserve"><value>FastFetch™️</value></data>
+  <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Automatyczne pobieranie z pierwszego dostępnego źródła</value></data>
+  <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Nie znaleziono dostępnych źródeł dla tej gry</value></data>
+  <data name="Add_FastFetch_Via" xml:space="preserve"><value>· przez {0}</value></data>
+  <data name="Plugin_Title" xml:space="preserve"><value>Wtyczka GameGuy</value></data>
+  <data name="Plugin_Subtitle" xml:space="preserve"><value>Wtyczka GameGuy do Steam! — Teraz używa LuaLoader zamiast Shittenium</value></data>
+  <data name="Plugin_CardTitle" xml:space="preserve"><value>Stan</value></data>
+  <data name="Plugin_Badge_UpdateAvailable" xml:space="preserve"><value>Dostępna aktualizacja</value></data>
+  <data name="Plugin_Row_InstalledVersion" xml:space="preserve"><value>Zainstalowana wersja</value></data>
+  <data name="Plugin_Row_LatestVersion" xml:space="preserve"><value>Najnowsza wersja</value></data>
+  <data name="Plugin_Row_Frontend" xml:space="preserve"><value>Frontend</value></data>
+  <data name="Plugin_Row_Loader" xml:space="preserve"><value>Loader (winmm.dll)</value></data>
+  <data name="Plugin_Millennium_Coexisting" xml:space="preserve"><value>Wykryto Millennium — GameGuy działa obok niego. Instalacja wyłącza kopię tej wtyczki należącą do Millennium, aby wstrzykiwał tylko LuaLoader.</value></data>
+  <data name="Plugin_Footer" xml:space="preserve"><value>LuaLoader instaluje się w folderze Steam. Ta aplikacja działa jako backend — jeśli zamkniesz ją z zasobnika, wtyczka przestanie działać!</value></data>
+  <data name="Plugin_Btn_Install" xml:space="preserve"><value>Zainstaluj</value></data>
+  <data name="Plugin_Btn_Update" xml:space="preserve"><value>Aktualizuj</value></data>
+  <data name="Plugin_Btn_Reinstall" xml:space="preserve"><value>Zainstaluj ponownie</value></data>
+  <data name="Plugin_Btn_Uninstall" xml:space="preserve"><value>Odinstaluj</value></data>
+  <data name="Plugin_Btn_CheckForUpdates" xml:space="preserve"><value>Sprawdź aktualizacje</value></data>
+  <data name="Plugin_Checking" xml:space="preserve"><value>Sprawdzanie…</value></data>
+  <data name="Plugin_Status_Installed" xml:space="preserve"><value>Zainstalowano</value></data>
+  <data name="Plugin_Status_NotInstalled" xml:space="preserve"><value>Nie zainstalowano</value></data>
+  <data name="Plugin_Status_UpToDate" xml:space="preserve"><value>Aktualne</value></data>
+  <data name="Plugin_Status_OutOfDate" xml:space="preserve"><value>Nieaktualne</value></data>
+  <data name="Plugin_Version_Unknown" xml:space="preserve"><value>nieznana</value></data>
+  <data name="Plugin_Version_Offline" xml:space="preserve"><value>offline</value></data>
+  <data name="Plugin_Status_OfflineCheck" xml:space="preserve"><value>Nie można połączyć się z GitHubem, aby sprawdzić aktualizacje.</value></data>
+  <data name="Plugin_Status_Port8080Busy" xml:space="preserve"><value>Inny program już korzysta z portu 8080 — most przeglądarki wtyczki może nie działać. Zamknij to, co używa tego portu, i zainstaluj ponownie lub uruchom ponownie Steam.</value></data>
+  <data name="Plugin_Confirm_RestartBody" xml:space="preserve"><value>Spowoduje to zamknięcie i ponowne uruchomienie Steam w celu zastosowania loadera. Kontynuować?</value></data>
+  <data name="Plugin_Confirm_RestartCaption" xml:space="preserve"><value>Uruchom ponownie Steam</value></data>
+  <data name="Plugin_Toast_Title" xml:space="preserve"><value>Wtyczka</value></data>
+  <data name="Plugin_Toast_Installed" xml:space="preserve"><value>Wtyczka zainstalowana. Steam jest uruchamiany ponownie, aby ją wczytać.</value></data>
+  <data name="Plugin_Toast_InstallFailed" xml:space="preserve"><value>Instalacja nie powiodła się: {0}</value></data>
+  <data name="Plugin_Toast_Removed" xml:space="preserve"><value>Wtyczka usunięta. Steam jest uruchamiany ponownie.</value></data>
+  <data name="Plugin_Toast_UninstallFailed" xml:space="preserve"><value>Odinstalowanie nie powiodło się: {0}</value></data>
+  <data name="Plugin_Toast_UpdateAvailable" xml:space="preserve"><value>Dostępna jest aktualizacja.</value></data>
+  <data name="Plugin_Toast_UpToDate" xml:space="preserve"><value>Masz najnowszą wersję.</value></data>
+  <data name="Plugin_Err_SteamNotFound" xml:space="preserve"><value>Nie znaleziono instalacji Steam.</value></data>
+  <data name="Plugin_Err_GithubUnreachable" xml:space="preserve"><value>Nie można połączyć się z GitHubem, aby pobrać najnowsze wydanie.</value></data>
+  <data name="Plugin_Err_MissingAssets" xml:space="preserve"><value>W wydaniu {0} brakuje {1} lub {2}.</value></data>
+  <data name="Plugin_Err_VerifyFailed" xml:space="preserve"><value>Weryfikacja skrótu {0} nie powiodła się.</value></data>
+  <data name="Plugin_Err_NoLuatoolsJs" xml:space="preserve"><value>plugin.zip nie zawierał public/luatools.js.</value></data>
+  <data name="Plugin_About_Header" xml:space="preserve"><value>Ważne funkcje</value></data>
+  <data name="Plugin_Feature_StoreButton" xml:space="preserve"><value>Dodaje przycisk „Add via LuaTools” na stronach sklepu Steam</value></data>
+  <data name="Plugin_Feature_AutoUpdate" xml:space="preserve"><value>Automatycznie się aktualizuje</value></data>
+  <data name="Plugin_Feature_Millennium" xml:space="preserve"><value>Działa z Millennium lub bez niego</value></data>
+  <data name="Drop_LinkHint" xml:space="preserve"><value>…albo przeciągnij tu link do SteamDB / sklepu Steam, aby dodać tę grę.</value></data>
+  <data name="Manage_Action_ManageBuild" xml:space="preserve"><value>Zarządzaj depotami</value></data>
+  <data name="Manage_AboutHeader" xml:space="preserve"><value>Informacje</value></data>
+  <data name="Manage_Info_Developer" xml:space="preserve"><value>Deweloper</value></data>
+  <data name="Manage_Info_Publisher" xml:space="preserve"><value>Wydawca</value></data>
+  <data name="Nav_Builds" xml:space="preserve"><value>Depoty</value></data>
+  <data name="Builds_Title" xml:space="preserve"><value>Depoty</value></data>
+  <data name="Builds_Subtitle" xml:space="preserve"><value>Przechowuj wiele wersji pliku lua danej gry i wybieraj, której używa Steam.</value></data>
+  <data name="Builds_NoSelection" xml:space="preserve"><value>Wybierz grę po lewej, aby zobaczyć jej ustawienia.</value></data>
+  <data name="Builds_ActiveBuild" xml:space="preserve"><value>Aktywne ustawienie</value></data>
+  <data name="Builds_Active" xml:space="preserve"><value>AKTYWNA</value></data>
+  <data name="Builds_Variant_Default" xml:space="preserve"><value>Domyślna</value></data>
+  <data name="Builds_Variant_Build" xml:space="preserve"><value>Kompilacja {0}</value></data>
+  <data name="Builds_Variant_Preset" xml:space="preserve"><value>Zapisane · {0}</value></data>
+  <data name="Builds_Pinned" xml:space="preserve"><value>Przypięta</value></data>
+  <data name="Builds_AutoUpdating" xml:space="preserve"><value>Automatyczne aktualizacje</value></data>
+  <data name="Builds_LatestBuild" xml:space="preserve"><value>Najnowsza kompilacja na Steamie: {0}</value></data>
+  <data name="Builds_Manifest" xml:space="preserve"><value>manifest {0}</value></data>
+  <data name="Builds_ManifestLatest" xml:space="preserve"><value>najnowszy to {0}</value></data>
+  <data name="Builds_PinDisabled" xml:space="preserve"><value>przypięcie wyłączone (autoaktualizacja)</value></data>
+  <data name="Builds_Meta_Depots" xml:space="preserve"><value>{0} depotów · {1} DLC</value></data>
+  <data name="Builds_Meta_Unsaved" xml:space="preserve"><value>niezapisana</value></data>
+  <data name="Builds_Source" xml:space="preserve"><value>z {0}</value></data>
+  <data name="Builds_Action_Apply" xml:space="preserve"><value>Zastosuj</value></data>
+  <data name="Builds_Action_Rename" xml:space="preserve"><value>Zmień nazwę</value></data>
+  <data name="Builds_Action_Edit" xml:space="preserve"><value>Edytuj</value></data>
+  <data name="Builds_Action_Delete" xml:space="preserve"><value>Usuń</value></data>
+  <data name="Builds_Action_Save" xml:space="preserve"><value>Zapisz</value></data>
+  <data name="Builds_Action_SaveAsPreset" xml:space="preserve"><value>Zapisz jako ustawienie</value></data>
+  <data name="Builds_Action_Cancel" xml:space="preserve"><value>Anuluj</value></data>
+  <data name="Builds_RenamePlaceholder" xml:space="preserve"><value>Nazwij to ustawienie…</value></data>
+  <data name="Builds_Editor_Title" xml:space="preserve"><value>Edytowanie pliku lua używanego przez Steam</value></data>
+  <data name="Builds_Delete_Title" xml:space="preserve"><value>Usunąć to ustawienie?</value></data>
+  <data name="Builds_Delete_Body" xml:space="preserve"><value>„{0}” zostanie usunięte z zapisanych ustawień. Nie wpływa to na samą grę.</value></data>
+  <data name="Builds_Delete_ActiveTip" xml:space="preserve"><value>Nie można usunąć ustawienia, które jest w użyciu.</value></data>
+  <data name="Builds_Apply_Done" xml:space="preserve"><value>Używana jest teraz „{0}”.</value></data>
+  <data name="Builds_Apply_Failed" xml:space="preserve"><value>Nie udało się przełączyć ustawienia — plik lua może być w użyciu.</value></data>
+  <data name="Builds_Save_Done" xml:space="preserve"><value>Zapisano.</value></data>
+  <data name="Builds_Save_Failed" xml:space="preserve"><value>Nie udało się zapisać — plik lua może być w użyciu.</value></data>
+  <data name="Builds_Preset_Saved" xml:space="preserve"><value>Zapisano jako ustawienie.</value></data>
+  <data name="Builds_Action_SaveTo" xml:space="preserve"><value>Zapisz w „{0}”</value></data>
+  <data name="Builds_Action_SaveAsNew" xml:space="preserve"><value>Zapisz jako nową</value></data>
+  <data name="Builds_Save_Updated" xml:space="preserve"><value>Zaktualizowano „{0}”.</value></data>
+  <data name="Builds_Depot_Lock" xml:space="preserve"><value>Zablokuj</value></data>
+  <data name="Builds_Depot_LockTip" xml:space="preserve"><value>Zablokowany: ten depot pozostaje przy manifeście powyżej. Odblokowany: Steam aktualizuje go do najnowszej wersji. (Zakomentowuje lub odkomentowuje wiersz setManifestid.)</value></data>
+  <data name="Builds_Depot_EnableTip" xml:space="preserve"><value>Wł.: klucz deszyfrujący tego depotu jest stosowany. Wył.: depot nie jest w ogóle odblokowywany. (Zakomentowuje lub odkomentowuje wiersz addappid.)</value></data>
+  <data name="Builds_Depot_Search" xml:space="preserve"><value>Szukaj depotów wg nazwy, ID lub typu…</value></data>
+  <data name="Builds_Depot_NoMatch" xml:space="preserve"><value>Żaden depot nie pasuje do wyszukiwania.</value></data>
+  <data name="Builds_Depot_InactiveNote" xml:space="preserve"><value>Edytujesz ustawienie, które nie jest zastosowane — zmiany zapisują się prosto w nim, a Steam nadal używa zastosowanego ustawienia, dopóki nie klikniesz Zastosuj.</value></data>
+  <data name="Manage_Action_LaunchOptions" xml:space="preserve"><value>Opcje uruchamiania…</value></data>
+  <data name="Launch_Title" xml:space="preserve"><value>Opcje uruchamiania</value></data>
+  <data name="Launch_Loading" xml:space="preserve"><value>Odczytywanie pamięci podręcznej aplikacji Steam…</value></data>
+  <data name="Launch_NotFound" xml:space="preserve"><value>Steam nie ma jeszcze zapisanych informacji o tej grze. Uruchom Steam raz i spróbuj ponownie.</value></data>
+  <data name="Launch_UnsupportedFormat" xml:space="preserve"><value>Pamięć podręczna aplikacji Steam ma format, którego ta wersja nie rozumie ({0}). Zaktualizuj GameGuy.</value></data>
+  <data name="Launch_ReadFailed" xml:space="preserve"><value>Nie udało się odczytać pamięci podręcznej aplikacji Steam. {0}</value></data>
+  <data name="Launch_ExecutableRequired" xml:space="preserve"><value>Każda opcja uruchamiania wymaga pliku wykonywalnego.</value></data>
+  <data name="Launch_Add" xml:space="preserve"><value>Dodaj</value></data>
+  <data name="Launch_Delete" xml:space="preserve"><value>Usuń</value></data>
+  <data name="Launch_Field_Executable" xml:space="preserve"><value>Plik wykonywalny</value></data>
+  <data name="Launch_Field_Arguments" xml:space="preserve"><value>Argumenty</value></data>
+  <data name="Launch_Field_WorkingDir" xml:space="preserve"><value>Katalog roboczy</value></data>
+  <data name="Launch_Field_Description" xml:space="preserve"><value>Etykieta (widoczna w menu gry na Steamie)</value></data>
+  <data name="Launch_Field_Os" xml:space="preserve"><value>System operacyjny</value></data>
+  <data name="Launch_Field_Type" xml:space="preserve"><value>Typ</value></data>
+  <data name="Launch_Field_BetaKey" xml:space="preserve"><value>Tylko w gałęzi</value></data>
+  <data name="Launch_Field_BetaKey_Tip" xml:space="preserve"><value>Nazwa gałęzi, do której ograniczona jest ta opcja — np. beta, default, development. Zostaw puste, aby pokazywać ją we wszystkich gałęziach.</value></data>
+  <data name="Launch_Field_OwnsDlc" xml:space="preserve"><value>Tylko przy posiadanym DLC (App ID)</value></data>
+  <data name="Launch_InstallPath" xml:space="preserve"><value>Ścieżka instalacji: {0}</value></data>
+  <data name="Launch_SteamRestartNote" xml:space="preserve"><value>Zastosowanie zmian zamyka i ponownie otwiera Steam.</value></data>
+  <data name="Launch_Restore" xml:space="preserve"><value>Przywróć oryginalne</value></data>
+  <data name="Launch_Restore_Tip" xml:space="preserve"><value>Przywraca opcje uruchamiania dostarczone przez Steam, sprzed zmian GameGuy.</value></data>
+  <data name="Launch_Restore_Title" xml:space="preserve"><value>Przywrócić oryginalne opcje uruchamiania?</value></data>
+  <data name="Launch_Restore_Body" xml:space="preserve"><value>Spowoduje to przywrócenie opcji uruchamiania takich, jakie miał Steam, i odrzucenie twoich zmian. Steam zostanie zamknięty i otwarty ponownie. Kontynuować?</value></data>
+  <data name="Launch_NothingToRestore" xml:space="preserve"><value>Ta gra nie była zmieniana, więc nie ma czego przywracać.</value></data>
+  <data name="Launch_ApplyNow_Title" xml:space="preserve"><value>Zastosować w Steamie teraz?</value></data>
+  <data name="Launch_ApplyNow_Body" xml:space="preserve"><value>Twoje zmiany są zapisane. Zapisanie ich w Steamie wymaga zamknięcia i ponownego otwarcia Steama — zrobić to teraz? Wybierz Anuluj, aby zastosować później.</value></data>
+  <data name="Launch_Staged" xml:space="preserve"><value>Zapisano. Zastosuj je z tego okna, gdy będziesz mógł ponownie uruchomić Steam.</value></data>
+  <data name="Launch_Applied" xml:space="preserve"><value>Zastosowano opcje uruchamiania.</value></data>
+  <data name="Launch_Applied_Restarted" xml:space="preserve"><value>Zastosowano opcje uruchamiania. Steam został uruchomiony ponownie.</value></data>
+  <data name="Launch_ApplyFailed" xml:space="preserve"><value>Nie udało się zastosować opcji uruchamiania. {0}</value></data>
+  <data name="Launch_Drift_Title" xml:space="preserve"><value>Opcje uruchamiania zostały zresetowane</value></data>
+  <data name="Launch_Drift_Body" xml:space="preserve"><value>Steam nadpisał twoje opcje uruchamiania dla {0} gry/gier. Ponowne zastosowanie zamyka i otwiera Steam.</value></data>
+  <data name="Launch_Drift_Action" xml:space="preserve"><value>Zastosuj ponownie</value></data>
+  <data name="Err_SteamNotFound" xml:space="preserve"><value>Nie znaleziono lokalizacji Steam. Ustaw ją w Ustawieniach.</value></data>
+  <data name="Err_GithubUnreachable" xml:space="preserve"><value>Nie udało się połączyć z GitHubem. Sprawdź połączenie i spróbuj ponownie.</value></data>
+  <data name="Err_UpdateServerUnreachable" xml:space="preserve"><value>Nie udało się połączyć z serwerem aktualizacji. Sprawdź połączenie i spróbuj ponownie.</value></data>
+  <data name="Err_Cancelled" xml:space="preserve"><value>Anulowano.</value></data>
+  <data name="Err_CancelledByUser" xml:space="preserve"><value>Anulowane przez użytkownika</value></data>
+  <data name="Err_ReleaseMissingDownload" xml:space="preserve"><value>W wydaniu brakuje oczekiwanego pliku do pobrania.</value></data>
+  <data name="Err_ReleaseMissingFile" xml:space="preserve"><value>W wydaniu brakuje {0}.</value></data>
+  <data name="Err_VerifyFailed" xml:space="preserve"><value>Pobieranie nie przeszło weryfikacji (niezgodna suma sha256).</value></data>
+  <data name="Err_VerifyFailedFile" xml:space="preserve"><value>{0} nie przeszedł weryfikacji (niezgodna suma sha256).</value></data>
+  <data name="Err_DownloadMissingFiles" xml:space="preserve"><value>Brakuje w pobranych plikach: {0}.</value></data>
+  <data name="Err_WriteFailedCount" xml:space="preserve"><value>Nie udało się zapisać {0} plik(ów). Zamknij Steam i spróbuj ponownie.</value></data>
+  <data name="Err_WriteFailedFile" xml:space="preserve"><value>Nie udało się zapisać {0}. Zamknij Steam i spróbuj ponownie.</value></data>
+  <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>Nie udało się otworzyć pobranego pliku: {0}</value></data>
+  <data name="Err_NoSourceAvailable" xml:space="preserve"><value>Brak dostępnego źródła dla tej gry.</value></data>
+  <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>Link do pobrania był pusty. Spróbuj ponownie.</value></data>
+  <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>Pobieranie nie powiodło się ({0}).</value></data>
+  <data name="Api_Err_RequestFailed" xml:space="preserve"><value>Żądanie nie powiodło się ({0})</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
+  <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Twój klucz Hubcap jest nieprawidłowy lub wygasł.</value></data>
+  <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Osiągnięto dzienny limit Hubcap.</value></data>
+  <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Brak manifestu Hubcap dla tej aplikacji.</value></data>
+  <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Pobieranie z Hubcap nie powiodło się ({0}).</value></data>
+  <data name="Nav_Downloads" xml:space="preserve"><value>Pobieranie</value></data>
+  <data name="Downloads_Title" xml:space="preserve"><value>Pobieranie</value></data>
+  <data name="Downloads_Empty" xml:space="preserve"><value>Nic się teraz nie pobiera. No dawaj, pobierz coś!</value></data>
+  <data name="Downloads_Section_Active" xml:space="preserve"><value>Kolejka</value></data>
+  <data name="Downloads_Section_History" xml:space="preserve"><value>Historia</value></data>
+  <data name="Downloads_Status_Queued" xml:space="preserve"><value>W kolejce</value></data>
+  <data name="Downloads_Status_Downloading" xml:space="preserve"><value>Pobieranie</value></data>
+  <data name="Downloads_Status_AwaitingConfirm" xml:space="preserve"><value>Czeka na Ciebie</value></data>
+  <data name="Downloads_Status_Installing" xml:space="preserve"><value>Instalowanie</value></data>
+  <data name="Downloads_Status_Completed" xml:space="preserve"><value>Gotowe</value></data>
+  <data name="Downloads_Status_Failed" xml:space="preserve"><value>Niepowodzenie</value></data>
+  <data name="Downloads_Status_Cancelled" xml:space="preserve"><value>Anulowano</value></data>
+  <data name="Downloads_Action_Cancel" xml:space="preserve"><value>Anuluj</value></data>
+  <data name="Downloads_Action_Retry" xml:space="preserve"><value>Ponów</value></data>
+  <data name="Downloads_Action_Remove" xml:space="preserve"><value>Usuń</value></data>
+  <data name="Downloads_Action_MoveUp" xml:space="preserve"><value>W górę</value></data>
+  <data name="Downloads_Action_MoveDown" xml:space="preserve"><value>W dół</value></data>
+  <data name="Downloads_Action_ClearHistory" xml:space="preserve"><value>Wyczyść historię</value></data>
+  <data name="Downloads_Action_Review" xml:space="preserve"><value>Sprawdź</value></data>
+  <data name="Downloads_Of" xml:space="preserve"><value>{0} z {1}</value></data>
+  <data name="Downloads_Eta" xml:space="preserve"><value>Pozostało {0}</value></data>
+  <data name="Downloads_ActionRequired" xml:space="preserve"><value>Wymaga działania</value></data>
+  <data name="Downloads_Err_Interrupted" xml:space="preserve"><value>Przerwano przy zamykaniu aplikacji.</value></data>
+  <data name="Downloads_Kind_Dlc" xml:space="preserve"><value>Odblokowanie DLC</value></data>
+  <data name="Fixes_NotInstalled_Hint" xml:space="preserve"><value>Najpierw zainstaluj grę, aby zastosować poprawkę.</value></data>
+  <data name="Downloads_Status_Paused" xml:space="preserve"><value>Wstrzymano</value></data>
+  <data name="Downloads_Status_Verifying" xml:space="preserve"><value>Weryfikowanie…</value></data>
+  <data name="Downloads_Action_Pause" xml:space="preserve"><value>Wstrzymaj</value></data>
+  <data name="Downloads_Action_Resume" xml:space="preserve"><value>Wznów</value></data>
+  <data name="Downloads_Kind_Depot" xml:space="preserve"><value>Pliki depotu</value></data>
+  <data name="Downloads_Depots_Progress" xml:space="preserve"><value>Depoty · {0} z {1}</value></data>
+  <data name="Depot_Err_Tool" xml:space="preserve"><value>Nie udało się pobrać pobieracza depotów.</value></data>
+  <data name="Depot_Err_NoKeys" xml:space="preserve"><value>Nie znaleziono kluczy deszyfrujących dla tej gry.</value></data>
+  <data name="Depot_Err_Failed" xml:space="preserve"><value>Depot {0} nie powiódł się: {1}</value></data>
+  <data name="Depot_Status_Done" xml:space="preserve"><value>Pobrano {0} depotów do {1}.</value></data>
+  <data name="Builds_Action_Download" xml:space="preserve"><value>Pobierz</value></data>
+  <data name="Builds_Select_Title" xml:space="preserve"><value>Wybierz depoty do pobrania</value></data>
+  <data name="Builds_Select_Confirm" xml:space="preserve"><value>Pobierz {0} depotów ({1})</value></data>
+  <data name="Builds_Select_NoManifest" xml:space="preserve"><value>Ten depot nie podaje wersji do pobrania.</value></data>
+  <data name="Builds_Select_All" xml:space="preserve"><value>Zaznacz wszystko</value></data>
+  <data name="Builds_Select_None" xml:space="preserve"><value>Nie wybrano depotów</value></data>
+  <data name="Builds_Select_ChooseFolder" xml:space="preserve"><value>Wybierz, gdzie zapisać pliki depotu</value></data>
+  <data name="Depot_Err_NoSpace" xml:space="preserve"><value>Za mało miejsca na dysku: potrzeba {0}, wolne tylko {1}.</value></data>
+  <data name="Builds_Select_SaveTo" xml:space="preserve"><value>Zapisz w</value></data>
+  <data name="Builds_Select_Space" xml:space="preserve"><value>Potrzeba {0} · wolne {1} na {2}</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
+  <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>pobieranie manifestu</value></data>
+  <data name="Depot_Err_NoManifest" xml:space="preserve"><value>Nie udało się pobrać manifestu tego depotu.</value></data>
+  <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>Przygotowywanie · {0} z {1}</value></data>
+  <data name="Downloads_Depots_GettingTool" xml:space="preserve"><value>Pobieranie narzędzia</value></data>
+  <data name="Downloads_Kind_Tool" xml:space="preserve"><value>Narzędzie</value></data>
+  <data name="Downloads_SteamAutoCrack" xml:space="preserve"><value>SteamAutoCrack</value></data>
+  <data name="Downloads_SAC_GettingRuntime" xml:space="preserve"><value>Sprawdzanie środowiska .NET</value></data>
+  <data name="Downloads_SAC_GettingTool" xml:space="preserve"><value>Pobieranie SteamAutoCrack</value></data>
+  <data name="Downloads_SAC_Launched" xml:space="preserve"><value>Otwarto SteamAutoCrack.</value></data>
+  <data name="Downloads_SAC_Err_Runtime" xml:space="preserve"><value>Nie udało się zainstalować środowiska .NET wymaganego przez SteamAutoCrack.</value></data>
+  <data name="Downloads_SAC_Err_Restart" xml:space="preserve"><value>Środowisko .NET zostało zainstalowane, ale Windows wymaga ponownego uruchomienia przed uruchomieniem SteamAutoCrack.</value></data>
+  <data name="Downloads_SAC_Err_Tool" xml:space="preserve"><value>Nie udało się pobrać SteamAutoCrack.</value></data>
+  <data name="Downloads_SAC_Err_Launch" xml:space="preserve"><value>Nie udało się uruchomić SteamAutoCrack.</value></data>
+  <data name="Downloads_SAC_Updated" xml:space="preserve"><value>Zaktualizowano SteamAutoCrack.</value></data>
+  <data name="Downloads_Depot_PreAllocating" xml:space="preserve"><value>przydzielanie plików</value></data>
+  <data name="Downloads_Depot_Validating" xml:space="preserve"><value>sprawdzanie istniejących plików</value></data>
+  <data name="Depot_Cancel_Title" xml:space="preserve"><value>Anuluj pobieranie</value></data>
+  <data name="Depot_Cancel_Body" xml:space="preserve"><value>Zapisano już {0} w:
+{1}
+
+Tak - zatrzymaj i usuń te pliki
+Nie - zatrzymaj, ale zachowaj
+Anuluj - kontynuuj pobieranie</value></data>
+  <data name="Depot_Cancel_DeleteFailed" xml:space="preserve"><value>Nie udało się usunąć pobranych plików. Nadal są w {0}.</value></data>
+  <data name="Common_CopyAppId" xml:space="preserve"><value>Kopiuj App ID</value></data>
+  <data name="Common_ShowInFolder" xml:space="preserve"><value>Pokaż w folderze</value></data>
+  <data name="Err_ClipboardBusy" xml:space="preserve"><value>Nie można skopiować — inna aplikacja blokuje schowek.</value></data>
+  <data name="Err_PathMissing" xml:space="preserve"><value>Nie można otworzyć {0} — mógł zostać przeniesiony lub usunięty.</value></data>
+  <data name="Builds_Select_NoKey" xml:space="preserve"><value>Brak klucza deszyfrującego w Lua dla tego depotu.</value></data>
+  <data name="Depot_Err_BadKey" xml:space="preserve"><value>Klucz deszyfrujący dla depotu {0} jest nieprawidłowy.</value></data>
+  <data name="Depot_Err_NoKeyFor" xml:space="preserve"><value>Brak klucza deszyfrującego w Lua dla depotu {0}.</value></data>
+  <data name="Builds_Select_SharedHint" xml:space="preserve"><value>Współdzielone środowisko — zwykle już zainstalowane. Zaznacz, aby i tak pobrać.</value></data>
+  <data name="Downloads_ClearHistory_Confirm" xml:space="preserve"><value>Usunąć wszystkie {0} wpisy z historii pobierania? Pobrane pliki pozostaną nienaruszone.</value></data>
+  <data name="Fixes_Applied_Hint" xml:space="preserve"><value>Ta poprawka jest już zastosowana. Cofnij ją, aby zainstalować inną.</value></data>
+  <data name="Fixes_MyGames" xml:space="preserve"><value>Moje gry</value></data>
+  <data name="Fixes_MyGames_Count" xml:space="preserve"><value>{0} z twoich gier ma poprawki. Przewiń listę, aby zobaczyć resztę.</value></data>
+  <data name="Fixes_MyGames_NotInstalled" xml:space="preserve"><value>Nie dodano jeszcze żadnych plików lua. Dodaj (lub zainstaluj) grę, aby ją tu zobaczyć.</value></data>
+  <data name="Fixes_Revert" xml:space="preserve"><value>Cofnij</value></data>
+  <data name="Fixes_Revert_Cancel" xml:space="preserve"><value>Anuluj</value></data>
+  <data name="Fixes_Revert_Confirm_Body" xml:space="preserve"><value>Cofnąć „{0}”? Zmodyfikowane pliki zostaną przywrócone z kopii zapasowej, a pliki dodane przez poprawkę usunięte.</value></data>
+  <data name="Fixes_Revert_Confirm_Title" xml:space="preserve"><value>Cofnąć poprawkę dla {0}?</value></data>
+  <data name="Fixes_Revert_Done" xml:space="preserve"><value>Poprawka cofnięta</value></data>
+  <data name="Fixes_Revert_Done_Body" xml:space="preserve"><value>Przywrócono {0}, usunięto {1} dodanych plików.</value></data>
+  <data name="Fixes_Revert_Failed" xml:space="preserve"><value>Nie udało się cofnąć poprawki</value></data>
+  <data name="Fixes_Revert_NoRecord" xml:space="preserve"><value>Brak zapisu o zastosowaniu tej poprawki. Mogła już zostać cofnięta.</value></data>
+  <data name="Fixes_Revert_Conflict" xml:space="preserve"><value>Nie można bezpiecznie cofnąć poprawki</value></data>
+  <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>Plik {0} zmienił się od zastosowania tej poprawki, więc przywrócenie nadpisałoby te zmiany. Jeśli zastosowano na wierzchu inną poprawkę, cofnij najpierw ją. Dotyczy {1} plik(ów).</value></data>
+  <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Poprawka cofnięta częściowo</value></data>
+  <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>Nie udało się przywrócić {0} plików. Zamknij grę i spróbuj ponownie.</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
+</root>

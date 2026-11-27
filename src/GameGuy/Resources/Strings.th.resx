@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- th -->
+    <data name="App_Name" xml:space="preserve"><value>GameGuy</value></data>
+  <data name="Nav_Home" xml:space="preserve"><value>หน้าแรก</value></data>
+  <data name="Nav_Add" xml:space="preserve"><value>เพิ่ม</value></data>
+  <data name="Nav_Manage" xml:space="preserve"><value>จัดการ</value></data>
+  <data name="Nav_Mode" xml:space="preserve"><value>โหมด</value></data>
+  <data name="Nav_Fixes" xml:space="preserve"><value>การแก้ไข</value></data>
+  <data name="Nav_RestartSteam" xml:space="preserve"><value>รีสตาร์ท Steam</value></data>
+  <data name="Nav_Settings" xml:space="preserve"><value>การตั้งค่า</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
+  <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>รีสตาร์ท Steam ตอนนี้ไหม? การดำเนินการนี้จะปิด Steam และเกมที่กำลังทำงานทั้งหมด แล้วเปิดใหม่อีกครั้ง</value></data>
+  <data name="Settings_Title" xml:space="preserve"><value>การตั้งค่า</value></data>
+  <data name="Settings_Section_General" xml:space="preserve"><value>ทั่วไป</value></data>
+  <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
+  <data name="Settings_Section_Install" xml:space="preserve"><value>การติดตั้ง</value></data>
+  <data name="Settings_Section_Community" xml:space="preserve"><value>ชุมชน</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
+  <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>จัดการคีย์ API Hubcap และโปรไฟล์ของคุณที่</value></data>
+  <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
+  <data name="Settings_HubcapKey" xml:space="preserve"><value>คีย์ API ของ Hubcap</value></data>
+  <data name="Settings_HubcapKey_Hint" xml:space="preserve"><value>วางคีย์ API ของ Hubcap ส่วนตัวของคุณเพื่อปลดล็อกแมนิเฟสต์ของ Hubcap แอปจะเชื่อมต่อกับ Hubcap โดยตรงด้วยคีย์ของคุณ</value></data>
+  <data name="Settings_HubcapKeyPlaceholder" xml:space="preserve"><value>วางคีย์ API ของคุณ (smm_…)</value></data>
+  <data name="Settings_HubcapValidate" xml:space="preserve"><value>ตรวจสอบและบันทึก</value></data>
+  <data name="Settings_HubcapClear" xml:space="preserve"><value>ล้าง</value></data>
+  <data name="Settings_HubcapGetKey" xml:space="preserve"><value>รับคีย์ได้ที่</value></data>
+  <data name="Settings_HubcapKeyOk" xml:space="preserve"><value>{0}/{1} คำขอวันนี้</value></data>
+  <data name="Settings_HubcapKeyOkExpiry" xml:space="preserve"><value>{0}/{1} วันนี้ · หมดอายุ {2}</value></data>
+  <data name="Settings_HubcapKeyBad" xml:space="preserve"><value>นี่ดูเหมือนจะไม่ใช่คีย์ที่ถูกต้อง (smm_…)</value></data>
+  <data name="Settings_HubcapKeyError" xml:space="preserve"><value>ไม่สามารถยืนยันคีย์ได้ — อาจไม่ถูกต้อง หมดอายุ หรือไม่สามารถเข้าถึง Hubcap ได้</value></data>
+  <data name="Settings_HubcapActive" xml:space="preserve"><value>เปิดใช้งาน</value></data>
+  <data name="Settings_HubcapRefresh" xml:space="preserve"><value>รีเฟรช</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>ภาษา</value></data>
+  <data name="Settings_Language_Hint" xml:space="preserve"><value>เลือกภาษาที่แสดงของแอป จะมีผลหลังจากรีสตาร์ท</value></data>
+  <data name="Settings_Language_SystemDefault" xml:space="preserve"><value>ค่าเริ่มต้นของระบบ</value></data>
+  <data name="Settings_Dns" xml:space="preserve"><value>การแปลงชื่อ DNS</value></data>
+  <data name="Settings_Dns_Hint" xml:space="preserve"><value>หากผู้ให้บริการของคุณบล็อก lua.tools แอปสามารถค้นหาที่อยู่ผ่าน Cloudflare (1.1.1.1) แทนตัวแปลงของระบบได้ โหมด “อัตโนมัติ” จะสลับเมื่อ DNS ปกติล้มเหลวเท่านั้น</value></data>
+  <data name="Settings_Dns_Auto" xml:space="preserve"><value>อัตโนมัติ</value></data>
+  <data name="Settings_Dns_Always" xml:space="preserve"><value>ใช้ Cloudflare เสมอ</value></data>
+  <data name="Settings_Dns_Never" xml:space="preserve"><value>ใช้ DNS ของระบบเท่านั้น</value></data>
+  <data name="Settings_SteamLocation" xml:space="preserve"><value>ตำแหน่ง Steam</value></data>
+  <data name="Settings_Change" xml:space="preserve"><value>เปลี่ยน…</value></data>
+  <data name="Settings_Open" xml:space="preserve"><value>เปิด</value></data>
+  <data name="Settings_ResetToAuto" xml:space="preserve"><value>รีเซ็ตเป็นอัตโนมัติ</value></data>
+  <data name="Settings_AutoUpdateApps" xml:space="preserve"><value>อัปเดตเกมอัตโนมัติ (ไม่ล็อก manifest)</value></data>
+  <data name="Settings_AutoUpdateApps_Hint" xml:space="preserve"><value>ติดตั้งโดยไม่ตรึงเวอร์ชัน เพื่อให้ Steam อัปเดตเกมอยู่เสมอ ปิดเพื่อล็อกเกมไว้ที่เวอร์ชันที่ดาวน์โหลด</value></data>
+  <data name="Settings_DonateKeys" xml:space="preserve"><value>บริจาคคีย์ถอดรหัส</value></data>
+  <data name="Settings_DonateKeys_Hint" xml:space="preserve"><value>แบ่งปันคีย์ถอดรหัส depot ของ Steam ที่เหลือเพื่อขยายคลังของชุมชน จะส่งเฉพาะคีย์ที่ตรวจสอบแล้วเท่านั้น — ไม่มีข้อมูลบัญชีหรือข้อมูลส่วนตัว</value></data>
+  <data name="Settings_SteamNotFound" xml:space="preserve"><value>ไม่พบ Steam</value></data>
+  <data name="Settings_SteamSource_Custom" xml:space="preserve"><value>ตำแหน่งที่กำหนดเอง</value></data>
+  <data name="Settings_SteamSource_NotFound" xml:space="preserve"><value>ไม่พบ</value></data>
+  <data name="Settings_SteamSource_Auto" xml:space="preserve"><value>ตรวจพบอัตโนมัติจากรีจิสทรี</value></data>
+  <data name="Settings_SteamWarning_NoExe" xml:space="preserve"><value>ไม่พบ steam.exe ในโฟลเดอร์นี้</value></data>
+  <data name="Settings_ChooseSteamFolder" xml:space="preserve"><value>เลือกโฟลเดอร์ Steam ของคุณ</value></data>
+  <data name="Lang_Changed_Title" xml:space="preserve"><value>เปลี่ยนภาษาแล้ว</value></data>
+  <data name="Lang_Changed_Body" xml:space="preserve"><value>รีสตาร์ทแอปเพื่อใช้ภาษาใหม่</value></data>
+  <data name="Lang_Changed_Restart" xml:space="preserve"><value>รีสตาร์ทเดี๋ยวนี้</value></data>
+  <data name="Home_Welcome" xml:space="preserve"><value>ยินดีต้อนรับสู่ GameGuy</value></data>
+  <data name="Home_LuasOnBoard" xml:space="preserve"><value>Lua ที่มีอยู่</value></data>
+  <data name="Home_LastAdded" xml:space="preserve"><value>เพิ่มล่าสุด</value></data>
+  <data name="Home_PluginStatus" xml:space="preserve"><value>สถานะปลั๊กอิน</value></data>
+  <data name="Home_RecentlyAdded" xml:space="preserve"><value>เพิ่มเมื่อเร็ว ๆ นี้</value></data>
+  <data name="Home_ViewDetails" xml:space="preserve"><value>ดูรายละเอียด</value></data>
+  <data name="Home_CheckingSteam" xml:space="preserve"><value>กำลังตรวจสอบ Steam…</value></data>
+  <data name="Home_SteamDetected" xml:space="preserve"><value>ตรวจพบ Steam · {0}</value></data>
+  <data name="Home_SteamNotFound" xml:space="preserve"><value>ไม่พบ Steam — ตั้งค่าตำแหน่งในการตั้งค่า</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
+  <data name="Home_NoModeSelected" xml:space="preserve"><value>ยังไม่ได้เลือกโหมด</value></data>
+  <data name="Home_ModeIs" xml:space="preserve"><value>โหมด · {0}</value></data>
+  <data name="Mode_Title" xml:space="preserve"><value>โหมด</value></data>
+  <data name="Mode_Subtitle" xml:space="preserve"><value>สลับแบ็กเอนด์ที่ใช้ปลดล็อกเกมที่เพิ่มด้วย GameGuy — ใช้งานได้ครั้งละหนึ่งโหมดเท่านั้น</value></data>
+  <data name="Mode_CheckForUpdates" xml:space="preserve"><value>ตรวจหาการอัปเดต</value></data>
+  <data name="Mode_Active" xml:space="preserve"><value>ใช้งานอยู่</value></data>
+  <data name="Mode_Recommended" xml:space="preserve"><value>แนะนำ</value></data>
+  <data name="Mode_Confirm_Body" xml:space="preserve"><value>Steam จะถูกปิดเพื่อให้สามารถเปลี่ยนไฟล์ได้ จากนั้นจะรีสตาร์ทโดยอัตโนมัติ เกมหรือการดาวน์โหลดที่กำลังทำงานทั้งหมดจะหยุดลง</value></data>
+  <data name="Mode_Cancel" xml:space="preserve"><value>ยกเลิก</value></data>
+  <data name="Mode_CloseSteamContinue" xml:space="preserve"><value>ปิด Steam และดำเนินการต่อ</value></data>
+  <data name="Mode_Desc_Bst" xml:space="preserve"><value>ฟอร์กโอเพนซอร์สของ OpenSteamTools ที่ทีม GameGuy ดูแลอย่างต่อเนื่อง พร้อมการแก้ไขและฟีเจอร์ใหม่ ๆ!</value></data>
+  <data name="Mode_CloudRedirect_Manage" xml:space="preserve"><value>จัดการ</value></data>
+  <data name="Mode_CloudRedirect_LaunchFailed" xml:space="preserve"><value>ไม่สามารถดาวน์โหลดหรือเปิด CloudRedirect ได้</value></data>
+  <data name="Mode_Desc_Ost" xml:space="preserve"><value>บิลด์รายคืนของ OpenSteamTools จากซอร์สล่าสุด มีการแก้ไขล่าสุด แต่อาจเสถียรน้อยกว่า</value></data>
+  <data name="Mode_UserManaged" xml:space="preserve"><value>จากนี้ไปตัวใครตัวมัน</value></data>
+  <data name="Mode_Desc_Custom" xml:space="preserve"><value>ใช้วิธีปลดล็อกของคุณเองได้เลย เราจะไม่ไปยุ่งกับมัน</value></data>
+  <data name="Mode_Name_Custom" xml:space="preserve"><value>ตัวปลดล็อกของคุณเอง</value></data>
+  <data name="Mode_Experimental" xml:space="preserve"><value>ทดลอง</value></data>
+  <data name="Mode_CloudRedirectSupport" xml:space="preserve"><value>รองรับ CloudRedirect</value></data>
+  <data name="Mode_CloudRedirect_AddonDesc" xml:space="preserve"><value>นำการรองรับ Steam Cloud ในตัวกลับมาผ่านผู้ให้บริการพื้นที่จัดเก็บภายนอก เช่น Google Drive / OneDrive / Cloudflare R2 และอื่น ๆ ขณะนี้ใช้ได้กับ OpenSteamTools / BetterSteamTools เท่านั้น อย่าลืมตั้งค่าด้วยการคลิก "จัดการ" หลังเปิดใช้งาน แล้วรีสตาร์ท Steam!</value></data>
+  <data name="Mode_CloudRedirect_Locked" xml:space="preserve"><value>เลือก OpenSteamTools / BetterSteamTools เพื่อใช้ CloudRedirect</value></data>
+  <data name="Mode_CloudRedirect_Enable" xml:space="preserve"><value>เปิดใช้งาน</value></data>
+  <data name="Mode_CloudRedirect_Disable" xml:space="preserve"><value>ปิดใช้งาน</value></data>
+  <data name="Mode_CloudRedirect_Status_Enabled" xml:space="preserve"><value>เปิดใช้งานอยู่</value></data>
+  <data name="Mode_CloudRedirect_Status_Disabled" xml:space="preserve"><value>ติดตั้งแล้วแต่ปิดใช้งาน</value></data>
+  <data name="Mode_CloudRedirect_Status_NotInstalled" xml:space="preserve"><value>ยังไม่ได้ติดตั้ง</value></data>
+  <data name="Mode_CloudRedirect_Status_UpdateAvailable" xml:space="preserve"><value>มีอัปเดต</value></data>
+  <data name="Mode_CloudRedirect_Toast_Enabled" xml:space="preserve"><value>เปิดใช้งานแล้ว — รีสตาร์ท Steam เพื่อให้มีผล</value></data>
+  <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>ปิดใช้งานแล้ว — รีสตาร์ท Steam เพื่อให้มีผล</value></data>
+  <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>อัปเดตแล้ว — รีสตาร์ท Steam เพื่อให้มีผล</value></data>
+  <data name="Onboarding_Title" xml:space="preserve"><value>ยินดีต้อนรับสู่แอป GameGuy!</value></data>
+  <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>ใช้การตั้งค่าที่แนะนำ</value></data>
+  <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>โหมด: BetterSteamTools · เปิด FastFetch</value></data>
+  <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>ติดตั้งปลั๊กอินชื่อดังของเรา</value></data>
+  <data name="Onboarding_Plugin_Detail" xml:space="preserve"><value>เพิ่มปุ่ม "Add via LuaTools" ในหน้าร้านค้า Steam</value></data>
+  <data name="Onboarding_Yes" xml:space="preserve"><value>ตกลง</value></data>
+  <data name="Onboarding_No" xml:space="preserve"><value>ไม่เป็นไร ขอบคุณ</value></data>
+  <data name="Onboarding_Go" xml:space="preserve"><value>ไปกันเลย!</value></data>
+  <data name="Onboarding_Applying" xml:space="preserve"><value>กำลังตั้งค่า…</value></data>
+  <data name="Mode_Checking" xml:space="preserve"><value>กำลังตรวจสอบ…</value></data>
+  <data name="Mode_StatusUnavailable" xml:space="preserve"><value>สถานะไม่พร้อมใช้งาน (ออฟไลน์?)</value></data>
+  <data name="Mode_NotActive" xml:space="preserve"><value>ไม่ได้ใช้งาน</value></data>
+  <data name="Mode_NotInstalled" xml:space="preserve"><value>ยังไม่ได้ติดตั้ง</value></data>
+  <data name="Mode_UpToDate" xml:space="preserve"><value>เป็นเวอร์ชันล่าสุด</value></data>
+  <data name="Mode_UpdateAvailable" xml:space="preserve"><value>มีการอัปเดต</value></data>
+  <data name="Mode_Btn_Reinstall" xml:space="preserve"><value>ติดตั้งใหม่</value></data>
+  <data name="Mode_Btn_Update" xml:space="preserve"><value>อัปเดต</value></data>
+  <data name="Mode_Btn_Install" xml:space="preserve"><value>ติดตั้ง</value></data>
+  <data name="Mode_Btn_Switch" xml:space="preserve"><value>สลับไปใช้อันนี้</value></data>
+  <data name="Mode_Confirm_Reinstall" xml:space="preserve"><value>ติดตั้ง {0} ใหม่หรือไม่?</value></data>
+  <data name="Mode_Confirm_Switch" xml:space="preserve"><value>สลับไปใช้ {0} หรือไม่?</value></data>
+  <data name="Mode_Toast_Updated" xml:space="preserve"><value>อัปเดตโหมดแล้ว</value></data>
+  <data name="Mode_Toast_Updated_Restarting" xml:space="preserve"><value>ติดตั้ง {0} แล้ว — Steam กำลังรีสตาร์ท</value></data>
+  <data name="Mode_Toast_Updated_Start" xml:space="preserve"><value>ติดตั้ง {0} แล้ว เริ่ม Steam เพื่อใช้งาน</value></data>
+  <data name="Mode_Toast_InstallFailed" xml:space="preserve"><value>การติดตั้งล้มเหลว</value></data>
+  <data name="Mode_Toast_InstallFailed_Body" xml:space="preserve"><value>มีบางอย่างผิดพลาด</value></data>
+  <data name="Drop_Title" xml:space="preserve"><value>วางไฟล์ .lua, .manifest หรือ .zip ที่นี่</value></data>
+  <data name="Drop_BrowseFiles" xml:space="preserve"><value>เรียกดูไฟล์…</value></data>
+  <data name="Drop_Picker_Title" xml:space="preserve"><value>เลือกไฟล์ .lua / .manifest / .zip</value></data>
+  <data name="Drop_Picker_Filter" xml:space="preserve"><value>Lua / manifest / zip|*.lua;*.manifest;*.zip|ไฟล์ทั้งหมด|*.*</value></data>
+  <data name="Drop_Nothing" xml:space="preserve"><value>ไม่มีอะไรให้ติดตั้ง — วางไฟล์ .lua, .manifest หรือ .zip</value></data>
+  <data name="Drop_Confirm_Replace" xml:space="preserve"><value>แทนที่ "{0}" หรือไม่?</value></data>
+  <data name="Drop_Confirm_NoChanges" xml:space="preserve"><value>ไม่มีการเปลี่ยนแปลง depot/DLC — เนื้อหาเหมือนเดิม</value></data>
+  <data name="Drop_NothingInstalled" xml:space="preserve"><value>ไม่ได้ติดตั้งอะไรเลย (ยกเลิกหรือชื่อไฟล์ไม่รู้จัก)</value></data>
+  <data name="Drop_Count_Luas" xml:space="preserve"><value>{0} lua</value></data>
+  <data name="Drop_Count_Manifests" xml:space="preserve"><value>{0} manifest</value></data>
+  <data name="Drop_Result_Installed" xml:space="preserve"><value>ติดตั้ง {0} ลงใน Steam แล้ว</value></data>
+  <data name="Drop_Result_Failed" xml:space="preserve"><value> {0} ไฟล์ล้มเหลว — ปิด Steam แล้วลองอีกครั้ง</value></data>
+  <data name="Common_SearchPlaceholder" xml:space="preserve"><value>ค้นหาด้วยชื่อหรือ App ID...</value></data>
+  <data name="Common_Loading" xml:space="preserve"><value>กำลังโหลด…</value></data>
+  <data name="Common_AppId" xml:space="preserve"><value>App ID: {0}</value></data>
+  <data name="Common_AppFallback" xml:space="preserve"><value>แอป {0}</value></data>
+  <data name="Manage_Title" xml:space="preserve"><value>จัดการ</value></data>
+  <data name="Manage_Refresh" xml:space="preserve"><value>รีเฟรช</value></data>
+  <data name="Manage_Filters" xml:space="preserve"><value>ตัวกรอง</value></data>
+  <data name="Manage_Filter_Type" xml:space="preserve"><value>ประเภท</value></data>
+  <data name="Manage_Filter_Genre" xml:space="preserve"><value>แนว</value></data>
+  <data name="Manage_Filter_Year" xml:space="preserve"><value>ปี</value></data>
+  <data name="Manage_Filter_Price" xml:space="preserve"><value>ราคา</value></data>
+  <data name="Manage_Filter_Content" xml:space="preserve"><value>เนื้อหา</value></data>
+  <data name="Manage_Content_HideAdult" xml:space="preserve"><value>ซ่อนเนื้อหาผู้ใหญ่ (18+)</value></data>
+  <data name="Manage_Content_AdultOnly" xml:space="preserve"><value>ผู้ใหญ่เท่านั้น</value></data>
+  <data name="Manage_Filter_SortBy" xml:space="preserve"><value>เรียงตาม</value></data>
+  <data name="Manage_ClearFilters" xml:space="preserve"><value>ล้างตัวกรอง</value></data>
+  <data name="Manage_Select" xml:space="preserve"><value>เลือก</value></data>
+  <data name="Manage_DeleteThisLua" xml:space="preserve"><value>ลบ lua นี้</value></data>
+  <data name="Manage_ResultsPerPage" xml:space="preserve"><value>ผลลัพธ์ต่อหน้า</value></data>
+  <data name="Manage_Action_ViewDetails" xml:space="preserve"><value>ดูรายละเอียด</value></data>
+  <data name="Manage_Action_Update" xml:space="preserve"><value>อัปเดต / ดาวน์โหลดใหม่</value></data>
+  <data name="Manage_Action_OpenStore" xml:space="preserve"><value>เปิดหน้าร้านค้า</value></data>
+  <data name="Manage_Action_OpenInSteam" xml:space="preserve"><value>เปิดใน Steam</value></data>
+  <data name="Manage_Action_Reveal" xml:space="preserve"><value>แสดง .lua</value></data>
+  <data name="Manage_Action_CopyAppId" xml:space="preserve"><value>คัดลอก App ID</value></data>
+  <data name="Manage_Action_RemoveDrm" xml:space="preserve"><value>ลบ DRM ของ Steam</value></data>
+  <data name="Manage_ActionsHeader" xml:space="preserve"><value>การดำเนินการ</value></data>
+  <data name="Manage_Steamless_Confirm_Title" xml:space="preserve"><value>ลบ DRM ของ Steam หรือไม่?</value></data>
+  <data name="Manage_Steamless_Confirm_Body" xml:space="preserve"><value>การดำเนินการนี้จะเรียกใช้ Steamless กับไฟล์เรียกทำงานของเกมเพื่อลบ DRM SteamStub ไฟล์ .exe ต้นฉบับจะถูกสำรองเป็น .bak ก่อน บางเกมอาจต้องตรวจสอบไฟล์ใน Steam ภายหลัง ดำเนินการต่อหรือไม่?</value></data>
+  <data name="Manage_Steamless_Working" xml:space="preserve"><value>กำลังลบ DRM ของ Steam…</value></data>
+  <data name="Manage_Toast_Steamless_Done" xml:space="preserve"><value>แก้ไขแล้ว {0} รายการ, ไม่เปลี่ยนแปลง {1} รายการ</value></data>
+  <data name="Manage_Steamless_NoInstall" xml:space="preserve"><value>ไม่พบโฟลเดอร์เกม — ติดตั้งไว้หรือไม่?</value></data>
+  <data name="Manage_Steamless_Failed" xml:space="preserve"><value>ไม่สามารถลบ DRM ได้ {0}</value></data>
+  <data name="Manage_CopyAppIdTip" xml:space="preserve"><value>คลิกเพื่อคัดลอก App ID</value></data>
+  <data name="Manage_LoadingDepotInfo" xml:space="preserve"><value>กำลังโหลดข้อมูล depot…</value></data>
+  <data name="Manage_MissingHint" xml:space="preserve"><value>มีใน Steam แต่ไม่มีใน lua ของคุณ (มักเป็น depot ที่ถูกเซ็นเซอร์หรืออยู่ในบัญชีดำ)</value></data>
+  <data name="Manage_UnknownHint" xml:space="preserve"><value>depot ที่เสียหาย ยังไม่เปิดตัว หรือเป็นไฟล์แจกจ่ายร่วม — โดยปกติไม่มีอะไรต้องกังวล</value></data>
+  <data name="Manage_Clear" xml:space="preserve"><value>ล้าง</value></data>
+  <data name="Manage_DeleteSelected" xml:space="preserve"><value>ลบที่เลือก</value></data>
+  <data name="Manage_LoadingGames" xml:space="preserve"><value>กำลังโหลดเกมของคุณ…</value></data>
+  <data name="Manage_Opt_Any" xml:space="preserve"><value>ทั้งหมด</value></data>
+  <data name="Manage_Opt_Free" xml:space="preserve"><value>ฟรี</value></data>
+  <data name="Manage_Opt_Paid" xml:space="preserve"><value>เสียเงิน</value></data>
+  <data name="Manage_Sort_RecentlyAdded" xml:space="preserve"><value>เพิ่มเมื่อเร็ว ๆ นี้</value></data>
+  <data name="Manage_Sort_NameAZ" xml:space="preserve"><value>ชื่อ (A–Z)</value></data>
+  <data name="Manage_Sort_ReleaseNewest" xml:space="preserve"><value>วันที่วางจำหน่าย (ใหม่สุด)</value></data>
+  <data name="Manage_Sort_Metacritic" xml:space="preserve"><value>Metacritic</value></data>
+  <data name="Manage_Sort_MostReviewed" xml:space="preserve"><value>รีวิวมากที่สุด</value></data>
+  <data name="Manage_PageSize_All" xml:space="preserve"><value>ทั้งหมด</value></data>
+  <data name="Manage_PageLabel" xml:space="preserve"><value>หน้า {0} จาก {1}</value></data>
+  <data name="Manage_SelectionLabel" xml:space="preserve"><value>เลือก {0} รายการ</value></data>
+  <data name="Manage_FetchingDetails" xml:space="preserve"><value>กำลังดึงรายละเอียดสำหรับ {0} แอป</value></data>
+  <data name="Manage_Empty_NoMatch" xml:space="preserve"><value>ไม่มีเกมที่ตรงกับตัวกรองของคุณ</value></data>
+  <data name="Manage_Empty_NoLuas" xml:space="preserve"><value>ยังไม่พบไฟล์ lua เพิ่มเกมจากแท็บ เพิ่ม</value></data>
+  <data name="Manage_Empty_NoSteam" xml:space="preserve"><value>ไม่พบตำแหน่ง Steam — ตั้งค่าในการตั้งค่า</value></data>
+  <data name="Manage_Toast_NotFound_Title" xml:space="preserve"><value>ไม่พบ</value></data>
+  <data name="Manage_Toast_NotFound_Body" xml:space="preserve"><value>เกมนั้นไม่อยู่ในคลังของคุณแล้ว</value></data>
+  <data name="Manage_Toast_Refreshed_Title" xml:space="preserve"><value>รีเฟรชคลังแล้ว</value></data>
+  <data name="Manage_Toast_Refreshed_Body" xml:space="preserve"><value>{0} เกมในคลัง</value></data>
+  <data name="Manage_DepotError" xml:space="preserve"><value>ไม่สามารถโหลดข้อมูล depot ได้ (ออฟไลน์หรือแอปไม่รู้จัก)</value></data>
+  <data name="Manage_Toggle_InLua" xml:space="preserve"><value>ใน lua</value></data>
+  <data name="Manage_Toggle_Missing" xml:space="preserve"><value>depot / DLC ที่ขาดหายไป</value></data>
+  <data name="Manage_Toggle_Unknown" xml:space="preserve"><value>รายการที่ไม่รู้จัก</value></data>
+  <data name="Manage_Depot" xml:space="preserve"><value>Depot</value></data>
+  <data name="Manage_SharedDepot" xml:space="preserve"><value>depot ที่ใช้ร่วมกัน</value></data>
+  <data name="Manage_DlcName" xml:space="preserve"><value>DLC {0}</value></data>
+  <data name="Manage_Delete_Title" xml:space="preserve"><value>ลบไฟล์ lua</value></data>
+  <data name="Manage_Delete_Body" xml:space="preserve"><value>นำ “{0}” (App ID {1}) ออกหรือไม่?
+
+การทำเช่นนี้จะลบไฟล์ .lua ออกจาก Steam\config\stplug-in</value></data>
+  <data name="Manage_DeleteMany_Title" xml:space="preserve"><value>ลบไฟล์ lua</value></data>
+  <data name="Manage_DeleteMany_Body" xml:space="preserve"><value>นำไฟล์ lua {0} ไฟล์ออกหรือไม่?
+
+การทำเช่นนี้จะลบไฟล์ .lua ออกจาก Steam\config\stplug-in</value></data>
+  <data name="Manage_RemoveFailed_Title" xml:space="preserve"><value>การลบล้มเหลว</value></data>
+  <data name="Manage_RemoveFailed_File" xml:space="preserve"><value>ไม่สามารถลบไฟล์ได้:
+{0}</value></data>
+  <data name="Manage_RemoveFailed_Named" xml:space="preserve"><value>ไม่สามารถลบ "{0}" ได้:
+{1}</value></data>
+  <data name="Manage_RemoveFailed_Count" xml:space="preserve"><value>ไม่สามารถลบ {0} ไฟล์ได้</value></data>
+  <data name="Manage_RestartSteam_Title" xml:space="preserve"><value>รีสตาร์ท Steam</value></data>
+  <data name="Manage_RestartSteam_Failed" xml:space="preserve"><value>ไม่พบหรือไม่สามารถเปิด Steam ได้ ตั้งค่าตำแหน่งในการตั้งค่า</value></data>
+  <data name="Fixes_Title" xml:space="preserve"><value>การแก้ไข</value></data>
+  <data name="Fixes_Loading" xml:space="preserve"><value>กำลังโหลดการแก้ไข…</value></data>
+  <data name="Fixes_Build" xml:space="preserve"><value>บิลด์ {0}</value></data>
+  <data name="Fixes_Manifest" xml:space="preserve"><value>Manifest</value></data>
+  <data name="Fixes_Fix" xml:space="preserve"><value>การแก้ไข</value></data>
+  <data name="Fixes_Count" xml:space="preserve"><value>{0} การแก้ไข</value></data>
+  <data name="Fixes_Err_Load" xml:space="preserve"><value>ไม่สามารถโหลดการแก้ไขได้ — ตรวจสอบการเชื่อมต่อของคุณ</value></data>
+  <data name="Fixes_Empty_None" xml:space="preserve"><value>ยังไม่มีการแก้ไขที่พร้อมใช้งาน</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
+  <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>การดาวน์โหลดล้มเหลว</value></data>
+  <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>มีบางอย่างผิดพลาด — ลองอีกครั้ง</value></data>
+  <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>การติดตั้งล้มเหลว</value></data>
+  <data name="Fixes_Toast_InstallFailed_Body" xml:space="preserve"><value>ไม่สามารถติดตั้งได้ — ปิด Steam (หรือรีสตาร์ท Steam) แล้วลองอีกครั้ง</value></data>
+  <data name="Fixes_Toast_FixInstalled" xml:space="preserve"><value>ติดตั้งการแก้ไขแล้ว</value></data>
+  <data name="Fixes_Toast_FixInstalled_Body" xml:space="preserve"><value>ติดตั้งแมนิเฟสต์ของ {0} แล้ว</value></data>
+  <data name="Fixes_Toast_GameNotFound" xml:space="preserve"><value>ไม่พบเกม</value></data>
+  <data name="Fixes_Toast_GameNotFound_Body" xml:space="preserve"><value>ติดตั้ง {0} ใน Steam ก่อน จากนั้นจึงใช้การแก้ไข</value></data>
+  <data name="Fixes_Toast_PartiallyApplied" xml:space="preserve"><value>ใช้การแก้ไขบางส่วนแล้ว</value></data>
+  <data name="Fixes_Toast_PartiallyApplied_Body" xml:space="preserve"><value>ไม่สามารถเขียน {0} ไฟล์ได้ — ปิดเกมแล้วลองอีกครั้ง</value></data>
+  <data name="Fixes_Toast_FixApplied" xml:space="preserve"><value>ใช้การแก้ไขแล้ว</value></data>
+  <data name="Fixes_Toast_FixApplied_Body" xml:space="preserve"><value>แตกไฟล์การแก้ไขของ {0} ลงในโฟลเดอร์เกมแล้ว</value></data>
+  <data name="Fixes_Toast_CouldntApply" xml:space="preserve"><value>ไม่สามารถใช้การแก้ไขได้</value></data>
+  <data name="Fixes_Toast_Refreshed_Title" xml:space="preserve"><value>รีเฟรชแล้ว</value></data>
+  <data name="Fixes_Toast_Refreshed_Body" xml:space="preserve"><value>{0} เกมที่มีแพตช์แก้ไข</value></data>
+  <data name="Add_Title" xml:space="preserve"><value>ไปหา Lua กันเถอะ™!</value></data>
+  <data name="Add_Subtitle" xml:space="preserve"><value>ป้อน App ID วางลิงก์ Steam หรือค้นหาด้วยชื่อเกม</value></data>
+  <data name="Add_SearchPlaceholder" xml:space="preserve"><value>ป้อน App ID หรือค้นหาเกม...</value></data>
+  <data name="Add_Featured_TopSellers" xml:space="preserve"><value>สินค้าขายดี</value></data>
+  <data name="Add_Featured_NewReleases" xml:space="preserve"><value>ออกใหม่</value></data>
+  <data name="Add_Released" xml:space="preserve"><value>วางจำหน่าย {0}</value></data>
+  <data name="Add_Fetch" xml:space="preserve"><value>ดึงข้อมูล</value></data>
+  <data name="Add_Checking" xml:space="preserve"><value>กำลังตรวจสอบ…</value></data>
+  <data name="Add_Reveal" xml:space="preserve"><value>แสดง</value></data>
+  <data name="Add_Supporter" xml:space="preserve"><value>Supporter</value></data>
+  <data name="Add_Unlimited" xml:space="preserve"><value>ไม่จำกัด</value></data>
+  <data name="Add_RequiresOwnKey" xml:space="preserve"><value>ต้องใช้คีย์ API ของคุณเอง</value></data>
+  <data name="Add_Discord" xml:space="preserve"><value>Discord</value></data>
+  <data name="Add_JoinDiscord" xml:space="preserve"><value>เข้าร่วม Discord ของแหล่งนี้</value></data>
+  <data name="Add_Download" xml:space="preserve"><value>ดาวน์โหลด</value></data>
+  <data name="Add_NeedsHubcapKey" xml:space="preserve"><value>ต้องใช้คีย์ Hubcap</value></data>
+  <data name="Add_NeedsHubcapKey_Tip" xml:space="preserve"><value>ตั้งค่าคีย์ API ของ Hubcap ในการตั้งค่าเพื่อปลดล็อกแหล่งนี้</value></data>
+  <data name="Add_Depots" xml:space="preserve"><value>DEPOT</value></data>
+  <data name="Add_Available" xml:space="preserve"><value>พร้อมใช้งาน</value></data>
+  <data name="Add_Missing" xml:space="preserve"><value>ขาดหาย</value></data>
+  <data name="Add_NoKey" xml:space="preserve"><value>ไม่มีคีย์</value></data>
+  <data name="Add_DownloadLua" xml:space="preserve"><value>ดาวน์โหลด .lua</value></data>
+  <data name="Add_Generating" xml:space="preserve"><value>กำลังสร้าง…</value></data>
+  <data name="Add_DlcHint" xml:space="preserve"><value>วาง .lua ลงใน steam\config\stplug-in — ตรวจสอบให้แน่ใจว่าได้เพิ่มเกมหลักด้วย นับรวมในขีดจำกัดรายวันของคุณ (25/วัน)</value></data>
+  <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>มีไฟล์อยู่แล้วใช่ไหม?</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
+  <data name="Add_Err_BaseGame" xml:space="preserve"><value>ไม่สามารถระบุเกมหลักของ DLC นี้ได้</value></data>
+  <data name="Add_Err_Generic" xml:space="preserve"><value>มีบางอย่างผิดพลาด — ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>การดาวน์โหลดล้มเหลว — ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง</value></data>
+  <data name="Add_Confirm_Replace" xml:space="preserve"><value>แทนที่ "{0}" หรือไม่?</value></data>
+  <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>ไม่มีการเปลี่ยนแปลง depot/DLC — เนื้อหาเหมือนเดิม</value></data>
+  <data name="Add_Status_Cancelled" xml:space="preserve"><value>ยกเลิกการติดตั้งแล้ว — ไฟล์ที่มีอยู่ไม่เปลี่ยนแปลง</value></data>
+  <data name="Add_Status_InstallFailed" xml:space="preserve"><value>ไม่สามารถติดตั้ง {0} ไฟล์ได้ — ปิด Steam (หรือใช้ รีสตาร์ท Steam) แล้วลองอีกครั้ง</value></data>
+  <data name="Add_Status_AddedManifests" xml:space="preserve"><value>เพิ่ม {0} แล้ว: lua + แมนิเฟสต์ {1} รายการ</value></data>
+  <data name="Add_Status_AddedFetch" xml:space="preserve"><value>เพิ่ม {0} แล้ว Steam จะดึงแมนิเฟสต์ให้</value></data>
+  <data name="Confirm_OpenSteamDb" xml:space="preserve"><value>เปิดใน SteamDB</value></data>
+  <data name="Confirm_Shared" xml:space="preserve"><value>ใช้ร่วมกัน</value></data>
+  <data name="Confirm_ReviewChanges" xml:space="preserve"><value>การดำเนินการนี้จะแทนที่ lua ที่ติดตั้งไว้ ตรวจสอบสิ่งที่เปลี่ยนแปลง:</value></data>
+  <data name="Confirm_Adding" xml:space="preserve"><value>กำลังเพิ่ม ({0})</value></data>
+  <data name="Confirm_Removing" xml:space="preserve"><value>กำลังนำออก ({0})</value></data>
+  <data name="Confirm_Skip" xml:space="preserve"><value>ข้าม</value></data>
+  <data name="Confirm_Replace" xml:space="preserve"><value>แทนที่</value></data>
+  <data name="Settings_Section_Startup" xml:space="preserve"><value>การเริ่มต้น</value></data>
+  <data name="Settings_StartWithWindows" xml:space="preserve"><value>เริ่มพร้อม Windows</value></data>
+  <data name="Settings_StartWithWindows_Hint" xml:space="preserve"><value>เปิด GameGuy โดยอัตโนมัติเมื่อ Windows เริ่มทำงาน</value></data>
+  <data name="Settings_MinimizeToTray" xml:space="preserve"><value>ย่อไปที่ถาดระบบ</value></data>
+  <data name="Settings_MinimizeToTray_Hint" xml:space="preserve"><value>เมื่อคุณปิดหน้าต่าง ให้ GameGuy ทำงานต่อในถาดระบบแทนที่จะออกจากโปรแกรม ดับเบิลคลิกที่ไอคอนถาดเพื่อคืนค่า</value></data>
+  <data name="Tray_Open" xml:space="preserve"><value>เปิด GameGuy</value></data>
+  <data name="Tray_Exit" xml:space="preserve"><value>ออก</value></data>
+
+  <data name="Add_FastFetch" xml:space="preserve"><value>FastFetch™️</value></data>
+  <data name="Add_FastFetch_Hint" xml:space="preserve"><value>ดาวน์โหลดอัตโนมัติจากแหล่งแรกที่พร้อมใช้งาน</value></data>
+  <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>ไม่พบแหล่งที่พร้อมใช้งานสำหรับเกมนี้</value></data>
+  <data name="Add_FastFetch_Via" xml:space="preserve"><value>· ผ่าน {0}</value></data>
+  <data name="Plugin_Title" xml:space="preserve"><value>ปลั๊กอิน GameGuy</value></data>
+  <data name="Plugin_Subtitle" xml:space="preserve"><value>ปลั๊กอิน GameGuy สำหรับ Steam! — ตอนนี้ใช้ LuaLoader แทน Shittenium</value></data>
+  <data name="Plugin_CardTitle" xml:space="preserve"><value>สถานะ</value></data>
+  <data name="Plugin_Badge_UpdateAvailable" xml:space="preserve"><value>มีอัปเดต</value></data>
+  <data name="Plugin_Row_InstalledVersion" xml:space="preserve"><value>เวอร์ชันที่ติดตั้ง</value></data>
+  <data name="Plugin_Row_LatestVersion" xml:space="preserve"><value>เวอร์ชันล่าสุด</value></data>
+  <data name="Plugin_Row_Frontend" xml:space="preserve"><value>ฟรอนต์เอนด์</value></data>
+  <data name="Plugin_Row_Loader" xml:space="preserve"><value>ตัวโหลด (winmm.dll)</value></data>
+  <data name="Plugin_Millennium_Coexisting" xml:space="preserve"><value>ตรวจพบ Millennium — GameGuy ทำงานควบคู่กับมัน การติดตั้งจะปิดใช้งานสำเนาปลั๊กอินนี้ของ Millennium เพื่อให้เฉพาะ LuaLoader ทำการฉีดเท่านั้น</value></data>
+  <data name="Plugin_Footer" xml:space="preserve"><value>LuaLoader จะติดตั้งลงในโฟลเดอร์ Steam ของคุณ แอปนี้ทำงานเป็นแบ็กเอนด์ — หากคุณปิดจากถาดระบบ ปลั๊กอินจะไม่ทำงานอีกต่อไป!</value></data>
+  <data name="Plugin_Btn_Install" xml:space="preserve"><value>ติดตั้ง</value></data>
+  <data name="Plugin_Btn_Update" xml:space="preserve"><value>อัปเดต</value></data>
+  <data name="Plugin_Btn_Reinstall" xml:space="preserve"><value>ติดตั้งใหม่</value></data>
+  <data name="Plugin_Btn_Uninstall" xml:space="preserve"><value>ถอนการติดตั้ง</value></data>
+  <data name="Plugin_Btn_CheckForUpdates" xml:space="preserve"><value>ตรวจหาการอัปเดต</value></data>
+  <data name="Plugin_Checking" xml:space="preserve"><value>กำลังตรวจสอบ…</value></data>
+  <data name="Plugin_Status_Installed" xml:space="preserve"><value>ติดตั้งแล้ว</value></data>
+  <data name="Plugin_Status_NotInstalled" xml:space="preserve"><value>ยังไม่ได้ติดตั้ง</value></data>
+  <data name="Plugin_Status_UpToDate" xml:space="preserve"><value>เป็นเวอร์ชันล่าสุด</value></data>
+  <data name="Plugin_Status_OutOfDate" xml:space="preserve"><value>ล้าสมัย</value></data>
+  <data name="Plugin_Version_Unknown" xml:space="preserve"><value>ไม่ทราบ</value></data>
+  <data name="Plugin_Version_Offline" xml:space="preserve"><value>ออฟไลน์</value></data>
+  <data name="Plugin_Status_OfflineCheck" xml:space="preserve"><value>ไม่สามารถเชื่อมต่อ GitHub เพื่อตรวจหาการอัปเดตได้</value></data>
+  <data name="Plugin_Status_Port8080Busy" xml:space="preserve"><value>โปรแกรมอื่นกำลังใช้พอร์ต 8080 อยู่แล้ว — บริดจ์เบราว์เซอร์ของปลั๊กอินอาจทำงานไม่ได้ ปิดโปรแกรมที่ใช้พอร์ตนั้น แล้วติดตั้งใหม่หรือรีสตาร์ท Steam</value></data>
+  <data name="Plugin_Confirm_RestartBody" xml:space="preserve"><value>การดำเนินการนี้จะปิดและรีสตาร์ท Steam เพื่อใช้ตัวโหลด ดำเนินการต่อหรือไม่?</value></data>
+  <data name="Plugin_Confirm_RestartCaption" xml:space="preserve"><value>รีสตาร์ท Steam</value></data>
+  <data name="Plugin_Toast_Title" xml:space="preserve"><value>ปลั๊กอิน</value></data>
+  <data name="Plugin_Toast_Installed" xml:space="preserve"><value>ติดตั้งปลั๊กอินแล้ว Steam กำลังรีสตาร์ทเพื่อโหลด</value></data>
+  <data name="Plugin_Toast_InstallFailed" xml:space="preserve"><value>การติดตั้งล้มเหลว: {0}</value></data>
+  <data name="Plugin_Toast_Removed" xml:space="preserve"><value>ลบปลั๊กอินแล้ว Steam กำลังรีสตาร์ท</value></data>
+  <data name="Plugin_Toast_UninstallFailed" xml:space="preserve"><value>การถอนการติดตั้งล้มเหลว: {0}</value></data>
+  <data name="Plugin_Toast_UpdateAvailable" xml:space="preserve"><value>มีอัปเดตพร้อมใช้งาน</value></data>
+  <data name="Plugin_Toast_UpToDate" xml:space="preserve"><value>คุณใช้เวอร์ชันล่าสุดอยู่แล้ว</value></data>
+  <data name="Plugin_Err_SteamNotFound" xml:space="preserve"><value>ไม่พบการติดตั้ง Steam</value></data>
+  <data name="Plugin_Err_GithubUnreachable" xml:space="preserve"><value>ไม่สามารถเชื่อมต่อ GitHub เพื่อดึงรุ่นล่าสุดได้</value></data>
+  <data name="Plugin_Err_MissingAssets" xml:space="preserve"><value>รุ่น {0} ขาด {1} หรือ {2}</value></data>
+  <data name="Plugin_Err_VerifyFailed" xml:space="preserve"><value>การตรวจสอบแฮชของ {0} ล้มเหลว</value></data>
+  <data name="Plugin_Err_NoLuatoolsJs" xml:space="preserve"><value>plugin.zip ไม่มี public/luatools.js</value></data>
+  <data name="Plugin_About_Header" xml:space="preserve"><value>ฟีเจอร์เด่น</value></data>
+  <data name="Plugin_Feature_StoreButton" xml:space="preserve"><value>เพิ่มปุ่ม “Add via LuaTools” ในหน้าร้านค้า Steam</value></data>
+  <data name="Plugin_Feature_AutoUpdate" xml:space="preserve"><value>อัปเดตตัวเองโดยอัตโนมัติ</value></data>
+  <data name="Plugin_Feature_Millennium" xml:space="preserve"><value>ทำงานได้ทั้งที่มีและไม่มี Millennium</value></data>
+  <data name="Drop_LinkHint" xml:space="preserve"><value>…หรือลากลิงก์ SteamDB / ร้านค้า Steam มาวางเพื่อเพิ่มเกมนั้น</value></data>
+  <data name="Manage_Action_ManageBuild" xml:space="preserve"><value>จัดการดีโป</value></data>
+  <data name="Manage_AboutHeader" xml:space="preserve"><value>เกี่ยวกับ</value></data>
+  <data name="Manage_Info_Developer" xml:space="preserve"><value>ผู้พัฒนา</value></data>
+  <data name="Manage_Info_Publisher" xml:space="preserve"><value>ผู้จัดจำหน่าย</value></data>
+  <data name="Nav_Builds" xml:space="preserve"><value>ดีโป</value></data>
+  <data name="Builds_Title" xml:space="preserve"><value>ดีโป</value></data>
+  <data name="Builds_Subtitle" xml:space="preserve"><value>เก็บไฟล์ lua ของเกมไว้ได้หลายเวอร์ชัน แล้วเลือกว่าจะให้ Steam ใช้อันไหน</value></data>
+  <data name="Builds_NoSelection" xml:space="preserve"><value>เลือกเกมทางด้านซ้ายเพื่อดูพรีเซ็ตของเกมนั้น</value></data>
+  <data name="Builds_ActiveBuild" xml:space="preserve"><value>พรีเซ็ตที่ใช้อยู่</value></data>
+  <data name="Builds_Active" xml:space="preserve"><value>ใช้อยู่</value></data>
+  <data name="Builds_Variant_Default" xml:space="preserve"><value>ค่าเริ่มต้น</value></data>
+  <data name="Builds_Variant_Build" xml:space="preserve"><value>บิลด์ {0}</value></data>
+  <data name="Builds_Variant_Preset" xml:space="preserve"><value>บันทึกแล้ว · {0}</value></data>
+  <data name="Builds_Pinned" xml:space="preserve"><value>ตรึงไว้</value></data>
+  <data name="Builds_AutoUpdating" xml:space="preserve"><value>อัปเดตอัตโนมัติ</value></data>
+  <data name="Builds_LatestBuild" xml:space="preserve"><value>บิลด์ล่าสุดบน Steam: {0}</value></data>
+  <data name="Builds_Manifest" xml:space="preserve"><value>มานิเฟสต์ {0}</value></data>
+  <data name="Builds_ManifestLatest" xml:space="preserve"><value>ล่าสุดคือ {0}</value></data>
+  <data name="Builds_PinDisabled" xml:space="preserve"><value>ปิดการตรึง (อัปเดตอัตโนมัติ)</value></data>
+  <data name="Builds_Meta_Depots" xml:space="preserve"><value>{0} ดีโป · {1} DLC</value></data>
+  <data name="Builds_Meta_Unsaved" xml:space="preserve"><value>ยังไม่บันทึก</value></data>
+  <data name="Builds_Source" xml:space="preserve"><value>จาก {0}</value></data>
+  <data name="Builds_Action_Apply" xml:space="preserve"><value>ใช้งาน</value></data>
+  <data name="Builds_Action_Rename" xml:space="preserve"><value>เปลี่ยนชื่อ</value></data>
+  <data name="Builds_Action_Edit" xml:space="preserve"><value>แก้ไข</value></data>
+  <data name="Builds_Action_Delete" xml:space="preserve"><value>ลบ</value></data>
+  <data name="Builds_Action_Save" xml:space="preserve"><value>บันทึก</value></data>
+  <data name="Builds_Action_SaveAsPreset" xml:space="preserve"><value>บันทึกเป็นพรีเซ็ต</value></data>
+  <data name="Builds_Action_Cancel" xml:space="preserve"><value>ยกเลิก</value></data>
+  <data name="Builds_RenamePlaceholder" xml:space="preserve"><value>ตั้งชื่อพรีเซ็ตนี้…</value></data>
+  <data name="Builds_Editor_Title" xml:space="preserve"><value>กำลังแก้ไขไฟล์ lua ที่ Steam ใช้อยู่</value></data>
+  <data name="Builds_Delete_Title" xml:space="preserve"><value>ลบพรีเซ็ตนี้หรือไม่?</value></data>
+  <data name="Builds_Delete_Body" xml:space="preserve"><value>“{0}” จะถูกลบออกจากพรีเซ็ตที่คุณบันทึกไว้ ซึ่งไม่มีผลต่อตัวเกม</value></data>
+  <data name="Builds_Delete_ActiveTip" xml:space="preserve"><value>ไม่สามารถลบพรีเซ็ตที่กำลังใช้งานอยู่</value></data>
+  <data name="Builds_Apply_Done" xml:space="preserve"><value>กำลังใช้ “{0}” แล้ว</value></data>
+  <data name="Builds_Apply_Failed" xml:space="preserve"><value>สลับพรีเซ็ตไม่สำเร็จ — ไฟล์ lua อาจกำลังถูกใช้งานอยู่</value></data>
+  <data name="Builds_Save_Done" xml:space="preserve"><value>บันทึกแล้ว</value></data>
+  <data name="Builds_Save_Failed" xml:space="preserve"><value>บันทึกไม่สำเร็จ — ไฟล์ lua อาจกำลังถูกใช้งานอยู่</value></data>
+  <data name="Builds_Preset_Saved" xml:space="preserve"><value>บันทึกเป็นพรีเซ็ตแล้ว</value></data>
+  <data name="Builds_Action_SaveTo" xml:space="preserve"><value>บันทึกลงใน “{0}”</value></data>
+  <data name="Builds_Action_SaveAsNew" xml:space="preserve"><value>บันทึกเป็นอันใหม่</value></data>
+  <data name="Builds_Save_Updated" xml:space="preserve"><value>อัปเดต “{0}” แล้ว</value></data>
+  <data name="Builds_Depot_Lock" xml:space="preserve"><value>ล็อก</value></data>
+  <data name="Builds_Depot_LockTip" xml:space="preserve"><value>ล็อก: ดีโปนี้จะคงอยู่ที่มานิเฟสต์ด้านบน ปลดล็อก: Steam จะอัปเดตเป็นเวอร์ชันล่าสุด (คอมเมนต์หรือยกเลิกคอมเมนต์บรรทัด setManifestid)</value></data>
+  <data name="Builds_Depot_EnableTip" xml:space="preserve"><value>เปิด: คีย์ถอดรหัสของดีโปนี้จะถูกใช้ ปิด: ดีโปจะไม่ถูกปลดล็อกเลย (คอมเมนต์หรือยกเลิกคอมเมนต์บรรทัด addappid)</value></data>
+  <data name="Builds_Depot_Search" xml:space="preserve"><value>ค้นหาดีโปตามชื่อ, ID หรือประเภท…</value></data>
+  <data name="Builds_Depot_NoMatch" xml:space="preserve"><value>ไม่มีดีโปที่ตรงกับการค้นหาของคุณ</value></data>
+  <data name="Builds_Depot_InactiveNote" xml:space="preserve"><value>คุณกำลังแก้ไขพรีเซ็ตที่ยังไม่ได้ใช้งาน — การเปลี่ยนแปลงจะถูกบันทึกลงในพรีเซ็ตนั้นโดยตรง และ Steam จะยังใช้พรีเซ็ตที่ใช้งานอยู่จนกว่าคุณจะกดใช้งาน</value></data>
+  <data name="Manage_Action_LaunchOptions" xml:space="preserve"><value>ตัวเลือกการเปิดเกม…</value></data>
+  <data name="Launch_Title" xml:space="preserve"><value>ตัวเลือกการเปิดเกม</value></data>
+  <data name="Launch_Loading" xml:space="preserve"><value>กำลังอ่านแคชแอปของ Steam…</value></data>
+  <data name="Launch_NotFound" xml:space="preserve"><value>Steam ยังไม่มีข้อมูลแคชของเกมนี้ ลองเปิด Steam สักครั้งแล้วลองใหม่</value></data>
+  <data name="Launch_UnsupportedFormat" xml:space="preserve"><value>แคชแอปของ Steam อยู่ในรูปแบบที่เวอร์ชันนี้ไม่รู้จัก ({0}) กรุณาอัปเดต GameGuy</value></data>
+  <data name="Launch_ReadFailed" xml:space="preserve"><value>อ่านแคชแอปของ Steam ไม่สำเร็จ {0}</value></data>
+  <data name="Launch_ExecutableRequired" xml:space="preserve"><value>ทุกตัวเลือกการเปิดเกมต้องมีไฟล์ปฏิบัติการ</value></data>
+  <data name="Launch_Add" xml:space="preserve"><value>เพิ่ม</value></data>
+  <data name="Launch_Delete" xml:space="preserve"><value>ลบ</value></data>
+  <data name="Launch_Field_Executable" xml:space="preserve"><value>ไฟล์ปฏิบัติการ</value></data>
+  <data name="Launch_Field_Arguments" xml:space="preserve"><value>อาร์กิวเมนต์</value></data>
+  <data name="Launch_Field_WorkingDir" xml:space="preserve"><value>ไดเรกทอรีทำงาน</value></data>
+  <data name="Launch_Field_Description" xml:space="preserve"><value>ป้ายชื่อ (แสดงในเมนูเล่นเกมของ Steam)</value></data>
+  <data name="Launch_Field_Os" xml:space="preserve"><value>ระบบปฏิบัติการ</value></data>
+  <data name="Launch_Field_Type" xml:space="preserve"><value>ประเภท</value></data>
+  <data name="Launch_Field_BetaKey" xml:space="preserve"><value>เฉพาะในสาขา</value></data>
+  <data name="Launch_Field_BetaKey_Tip" xml:space="preserve"><value>ชื่อสาขาที่จำกัดตัวเลือกนี้ไว้ — เช่น beta, default, development เว้นว่างไว้เพื่อให้แสดงในทุกสาขา</value></data>
+  <data name="Launch_Field_OwnsDlc" xml:space="preserve"><value>เฉพาะเมื่อเป็นเจ้าของ DLC (App ID)</value></data>
+  <data name="Launch_InstallPath" xml:space="preserve"><value>เส้นทางติดตั้ง: {0}</value></data>
+  <data name="Launch_SteamRestartNote" xml:space="preserve"><value>การใช้การเปลี่ยนแปลงจะปิดแล้วเปิด Steam ใหม่</value></data>
+  <data name="Launch_Restore" xml:space="preserve"><value>คืนค่าเดิม</value></data>
+  <data name="Launch_Restore_Tip" xml:space="preserve"><value>คืนค่าตัวเลือกการเปิดเกมที่มากับ Steam ก่อนที่ GameGuy จะเปลี่ยน</value></data>
+  <data name="Launch_Restore_Title" xml:space="preserve"><value>คืนค่าตัวเลือกการเปิดเกมเดิมหรือไม่?</value></data>
+  <data name="Launch_Restore_Body" xml:space="preserve"><value>การทำเช่นนี้จะคืนตัวเลือกการเปิดเกมให้เป็นแบบที่ Steam มีอยู่เดิม และละทิ้งการเปลี่ยนแปลงของคุณ Steam จะถูกปิดแล้วเปิดใหม่ ดำเนินการต่อหรือไม่?</value></data>
+  <data name="Launch_NothingToRestore" xml:space="preserve"><value>เกมนี้ไม่ได้ถูกเปลี่ยนแปลง จึงไม่มีอะไรให้คืนค่า</value></data>
+  <data name="Launch_ApplyNow_Title" xml:space="preserve"><value>ใช้กับ Steam ตอนนี้หรือไม่?</value></data>
+  <data name="Launch_ApplyNow_Body" xml:space="preserve"><value>บันทึกการเปลี่ยนแปลงของคุณแล้ว การเขียนลงใน Steam ต้องปิดแล้วเปิด Steam ใหม่ — ทำตอนนี้หรือไม่? เลือกยกเลิกเพื่อใช้ภายหลัง</value></data>
+  <data name="Launch_Staged" xml:space="preserve"><value>บันทึกแล้ว ใช้งานได้จากหน้าต่างนี้เมื่อคุณพร้อมรีสตาร์ท Steam</value></data>
+  <data name="Launch_Applied" xml:space="preserve"><value>ใช้ตัวเลือกการเปิดเกมแล้ว</value></data>
+  <data name="Launch_Applied_Restarted" xml:space="preserve"><value>ใช้ตัวเลือกการเปิดเกมแล้ว Steam ถูกรีสตาร์ท</value></data>
+  <data name="Launch_ApplyFailed" xml:space="preserve"><value>ใช้ตัวเลือกการเปิดเกมไม่สำเร็จ {0}</value></data>
+  <data name="Launch_Drift_Title" xml:space="preserve"><value>ตัวเลือกการเปิดเกมถูกรีเซ็ต</value></data>
+  <data name="Launch_Drift_Body" xml:space="preserve"><value>Steam เขียนทับตัวเลือกการเปิดเกมของคุณสำหรับ {0} เกม การใช้ใหม่จะปิดแล้วเปิด Steam ใหม่</value></data>
+  <data name="Launch_Drift_Action" xml:space="preserve"><value>ใช้อีกครั้ง</value></data>
+  <data name="Err_SteamNotFound" xml:space="preserve"><value>ไม่พบตำแหน่งของ Steam ตั้งค่าได้ในหน้าการตั้งค่า</value></data>
+  <data name="Err_GithubUnreachable" xml:space="preserve"><value>เชื่อมต่อ GitHub ไม่ได้ ตรวจสอบการเชื่อมต่อแล้วลองใหม่</value></data>
+  <data name="Err_UpdateServerUnreachable" xml:space="preserve"><value>เชื่อมต่อเซิร์ฟเวอร์อัปเดตไม่ได้ ตรวจสอบการเชื่อมต่อแล้วลองใหม่</value></data>
+  <data name="Err_Cancelled" xml:space="preserve"><value>ยกเลิกแล้ว</value></data>
+  <data name="Err_CancelledByUser" xml:space="preserve"><value>ผู้ใช้ยกเลิก</value></data>
+  <data name="Err_ReleaseMissingDownload" xml:space="preserve"><value>รีลีสนี้ไม่มีไฟล์ดาวน์โหลดที่ต้องการ</value></data>
+  <data name="Err_ReleaseMissingFile" xml:space="preserve"><value>รีลีสนี้ไม่มี {0}</value></data>
+  <data name="Err_VerifyFailed" xml:space="preserve"><value>การดาวน์โหลดไม่ผ่านการตรวจสอบ (sha256 ไม่ตรงกัน)</value></data>
+  <data name="Err_VerifyFailedFile" xml:space="preserve"><value>{0} ไม่ผ่านการตรวจสอบ (sha256 ไม่ตรงกัน)</value></data>
+  <data name="Err_DownloadMissingFiles" xml:space="preserve"><value>ไฟล์ที่ขาดในการดาวน์โหลด: {0}</value></data>
+  <data name="Err_WriteFailedCount" xml:space="preserve"><value>เขียนไฟล์ไม่สำเร็จ {0} ไฟล์ ปิด Steam แล้วลองใหม่</value></data>
+  <data name="Err_WriteFailedFile" xml:space="preserve"><value>เขียน {0} ไม่สำเร็จ ปิด Steam แล้วลองใหม่</value></data>
+  <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>เปิดไฟล์ที่ดาวน์โหลดไม่ได้: {0}</value></data>
+  <data name="Err_NoSourceAvailable" xml:space="preserve"><value>ไม่มีแหล่งที่ใช้ได้สำหรับเกมนี้</value></data>
+  <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>ลิงก์ดาวน์โหลดว่างเปล่า ลองใหม่อีกครั้ง</value></data>
+  <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>ดาวน์โหลดไม่สำเร็จ ({0})</value></data>
+  <data name="Api_Err_RequestFailed" xml:space="preserve"><value>คำขอไม่สำเร็จ ({0})</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
+  <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>คีย์ Hubcap ของคุณไม่ถูกต้องหรือหมดอายุ</value></data>
+  <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>คุณใช้ Hubcap ครบตามขีดจำกัดรายวันแล้ว</value></data>
+  <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>ไม่มี manifest ของ Hubcap สำหรับแอปนี้</value></data>
+  <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>ดาวน์โหลดจาก Hubcap ไม่สำเร็จ ({0})</value></data>
+  <data name="Nav_Downloads" xml:space="preserve"><value>การดาวน์โหลด</value></data>
+  <data name="Downloads_Title" xml:space="preserve"><value>การดาวน์โหลด</value></data>
+  <data name="Downloads_Empty" xml:space="preserve"><value>ยังไม่มีการดาวน์โหลด มาเริ่มดาวน์โหลดอะไรสักอย่างกัน!</value></data>
+  <data name="Downloads_Section_Active" xml:space="preserve"><value>คิว</value></data>
+  <data name="Downloads_Section_History" xml:space="preserve"><value>ประวัติ</value></data>
+  <data name="Downloads_Status_Queued" xml:space="preserve"><value>อยู่ในคิว</value></data>
+  <data name="Downloads_Status_Downloading" xml:space="preserve"><value>กำลังดาวน์โหลด</value></data>
+  <data name="Downloads_Status_AwaitingConfirm" xml:space="preserve"><value>รอคุณยืนยัน</value></data>
+  <data name="Downloads_Status_Installing" xml:space="preserve"><value>กำลังติดตั้ง</value></data>
+  <data name="Downloads_Status_Completed" xml:space="preserve"><value>เสร็จแล้ว</value></data>
+  <data name="Downloads_Status_Failed" xml:space="preserve"><value>ล้มเหลว</value></data>
+  <data name="Downloads_Status_Cancelled" xml:space="preserve"><value>ยกเลิกแล้ว</value></data>
+  <data name="Downloads_Action_Cancel" xml:space="preserve"><value>ยกเลิก</value></data>
+  <data name="Downloads_Action_Retry" xml:space="preserve"><value>ลองใหม่</value></data>
+  <data name="Downloads_Action_Remove" xml:space="preserve"><value>นำออก</value></data>
+  <data name="Downloads_Action_MoveUp" xml:space="preserve"><value>เลื่อนขึ้น</value></data>
+  <data name="Downloads_Action_MoveDown" xml:space="preserve"><value>เลื่อนลง</value></data>
+  <data name="Downloads_Action_ClearHistory" xml:space="preserve"><value>ล้างประวัติ</value></data>
+  <data name="Downloads_Action_Review" xml:space="preserve"><value>ตรวจสอบ</value></data>
+  <data name="Downloads_Of" xml:space="preserve"><value>{0} จาก {1}</value></data>
+  <data name="Downloads_Eta" xml:space="preserve"><value>เหลืออีก {0}</value></data>
+  <data name="Downloads_ActionRequired" xml:space="preserve"><value>ต้องดำเนินการ</value></data>
+  <data name="Downloads_Err_Interrupted" xml:space="preserve"><value>ถูกขัดจังหวะเมื่อปิดแอป</value></data>
+  <data name="Downloads_Kind_Dlc" xml:space="preserve"><value>ปลดล็อก DLC</value></data>
+  <data name="Fixes_NotInstalled_Hint" xml:space="preserve"><value>ติดตั้งเกมก่อนจึงจะใช้ฟิกซ์ได้</value></data>
+  <data name="Downloads_Status_Paused" xml:space="preserve"><value>หยุดชั่วคราว</value></data>
+  <data name="Downloads_Status_Verifying" xml:space="preserve"><value>กำลังตรวจสอบ…</value></data>
+  <data name="Downloads_Action_Pause" xml:space="preserve"><value>หยุดชั่วคราว</value></data>
+  <data name="Downloads_Action_Resume" xml:space="preserve"><value>ทำต่อ</value></data>
+  <data name="Downloads_Kind_Depot" xml:space="preserve"><value>ไฟล์ depot</value></data>
+  <data name="Downloads_Depots_Progress" xml:space="preserve"><value>Depot · {0} จาก {1}</value></data>
+  <data name="Depot_Err_Tool" xml:space="preserve"><value>ไม่สามารถดึงตัวดาวน์โหลด depot ได้</value></data>
+  <data name="Depot_Err_NoKeys" xml:space="preserve"><value>ไม่พบคีย์ถอดรหัสสำหรับเกมนี้</value></data>
+  <data name="Depot_Err_Failed" xml:space="preserve"><value>Depot {0} ล้มเหลว: {1}</value></data>
+  <data name="Depot_Status_Done" xml:space="preserve"><value>ดาวน์โหลด {0} depot ไปที่ {1} แล้ว</value></data>
+  <data name="Builds_Action_Download" xml:space="preserve"><value>ดาวน์โหลด</value></data>
+  <data name="Builds_Select_Title" xml:space="preserve"><value>เลือก depot ที่จะดาวน์โหลด</value></data>
+  <data name="Builds_Select_Confirm" xml:space="preserve"><value>ดาวน์โหลด {0} depot ({1})</value></data>
+  <data name="Builds_Select_NoManifest" xml:space="preserve"><value>depot นี้ไม่ได้ระบุเวอร์ชันให้ดาวน์โหลด</value></data>
+  <data name="Builds_Select_All" xml:space="preserve"><value>เลือกทั้งหมด</value></data>
+  <data name="Builds_Select_None" xml:space="preserve"><value>ยังไม่ได้เลือก depot</value></data>
+  <data name="Builds_Select_ChooseFolder" xml:space="preserve"><value>เลือกที่จัดเก็บไฟล์ depot</value></data>
+  <data name="Depot_Err_NoSpace" xml:space="preserve"><value>พื้นที่ดิสก์ไม่พอ: ต้องการ {0} แต่เหลือเพียง {1}</value></data>
+  <data name="Builds_Select_SaveTo" xml:space="preserve"><value>บันทึกไปที่</value></data>
+  <data name="Builds_Select_Space" xml:space="preserve"><value>ต้องการ {0} · เหลือ {1} บน {2}</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
+  <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>กำลังดึง manifest</value></data>
+  <data name="Depot_Err_NoManifest" xml:space="preserve"><value>ไม่สามารถดึง manifest ของ depot นี้ได้</value></data>
+  <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>กำลังเตรียม · {0} จาก {1}</value></data>
+  <data name="Downloads_Depots_GettingTool" xml:space="preserve"><value>กำลังรับตัวดาวน์โหลด</value></data>
+  <data name="Downloads_Kind_Tool" xml:space="preserve"><value>เครื่องมือ</value></data>
+  <data name="Downloads_SteamAutoCrack" xml:space="preserve"><value>SteamAutoCrack</value></data>
+  <data name="Downloads_SAC_GettingRuntime" xml:space="preserve"><value>กำลังตรวจสอบ .NET runtime</value></data>
+  <data name="Downloads_SAC_GettingTool" xml:space="preserve"><value>กำลังรับ SteamAutoCrack</value></data>
+  <data name="Downloads_SAC_Launched" xml:space="preserve"><value>เปิด SteamAutoCrack แล้ว</value></data>
+  <data name="Downloads_SAC_Err_Runtime" xml:space="preserve"><value>ติดตั้ง .NET runtime ที่ SteamAutoCrack ต้องใช้ไม่สำเร็จ</value></data>
+  <data name="Downloads_SAC_Err_Restart" xml:space="preserve"><value>ติดตั้ง .NET runtime แล้ว แต่ต้องรีสตาร์ท Windows ก่อนจึงจะเรียกใช้ SteamAutoCrack ได้</value></data>
+  <data name="Downloads_SAC_Err_Tool" xml:space="preserve"><value>ดาวน์โหลด SteamAutoCrack ไม่สำเร็จ</value></data>
+  <data name="Downloads_SAC_Err_Launch" xml:space="preserve"><value>เริ่ม SteamAutoCrack ไม่สำเร็จ</value></data>
+  <data name="Downloads_SAC_Updated" xml:space="preserve"><value>อัปเดต SteamAutoCrack แล้ว</value></data>
+  <data name="Downloads_Depot_PreAllocating" xml:space="preserve"><value>กำลังจองพื้นที่ไฟล์</value></data>
+  <data name="Downloads_Depot_Validating" xml:space="preserve"><value>กำลังตรวจสอบไฟล์ที่มีอยู่</value></data>
+  <data name="Depot_Cancel_Title" xml:space="preserve"><value>ยกเลิกการดาวน์โหลด</value></data>
+  <data name="Depot_Cancel_Body" xml:space="preserve"><value>เขียนไปแล้ว {0} ที่:
+{1}
+
+ใช่ - หยุดและลบไฟล์เหล่านั้น
+ไม่ - หยุดแต่เก็บไฟล์ไว้
+ยกเลิก - ดาวน์โหลดต่อ</value></data>
+  <data name="Depot_Cancel_DeleteFailed" xml:space="preserve"><value>ลบไฟล์ที่ดาวน์โหลดไม่สำเร็จ ไฟล์ยังอยู่ที่ {0}</value></data>
+  <data name="Common_CopyAppId" xml:space="preserve"><value>คัดลอก App ID</value></data>
+  <data name="Common_ShowInFolder" xml:space="preserve"><value>แสดงในโฟลเดอร์</value></data>
+  <data name="Err_ClipboardBusy" xml:space="preserve"><value>คัดลอกไม่ได้ — แอปอื่นกำลังใช้คลิปบอร์ดอยู่</value></data>
+  <data name="Err_PathMissing" xml:space="preserve"><value>เปิด {0} ไม่ได้ — อาจถูกย้ายหรือลบไปแล้ว</value></data>
+  <data name="Builds_Select_NoKey" xml:space="preserve"><value>ไม่มีคีย์ถอดรหัสใน Lua สำหรับ depot นี้</value></data>
+  <data name="Depot_Err_BadKey" xml:space="preserve"><value>คีย์ถอดรหัสสำหรับ depot {0} ไม่ถูกต้อง</value></data>
+  <data name="Depot_Err_NoKeyFor" xml:space="preserve"><value>ไม่มีคีย์ถอดรหัสใน Lua สำหรับ depot {0}</value></data>
+  <data name="Builds_Select_SharedHint" xml:space="preserve"><value>รันไทม์ที่ใช้ร่วมกัน — ปกติติดตั้งไว้แล้ว ติ๊กเพื่อดาวน์โหลดอยู่ดี</value></data>
+  <data name="Downloads_ClearHistory_Confirm" xml:space="preserve"><value>ต้องการลบรายการทั้งหมด {0} รายการออกจากประวัติการดาวน์โหลดหรือไม่ ไฟล์ที่ดาวน์โหลดแล้วจะไม่ได้รับผลกระทบ</value></data>
+  <data name="Fixes_Applied_Hint" xml:space="preserve"><value>แก้ไขนี้ถูกใช้งานอยู่แล้ว ย้อนกลับก่อนหากต้องการติดตั้งอันอื่น</value></data>
+  <data name="Fixes_MyGames" xml:space="preserve"><value>เกมของฉัน</value></data>
+  <data name="Fixes_MyGames_Count" xml:space="preserve"><value>เกมของคุณ {0} เกมมีตัวแก้ไข เลื่อนรายการเพื่อดูเกมที่เหลือ</value></data>
+  <data name="Fixes_MyGames_NotInstalled" xml:space="preserve"><value>ยังไม่ได้เพิ่ม lua เพิ่ม (หรือติดตั้ง) เกมเพื่อให้แสดงที่นี่</value></data>
+  <data name="Fixes_Revert" xml:space="preserve"><value>ย้อนกลับ</value></data>
+  <data name="Fixes_Revert_Cancel" xml:space="preserve"><value>ยกเลิก</value></data>
+  <data name="Fixes_Revert_Confirm_Body" xml:space="preserve"><value>ย้อนกลับ "{0}" หรือไม่ ไฟล์ที่ถูกแก้ไขจะถูกกู้คืนจากข้อมูลสำรอง และไฟล์ที่ตัวแก้ไขเพิ่มไว้จะถูกลบ</value></data>
+  <data name="Fixes_Revert_Confirm_Title" xml:space="preserve"><value>ย้อนกลับตัวแก้ไขของ {0} หรือไม่</value></data>
+  <data name="Fixes_Revert_Done" xml:space="preserve"><value>ย้อนกลับตัวแก้ไขแล้ว</value></data>
+  <data name="Fixes_Revert_Done_Body" xml:space="preserve"><value>กู้คืน {0} รายการ ลบไฟล์ที่เพิ่ม {1} รายการ</value></data>
+  <data name="Fixes_Revert_Failed" xml:space="preserve"><value>ย้อนกลับตัวแก้ไขไม่สำเร็จ</value></data>
+  <data name="Fixes_Revert_NoRecord" xml:space="preserve"><value>ไม่พบบันทึกว่าเคยใช้ตัวแก้ไขนี้ อาจถูกย้อนกลับไปแล้ว</value></data>
+  <data name="Fixes_Revert_Conflict" xml:space="preserve"><value>ไม่สามารถย้อนกลับแพตช์ได้อย่างปลอดภัย</value></data>
+  <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} มีการเปลี่ยนแปลงหลังจากใช้แพตช์นี้ การกู้คืนจะเขียนทับการเปลี่ยนแปลงนั้น หากคุณใช้แพตช์อื่นทับไว้ ให้ย้อนกลับแพตช์นั้นก่อน มีไฟล์ที่ได้รับผลกระทบ {1} ไฟล์</value></data>
+  <data name="Fixes_Revert_Partial" xml:space="preserve"><value>ย้อนกลับตัวแก้ไขได้บางส่วน</value></data>
+  <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>กู้คืนไฟล์ {0} รายการไม่สำเร็จ กรุณาปิดเกมแล้วลองใหม่</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
+</root>

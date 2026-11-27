@@ -15,7 +15,7 @@ import glob
 import os
 import xml.etree.ElementTree as ET
 
-RES_DIR = os.path.join("src", "LuaToolsGui", "Resources")
+RES_DIR = os.path.join("src", "GameGuy", "Resources")
 ENGLISH = os.path.join(RES_DIR, "Strings.resx")
 
 DATA_RE = re.compile(r'<data name="([^"]+)" xml:space="preserve"><value>(.*?)</value></data>', re.S)

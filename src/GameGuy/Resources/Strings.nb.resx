@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- nb -->
+    <data name="App_Name" xml:space="preserve"><value>GameGuy</value></data>
+  <data name="Nav_Home" xml:space="preserve"><value>Hjem</value></data>
+  <data name="Nav_Add" xml:space="preserve"><value>Legg til</value></data>
+  <data name="Nav_Manage" xml:space="preserve"><value>Administrer</value></data>
+  <data name="Nav_Mode" xml:space="preserve"><value>Modus</value></data>
+  <data name="Nav_Fixes" xml:space="preserve"><value>Fikser</value></data>
+  <data name="Nav_RestartSteam" xml:space="preserve"><value>Start Steam på nytt</value></data>
+  <data name="Nav_Settings" xml:space="preserve"><value>Innstillinger</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
+  <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>Starte Steam på nytt nå? Dette lukker Steam og alle spill som kjører, og starter det deretter på nytt.</value></data>
+  <data name="Settings_Title" xml:space="preserve"><value>Innstillinger</value></data>
+  <data name="Settings_Section_General" xml:space="preserve"><value>GENERELT</value></data>
+  <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
+  <data name="Settings_Section_Install" xml:space="preserve"><value>INSTALLASJON</value></data>
+  <data name="Settings_Section_Community" xml:space="preserve"><value>FELLESSKAP</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
+  <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Administrer Hubcap API-nøkkelen og profilen din på</value></data>
+  <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
+  <data name="Settings_HubcapKey" xml:space="preserve"><value>Hubcap API-nøkkel</value></data>
+  <data name="Settings_HubcapKey_Hint" xml:space="preserve"><value>Lim inn din personlige Hubcap API-nøkkel for å låse opp Hubcap-manifester. Appen kobler til Hubcap direkte med nøkkelen din.</value></data>
+  <data name="Settings_HubcapKeyPlaceholder" xml:space="preserve"><value>Lim inn API-nøkkelen din (smm_…)</value></data>
+  <data name="Settings_HubcapValidate" xml:space="preserve"><value>Valider og lagre</value></data>
+  <data name="Settings_HubcapClear" xml:space="preserve"><value>Tøm</value></data>
+  <data name="Settings_HubcapGetKey" xml:space="preserve"><value>Få en nøkkel på</value></data>
+  <data name="Settings_HubcapKeyOk" xml:space="preserve"><value>{0}/{1} forespørsler i dag</value></data>
+  <data name="Settings_HubcapKeyOkExpiry" xml:space="preserve"><value>{0}/{1} i dag · utløper {2}</value></data>
+  <data name="Settings_HubcapKeyBad" xml:space="preserve"><value>Dette ser ikke ut som en gyldig nøkkel (smm_…).</value></data>
+  <data name="Settings_HubcapKeyError" xml:space="preserve"><value>Kunne ikke verifisere nøkkelen — den kan være ugyldig, utløpt, eller Hubcap er utilgjengelig.</value></data>
+  <data name="Settings_HubcapActive" xml:space="preserve"><value>Aktiv</value></data>
+  <data name="Settings_HubcapRefresh" xml:space="preserve"><value>Oppdater</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>Språk</value></data>
+  <data name="Settings_Language_Hint" xml:space="preserve"><value>Velg appens visningsspråk. Tas i bruk etter en omstart.</value></data>
+  <data name="Settings_Language_SystemDefault" xml:space="preserve"><value>Systemstandard</value></data>
+  <data name="Settings_Dns" xml:space="preserve"><value>DNS-oppslag</value></data>
+  <data name="Settings_Dns_Hint" xml:space="preserve"><value>Hvis leverandøren din blokkerer lua.tools, kan appen slå opp adresser via Cloudflare (1.1.1.1) i stedet for systemets oppslag. «Automatisk» bytter først når vanlig DNS feiler.</value></data>
+  <data name="Settings_Dns_Auto" xml:space="preserve"><value>Automatisk</value></data>
+  <data name="Settings_Dns_Always" xml:space="preserve"><value>Bruk alltid Cloudflare</value></data>
+  <data name="Settings_Dns_Never" xml:space="preserve"><value>Bruk bare systemets DNS</value></data>
+  <data name="Settings_SteamLocation" xml:space="preserve"><value>Steam-plassering</value></data>
+  <data name="Settings_Change" xml:space="preserve"><value>Endre…</value></data>
+  <data name="Settings_Open" xml:space="preserve"><value>Åpne</value></data>
+  <data name="Settings_ResetToAuto" xml:space="preserve"><value>Tilbakestill til automatisk</value></data>
+  <data name="Settings_AutoUpdateApps" xml:space="preserve"><value>Oppdater spill automatisk (ikke lås manifester)</value></data>
+  <data name="Settings_AutoUpdateApps_Hint" xml:space="preserve"><value>Installerer uten å feste en versjon, slik at Steam holder spillene oppdatert. Slå av for å låse spillene til den nedlastede versjonen.</value></data>
+  <data name="Settings_DonateKeys" xml:space="preserve"><value>Doner dekrypteringsnøkler</value></data>
+  <data name="Settings_DonateKeys_Hint" xml:space="preserve"><value>Del overflødige Steam-depotdekrypteringsnøkler for å utvide fellesskapets pool. Bare validerte nøkler sendes — ingen kontoinformasjon eller personlige data.</value></data>
+  <data name="Settings_SteamNotFound" xml:space="preserve"><value>Steam ble ikke funnet</value></data>
+  <data name="Settings_SteamSource_Custom" xml:space="preserve"><value>Egendefinert plassering</value></data>
+  <data name="Settings_SteamSource_NotFound" xml:space="preserve"><value>Ikke funnet</value></data>
+  <data name="Settings_SteamSource_Auto" xml:space="preserve"><value>Oppdaget automatisk fra registeret</value></data>
+  <data name="Settings_SteamWarning_NoExe" xml:space="preserve"><value>steam.exe ble ikke funnet i denne mappen.</value></data>
+  <data name="Settings_ChooseSteamFolder" xml:space="preserve"><value>Velg Steam-mappen din</value></data>
+  <data name="Lang_Changed_Title" xml:space="preserve"><value>Språk endret</value></data>
+  <data name="Lang_Changed_Body" xml:space="preserve"><value>Start appen på nytt for å ta i bruk det nye språket.</value></data>
+  <data name="Lang_Changed_Restart" xml:space="preserve"><value>Start på nytt nå</value></data>
+  <data name="Home_Welcome" xml:space="preserve"><value>Velkommen til GameGuy</value></data>
+  <data name="Home_LuasOnBoard" xml:space="preserve"><value>Lua-er om bord</value></data>
+  <data name="Home_LastAdded" xml:space="preserve"><value>SIST LAGT TIL</value></data>
+  <data name="Home_PluginStatus" xml:space="preserve"><value>Programtilleggsstatus</value></data>
+  <data name="Home_RecentlyAdded" xml:space="preserve"><value>Nylig lagt til</value></data>
+  <data name="Home_ViewDetails" xml:space="preserve"><value>Vis detaljer</value></data>
+  <data name="Home_CheckingSteam" xml:space="preserve"><value>Sjekker Steam…</value></data>
+  <data name="Home_SteamDetected" xml:space="preserve"><value>Steam oppdaget · {0}</value></data>
+  <data name="Home_SteamNotFound" xml:space="preserve"><value>Steam ble ikke funnet — angi plasseringen i Innstillinger.</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
+  <data name="Home_NoModeSelected" xml:space="preserve"><value>Ingen modus valgt</value></data>
+  <data name="Home_ModeIs" xml:space="preserve"><value>Modus · {0}</value></data>
+  <data name="Mode_Title" xml:space="preserve"><value>Modus</value></data>
+  <data name="Mode_Subtitle" xml:space="preserve"><value>Bytt backend som brukes til å låse opp spill lagt til med GameGuy — bare én aktiv om gangen.</value></data>
+  <data name="Mode_CheckForUpdates" xml:space="preserve"><value>Se etter oppdateringer</value></data>
+  <data name="Mode_Active" xml:space="preserve"><value>AKTIV</value></data>
+  <data name="Mode_Recommended" xml:space="preserve"><value>ANBEFALT</value></data>
+  <data name="Mode_Confirm_Body" xml:space="preserve"><value>Steam lukkes slik at filene kan endres, og startes deretter automatisk på nytt. Alle spill eller nedlastinger som kjører, stopper.</value></data>
+  <data name="Mode_Cancel" xml:space="preserve"><value>Avbryt</value></data>
+  <data name="Mode_CloseSteamContinue" xml:space="preserve"><value>Lukk Steam og fortsett</value></data>
+  <data name="Mode_Desc_Bst" xml:space="preserve"><value>En åpen kildekode-fork av OpenSteamTools som vedlikeholdes aktivt av GameGuy-teamet. Med feilrettinger og nye funksjoner!</value></data>
+  <data name="Mode_CloudRedirect_Manage" xml:space="preserve"><value>Administrer</value></data>
+  <data name="Mode_CloudRedirect_LaunchFailed" xml:space="preserve"><value>Kunne ikke laste ned eller starte CloudRedirect.</value></data>
+  <data name="Mode_Desc_Ost" xml:space="preserve"><value>Nattlig bygg av OpenSteamTools fra nyeste kildekode. De nyeste rettelsene, men kan være mindre stabil.</value></data>
+  <data name="Mode_UserManaged" xml:space="preserve"><value>Nå er du på egen hånd</value></data>
+  <data name="Mode_Desc_Custom" xml:space="preserve"><value>Bruk din egen unlock-løsning, vi rører den ikke</value></data>
+  <data name="Mode_Name_Custom" xml:space="preserve"><value>Egen unlocker</value></data>
+  <data name="Mode_Experimental" xml:space="preserve"><value>EKSPERIMENTELL</value></data>
+  <data name="Mode_CloudRedirectSupport" xml:space="preserve"><value>CLOUDREDIRECT-STØTTE</value></data>
+  <data name="Mode_CloudRedirect_AddonDesc" xml:space="preserve"><value>Bringer tilbake innebygd Steam Cloud-støtte via tredjeparts lagringsleverandører som Google Drive / OneDrive / Cloudflare R2 med flere. Foreløpig bare kompatibel med OpenSteamTools / BetterSteamTools. Ikke glem å konfigurere den ved å klikke "Administrer" etter aktivering, og start deretter Steam på nytt!</value></data>
+  <data name="Mode_CloudRedirect_Locked" xml:space="preserve"><value>Velg OpenSteamTools / BetterSteamTools for å bruke CloudRedirect.</value></data>
+  <data name="Mode_CloudRedirect_Enable" xml:space="preserve"><value>Aktiver</value></data>
+  <data name="Mode_CloudRedirect_Disable" xml:space="preserve"><value>Deaktiver</value></data>
+  <data name="Mode_CloudRedirect_Status_Enabled" xml:space="preserve"><value>Aktivert.</value></data>
+  <data name="Mode_CloudRedirect_Status_Disabled" xml:space="preserve"><value>Installert, men deaktivert.</value></data>
+  <data name="Mode_CloudRedirect_Status_NotInstalled" xml:space="preserve"><value>Ikke installert ennå.</value></data>
+  <data name="Mode_CloudRedirect_Status_UpdateAvailable" xml:space="preserve"><value>Oppdatering tilgjengelig.</value></data>
+  <data name="Mode_CloudRedirect_Toast_Enabled" xml:space="preserve"><value>Aktivert — start Steam på nytt for å ta i bruk.</value></data>
+  <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>Deaktivert — start Steam på nytt for å ta i bruk.</value></data>
+  <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>Oppdatert — start Steam på nytt for å ta i bruk.</value></data>
+  <data name="Onboarding_Title" xml:space="preserve"><value>Velkommen til GameGuy-appen!</value></data>
+  <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>Bruk anbefalte innstillinger</value></data>
+  <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>Modus: BetterSteamTools · FastFetch på</value></data>
+  <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>Installer vår berømte plugin</value></data>
+  <data name="Onboarding_Plugin_Detail" xml:space="preserve"><value>Legger til «Add via LuaTools»-knappen på Steam-butikksider.</value></data>
+  <data name="Onboarding_Yes" xml:space="preserve"><value>Ja takk</value></data>
+  <data name="Onboarding_No" xml:space="preserve"><value>Nei takk</value></data>
+  <data name="Onboarding_Go" xml:space="preserve"><value>Kom i gang!</value></data>
+  <data name="Onboarding_Applying" xml:space="preserve"><value>Setter opp…</value></data>
+  <data name="Mode_Checking" xml:space="preserve"><value>Sjekker…</value></data>
+  <data name="Mode_StatusUnavailable" xml:space="preserve"><value>Status utilgjengelig (frakoblet?)</value></data>
+  <data name="Mode_NotActive" xml:space="preserve"><value>Ikke aktiv</value></data>
+  <data name="Mode_NotInstalled" xml:space="preserve"><value>Ikke installert</value></data>
+  <data name="Mode_UpToDate" xml:space="preserve"><value>Oppdatert</value></data>
+  <data name="Mode_UpdateAvailable" xml:space="preserve"><value>Oppdatering tilgjengelig</value></data>
+  <data name="Mode_Btn_Reinstall" xml:space="preserve"><value>Installer på nytt</value></data>
+  <data name="Mode_Btn_Update" xml:space="preserve"><value>Oppdater</value></data>
+  <data name="Mode_Btn_Install" xml:space="preserve"><value>Installer</value></data>
+  <data name="Mode_Btn_Switch" xml:space="preserve"><value>Bytt til denne</value></data>
+  <data name="Mode_Confirm_Reinstall" xml:space="preserve"><value>Installere {0} på nytt?</value></data>
+  <data name="Mode_Confirm_Switch" xml:space="preserve"><value>Bytte til {0}?</value></data>
+  <data name="Mode_Toast_Updated" xml:space="preserve"><value>Modus oppdatert</value></data>
+  <data name="Mode_Toast_Updated_Restarting" xml:space="preserve"><value>{0} er installert — Steam starter på nytt.</value></data>
+  <data name="Mode_Toast_Updated_Start" xml:space="preserve"><value>{0} er installert. Start Steam for å bruke det.</value></data>
+  <data name="Mode_Toast_InstallFailed" xml:space="preserve"><value>Installasjonen mislyktes</value></data>
+  <data name="Mode_Toast_InstallFailed_Body" xml:space="preserve"><value>Noe gikk galt.</value></data>
+  <data name="Drop_Title" xml:space="preserve"><value>Slipp .lua-, .manifest- eller .zip-filer her</value></data>
+  <data name="Drop_BrowseFiles" xml:space="preserve"><value>Bla gjennom filer…</value></data>
+  <data name="Drop_Picker_Title" xml:space="preserve"><value>Velg .lua- / .manifest- / .zip-filer</value></data>
+  <data name="Drop_Picker_Filter" xml:space="preserve"><value>Lua / manifest / zip|*.lua;*.manifest;*.zip|Alle filer|*.*</value></data>
+  <data name="Drop_Nothing" xml:space="preserve"><value>Ingenting å installere — slipp .lua-, .manifest- eller .zip-filer.</value></data>
+  <data name="Drop_Confirm_Replace" xml:space="preserve"><value>Erstatte "{0}"?</value></data>
+  <data name="Drop_Confirm_NoChanges" xml:space="preserve"><value>Ingen depot-/DLC-endringer — samme innhold.</value></data>
+  <data name="Drop_NothingInstalled" xml:space="preserve"><value>Ingenting installert (avbrutt eller ugjenkjennelige filnavn).</value></data>
+  <data name="Drop_Count_Luas" xml:space="preserve"><value>{0} lua</value></data>
+  <data name="Drop_Count_Manifests" xml:space="preserve"><value>{0} manifest(er)</value></data>
+  <data name="Drop_Result_Installed" xml:space="preserve"><value>{0} installert i Steam.</value></data>
+  <data name="Drop_Result_Failed" xml:space="preserve"><value> {0} fil(er) mislyktes — lukk Steam og prøv igjen.</value></data>
+  <data name="Common_SearchPlaceholder" xml:space="preserve"><value>Søk etter navn eller App ID...</value></data>
+  <data name="Common_Loading" xml:space="preserve"><value>Laster…</value></data>
+  <data name="Common_AppId" xml:space="preserve"><value>App ID: {0}</value></data>
+  <data name="Common_AppFallback" xml:space="preserve"><value>App {0}</value></data>
+  <data name="Manage_Title" xml:space="preserve"><value>Administrer</value></data>
+  <data name="Manage_Refresh" xml:space="preserve"><value>Oppdater</value></data>
+  <data name="Manage_Filters" xml:space="preserve"><value>Filtre</value></data>
+  <data name="Manage_Filter_Type" xml:space="preserve"><value>Type</value></data>
+  <data name="Manage_Filter_Genre" xml:space="preserve"><value>Sjanger</value></data>
+  <data name="Manage_Filter_Year" xml:space="preserve"><value>År</value></data>
+  <data name="Manage_Filter_Price" xml:space="preserve"><value>Pris</value></data>
+  <data name="Manage_Filter_Content" xml:space="preserve"><value>Innhold</value></data>
+  <data name="Manage_Content_HideAdult" xml:space="preserve"><value>Skjul vokseninnhold (18+)</value></data>
+  <data name="Manage_Content_AdultOnly" xml:space="preserve"><value>Bare voksen</value></data>
+  <data name="Manage_Filter_SortBy" xml:space="preserve"><value>Sorter etter</value></data>
+  <data name="Manage_ClearFilters" xml:space="preserve"><value>Tøm filtre</value></data>
+  <data name="Manage_Select" xml:space="preserve"><value>Velg</value></data>
+  <data name="Manage_DeleteThisLua" xml:space="preserve"><value>Slett denne lua-en</value></data>
+  <data name="Manage_ResultsPerPage" xml:space="preserve"><value>Resultater per side</value></data>
+  <data name="Manage_Action_ViewDetails" xml:space="preserve"><value>Vis detaljer</value></data>
+  <data name="Manage_Action_Update" xml:space="preserve"><value>Oppdater / last ned på nytt</value></data>
+  <data name="Manage_Action_OpenStore" xml:space="preserve"><value>Åpne butikksiden</value></data>
+  <data name="Manage_Action_OpenInSteam" xml:space="preserve"><value>Åpne i Steam</value></data>
+  <data name="Manage_Action_Reveal" xml:space="preserve"><value>Vis .lua</value></data>
+  <data name="Manage_Action_CopyAppId" xml:space="preserve"><value>Kopier App ID</value></data>
+  <data name="Manage_Action_RemoveDrm" xml:space="preserve"><value>Fjern Steam-DRM</value></data>
+  <data name="Manage_ActionsHeader" xml:space="preserve"><value>Handlinger</value></data>
+  <data name="Manage_Steamless_Confirm_Title" xml:space="preserve"><value>Fjerne Steam-DRM?</value></data>
+  <data name="Manage_Steamless_Confirm_Body" xml:space="preserve"><value>Dette kjører Steamless på spillets kjørbare fil for å fjerne SteamStub-DRM. Den originale .exe-en sikkerhetskopieres først til .bak. Enkelte spill kan trenge en filbekreftelse i Steam etterpå. Fortsette?</value></data>
+  <data name="Manage_Steamless_Working" xml:space="preserve"><value>Fjerner Steam-DRM…</value></data>
+  <data name="Manage_Toast_Steamless_Done" xml:space="preserve"><value>{0} endret, {1} uendret.</value></data>
+  <data name="Manage_Steamless_NoInstall" xml:space="preserve"><value>Spillmappen ble ikke funnet — er det installert?</value></data>
+  <data name="Manage_Steamless_Failed" xml:space="preserve"><value>Kunne ikke fjerne DRM. {0}</value></data>
+  <data name="Manage_CopyAppIdTip" xml:space="preserve"><value>Klikk for å kopiere App ID</value></data>
+  <data name="Manage_LoadingDepotInfo" xml:space="preserve"><value>Laster depotinformasjon…</value></data>
+  <data name="Manage_MissingHint" xml:space="preserve"><value>På Steam, men ikke i lua-en din (ofte sensurerte eller svartelistede depoter)</value></data>
+  <data name="Manage_UnknownHint" xml:space="preserve"><value>Ødelagte, ikke-utgitte eller delte redistribuerbare depoter — vanligvis ingenting å bekymre seg for</value></data>
+  <data name="Manage_Clear" xml:space="preserve"><value>Tøm</value></data>
+  <data name="Manage_DeleteSelected" xml:space="preserve"><value>Slett valgte</value></data>
+  <data name="Manage_LoadingGames" xml:space="preserve"><value>Laster spillene dine…</value></data>
+  <data name="Manage_Opt_Any" xml:space="preserve"><value>Alle</value></data>
+  <data name="Manage_Opt_Free" xml:space="preserve"><value>Gratis</value></data>
+  <data name="Manage_Opt_Paid" xml:space="preserve"><value>Betalt</value></data>
+  <data name="Manage_Sort_RecentlyAdded" xml:space="preserve"><value>Nylig lagt til</value></data>
+  <data name="Manage_Sort_NameAZ" xml:space="preserve"><value>Navn (A–Å)</value></data>
+  <data name="Manage_Sort_ReleaseNewest" xml:space="preserve"><value>Utgivelsesdato (nyeste)</value></data>
+  <data name="Manage_Sort_Metacritic" xml:space="preserve"><value>Metacritic</value></data>
+  <data name="Manage_Sort_MostReviewed" xml:space="preserve"><value>Mest anmeldt</value></data>
+  <data name="Manage_PageSize_All" xml:space="preserve"><value>Alle</value></data>
+  <data name="Manage_PageLabel" xml:space="preserve"><value>Side {0} av {1}</value></data>
+  <data name="Manage_SelectionLabel" xml:space="preserve"><value>{0} valgt</value></data>
+  <data name="Manage_FetchingDetails" xml:space="preserve"><value>Henter detaljer for {0} apper</value></data>
+  <data name="Manage_Empty_NoMatch" xml:space="preserve"><value>Ingen spill samsvarer med filtrene dine.</value></data>
+  <data name="Manage_Empty_NoLuas" xml:space="preserve"><value>Ingen lua-filer funnet ennå. Legg til et spill fra Legg til-fanen.</value></data>
+  <data name="Manage_Empty_NoSteam" xml:space="preserve"><value>Steam-plassering ble ikke funnet — angi den i Innstillinger.</value></data>
+  <data name="Manage_Toast_NotFound_Title" xml:space="preserve"><value>Ikke funnet</value></data>
+  <data name="Manage_Toast_NotFound_Body" xml:space="preserve"><value>Det spillet er ikke lenger i biblioteket ditt.</value></data>
+  <data name="Manage_Toast_Refreshed_Title" xml:space="preserve"><value>Bibliotek oppdatert</value></data>
+  <data name="Manage_Toast_Refreshed_Body" xml:space="preserve"><value>{0} spill om bord.</value></data>
+  <data name="Manage_DepotError" xml:space="preserve"><value>Kunne ikke laste depotinformasjon (frakoblet eller ukjent app).</value></data>
+  <data name="Manage_Toggle_InLua" xml:space="preserve"><value>I lua</value></data>
+  <data name="Manage_Toggle_Missing" xml:space="preserve"><value>Manglende depoter / DLC</value></data>
+  <data name="Manage_Toggle_Unknown" xml:space="preserve"><value>Ukjente ting</value></data>
+  <data name="Manage_Depot" xml:space="preserve"><value>Depot</value></data>
+  <data name="Manage_SharedDepot" xml:space="preserve"><value>Delt depot</value></data>
+  <data name="Manage_DlcName" xml:space="preserve"><value>DLC {0}</value></data>
+  <data name="Manage_Delete_Title" xml:space="preserve"><value>Fjern lua-fil</value></data>
+  <data name="Manage_Delete_Body" xml:space="preserve"><value>Fjern «{0}» (App ID {1})?
+
+Dette sletter .lua-filen fra Steam\config\stplug-in.</value></data>
+  <data name="Manage_DeleteMany_Title" xml:space="preserve"><value>Fjern lua-filer</value></data>
+  <data name="Manage_DeleteMany_Body" xml:space="preserve"><value>Fjern {0} lua-filer?
+
+Dette sletter .lua-filene fra Steam\config\stplug-in.</value></data>
+  <data name="Manage_RemoveFailed_Title" xml:space="preserve"><value>Fjerning mislyktes</value></data>
+  <data name="Manage_RemoveFailed_File" xml:space="preserve"><value>Kunne ikke slette filen:
+{0}</value></data>
+  <data name="Manage_RemoveFailed_Named" xml:space="preserve"><value>Kunne ikke slette "{0}":
+{1}</value></data>
+  <data name="Manage_RemoveFailed_Count" xml:space="preserve"><value>{0} filer kunne ikke slettes.</value></data>
+  <data name="Manage_RestartSteam_Title" xml:space="preserve"><value>Start Steam på nytt</value></data>
+  <data name="Manage_RestartSteam_Failed" xml:space="preserve"><value>Kunne ikke finne eller starte Steam. Angi plasseringen i Innstillinger.</value></data>
+  <data name="Fixes_Title" xml:space="preserve"><value>Fikser</value></data>
+  <data name="Fixes_Loading" xml:space="preserve"><value>Laster fikser…</value></data>
+  <data name="Fixes_Build" xml:space="preserve"><value>Bygg {0}</value></data>
+  <data name="Fixes_Manifest" xml:space="preserve"><value>Manifest</value></data>
+  <data name="Fixes_Fix" xml:space="preserve"><value>Fiks</value></data>
+  <data name="Fixes_Count" xml:space="preserve"><value>{0} fikser</value></data>
+  <data name="Fixes_Err_Load" xml:space="preserve"><value>Kunne ikke laste fikser — sjekk tilkoblingen din.</value></data>
+  <data name="Fixes_Empty_None" xml:space="preserve"><value>Ingen fikser tilgjengelig ennå.</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
+  <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>Nedlasting mislyktes</value></data>
+  <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>Noe gikk galt — prøv igjen.</value></data>
+  <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>Installasjonen mislyktes</value></data>
+  <data name="Fixes_Toast_InstallFailed_Body" xml:space="preserve"><value>Kunne ikke installere — lukk Steam (eller start Steam på nytt) og prøv igjen.</value></data>
+  <data name="Fixes_Toast_FixInstalled" xml:space="preserve"><value>Fiks installert</value></data>
+  <data name="Fixes_Toast_FixInstalled_Body" xml:space="preserve"><value>Manifest for {0} installert.</value></data>
+  <data name="Fixes_Toast_GameNotFound" xml:space="preserve"><value>Spill ikke funnet</value></data>
+  <data name="Fixes_Toast_GameNotFound_Body" xml:space="preserve"><value>Installer {0} i Steam først, og bruk deretter fiksen.</value></data>
+  <data name="Fixes_Toast_PartiallyApplied" xml:space="preserve"><value>Fiks delvis brukt</value></data>
+  <data name="Fixes_Toast_PartiallyApplied_Body" xml:space="preserve"><value>{0} fil(er) kunne ikke skrives — lukk spillet og prøv igjen.</value></data>
+  <data name="Fixes_Toast_FixApplied" xml:space="preserve"><value>Fiks brukt</value></data>
+  <data name="Fixes_Toast_FixApplied_Body" xml:space="preserve"><value>Fiks for {0} pakket ut i spillmappen.</value></data>
+  <data name="Fixes_Toast_CouldntApply" xml:space="preserve"><value>Kunne ikke bruke fiksen</value></data>
+  <data name="Fixes_Toast_Refreshed_Title" xml:space="preserve"><value>Oppdatert</value></data>
+  <data name="Fixes_Toast_Refreshed_Body" xml:space="preserve"><value>{0} spill med fixer.</value></data>
+  <data name="Add_Title" xml:space="preserve"><value>La oss hente Lua™!</value></data>
+  <data name="Add_Subtitle" xml:space="preserve"><value>Skriv inn en App ID, lim inn en Steam-lenke, eller søk etter spillnavn</value></data>
+  <data name="Add_SearchPlaceholder" xml:space="preserve"><value>Skriv inn App ID eller søk spill...</value></data>
+  <data name="Add_Featured_TopSellers" xml:space="preserve"><value>Bestselgere</value></data>
+  <data name="Add_Featured_NewReleases" xml:space="preserve"><value>Nye utgivelser</value></data>
+  <data name="Add_Released" xml:space="preserve"><value>Utgitt {0}</value></data>
+  <data name="Add_Fetch" xml:space="preserve"><value>Hent</value></data>
+  <data name="Add_Checking" xml:space="preserve"><value>Sjekker…</value></data>
+  <data name="Add_Reveal" xml:space="preserve"><value>Vis</value></data>
+  <data name="Add_Supporter" xml:space="preserve"><value>Supporter</value></data>
+  <data name="Add_Unlimited" xml:space="preserve"><value>Ubegrenset</value></data>
+  <data name="Add_RequiresOwnKey" xml:space="preserve"><value>Krever din egen API-nøkkel</value></data>
+  <data name="Add_Discord" xml:space="preserve"><value>Discord</value></data>
+  <data name="Add_JoinDiscord" xml:space="preserve"><value>Bli med i denne kildens Discord</value></data>
+  <data name="Add_Download" xml:space="preserve"><value>Last ned</value></data>
+  <data name="Add_NeedsHubcapKey" xml:space="preserve"><value>Trenger Hubcap-nøkkel</value></data>
+  <data name="Add_NeedsHubcapKey_Tip" xml:space="preserve"><value>Angi Hubcap API-nøkkelen din i Innstillinger for å låse opp denne kilden</value></data>
+  <data name="Add_Depots" xml:space="preserve"><value>DEPOTER</value></data>
+  <data name="Add_Available" xml:space="preserve"><value>TILGJENGELIG</value></data>
+  <data name="Add_Missing" xml:space="preserve"><value>MANGLER</value></data>
+  <data name="Add_NoKey" xml:space="preserve"><value>INGEN NØKKEL</value></data>
+  <data name="Add_DownloadLua" xml:space="preserve"><value>Last ned .lua</value></data>
+  <data name="Add_Generating" xml:space="preserve"><value>Genererer…</value></data>
+  <data name="Add_DlcHint" xml:space="preserve"><value>Legg .lua-filen i steam\config\stplug-in — sørg for at grunnspillet også er lagt til. Teller mot din daglige grense (25/dag).</value></data>
+  <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>Har du allerede filene?</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
+  <data name="Add_Err_BaseGame" xml:space="preserve"><value>Kunne ikke fastslå grunnspillet for denne DLC-en</value></data>
+  <data name="Add_Err_Generic" xml:space="preserve"><value>Noe gikk galt — sjekk tilkoblingen din og prøv igjen.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Nedlasting mislyktes — sjekk tilkoblingen din og prøv igjen.</value></data>
+  <data name="Add_Confirm_Replace" xml:space="preserve"><value>Erstatte "{0}"?</value></data>
+  <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Ingen depot-/DLC-endringer — samme innhold.</value></data>
+  <data name="Add_Status_Cancelled" xml:space="preserve"><value>Installasjon avbrutt — eksisterende filer er uendret.</value></data>
+  <data name="Add_Status_InstallFailed" xml:space="preserve"><value>Kunne ikke installere {0} fil(er) — lukk Steam (eller bruk Start Steam på nytt) og prøv igjen.</value></data>
+  <data name="Add_Status_AddedManifests" xml:space="preserve"><value>La til {0}: lua + {1} manifest(er).</value></data>
+  <data name="Add_Status_AddedFetch" xml:space="preserve"><value>La til {0}. Steam henter manifester.</value></data>
+  <data name="Confirm_OpenSteamDb" xml:space="preserve"><value>Åpne på SteamDB</value></data>
+  <data name="Confirm_Shared" xml:space="preserve"><value>DELT</value></data>
+  <data name="Confirm_ReviewChanges" xml:space="preserve"><value>Dette erstatter den installerte lua-en. Se gjennom hva som endres:</value></data>
+  <data name="Confirm_Adding" xml:space="preserve"><value>Legger til ({0})</value></data>
+  <data name="Confirm_Removing" xml:space="preserve"><value>Fjerner ({0})</value></data>
+  <data name="Confirm_Skip" xml:space="preserve"><value>Hopp over</value></data>
+  <data name="Confirm_Replace" xml:space="preserve"><value>Erstatt</value></data>
+  <data name="Settings_Section_Startup" xml:space="preserve"><value>OPPSTART</value></data>
+  <data name="Settings_StartWithWindows" xml:space="preserve"><value>Start med Windows</value></data>
+  <data name="Settings_StartWithWindows_Hint" xml:space="preserve"><value>Start GameGuy automatisk når Windows starter.</value></data>
+  <data name="Settings_MinimizeToTray" xml:space="preserve"><value>Minimer til systemstatusfeltet</value></data>
+  <data name="Settings_MinimizeToTray_Hint" xml:space="preserve"><value>Når du lukker vinduet, la GameGuy fortsette å kjøre i systemstatusfeltet i stedet for å avslutte. Dobbeltklikk på ikonet for å gjenopprette.</value></data>
+  <data name="Tray_Open" xml:space="preserve"><value>Åpne GameGuy</value></data>
+  <data name="Tray_Exit" xml:space="preserve"><value>Avslutt</value></data>
+
+  <data name="Add_FastFetch" xml:space="preserve"><value>FastFetch™️</value></data>
+  <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Automatisk nedlasting fra første tilgjengelige kilde</value></data>
+  <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Ingen tilgjengelige kilder funnet for dette spillet</value></data>
+  <data name="Add_FastFetch_Via" xml:space="preserve"><value>· via {0}</value></data>
+  <data name="Plugin_Title" xml:space="preserve"><value>GameGuy-programtillegg</value></data>
+  <data name="Plugin_Subtitle" xml:space="preserve"><value>GameGuy Steam-programtillegget! — Bruker nå LuaLoader i stedet for Shittenium</value></data>
+  <data name="Plugin_CardTitle" xml:space="preserve"><value>Status</value></data>
+  <data name="Plugin_Badge_UpdateAvailable" xml:space="preserve"><value>Oppdatering tilgjengelig</value></data>
+  <data name="Plugin_Row_InstalledVersion" xml:space="preserve"><value>Installert versjon</value></data>
+  <data name="Plugin_Row_LatestVersion" xml:space="preserve"><value>Nyeste versjon</value></data>
+  <data name="Plugin_Row_Frontend" xml:space="preserve"><value>Frontend</value></data>
+  <data name="Plugin_Row_Loader" xml:space="preserve"><value>Laster (winmm.dll)</value></data>
+  <data name="Plugin_Millennium_Coexisting" xml:space="preserve"><value>Millennium oppdaget — GameGuy kjører ved siden av det. Installasjon deaktiverer Milleniums egen kopi av dette programtillegget, slik at bare LuaLoader injiserer.</value></data>
+  <data name="Plugin_Footer" xml:space="preserve"><value>LuaLoader installeres i Steam-mappen din. Denne appen fungerer som backend — hvis du lukker den fra systemstatusfeltet, slutter programtillegget å fungere!</value></data>
+  <data name="Plugin_Btn_Install" xml:space="preserve"><value>Installer</value></data>
+  <data name="Plugin_Btn_Update" xml:space="preserve"><value>Oppdater</value></data>
+  <data name="Plugin_Btn_Reinstall" xml:space="preserve"><value>Installer på nytt</value></data>
+  <data name="Plugin_Btn_Uninstall" xml:space="preserve"><value>Avinstaller</value></data>
+  <data name="Plugin_Btn_CheckForUpdates" xml:space="preserve"><value>Se etter oppdateringer</value></data>
+  <data name="Plugin_Checking" xml:space="preserve"><value>Sjekker…</value></data>
+  <data name="Plugin_Status_Installed" xml:space="preserve"><value>Installert</value></data>
+  <data name="Plugin_Status_NotInstalled" xml:space="preserve"><value>Ikke installert</value></data>
+  <data name="Plugin_Status_UpToDate" xml:space="preserve"><value>Oppdatert</value></data>
+  <data name="Plugin_Status_OutOfDate" xml:space="preserve"><value>Utdatert</value></data>
+  <data name="Plugin_Version_Unknown" xml:space="preserve"><value>ukjent</value></data>
+  <data name="Plugin_Version_Offline" xml:space="preserve"><value>frakoblet</value></data>
+  <data name="Plugin_Status_OfflineCheck" xml:space="preserve"><value>Kunne ikke nå GitHub for å se etter oppdateringer.</value></data>
+  <data name="Plugin_Status_Port8080Busy" xml:space="preserve"><value>Et annet program bruker allerede port 8080 — programtilleggets nettleserbro fungerer kanskje ikke. Lukk det som bruker den porten, og installer på nytt eller start Steam på nytt.</value></data>
+  <data name="Plugin_Confirm_RestartBody" xml:space="preserve"><value>Dette lukker og starter Steam på nytt for å ta i bruk lasteren. Fortsette?</value></data>
+  <data name="Plugin_Confirm_RestartCaption" xml:space="preserve"><value>Start Steam på nytt</value></data>
+  <data name="Plugin_Toast_Title" xml:space="preserve"><value>Programtillegg</value></data>
+  <data name="Plugin_Toast_Installed" xml:space="preserve"><value>Programtillegg installert. Steam starter på nytt for å laste det.</value></data>
+  <data name="Plugin_Toast_InstallFailed" xml:space="preserve"><value>Installasjonen mislyktes: {0}</value></data>
+  <data name="Plugin_Toast_Removed" xml:space="preserve"><value>Programtillegg fjernet. Steam starter på nytt.</value></data>
+  <data name="Plugin_Toast_UninstallFailed" xml:space="preserve"><value>Avinstallasjonen mislyktes: {0}</value></data>
+  <data name="Plugin_Toast_UpdateAvailable" xml:space="preserve"><value>En oppdatering er tilgjengelig.</value></data>
+  <data name="Plugin_Toast_UpToDate" xml:space="preserve"><value>Du er oppdatert.</value></data>
+  <data name="Plugin_Err_SteamNotFound" xml:space="preserve"><value>Fant ikke Steam-installasjonen.</value></data>
+  <data name="Plugin_Err_GithubUnreachable" xml:space="preserve"><value>Kunne ikke nå GitHub for å hente den nyeste utgivelsen.</value></data>
+  <data name="Plugin_Err_MissingAssets" xml:space="preserve"><value>Utgivelsen {0} mangler {1} eller {2}.</value></data>
+  <data name="Plugin_Err_VerifyFailed" xml:space="preserve"><value>Hash-verifisering av {0} mislyktes.</value></data>
+  <data name="Plugin_Err_NoLuatoolsJs" xml:space="preserve"><value>plugin.zip inneholdt ikke public/luatools.js.</value></data>
+  <data name="Plugin_About_Header" xml:space="preserve"><value>Viktige funksjoner</value></data>
+  <data name="Plugin_Feature_StoreButton" xml:space="preserve"><value>Legger til en «Add via LuaTools»-knapp på Steam-butikksider</value></data>
+  <data name="Plugin_Feature_AutoUpdate" xml:space="preserve"><value>Oppdaterer seg selv automatisk</value></data>
+  <data name="Plugin_Feature_Millennium" xml:space="preserve"><value>Fungerer med eller uten Millennium</value></data>
+  <data name="Drop_LinkHint" xml:space="preserve"><value>…eller dra inn en SteamDB-/Steam-butikklenke for å legge til det spillet.</value></data>
+  <data name="Manage_Action_ManageBuild" xml:space="preserve"><value>Administrer depoter</value></data>
+  <data name="Manage_AboutHeader" xml:space="preserve"><value>Om</value></data>
+  <data name="Manage_Info_Developer" xml:space="preserve"><value>Utvikler</value></data>
+  <data name="Manage_Info_Publisher" xml:space="preserve"><value>Utgiver</value></data>
+  <data name="Nav_Builds" xml:space="preserve"><value>Depoter</value></data>
+  <data name="Builds_Title" xml:space="preserve"><value>Depoter</value></data>
+  <data name="Builds_Subtitle" xml:space="preserve"><value>Ta vare på flere versjoner av et spills lua, og velg hvilken Steam bruker.</value></data>
+  <data name="Builds_NoSelection" xml:space="preserve"><value>Velg et spill til venstre for å se forhåndsinnstillingene til det.</value></data>
+  <data name="Builds_ActiveBuild" xml:space="preserve"><value>Aktiv forhåndsinnstilling</value></data>
+  <data name="Builds_Active" xml:space="preserve"><value>AKTIV</value></data>
+  <data name="Builds_Variant_Default" xml:space="preserve"><value>Standard</value></data>
+  <data name="Builds_Variant_Build" xml:space="preserve"><value>Build {0}</value></data>
+  <data name="Builds_Variant_Preset" xml:space="preserve"><value>Lagret · {0}</value></data>
+  <data name="Builds_Pinned" xml:space="preserve"><value>Låst</value></data>
+  <data name="Builds_AutoUpdating" xml:space="preserve"><value>Oppdateres automatisk</value></data>
+  <data name="Builds_LatestBuild" xml:space="preserve"><value>Nyeste build på Steam: {0}</value></data>
+  <data name="Builds_Manifest" xml:space="preserve"><value>manifest {0}</value></data>
+  <data name="Builds_ManifestLatest" xml:space="preserve"><value>nyeste er {0}</value></data>
+  <data name="Builds_PinDisabled" xml:space="preserve"><value>låsing av (autooppdatering)</value></data>
+  <data name="Builds_Meta_Depots" xml:space="preserve"><value>{0} depoter · {1} DLC</value></data>
+  <data name="Builds_Meta_Unsaved" xml:space="preserve"><value>ikke lagret</value></data>
+  <data name="Builds_Source" xml:space="preserve"><value>fra {0}</value></data>
+  <data name="Builds_Action_Apply" xml:space="preserve"><value>Bruk</value></data>
+  <data name="Builds_Action_Rename" xml:space="preserve"><value>Gi nytt navn</value></data>
+  <data name="Builds_Action_Edit" xml:space="preserve"><value>Rediger</value></data>
+  <data name="Builds_Action_Delete" xml:space="preserve"><value>Slett</value></data>
+  <data name="Builds_Action_Save" xml:space="preserve"><value>Lagre</value></data>
+  <data name="Builds_Action_SaveAsPreset" xml:space="preserve"><value>Lagre som forhåndsinnstilling</value></data>
+  <data name="Builds_Action_Cancel" xml:space="preserve"><value>Avbryt</value></data>
+  <data name="Builds_RenamePlaceholder" xml:space="preserve"><value>Gi denne forhåndsinnstillingen et navn…</value></data>
+  <data name="Builds_Editor_Title" xml:space="preserve"><value>Redigerer luaen Steam bruker</value></data>
+  <data name="Builds_Delete_Title" xml:space="preserve"><value>Slette denne forhåndsinnstillingen?</value></data>
+  <data name="Builds_Delete_Body" xml:space="preserve"><value>«{0}» fjernes fra de lagrede forhåndsinnstillingene dine. Dette påvirker ikke selve spillet.</value></data>
+  <data name="Builds_Delete_ActiveTip" xml:space="preserve"><value>Forhåndsinnstillingen som er i bruk, kan ikke slettes.</value></data>
+  <data name="Builds_Apply_Done" xml:space="preserve"><value>Bruker nå «{0}».</value></data>
+  <data name="Builds_Apply_Failed" xml:space="preserve"><value>Kunne ikke bytte forhåndsinnstilling — lua-filen kan være i bruk.</value></data>
+  <data name="Builds_Save_Done" xml:space="preserve"><value>Lagret.</value></data>
+  <data name="Builds_Save_Failed" xml:space="preserve"><value>Kunne ikke lagre — lua-filen kan være i bruk.</value></data>
+  <data name="Builds_Preset_Saved" xml:space="preserve"><value>Lagret som forhåndsinnstilling.</value></data>
+  <data name="Builds_Action_SaveTo" xml:space="preserve"><value>Lagre i «{0}»</value></data>
+  <data name="Builds_Action_SaveAsNew" xml:space="preserve"><value>Lagre som ny</value></data>
+  <data name="Builds_Save_Updated" xml:space="preserve"><value>«{0}» oppdatert.</value></data>
+  <data name="Builds_Depot_Lock" xml:space="preserve"><value>Lås</value></data>
+  <data name="Builds_Depot_LockTip" xml:space="preserve"><value>Låst: dette depotet blir værende på manifestet over. Ulåst: Steam oppdaterer det til nyeste versjon. (Kommenterer setManifestid-linjen inn eller ut.)</value></data>
+  <data name="Builds_Depot_EnableTip" xml:space="preserve"><value>På: dekrypteringsnøkkelen til dette depotet brukes. Av: depotet låses ikke opp i det hele tatt. (Kommenterer addappid-linjen inn eller ut.)</value></data>
+  <data name="Builds_Depot_Search" xml:space="preserve"><value>Søk i depoter etter navn, ID eller type…</value></data>
+  <data name="Builds_Depot_NoMatch" xml:space="preserve"><value>Ingen depoter samsvarer med søket ditt.</value></data>
+  <data name="Builds_Depot_InactiveNote" xml:space="preserve"><value>Du redigerer en forhåndsinnstilling som ikke er tatt i bruk — endringer lagres rett i den, og Steam fortsetter å bruke den aktive forhåndsinnstillingen til du trykker Bruk.</value></data>
+  <data name="Manage_Action_LaunchOptions" xml:space="preserve"><value>Oppstartsvalg…</value></data>
+  <data name="Launch_Title" xml:space="preserve"><value>Oppstartsvalg</value></data>
+  <data name="Launch_Loading" xml:space="preserve"><value>Leser Steams app-buffer…</value></data>
+  <data name="Launch_NotFound" xml:space="preserve"><value>Steam har ennå ingen bufret informasjon om dette spillet. Start Steam én gang, og prøv på nytt.</value></data>
+  <data name="Launch_UnsupportedFormat" xml:space="preserve"><value>Steams app-buffer har et format denne versjonen ikke forstår ({0}). Oppdater GameGuy.</value></data>
+  <data name="Launch_ReadFailed" xml:space="preserve"><value>Kunne ikke lese Steams app-buffer. {0}</value></data>
+  <data name="Launch_ExecutableRequired" xml:space="preserve"><value>Hvert oppstartsvalg trenger en kjørbar fil.</value></data>
+  <data name="Launch_Add" xml:space="preserve"><value>Legg til</value></data>
+  <data name="Launch_Delete" xml:space="preserve"><value>Slett</value></data>
+  <data name="Launch_Field_Executable" xml:space="preserve"><value>Kjørbar fil</value></data>
+  <data name="Launch_Field_Arguments" xml:space="preserve"><value>Argumenter</value></data>
+  <data name="Launch_Field_WorkingDir" xml:space="preserve"><value>Arbeidsmappe</value></data>
+  <data name="Launch_Field_Description" xml:space="preserve"><value>Etikett (vises i Steams spillmeny)</value></data>
+  <data name="Launch_Field_Os" xml:space="preserve"><value>Operativsystem</value></data>
+  <data name="Launch_Field_Type" xml:space="preserve"><value>Type</value></data>
+  <data name="Launch_Field_BetaKey" xml:space="preserve"><value>Bare på grenen</value></data>
+  <data name="Launch_Field_BetaKey_Tip" xml:space="preserve"><value>Navnet på grenen dette valget er begrenset til — for eksempel beta, default, development. La stå tomt for å vise det på alle grener.</value></data>
+  <data name="Launch_Field_OwnsDlc" xml:space="preserve"><value>Bare hvis DLC-en eies (App ID)</value></data>
+  <data name="Launch_InstallPath" xml:space="preserve"><value>Installasjonsbane: {0}</value></data>
+  <data name="Launch_SteamRestartNote" xml:space="preserve"><value>Når endringene tas i bruk, lukkes og åpnes Steam på nytt.</value></data>
+  <data name="Launch_Restore" xml:space="preserve"><value>Gjenopprett original</value></data>
+  <data name="Launch_Restore_Tip" xml:space="preserve"><value>Setter tilbake oppstartsvalgene Steam kom med, før GameGuy endret dem.</value></data>
+  <data name="Launch_Restore_Title" xml:space="preserve"><value>Gjenopprette de opprinnelige oppstartsvalgene?</value></data>
+  <data name="Launch_Restore_Body" xml:space="preserve"><value>Dette setter oppstartsvalgene tilbake slik Steam hadde dem, og forkaster endringene dine. Steam lukkes og åpnes på nytt. Fortsette?</value></data>
+  <data name="Launch_NothingToRestore" xml:space="preserve"><value>Dette spillet er ikke endret, så det er ingenting å gjenopprette.</value></data>
+  <data name="Launch_ApplyNow_Title" xml:space="preserve"><value>Ta i bruk i Steam nå?</value></data>
+  <data name="Launch_ApplyNow_Body" xml:space="preserve"><value>Endringene dine er lagret. For å skrive dem til Steam må Steam lukkes og åpnes på nytt — gjøre det nå? Velg Avbryt for å ta dem i bruk senere.</value></data>
+  <data name="Launch_Staged" xml:space="preserve"><value>Lagret. Ta dem i bruk fra dette vinduet når du kan starte Steam på nytt.</value></data>
+  <data name="Launch_Applied" xml:space="preserve"><value>Oppstartsvalgene er tatt i bruk.</value></data>
+  <data name="Launch_Applied_Restarted" xml:space="preserve"><value>Oppstartsvalgene er tatt i bruk. Steam ble startet på nytt.</value></data>
+  <data name="Launch_ApplyFailed" xml:space="preserve"><value>Kunne ikke ta i bruk oppstartsvalgene. {0}</value></data>
+  <data name="Launch_Drift_Title" xml:space="preserve"><value>Oppstartsvalgene ble tilbakestilt</value></data>
+  <data name="Launch_Drift_Body" xml:space="preserve"><value>Steam har overskrevet oppstartsvalgene dine for {0} spill. Å ta dem i bruk på nytt lukker og åpner Steam.</value></data>
+  <data name="Launch_Drift_Action" xml:space="preserve"><value>Ta i bruk på nytt</value></data>
+  <data name="Err_SteamNotFound" xml:space="preserve"><value>Fant ikke Steam-plasseringen. Angi den i Innstillinger.</value></data>
+  <data name="Err_GithubUnreachable" xml:space="preserve"><value>Kunne ikke nå GitHub. Sjekk tilkoblingen og prøv igjen.</value></data>
+  <data name="Err_UpdateServerUnreachable" xml:space="preserve"><value>Kunne ikke nå oppdateringsserveren. Sjekk tilkoblingen og prøv igjen.</value></data>
+  <data name="Err_Cancelled" xml:space="preserve"><value>Avbrutt.</value></data>
+  <data name="Err_CancelledByUser" xml:space="preserve"><value>Avbrutt av brukeren</value></data>
+  <data name="Err_ReleaseMissingDownload" xml:space="preserve"><value>Den forventede nedlastingen mangler i utgivelsen.</value></data>
+  <data name="Err_ReleaseMissingFile" xml:space="preserve"><value>{0} mangler i utgivelsen.</value></data>
+  <data name="Err_VerifyFailed" xml:space="preserve"><value>Nedlastingen besto ikke verifiseringen (sha256 stemmer ikke).</value></data>
+  <data name="Err_VerifyFailedFile" xml:space="preserve"><value>{0} besto ikke verifiseringen (sha256 stemmer ikke).</value></data>
+  <data name="Err_DownloadMissingFiles" xml:space="preserve"><value>Mangler i nedlastingen: {0}.</value></data>
+  <data name="Err_WriteFailedCount" xml:space="preserve"><value>Kunne ikke skrive {0} fil(er). Lukk Steam og prøv igjen.</value></data>
+  <data name="Err_WriteFailedFile" xml:space="preserve"><value>Kunne ikke skrive {0}. Lukk Steam og prøv igjen.</value></data>
+  <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>Kunne ikke åpne nedlastingen: {0}</value></data>
+  <data name="Err_NoSourceAvailable" xml:space="preserve"><value>Ingen tilgjengelig kilde for dette spillet.</value></data>
+  <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>Nedlastingslenken var tom. Prøv igjen.</value></data>
+  <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>Nedlastingen mislyktes ({0}).</value></data>
+  <data name="Api_Err_RequestFailed" xml:space="preserve"><value>Forespørselen mislyktes ({0})</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
+  <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Hubcap-nøkkelen din er ugyldig eller utløpt.</value></data>
+  <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Du har nådd den daglige Hubcap-grensen.</value></data>
+  <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Det finnes ingen Hubcap-manifest for denne appen.</value></data>
+  <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Hubcap-nedlastingen mislyktes ({0}).</value></data>
+  <data name="Nav_Downloads" xml:space="preserve"><value>Nedlastinger</value></data>
+  <data name="Downloads_Title" xml:space="preserve"><value>Nedlastinger</value></data>
+  <data name="Downloads_Empty" xml:space="preserve"><value>Ingen nedlastinger akkurat nå. Kom i gang – last ned noe!</value></data>
+  <data name="Downloads_Section_Active" xml:space="preserve"><value>Kø</value></data>
+  <data name="Downloads_Section_History" xml:space="preserve"><value>Historikk</value></data>
+  <data name="Downloads_Status_Queued" xml:space="preserve"><value>I kø</value></data>
+  <data name="Downloads_Status_Downloading" xml:space="preserve"><value>Laster ned</value></data>
+  <data name="Downloads_Status_AwaitingConfirm" xml:space="preserve"><value>Venter på deg</value></data>
+  <data name="Downloads_Status_Installing" xml:space="preserve"><value>Installerer</value></data>
+  <data name="Downloads_Status_Completed" xml:space="preserve"><value>Ferdig</value></data>
+  <data name="Downloads_Status_Failed" xml:space="preserve"><value>Mislyktes</value></data>
+  <data name="Downloads_Status_Cancelled" xml:space="preserve"><value>Avbrutt</value></data>
+  <data name="Downloads_Action_Cancel" xml:space="preserve"><value>Avbryt</value></data>
+  <data name="Downloads_Action_Retry" xml:space="preserve"><value>Prøv igjen</value></data>
+  <data name="Downloads_Action_Remove" xml:space="preserve"><value>Fjern</value></data>
+  <data name="Downloads_Action_MoveUp" xml:space="preserve"><value>Flytt opp</value></data>
+  <data name="Downloads_Action_MoveDown" xml:space="preserve"><value>Flytt ned</value></data>
+  <data name="Downloads_Action_ClearHistory" xml:space="preserve"><value>Tøm historikk</value></data>
+  <data name="Downloads_Action_Review" xml:space="preserve"><value>Se over</value></data>
+  <data name="Downloads_Of" xml:space="preserve"><value>{0} av {1}</value></data>
+  <data name="Downloads_Eta" xml:space="preserve"><value>{0} igjen</value></data>
+  <data name="Downloads_ActionRequired" xml:space="preserve"><value>Krever handling</value></data>
+  <data name="Downloads_Err_Interrupted" xml:space="preserve"><value>Avbrutt da appen ble lukket.</value></data>
+  <data name="Downloads_Kind_Dlc" xml:space="preserve"><value>DLC-opplåsing</value></data>
+  <data name="Fixes_NotInstalled_Hint" xml:space="preserve"><value>Installer spillet først for å bruke en fiks.</value></data>
+  <data name="Downloads_Status_Paused" xml:space="preserve"><value>Satt på pause</value></data>
+  <data name="Downloads_Status_Verifying" xml:space="preserve"><value>Verifiserer…</value></data>
+  <data name="Downloads_Action_Pause" xml:space="preserve"><value>Pause</value></data>
+  <data name="Downloads_Action_Resume" xml:space="preserve"><value>Fortsett</value></data>
+  <data name="Downloads_Kind_Depot" xml:space="preserve"><value>Depotfiler</value></data>
+  <data name="Downloads_Depots_Progress" xml:space="preserve"><value>Depoter · {0} av {1}</value></data>
+  <data name="Depot_Err_Tool" xml:space="preserve"><value>Fikk ikke tak i depot-nedlasteren.</value></data>
+  <data name="Depot_Err_NoKeys" xml:space="preserve"><value>Fant ingen dekrypteringsnøkler for dette spillet.</value></data>
+  <data name="Depot_Err_Failed" xml:space="preserve"><value>Depot {0} mislyktes: {1}</value></data>
+  <data name="Depot_Status_Done" xml:space="preserve"><value>Lastet ned {0} depoter til {1}.</value></data>
+  <data name="Builds_Action_Download" xml:space="preserve"><value>Last ned</value></data>
+  <data name="Builds_Select_Title" xml:space="preserve"><value>Velg depoter å laste ned</value></data>
+  <data name="Builds_Select_Confirm" xml:space="preserve"><value>Last ned {0} depoter ({1})</value></data>
+  <data name="Builds_Select_NoManifest" xml:space="preserve"><value>Dette depotet oppgir ingen versjon å laste ned.</value></data>
+  <data name="Builds_Select_All" xml:space="preserve"><value>Velg alle</value></data>
+  <data name="Builds_Select_None" xml:space="preserve"><value>Ingen depoter valgt</value></data>
+  <data name="Builds_Select_ChooseFolder" xml:space="preserve"><value>Velg hvor depotfilene skal lagres</value></data>
+  <data name="Depot_Err_NoSpace" xml:space="preserve"><value>Ikke nok diskplass: trenger {0}, bare {1} ledig.</value></data>
+  <data name="Builds_Select_SaveTo" xml:space="preserve"><value>Lagre i</value></data>
+  <data name="Builds_Select_Space" xml:space="preserve"><value>Trenger {0} · {1} ledig på {2}</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
+  <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>henter manifest</value></data>
+  <data name="Depot_Err_NoManifest" xml:space="preserve"><value>Fikk ikke tak i manifestet for dette depotet.</value></data>
+  <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>Forbereder · {0} av {1}</value></data>
+  <data name="Downloads_Depots_GettingTool" xml:space="preserve"><value>Henter nedlasteren</value></data>
+  <data name="Downloads_Kind_Tool" xml:space="preserve"><value>Verktøy</value></data>
+  <data name="Downloads_SteamAutoCrack" xml:space="preserve"><value>SteamAutoCrack</value></data>
+  <data name="Downloads_SAC_GettingRuntime" xml:space="preserve"><value>Kontrollerer .NET-kjøretid</value></data>
+  <data name="Downloads_SAC_GettingTool" xml:space="preserve"><value>Henter SteamAutoCrack</value></data>
+  <data name="Downloads_SAC_Launched" xml:space="preserve"><value>SteamAutoCrack er åpnet.</value></data>
+  <data name="Downloads_SAC_Err_Runtime" xml:space="preserve"><value>Kunne ikke installere .NET-kjøretiden SteamAutoCrack trenger.</value></data>
+  <data name="Downloads_SAC_Err_Restart" xml:space="preserve"><value>.NET-kjøretiden ble installert, men Windows må startes på nytt før SteamAutoCrack kan kjøre.</value></data>
+  <data name="Downloads_SAC_Err_Tool" xml:space="preserve"><value>Kunne ikke laste ned SteamAutoCrack.</value></data>
+  <data name="Downloads_SAC_Err_Launch" xml:space="preserve"><value>Kunne ikke starte SteamAutoCrack.</value></data>
+  <data name="Downloads_SAC_Updated" xml:space="preserve"><value>SteamAutoCrack er oppdatert.</value></data>
+  <data name="Downloads_Depot_PreAllocating" xml:space="preserve"><value>tildeler filer</value></data>
+  <data name="Downloads_Depot_Validating" xml:space="preserve"><value>kontrollerer eksisterende filer</value></data>
+  <data name="Depot_Cancel_Title" xml:space="preserve"><value>Avbryt nedlasting</value></data>
+  <data name="Depot_Cancel_Body" xml:space="preserve"><value>{0} er allerede skrevet til:
+{1}
+
+Ja - stopp og slett filene
+Nei - stopp, men behold dem
+Avbryt - fortsett nedlastingen</value></data>
+  <data name="Depot_Cancel_DeleteFailed" xml:space="preserve"><value>Kunne ikke slette de nedlastede filene. De ligger fortsatt i {0}.</value></data>
+  <data name="Common_CopyAppId" xml:space="preserve"><value>Kopier App ID</value></data>
+  <data name="Common_ShowInFolder" xml:space="preserve"><value>Vis i mappe</value></data>
+  <data name="Err_ClipboardBusy" xml:space="preserve"><value>Kunne ikke kopiere — en annen app bruker utklippstavlen.</value></data>
+  <data name="Err_PathMissing" xml:space="preserve"><value>Kunne ikke åpne {0} — den kan være flyttet eller slettet.</value></data>
+  <data name="Builds_Select_NoKey" xml:space="preserve"><value>Ingen dekrypteringsnøkkel i Lua for denne depoten.</value></data>
+  <data name="Depot_Err_BadKey" xml:space="preserve"><value>Dekrypteringsnøkkelen for depot {0} er feil.</value></data>
+  <data name="Depot_Err_NoKeyFor" xml:space="preserve"><value>Ingen dekrypteringsnøkkel i Lua for depot {0}.</value></data>
+  <data name="Builds_Select_SharedHint" xml:space="preserve"><value>Delt kjøretid — vanligvis allerede installert. Huk av for å laste ned likevel.</value></data>
+  <data name="Downloads_ClearHistory_Confirm" xml:space="preserve"><value>Fjerne alle {0} oppføringer fra nedlastingsloggen? Nedlastede filer påvirkes ikke.</value></data>
+  <data name="Fixes_Applied_Hint" xml:space="preserve"><value>Denne rettelsen er allerede brukt. Angre den hvis du vil installere en annen.</value></data>
+  <data name="Fixes_MyGames" xml:space="preserve"><value>Mine spill</value></data>
+  <data name="Fixes_MyGames_Count" xml:space="preserve"><value>{0} av spillene dine har rettelser. Bla i listen for å se resten.</value></data>
+  <data name="Fixes_MyGames_NotInstalled" xml:space="preserve"><value>Ingen lua-filer lagt til ennå. Legg til (eller installer) et spill for å se det her.</value></data>
+  <data name="Fixes_Revert" xml:space="preserve"><value>Angre</value></data>
+  <data name="Fixes_Revert_Cancel" xml:space="preserve"><value>Avbryt</value></data>
+  <data name="Fixes_Revert_Confirm_Body" xml:space="preserve"><value>Angre «{0}»? Endrede filer gjenopprettes fra sikkerhetskopien, og filer lagt til av rettelsen slettes.</value></data>
+  <data name="Fixes_Revert_Confirm_Title" xml:space="preserve"><value>Angre rettelsen for {0}?</value></data>
+  <data name="Fixes_Revert_Done" xml:space="preserve"><value>Rettelse angret</value></data>
+  <data name="Fixes_Revert_Done_Body" xml:space="preserve"><value>{0} gjenopprettet, {1} tillagte filer fjernet.</value></data>
+  <data name="Fixes_Revert_Failed" xml:space="preserve"><value>Kunne ikke angre rettelsen</value></data>
+  <data name="Fixes_Revert_NoRecord" xml:space="preserve"><value>Ingen registrering av at denne rettelsen er brukt. Den kan allerede være angret.</value></data>
+  <data name="Fixes_Revert_Conflict" xml:space="preserve"><value>Fiksen kan ikke tilbakestilles trygt</value></data>
+  <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} er endret siden denne fiksen ble brukt, så gjenoppretting ville overskrive de endringene. Hvis du har brukt en annen fiks oppå, tilbakestill den først. {1} fil(er) berørt.</value></data>
+  <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Rettelse delvis angret</value></data>
+  <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} fil(er) kunne ikke gjenopprettes. Lukk spillet og prøv igjen.</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
+</root>

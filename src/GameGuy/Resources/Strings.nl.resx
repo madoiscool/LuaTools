@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- nl -->
+    <data name="App_Name" xml:space="preserve"><value>GameGuy</value></data>
+  <data name="Nav_Home" xml:space="preserve"><value>Start</value></data>
+  <data name="Nav_Add" xml:space="preserve"><value>Toevoegen</value></data>
+  <data name="Nav_Manage" xml:space="preserve"><value>Beheren</value></data>
+  <data name="Nav_Mode" xml:space="preserve"><value>Modus</value></data>
+  <data name="Nav_Fixes" xml:space="preserve"><value>Fixes</value></data>
+  <data name="Nav_RestartSteam" xml:space="preserve"><value>Steam herstarten</value></data>
+  <data name="Nav_Settings" xml:space="preserve"><value>Instellingen</value></data>
+  <data name="Nav_Footer_NoKey" xml:space="preserve"><value>No key</value></data>
+  <data name="Nav_Footer_AuthKey" xml:space="preserve"><value>Key set</value></data>
+  <data name="Main_RestartSteam_Ask" xml:space="preserve"><value>Steam nu herstarten? Dit sluit Steam en alle actieve games en start het daarna opnieuw.</value></data>
+  <data name="Settings_Title" xml:space="preserve"><value>Instellingen</value></data>
+  <data name="Settings_Section_General" xml:space="preserve"><value>ALGEMEEN</value></data>
+  <data name="Settings_Section_Steam" xml:space="preserve"><value>STEAM</value></data>
+  <data name="Settings_Section_Install" xml:space="preserve"><value>INSTALLATIE</value></data>
+  <data name="Settings_Section_Community" xml:space="preserve"><value>COMMUNITY</value></data>
+  <data name="Settings_NoAuthKey" xml:space="preserve"><value>Browsing without a key</value></data>
+  <data name="Settings_AuthKeyHint" xml:space="preserve"><value>Add your authentication key to download manifests and DLC unlocks</value></data>
+  <data name="Settings_AuthKeyRequired" xml:space="preserve"><value>An authentication key is required for this action.</value></data>
+  <data name="Settings_Section_AuthKey" xml:space="preserve"><value>AUTHENTICATION KEY</value></data>
+  <data name="Settings_AuthKey" xml:space="preserve"><value>Authentication key</value></data>
+  <data name="Settings_AuthKey_Hint" xml:space="preserve"><value>Paste your lua.tools authentication key. The app needs it to download manifests, DLC unlocks and fixes.</value></data>
+  <data name="Settings_AuthKeyPlaceholder" xml:space="preserve"><value>Paste your authentication key</value></data>
+  <data name="Settings_AuthKey_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Settings_AuthKeyClear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Settings_AuthKeyActive" xml:space="preserve"><value>Key set</value></data>
+  <data name="Settings_AuthKeyMissing" xml:space="preserve"><value>No key set</value></data>
+  <data name="Settings_AuthKeyEmptyError" xml:space="preserve"><value>Enter a key first.</value></data>
+  <data name="Settings_AuthKeyGetKey" xml:space="preserve"><value>Get your authentication key on</value></data>
+  <data name="Settings_ManageKeyHintPrefix" xml:space="preserve"><value>Beheer je Hubcap-API-sleutel en profiel op</value></data>
+  <data name="Settings_Section_Hubcap" xml:space="preserve"><value>HUBCAP</value></data>
+  <data name="Settings_HubcapKey" xml:space="preserve"><value>Hubcap-API-sleutel</value></data>
+  <data name="Settings_HubcapKey_Hint" xml:space="preserve"><value>Plak je persoonlijke Hubcap-API-sleutel om Hubcap-manifesten te ontgrendelen. De app maakt met jouw sleutel rechtstreeks verbinding met Hubcap.</value></data>
+  <data name="Settings_HubcapKeyPlaceholder" xml:space="preserve"><value>Plak je API-sleutel (smm_…)</value></data>
+  <data name="Settings_HubcapValidate" xml:space="preserve"><value>Valideren en opslaan</value></data>
+  <data name="Settings_HubcapClear" xml:space="preserve"><value>Wissen</value></data>
+  <data name="Settings_HubcapGetKey" xml:space="preserve"><value>Haal een sleutel op bij</value></data>
+  <data name="Settings_HubcapKeyOk" xml:space="preserve"><value>{0}/{1} verzoeken vandaag</value></data>
+  <data name="Settings_HubcapKeyOkExpiry" xml:space="preserve"><value>{0}/{1} vandaag · verloopt op {2}</value></data>
+  <data name="Settings_HubcapKeyBad" xml:space="preserve"><value>Dit lijkt geen geldige sleutel (smm_…).</value></data>
+  <data name="Settings_HubcapKeyError" xml:space="preserve"><value>Kan de sleutel niet verifiëren — deze is mogelijk ongeldig, verlopen, of Hubcap is onbereikbaar.</value></data>
+  <data name="Settings_HubcapActive" xml:space="preserve"><value>Actief</value></data>
+  <data name="Settings_HubcapRefresh" xml:space="preserve"><value>Vernieuwen</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>Taal</value></data>
+  <data name="Settings_Language_Hint" xml:space="preserve"><value>Kies de weergavetaal van de app. Wordt toegepast na een herstart.</value></data>
+  <data name="Settings_Language_SystemDefault" xml:space="preserve"><value>Systeemstandaard</value></data>
+  <data name="Settings_Dns" xml:space="preserve"><value>DNS-resolutie</value></data>
+  <data name="Settings_Dns_Hint" xml:space="preserve"><value>Als je provider lua.tools blokkeert, kan de app adressen opzoeken via Cloudflare (1.1.1.1) in plaats van je systeemresolver. 'Automatisch' schakelt pas over nadat je normale DNS faalt.</value></data>
+  <data name="Settings_Dns_Auto" xml:space="preserve"><value>Automatisch</value></data>
+  <data name="Settings_Dns_Always" xml:space="preserve"><value>Altijd Cloudflare gebruiken</value></data>
+  <data name="Settings_Dns_Never" xml:space="preserve"><value>Alleen systeem-DNS gebruiken</value></data>
+  <data name="Settings_SteamLocation" xml:space="preserve"><value>Steam-locatie</value></data>
+  <data name="Settings_Change" xml:space="preserve"><value>Wijzigen…</value></data>
+  <data name="Settings_Open" xml:space="preserve"><value>Openen</value></data>
+  <data name="Settings_ResetToAuto" xml:space="preserve"><value>Terug naar automatisch</value></data>
+  <data name="Settings_AutoUpdateApps" xml:space="preserve"><value>Apps automatisch bijwerken (manifesten niet vergrendelen)</value></data>
+  <data name="Settings_AutoUpdateApps_Hint" xml:space="preserve"><value>Installeert zonder een versie vast te zetten, zodat Steam games up-to-date houdt. Schakel uit om games op de gedownloade versie te vergrendelen.</value></data>
+  <data name="Settings_DonateKeys" xml:space="preserve"><value>Decryptiesleutels doneren</value></data>
+  <data name="Settings_DonateKeys_Hint" xml:space="preserve"><value>Deel overtollige Steam-depotdecryptiesleutels om de communitypool te laten groeien. Alleen gevalideerde sleutels worden verzonden — geen accountgegevens of persoonlijke data.</value></data>
+  <data name="Settings_SteamNotFound" xml:space="preserve"><value>Steam niet gevonden</value></data>
+  <data name="Settings_SteamSource_Custom" xml:space="preserve"><value>Aangepaste locatie</value></data>
+  <data name="Settings_SteamSource_NotFound" xml:space="preserve"><value>Niet gevonden</value></data>
+  <data name="Settings_SteamSource_Auto" xml:space="preserve"><value>Automatisch gedetecteerd uit het register</value></data>
+  <data name="Settings_SteamWarning_NoExe" xml:space="preserve"><value>steam.exe niet gevonden in deze map.</value></data>
+  <data name="Settings_ChooseSteamFolder" xml:space="preserve"><value>Kies je Steam-map</value></data>
+  <data name="Lang_Changed_Title" xml:space="preserve"><value>Taal gewijzigd</value></data>
+  <data name="Lang_Changed_Body" xml:space="preserve"><value>Herstart de app om de nieuwe taal toe te passen.</value></data>
+  <data name="Lang_Changed_Restart" xml:space="preserve"><value>Nu herstarten</value></data>
+  <data name="Home_Welcome" xml:space="preserve"><value>Welkom bij GameGuy</value></data>
+  <data name="Home_LuasOnBoard" xml:space="preserve"><value>Lua's aan boord</value></data>
+  <data name="Home_LastAdded" xml:space="preserve"><value>LAATST TOEGEVOEGD</value></data>
+  <data name="Home_PluginStatus" xml:space="preserve"><value>Pluginstatus</value></data>
+  <data name="Home_RecentlyAdded" xml:space="preserve"><value>Onlangs toegevoegd</value></data>
+  <data name="Home_ViewDetails" xml:space="preserve"><value>Details bekijken</value></data>
+  <data name="Home_CheckingSteam" xml:space="preserve"><value>Steam controleren…</value></data>
+  <data name="Home_SteamDetected" xml:space="preserve"><value>Steam gedetecteerd · {0}</value></data>
+  <data name="Home_SteamNotFound" xml:space="preserve"><value>Steam niet gevonden — stel de locatie in bij Instellingen.</value></data>
+  <data name="Home_NoAuthKey" xml:space="preserve"><value>No key set</value></data>
+  <data name="Home_NoModeSelected" xml:space="preserve"><value>Geen modus geselecteerd</value></data>
+  <data name="Home_ModeIs" xml:space="preserve"><value>Modus · {0}</value></data>
+  <data name="Mode_Title" xml:space="preserve"><value>Modus</value></data>
+  <data name="Mode_Subtitle" xml:space="preserve"><value>Wissel de backend die wordt gebruikt om met GameGuy toegevoegde games te ontgrendelen — slechts één tegelijk actief.</value></data>
+  <data name="Mode_CheckForUpdates" xml:space="preserve"><value>Controleren op updates</value></data>
+  <data name="Mode_Active" xml:space="preserve"><value>ACTIEF</value></data>
+  <data name="Mode_Recommended" xml:space="preserve"><value>AANBEVOLEN</value></data>
+  <data name="Mode_Confirm_Body" xml:space="preserve"><value>Steam wordt gesloten zodat de bestanden kunnen worden gewijzigd en daarna automatisch opnieuw gestart. Alle actieve games of downloads worden gestopt.</value></data>
+  <data name="Mode_Cancel" xml:space="preserve"><value>Annuleren</value></data>
+  <data name="Mode_CloseSteamContinue" xml:space="preserve"><value>Steam sluiten en doorgaan</value></data>
+  <data name="Mode_Desc_Bst" xml:space="preserve"><value>Een opensource-fork van OpenSteamTools, actief onderhouden door het GameGuy-team. Met fixes en nieuwe functies!</value></data>
+  <data name="Mode_CloudRedirect_Manage" xml:space="preserve"><value>Beheren</value></data>
+  <data name="Mode_CloudRedirect_LaunchFailed" xml:space="preserve"><value>Kan CloudRedirect niet downloaden of starten.</value></data>
+  <data name="Mode_Desc_Ost" xml:space="preserve"><value>Nightly-build van OpenSteamTools uit de nieuwste broncode. De nieuwste fixes, maar mogelijk minder stabiel.</value></data>
+  <data name="Mode_UserManaged" xml:space="preserve"><value>Je staat er alleen voor</value></data>
+  <data name="Mode_Desc_Custom" xml:space="preserve"><value>Gebruik je eigen unlock-oplossing, wij blijven ervan af</value></data>
+  <data name="Mode_Name_Custom" xml:space="preserve"><value>Eigen unlocker</value></data>
+  <data name="Mode_Experimental" xml:space="preserve"><value>EXPERIMENTEEL</value></data>
+  <data name="Mode_CloudRedirectSupport" xml:space="preserve"><value>CLOUDREDIRECT-ONDERSTEUNING</value></data>
+  <data name="Mode_CloudRedirect_AddonDesc" xml:space="preserve"><value>Brengt native Steam Cloud-ondersteuning terug via externe opslagproviders zoals Google Drive / OneDrive / Cloudflare R2 en meer. Momenteel alleen compatibel met OpenSteamTools / BetterSteamTools. Vergeet niet om het na het inschakelen te configureren via "Beheren" en start daarna Steam opnieuw op!</value></data>
+  <data name="Mode_CloudRedirect_Locked" xml:space="preserve"><value>Selecteer OpenSteamTools / BetterSteamTools om CloudRedirect te gebruiken.</value></data>
+  <data name="Mode_CloudRedirect_Enable" xml:space="preserve"><value>Inschakelen</value></data>
+  <data name="Mode_CloudRedirect_Disable" xml:space="preserve"><value>Uitschakelen</value></data>
+  <data name="Mode_CloudRedirect_Status_Enabled" xml:space="preserve"><value>Ingeschakeld.</value></data>
+  <data name="Mode_CloudRedirect_Status_Disabled" xml:space="preserve"><value>Geïnstalleerd, maar uitgeschakeld.</value></data>
+  <data name="Mode_CloudRedirect_Status_NotInstalled" xml:space="preserve"><value>Nog niet geïnstalleerd.</value></data>
+  <data name="Mode_CloudRedirect_Status_UpdateAvailable" xml:space="preserve"><value>Update beschikbaar.</value></data>
+  <data name="Mode_CloudRedirect_Toast_Enabled" xml:space="preserve"><value>Ingeschakeld — herstart Steam om toe te passen.</value></data>
+  <data name="Mode_CloudRedirect_Toast_Disabled" xml:space="preserve"><value>Uitgeschakeld — herstart Steam om toe te passen.</value></data>
+  <data name="Mode_CloudRedirect_Toast_Updated" xml:space="preserve"><value>Bijgewerkt — herstart Steam om toe te passen.</value></data>
+  <data name="Onboarding_Title" xml:space="preserve"><value>Welkom bij de GameGuy-app!</value></data>
+  <data name="Onboarding_Recommended_Title" xml:space="preserve"><value>Aanbevolen instellingen toepassen</value></data>
+  <data name="Onboarding_Recommended_Detail" xml:space="preserve"><value>Modus: BetterSteamTools · FastFetch aan</value></data>
+  <data name="Onboarding_Plugin_Title" xml:space="preserve"><value>Installeer onze beroemde plug-in</value></data>
+  <data name="Onboarding_Plugin_Detail" xml:space="preserve"><value>Voegt de knop "Add via LuaTools" toe aan Steam-winkelpagina's.</value></data>
+  <data name="Onboarding_Yes" xml:space="preserve"><value>Ja, graag</value></data>
+  <data name="Onboarding_No" xml:space="preserve"><value>Nee, bedankt</value></data>
+  <data name="Onboarding_Go" xml:space="preserve"><value>Aan de slag!</value></data>
+  <data name="Onboarding_Applying" xml:space="preserve"><value>Bezig met instellen…</value></data>
+  <data name="Mode_Checking" xml:space="preserve"><value>Controleren…</value></data>
+  <data name="Mode_StatusUnavailable" xml:space="preserve"><value>Status niet beschikbaar (offline?)</value></data>
+  <data name="Mode_NotActive" xml:space="preserve"><value>Niet actief</value></data>
+  <data name="Mode_NotInstalled" xml:space="preserve"><value>Niet geïnstalleerd</value></data>
+  <data name="Mode_UpToDate" xml:space="preserve"><value>Up-to-date</value></data>
+  <data name="Mode_UpdateAvailable" xml:space="preserve"><value>Update beschikbaar</value></data>
+  <data name="Mode_Btn_Reinstall" xml:space="preserve"><value>Opnieuw installeren</value></data>
+  <data name="Mode_Btn_Update" xml:space="preserve"><value>Bijwerken</value></data>
+  <data name="Mode_Btn_Install" xml:space="preserve"><value>Installeren</value></data>
+  <data name="Mode_Btn_Switch" xml:space="preserve"><value>Hiernaar overschakelen</value></data>
+  <data name="Mode_Confirm_Reinstall" xml:space="preserve"><value>{0} opnieuw installeren?</value></data>
+  <data name="Mode_Confirm_Switch" xml:space="preserve"><value>Overschakelen naar {0}?</value></data>
+  <data name="Mode_Toast_Updated" xml:space="preserve"><value>Modus bijgewerkt</value></data>
+  <data name="Mode_Toast_Updated_Restarting" xml:space="preserve"><value>{0} is geïnstalleerd — Steam wordt opnieuw gestart.</value></data>
+  <data name="Mode_Toast_Updated_Start" xml:space="preserve"><value>{0} is geïnstalleerd. Start Steam om het te gebruiken.</value></data>
+  <data name="Mode_Toast_InstallFailed" xml:space="preserve"><value>Installatie mislukt</value></data>
+  <data name="Mode_Toast_InstallFailed_Body" xml:space="preserve"><value>Er is iets misgegaan.</value></data>
+  <data name="Drop_Title" xml:space="preserve"><value>Sleep .lua-, .manifest- of .zip-bestanden hierheen</value></data>
+  <data name="Drop_BrowseFiles" xml:space="preserve"><value>Bestanden bladeren…</value></data>
+  <data name="Drop_Picker_Title" xml:space="preserve"><value>.lua- / .manifest- / .zip-bestanden kiezen</value></data>
+  <data name="Drop_Picker_Filter" xml:space="preserve"><value>Lua / manifest / zip|*.lua;*.manifest;*.zip|Alle bestanden|*.*</value></data>
+  <data name="Drop_Nothing" xml:space="preserve"><value>Niets om te installeren — sleep .lua-, .manifest- of .zip-bestanden.</value></data>
+  <data name="Drop_Confirm_Replace" xml:space="preserve"><value>"{0}" vervangen?</value></data>
+  <data name="Drop_Confirm_NoChanges" xml:space="preserve"><value>Geen depot-/DLC-wijzigingen — dezelfde inhoud.</value></data>
+  <data name="Drop_NothingInstalled" xml:space="preserve"><value>Niets geïnstalleerd (geannuleerd of niet-herkende bestandsnamen).</value></data>
+  <data name="Drop_Count_Luas" xml:space="preserve"><value>{0} lua('s)</value></data>
+  <data name="Drop_Count_Manifests" xml:space="preserve"><value>{0} manifest(en)</value></data>
+  <data name="Drop_Result_Installed" xml:space="preserve"><value>{0} geïnstalleerd in Steam.</value></data>
+  <data name="Drop_Result_Failed" xml:space="preserve"><value> {0} bestand(en) mislukt — sluit Steam en probeer opnieuw.</value></data>
+  <data name="Common_SearchPlaceholder" xml:space="preserve"><value>Zoeken op naam of App ID...</value></data>
+  <data name="Common_Loading" xml:space="preserve"><value>Laden…</value></data>
+  <data name="Common_AppId" xml:space="preserve"><value>App ID: {0}</value></data>
+  <data name="Common_AppFallback" xml:space="preserve"><value>App {0}</value></data>
+  <data name="Manage_Title" xml:space="preserve"><value>Beheren</value></data>
+  <data name="Manage_Refresh" xml:space="preserve"><value>Vernieuwen</value></data>
+  <data name="Manage_Filters" xml:space="preserve"><value>Filters</value></data>
+  <data name="Manage_Filter_Type" xml:space="preserve"><value>Type</value></data>
+  <data name="Manage_Filter_Genre" xml:space="preserve"><value>Genre</value></data>
+  <data name="Manage_Filter_Year" xml:space="preserve"><value>Jaar</value></data>
+  <data name="Manage_Filter_Price" xml:space="preserve"><value>Prijs</value></data>
+  <data name="Manage_Filter_Content" xml:space="preserve"><value>Inhoud</value></data>
+  <data name="Manage_Content_HideAdult" xml:space="preserve"><value>Volwassen content verbergen (18+)</value></data>
+  <data name="Manage_Content_AdultOnly" xml:space="preserve"><value>Alleen volwassen</value></data>
+  <data name="Manage_Filter_SortBy" xml:space="preserve"><value>Sorteren op</value></data>
+  <data name="Manage_ClearFilters" xml:space="preserve"><value>Filters wissen</value></data>
+  <data name="Manage_Select" xml:space="preserve"><value>Selecteren</value></data>
+  <data name="Manage_DeleteThisLua" xml:space="preserve"><value>Deze lua verwijderen</value></data>
+  <data name="Manage_ResultsPerPage" xml:space="preserve"><value>Resultaten per pagina</value></data>
+  <data name="Manage_Action_ViewDetails" xml:space="preserve"><value>Details bekijken</value></data>
+  <data name="Manage_Action_Update" xml:space="preserve"><value>Bijwerken / opnieuw downloaden</value></data>
+  <data name="Manage_Action_OpenStore" xml:space="preserve"><value>Winkelpagina openen</value></data>
+  <data name="Manage_Action_OpenInSteam" xml:space="preserve"><value>Openen in Steam</value></data>
+  <data name="Manage_Action_Reveal" xml:space="preserve"><value>.lua tonen</value></data>
+  <data name="Manage_Action_CopyAppId" xml:space="preserve"><value>App ID kopiëren</value></data>
+  <data name="Manage_Action_RemoveDrm" xml:space="preserve"><value>Steam-DRM verwijderen</value></data>
+  <data name="Manage_ActionsHeader" xml:space="preserve"><value>Acties</value></data>
+  <data name="Manage_Steamless_Confirm_Title" xml:space="preserve"><value>Steam-DRM verwijderen?</value></data>
+  <data name="Manage_Steamless_Confirm_Body" xml:space="preserve"><value>Dit voert Steamless uit op het uitvoerbare bestand van het spel om de SteamStub-DRM te verwijderen. De originele .exe wordt eerst als .bak geback-upt. Sommige spellen hebben daarna een bestandsverificatie in Steam nodig. Doorgaan?</value></data>
+  <data name="Manage_Steamless_Working" xml:space="preserve"><value>Steam-DRM verwijderen…</value></data>
+  <data name="Manage_Toast_Steamless_Done" xml:space="preserve"><value>{0} aangepast, {1} ongewijzigd.</value></data>
+  <data name="Manage_Steamless_NoInstall" xml:space="preserve"><value>Spelmap niet gevonden — is het geïnstalleerd?</value></data>
+  <data name="Manage_Steamless_Failed" xml:space="preserve"><value>Kan DRM niet verwijderen. {0}</value></data>
+  <data name="Manage_CopyAppIdTip" xml:space="preserve"><value>Klik om de App ID te kopiëren</value></data>
+  <data name="Manage_LoadingDepotInfo" xml:space="preserve"><value>Depotinformatie laden…</value></data>
+  <data name="Manage_MissingHint" xml:space="preserve"><value>Op Steam maar niet in jouw lua (vaak gecensureerde of zwartelijst-depots)</value></data>
+  <data name="Manage_UnknownHint" xml:space="preserve"><value>Kapotte, niet-uitgebrachte of gedeelde redistributable-depots — meestal geen reden tot zorg</value></data>
+  <data name="Manage_Clear" xml:space="preserve"><value>Wissen</value></data>
+  <data name="Manage_DeleteSelected" xml:space="preserve"><value>Selectie verwijderen</value></data>
+  <data name="Manage_LoadingGames" xml:space="preserve"><value>Je games laden…</value></data>
+  <data name="Manage_Opt_Any" xml:space="preserve"><value>Alle</value></data>
+  <data name="Manage_Opt_Free" xml:space="preserve"><value>Gratis</value></data>
+  <data name="Manage_Opt_Paid" xml:space="preserve"><value>Betaald</value></data>
+  <data name="Manage_Sort_RecentlyAdded" xml:space="preserve"><value>Onlangs toegevoegd</value></data>
+  <data name="Manage_Sort_NameAZ" xml:space="preserve"><value>Naam (A–Z)</value></data>
+  <data name="Manage_Sort_ReleaseNewest" xml:space="preserve"><value>Releasedatum (nieuwste)</value></data>
+  <data name="Manage_Sort_Metacritic" xml:space="preserve"><value>Metacritic</value></data>
+  <data name="Manage_Sort_MostReviewed" xml:space="preserve"><value>Meest beoordeeld</value></data>
+  <data name="Manage_PageSize_All" xml:space="preserve"><value>Alle</value></data>
+  <data name="Manage_PageLabel" xml:space="preserve"><value>Pagina {0} van {1}</value></data>
+  <data name="Manage_SelectionLabel" xml:space="preserve"><value>{0} geselecteerd</value></data>
+  <data name="Manage_FetchingDetails" xml:space="preserve"><value>Details ophalen voor {0} apps</value></data>
+  <data name="Manage_Empty_NoMatch" xml:space="preserve"><value>Geen games komen overeen met je filters.</value></data>
+  <data name="Manage_Empty_NoLuas" xml:space="preserve"><value>Nog geen lua-bestanden gevonden. Voeg een game toe via het tabblad Toevoegen.</value></data>
+  <data name="Manage_Empty_NoSteam" xml:space="preserve"><value>Steam-locatie niet gevonden — stel deze in bij Instellingen.</value></data>
+  <data name="Manage_Toast_NotFound_Title" xml:space="preserve"><value>Niet gevonden</value></data>
+  <data name="Manage_Toast_NotFound_Body" xml:space="preserve"><value>Die game staat niet meer in je bibliotheek.</value></data>
+  <data name="Manage_Toast_Refreshed_Title" xml:space="preserve"><value>Bibliotheek vernieuwd</value></data>
+  <data name="Manage_Toast_Refreshed_Body" xml:space="preserve"><value>{0} games aan boord.</value></data>
+  <data name="Manage_DepotError" xml:space="preserve"><value>Kon depotinformatie niet laden (offline of onbekende app).</value></data>
+  <data name="Manage_Toggle_InLua" xml:space="preserve"><value>In lua</value></data>
+  <data name="Manage_Toggle_Missing" xml:space="preserve"><value>Ontbrekende depots / DLC</value></data>
+  <data name="Manage_Toggle_Unknown" xml:space="preserve"><value>Onbekende dingen</value></data>
+  <data name="Manage_Depot" xml:space="preserve"><value>Depot</value></data>
+  <data name="Manage_SharedDepot" xml:space="preserve"><value>Gedeeld depot</value></data>
+  <data name="Manage_DlcName" xml:space="preserve"><value>DLC {0}</value></data>
+  <data name="Manage_Delete_Title" xml:space="preserve"><value>Lua-bestand verwijderen</value></data>
+  <data name="Manage_Delete_Body" xml:space="preserve"><value>“{0}” (App ID {1}) verwijderen?
+
+Dit verwijdert het .lua-bestand uit Steam\config\stplug-in.</value></data>
+  <data name="Manage_DeleteMany_Title" xml:space="preserve"><value>Lua-bestanden verwijderen</value></data>
+  <data name="Manage_DeleteMany_Body" xml:space="preserve"><value>{0} lua-bestanden verwijderen?
+
+Dit verwijdert de .lua-bestanden uit Steam\config\stplug-in.</value></data>
+  <data name="Manage_RemoveFailed_Title" xml:space="preserve"><value>Verwijderen mislukt</value></data>
+  <data name="Manage_RemoveFailed_File" xml:space="preserve"><value>Kon het bestand niet verwijderen:
+{0}</value></data>
+  <data name="Manage_RemoveFailed_Named" xml:space="preserve"><value>Kon "{0}" niet verwijderen:
+{1}</value></data>
+  <data name="Manage_RemoveFailed_Count" xml:space="preserve"><value>{0} bestanden konden niet worden verwijderd.</value></data>
+  <data name="Manage_RestartSteam_Title" xml:space="preserve"><value>Steam herstarten</value></data>
+  <data name="Manage_RestartSteam_Failed" xml:space="preserve"><value>Kon Steam niet vinden of starten. Stel de locatie in bij Instellingen.</value></data>
+  <data name="Fixes_Title" xml:space="preserve"><value>Fixes</value></data>
+  <data name="Fixes_Loading" xml:space="preserve"><value>Fixes laden…</value></data>
+  <data name="Fixes_Build" xml:space="preserve"><value>Build {0}</value></data>
+  <data name="Fixes_Manifest" xml:space="preserve"><value>Manifest</value></data>
+  <data name="Fixes_Fix" xml:space="preserve"><value>Fix</value></data>
+  <data name="Fixes_Count" xml:space="preserve"><value>{0} fixes</value></data>
+  <data name="Fixes_Err_Load" xml:space="preserve"><value>Kon fixes niet laden — controleer je verbinding.</value></data>
+  <data name="Fixes_Empty_None" xml:space="preserve"><value>Nog geen fixes beschikbaar.</value></data>
+  <data name="Fixes_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download fixes.</value></data>
+  <data name="Fixes_AuthKeyRequired" xml:space="preserve"><value>Key required</value></data>
+  <data name="Fixes_Toast_DownloadFailed" xml:space="preserve"><value>Download mislukt</value></data>
+  <data name="Fixes_Toast_DownloadFailed_Body" xml:space="preserve"><value>Er is iets misgegaan — probeer opnieuw.</value></data>
+  <data name="Fixes_Toast_InstallFailed" xml:space="preserve"><value>Installatie mislukt</value></data>
+  <data name="Fixes_Toast_InstallFailed_Body" xml:space="preserve"><value>Kon niet installeren — sluit Steam (of herstart Steam) en probeer opnieuw.</value></data>
+  <data name="Fixes_Toast_FixInstalled" xml:space="preserve"><value>Fix geïnstalleerd</value></data>
+  <data name="Fixes_Toast_FixInstalled_Body" xml:space="preserve"><value>Manifest van {0} geïnstalleerd.</value></data>
+  <data name="Fixes_Toast_GameNotFound" xml:space="preserve"><value>Game niet gevonden</value></data>
+  <data name="Fixes_Toast_GameNotFound_Body" xml:space="preserve"><value>Installeer {0} eerst in Steam en pas dan de fix toe.</value></data>
+  <data name="Fixes_Toast_PartiallyApplied" xml:space="preserve"><value>Fix gedeeltelijk toegepast</value></data>
+  <data name="Fixes_Toast_PartiallyApplied_Body" xml:space="preserve"><value>{0} bestand(en) konden niet worden geschreven — sluit de game en probeer opnieuw.</value></data>
+  <data name="Fixes_Toast_FixApplied" xml:space="preserve"><value>Fix toegepast</value></data>
+  <data name="Fixes_Toast_FixApplied_Body" xml:space="preserve"><value>Fix van {0} uitgepakt in de gamemap.</value></data>
+  <data name="Fixes_Toast_CouldntApply" xml:space="preserve"><value>Kon fix niet toepassen</value></data>
+  <data name="Fixes_Toast_Refreshed_Title" xml:space="preserve"><value>Vernieuwd</value></data>
+  <data name="Fixes_Toast_Refreshed_Body" xml:space="preserve"><value>{0} games met fixes.</value></data>
+  <data name="Add_Title" xml:space="preserve"><value>Tijd om te Lua'en™!</value></data>
+  <data name="Add_Subtitle" xml:space="preserve"><value>Voer een App ID in, plak een Steam-link of zoek op gamenaam</value></data>
+  <data name="Add_SearchPlaceholder" xml:space="preserve"><value>Voer een App ID in of zoek games...</value></data>
+  <data name="Add_Featured_TopSellers" xml:space="preserve"><value>Bestverkocht</value></data>
+  <data name="Add_Featured_NewReleases" xml:space="preserve"><value>Nieuwe releases</value></data>
+  <data name="Add_Released" xml:space="preserve"><value>Uitgebracht op {0}</value></data>
+  <data name="Add_Fetch" xml:space="preserve"><value>Ophalen</value></data>
+  <data name="Add_Checking" xml:space="preserve"><value>Controleren…</value></data>
+  <data name="Add_Reveal" xml:space="preserve"><value>Tonen</value></data>
+  <data name="Add_Supporter" xml:space="preserve"><value>Supporter</value></data>
+  <data name="Add_Unlimited" xml:space="preserve"><value>Onbeperkt</value></data>
+  <data name="Add_RequiresOwnKey" xml:space="preserve"><value>Vereist je eigen API-sleutel</value></data>
+  <data name="Add_Discord" xml:space="preserve"><value>Discord</value></data>
+  <data name="Add_JoinDiscord" xml:space="preserve"><value>Word lid van de Discord van deze bron</value></data>
+  <data name="Add_Download" xml:space="preserve"><value>Downloaden</value></data>
+  <data name="Add_NeedsHubcapKey" xml:space="preserve"><value>Hubcap-sleutel nodig</value></data>
+  <data name="Add_NeedsHubcapKey_Tip" xml:space="preserve"><value>Stel je Hubcap-API-sleutel in bij Instellingen om deze bron te ontgrendelen</value></data>
+  <data name="Add_Depots" xml:space="preserve"><value>DEPOTS</value></data>
+  <data name="Add_Available" xml:space="preserve"><value>BESCHIKBAAR</value></data>
+  <data name="Add_Missing" xml:space="preserve"><value>ONTBREEKT</value></data>
+  <data name="Add_NoKey" xml:space="preserve"><value>GEEN SLEUTEL</value></data>
+  <data name="Add_DownloadLua" xml:space="preserve"><value>.lua downloaden</value></data>
+  <data name="Add_Generating" xml:space="preserve"><value>Genereren…</value></data>
+  <data name="Add_DlcHint" xml:space="preserve"><value>Plaats de .lua in steam\config\stplug-in — zorg dat de basisgame ook is toegevoegd. Telt mee voor je daglimiet (25/dag).</value></data>
+  <data name="Add_AlreadyHaveFiles" xml:space="preserve"><value>Heb je de bestanden al?</value></data>
+  <data name="Add_NeedAuthKey_Dlc" xml:space="preserve"><value>Add your authentication key to view DLC unlocks.</value></data>
+  <data name="Add_NeedAuthKey_Download" xml:space="preserve"><value>Add your authentication key to download.</value></data>
+  <data name="Add_Err_BaseGame" xml:space="preserve"><value>Kon de basisgame voor deze DLC niet bepalen</value></data>
+  <data name="Add_Err_Generic" xml:space="preserve"><value>Er is iets misgegaan — controleer je verbinding en probeer opnieuw.</value></data>
+  <data name="Add_Err_Download" xml:space="preserve"><value>Download mislukt — controleer je verbinding en probeer opnieuw.</value></data>
+  <data name="Add_Confirm_Replace" xml:space="preserve"><value>"{0}" vervangen?</value></data>
+  <data name="Add_Confirm_NoChanges" xml:space="preserve"><value>Geen depot-/DLC-wijzigingen — dezelfde inhoud.</value></data>
+  <data name="Add_Status_Cancelled" xml:space="preserve"><value>Installatie geannuleerd — bestaande bestanden ongewijzigd.</value></data>
+  <data name="Add_Status_InstallFailed" xml:space="preserve"><value>Kon {0} bestand(en) niet installeren — sluit Steam (of gebruik Steam herstarten) en probeer opnieuw.</value></data>
+  <data name="Add_Status_AddedManifests" xml:space="preserve"><value>{0} toegevoegd: lua + {1} manifest(en).</value></data>
+  <data name="Add_Status_AddedFetch" xml:space="preserve"><value>{0} toegevoegd. Steam haalt de manifests op.</value></data>
+  <data name="Confirm_OpenSteamDb" xml:space="preserve"><value>Openen op SteamDB</value></data>
+  <data name="Confirm_Shared" xml:space="preserve"><value>GEDEELD</value></data>
+  <data name="Confirm_ReviewChanges" xml:space="preserve"><value>Dit vervangt de geïnstalleerde lua. Bekijk wat er verandert:</value></data>
+  <data name="Confirm_Adding" xml:space="preserve"><value>Toevoegen ({0})</value></data>
+  <data name="Confirm_Removing" xml:space="preserve"><value>Verwijderen ({0})</value></data>
+  <data name="Confirm_Skip" xml:space="preserve"><value>Overslaan</value></data>
+  <data name="Confirm_Replace" xml:space="preserve"><value>Vervangen</value></data>
+  <data name="Settings_Section_Startup" xml:space="preserve"><value>OPSTARTEN</value></data>
+  <data name="Settings_StartWithWindows" xml:space="preserve"><value>Starten met Windows</value></data>
+  <data name="Settings_StartWithWindows_Hint" xml:space="preserve"><value>Start GameGuy automatisch wanneer Windows opstart.</value></data>
+  <data name="Settings_MinimizeToTray" xml:space="preserve"><value>Minimaliseren naar systeemvak</value></data>
+  <data name="Settings_MinimizeToTray_Hint" xml:space="preserve"><value>Houd GameGuy actief in het systeemvak wanneer u het venster sluit, in plaats van af te sluiten. Dubbelklik op het pictogram om te herstellen.</value></data>
+  <data name="Tray_Open" xml:space="preserve"><value>GameGuy openen</value></data>
+  <data name="Tray_Exit" xml:space="preserve"><value>Afsluiten</value></data>
+
+  <data name="Add_FastFetch" xml:space="preserve"><value>FastFetch™️</value></data>
+  <data name="Add_FastFetch_Hint" xml:space="preserve"><value>Automatisch downloaden van de eerste beschikbare bron</value></data>
+  <data name="Add_FastFetch_NoSource" xml:space="preserve"><value>Geen beschikbare bronnen gevonden voor dit spel</value></data>
+  <data name="Add_FastFetch_Via" xml:space="preserve"><value>· via {0}</value></data>
+  <data name="Plugin_Title" xml:space="preserve"><value>GameGuy-plug-in</value></data>
+  <data name="Plugin_Subtitle" xml:space="preserve"><value>De GameGuy Steam-plugin! — Gebruikt nu LuaLoader in plaats van Shittenium</value></data>
+  <data name="Plugin_CardTitle" xml:space="preserve"><value>Status</value></data>
+  <data name="Plugin_Badge_UpdateAvailable" xml:space="preserve"><value>Update beschikbaar</value></data>
+  <data name="Plugin_Row_InstalledVersion" xml:space="preserve"><value>Geïnstalleerde versie</value></data>
+  <data name="Plugin_Row_LatestVersion" xml:space="preserve"><value>Nieuwste versie</value></data>
+  <data name="Plugin_Row_Frontend" xml:space="preserve"><value>Frontend</value></data>
+  <data name="Plugin_Row_Loader" xml:space="preserve"><value>Loader (winmm.dll)</value></data>
+  <data name="Plugin_Millennium_Coexisting" xml:space="preserve"><value>Millennium gedetecteerd — GameGuy draait ernaast. Bij installatie wordt de eigen kopie van deze plug-in van Millennium uitgeschakeld, zodat alleen LuaLoader injecteert.</value></data>
+  <data name="Plugin_Footer" xml:space="preserve"><value>LuaLoader wordt in je Steam-map geïnstalleerd. Deze app werkt als backend — als je hem via het systeemvak sluit, werkt de plugin niet meer!</value></data>
+  <data name="Plugin_Btn_Install" xml:space="preserve"><value>Installeren</value></data>
+  <data name="Plugin_Btn_Update" xml:space="preserve"><value>Bijwerken</value></data>
+  <data name="Plugin_Btn_Reinstall" xml:space="preserve"><value>Opnieuw installeren</value></data>
+  <data name="Plugin_Btn_Uninstall" xml:space="preserve"><value>Verwijderen</value></data>
+  <data name="Plugin_Btn_CheckForUpdates" xml:space="preserve"><value>Controleren op updates</value></data>
+  <data name="Plugin_Checking" xml:space="preserve"><value>Bezig met controleren…</value></data>
+  <data name="Plugin_Status_Installed" xml:space="preserve"><value>Geïnstalleerd</value></data>
+  <data name="Plugin_Status_NotInstalled" xml:space="preserve"><value>Niet geïnstalleerd</value></data>
+  <data name="Plugin_Status_UpToDate" xml:space="preserve"><value>Up-to-date</value></data>
+  <data name="Plugin_Status_OutOfDate" xml:space="preserve"><value>Verouderd</value></data>
+  <data name="Plugin_Version_Unknown" xml:space="preserve"><value>onbekend</value></data>
+  <data name="Plugin_Version_Offline" xml:space="preserve"><value>offline</value></data>
+  <data name="Plugin_Status_OfflineCheck" xml:space="preserve"><value>Kan GitHub niet bereiken om op updates te controleren.</value></data>
+  <data name="Plugin_Status_Port8080Busy" xml:space="preserve"><value>Een ander programma gebruikt al poort 8080 — de browserbrug van de plugin werkt mogelijk niet. Sluit wat die poort gebruikt en installeer opnieuw of herstart Steam.</value></data>
+  <data name="Plugin_Confirm_RestartBody" xml:space="preserve"><value>Hiermee wordt Steam gesloten en opnieuw gestart om de loader toe te passen. Doorgaan?</value></data>
+  <data name="Plugin_Confirm_RestartCaption" xml:space="preserve"><value>Steam opnieuw starten</value></data>
+  <data name="Plugin_Toast_Title" xml:space="preserve"><value>Plug-in</value></data>
+  <data name="Plugin_Toast_Installed" xml:space="preserve"><value>Plug-in geïnstalleerd. Steam wordt opnieuw gestart om deze te laden.</value></data>
+  <data name="Plugin_Toast_InstallFailed" xml:space="preserve"><value>Installatie mislukt: {0}</value></data>
+  <data name="Plugin_Toast_Removed" xml:space="preserve"><value>Plug-in verwijderd. Steam wordt opnieuw gestart.</value></data>
+  <data name="Plugin_Toast_UninstallFailed" xml:space="preserve"><value>Verwijderen mislukt: {0}</value></data>
+  <data name="Plugin_Toast_UpdateAvailable" xml:space="preserve"><value>Er is een update beschikbaar.</value></data>
+  <data name="Plugin_Toast_UpToDate" xml:space="preserve"><value>Je bent up-to-date.</value></data>
+  <data name="Plugin_Err_SteamNotFound" xml:space="preserve"><value>Steam-installatie niet gevonden.</value></data>
+  <data name="Plugin_Err_GithubUnreachable" xml:space="preserve"><value>Kan GitHub niet bereiken om de nieuwste release op te halen.</value></data>
+  <data name="Plugin_Err_MissingAssets" xml:space="preserve"><value>In release {0} ontbreekt {1} of {2}.</value></data>
+  <data name="Plugin_Err_VerifyFailed" xml:space="preserve"><value>Hashverificatie van {0} mislukt.</value></data>
+  <data name="Plugin_Err_NoLuatoolsJs" xml:space="preserve"><value>plugin.zip bevatte geen public/luatools.js.</value></data>
+  <data name="Plugin_About_Header" xml:space="preserve"><value>Belangrijke functies</value></data>
+  <data name="Plugin_Feature_StoreButton" xml:space="preserve"><value>Voegt een knop 'Add via LuaTools' toe aan Steam-winkelpagina's</value></data>
+  <data name="Plugin_Feature_AutoUpdate" xml:space="preserve"><value>Werkt zichzelf automatisch bij</value></data>
+  <data name="Plugin_Feature_Millennium" xml:space="preserve"><value>Werkt met of zonder Millennium</value></data>
+  <data name="Drop_LinkHint" xml:space="preserve"><value>…of sleep een SteamDB-/Steam-winkellink hierheen om die game toe te voegen.</value></data>
+  <data name="Manage_Action_ManageBuild" xml:space="preserve"><value>Depots beheren</value></data>
+  <data name="Manage_AboutHeader" xml:space="preserve"><value>Over</value></data>
+  <data name="Manage_Info_Developer" xml:space="preserve"><value>Ontwikkelaar</value></data>
+  <data name="Manage_Info_Publisher" xml:space="preserve"><value>Uitgever</value></data>
+  <data name="Nav_Builds" xml:space="preserve"><value>Depots</value></data>
+  <data name="Builds_Title" xml:space="preserve"><value>Depots</value></data>
+  <data name="Builds_Subtitle" xml:space="preserve"><value>Bewaar meerdere versies van de lua van een game en kies welke Steam gebruikt.</value></data>
+  <data name="Builds_NoSelection" xml:space="preserve"><value>Kies links een game om de voorinstellingen ervan te zien.</value></data>
+  <data name="Builds_ActiveBuild" xml:space="preserve"><value>Actieve voorinstelling</value></data>
+  <data name="Builds_Active" xml:space="preserve"><value>ACTIEF</value></data>
+  <data name="Builds_Variant_Default" xml:space="preserve"><value>Standaard</value></data>
+  <data name="Builds_Variant_Build" xml:space="preserve"><value>Build {0}</value></data>
+  <data name="Builds_Variant_Preset" xml:space="preserve"><value>Opgeslagen · {0}</value></data>
+  <data name="Builds_Pinned" xml:space="preserve"><value>Vastgezet</value></data>
+  <data name="Builds_AutoUpdating" xml:space="preserve"><value>Automatisch bijwerken</value></data>
+  <data name="Builds_LatestBuild" xml:space="preserve"><value>Nieuwste build op Steam: {0}</value></data>
+  <data name="Builds_Manifest" xml:space="preserve"><value>manifest {0}</value></data>
+  <data name="Builds_ManifestLatest" xml:space="preserve"><value>nieuwste is {0}</value></data>
+  <data name="Builds_PinDisabled" xml:space="preserve"><value>vastzetten uit (automatisch bijwerken)</value></data>
+  <data name="Builds_Meta_Depots" xml:space="preserve"><value>{0} depots · {1} DLC</value></data>
+  <data name="Builds_Meta_Unsaved" xml:space="preserve"><value>niet opgeslagen</value></data>
+  <data name="Builds_Source" xml:space="preserve"><value>van {0}</value></data>
+  <data name="Builds_Action_Apply" xml:space="preserve"><value>Toepassen</value></data>
+  <data name="Builds_Action_Rename" xml:space="preserve"><value>Naam wijzigen</value></data>
+  <data name="Builds_Action_Edit" xml:space="preserve"><value>Bewerken</value></data>
+  <data name="Builds_Action_Delete" xml:space="preserve"><value>Verwijderen</value></data>
+  <data name="Builds_Action_Save" xml:space="preserve"><value>Opslaan</value></data>
+  <data name="Builds_Action_SaveAsPreset" xml:space="preserve"><value>Opslaan als voorinstelling</value></data>
+  <data name="Builds_Action_Cancel" xml:space="preserve"><value>Annuleren</value></data>
+  <data name="Builds_RenamePlaceholder" xml:space="preserve"><value>Geef deze voorinstelling een naam…</value></data>
+  <data name="Builds_Editor_Title" xml:space="preserve"><value>Bezig met bewerken van de lua die Steam gebruikt</value></data>
+  <data name="Builds_Delete_Title" xml:space="preserve"><value>Deze voorinstelling verwijderen?</value></data>
+  <data name="Builds_Delete_Body" xml:space="preserve"><value>‘{0}’ wordt uit je opgeslagen voorinstellingen verwijderd. Dit heeft geen invloed op de game zelf.</value></data>
+  <data name="Builds_Delete_ActiveTip" xml:space="preserve"><value>De voorinstelling die in gebruik is, kan niet worden verwijderd.</value></data>
+  <data name="Builds_Apply_Done" xml:space="preserve"><value>Gebruikt nu “{0}”.</value></data>
+  <data name="Builds_Apply_Failed" xml:space="preserve"><value>Kon niet van voorinstelling wisselen — het lua-bestand is mogelijk in gebruik.</value></data>
+  <data name="Builds_Save_Done" xml:space="preserve"><value>Opgeslagen.</value></data>
+  <data name="Builds_Save_Failed" xml:space="preserve"><value>Opslaan mislukt — het lua-bestand is mogelijk in gebruik.</value></data>
+  <data name="Builds_Preset_Saved" xml:space="preserve"><value>Opgeslagen als voorinstelling.</value></data>
+  <data name="Builds_Action_SaveTo" xml:space="preserve"><value>Opslaan in ‘{0}’</value></data>
+  <data name="Builds_Action_SaveAsNew" xml:space="preserve"><value>Opslaan als nieuw</value></data>
+  <data name="Builds_Save_Updated" xml:space="preserve"><value>‘{0}’ bijgewerkt.</value></data>
+  <data name="Builds_Depot_Lock" xml:space="preserve"><value>Vergrendelen</value></data>
+  <data name="Builds_Depot_LockTip" xml:space="preserve"><value>Vergrendeld: dit depot blijft op het manifest hierboven. Ontgrendeld: Steam werkt het bij naar de nieuwste versie. (Zet de setManifestid-regel in of uit commentaar.)</value></data>
+  <data name="Builds_Depot_EnableTip" xml:space="preserve"><value>Aan: de decryptiesleutel van dit depot wordt toegepast. Uit: het depot wordt helemaal niet ontgrendeld. (Zet de addappid-regel in of uit commentaar.)</value></data>
+  <data name="Builds_Depot_Search" xml:space="preserve"><value>Zoek depots op naam, ID of type…</value></data>
+  <data name="Builds_Depot_NoMatch" xml:space="preserve"><value>Geen depots komen overeen met je zoekopdracht.</value></data>
+  <data name="Builds_Depot_InactiveNote" xml:space="preserve"><value>Je bewerkt een voorinstelling die niet is toegepast — wijzigingen worden er rechtstreeks in opgeslagen, en Steam blijft de toegepaste voorinstelling gebruiken totdat je op Toepassen klikt.</value></data>
+  <data name="Manage_Action_LaunchOptions" xml:space="preserve"><value>Opstartopties…</value></data>
+  <data name="Launch_Title" xml:space="preserve"><value>Opstartopties</value></data>
+  <data name="Launch_Loading" xml:space="preserve"><value>Steams app-cache wordt gelezen…</value></data>
+  <data name="Launch_NotFound" xml:space="preserve"><value>Steam heeft nog geen gegevens in de cache voor deze game. Start Steam één keer op en probeer het opnieuw.</value></data>
+  <data name="Launch_UnsupportedFormat" xml:space="preserve"><value>Steams app-cache heeft een indeling die deze versie niet begrijpt ({0}). Werk GameGuy bij.</value></data>
+  <data name="Launch_ReadFailed" xml:space="preserve"><value>Kon Steams app-cache niet lezen. {0}</value></data>
+  <data name="Launch_ExecutableRequired" xml:space="preserve"><value>Elke opstartoptie heeft een uitvoerbaar bestand nodig.</value></data>
+  <data name="Launch_Add" xml:space="preserve"><value>Toevoegen</value></data>
+  <data name="Launch_Delete" xml:space="preserve"><value>Verwijderen</value></data>
+  <data name="Launch_Field_Executable" xml:space="preserve"><value>Uitvoerbaar bestand</value></data>
+  <data name="Launch_Field_Arguments" xml:space="preserve"><value>Argumenten</value></data>
+  <data name="Launch_Field_WorkingDir" xml:space="preserve"><value>Werkmap</value></data>
+  <data name="Launch_Field_Description" xml:space="preserve"><value>Label (wordt in Steams speelmenu getoond)</value></data>
+  <data name="Launch_Field_Os" xml:space="preserve"><value>Besturingssysteem</value></data>
+  <data name="Launch_Field_Type" xml:space="preserve"><value>Type</value></data>
+  <data name="Launch_Field_BetaKey" xml:space="preserve"><value>Alleen op branch</value></data>
+  <data name="Launch_Field_BetaKey_Tip" xml:space="preserve"><value>Naam van de branch waartoe deze optie beperkt is — bijvoorbeeld beta, default, development. Laat leeg om hem op elke branch te tonen.</value></data>
+  <data name="Launch_Field_OwnsDlc" xml:space="preserve"><value>Alleen bij bezit van de DLC (App ID)</value></data>
+  <data name="Launch_InstallPath" xml:space="preserve"><value>Installatiepad: {0}</value></data>
+  <data name="Launch_SteamRestartNote" xml:space="preserve"><value>Bij het toepassen van wijzigingen wordt Steam afgesloten en opnieuw geopend.</value></data>
+  <data name="Launch_Restore" xml:space="preserve"><value>Origineel herstellen</value></data>
+  <data name="Launch_Restore_Tip" xml:space="preserve"><value>Zet de opstartopties terug die Steam meeleverde, voordat GameGuy ze wijzigde.</value></data>
+  <data name="Launch_Restore_Title" xml:space="preserve"><value>Oorspronkelijke opstartopties herstellen?</value></data>
+  <data name="Launch_Restore_Body" xml:space="preserve"><value>Hiermee worden de opstartopties teruggezet zoals Steam ze had en worden je wijzigingen verworpen. Steam wordt afgesloten en opnieuw geopend. Doorgaan?</value></data>
+  <data name="Launch_NothingToRestore" xml:space="preserve"><value>Deze game is niet gewijzigd, dus er valt niets te herstellen.</value></data>
+  <data name="Launch_ApplyNow_Title" xml:space="preserve"><value>Nu toepassen op Steam?</value></data>
+  <data name="Launch_ApplyNow_Body" xml:space="preserve"><value>Je wijzigingen zijn opgeslagen. Om ze naar Steam te schrijven moet Steam worden afgesloten en opnieuw geopend — nu doen? Kies Annuleren om later toe te passen.</value></data>
+  <data name="Launch_Staged" xml:space="preserve"><value>Opgeslagen. Pas ze vanuit dit venster toe wanneer je Steam opnieuw kunt opstarten.</value></data>
+  <data name="Launch_Applied" xml:space="preserve"><value>Opstartopties toegepast.</value></data>
+  <data name="Launch_Applied_Restarted" xml:space="preserve"><value>Opstartopties toegepast. Steam is opnieuw opgestart.</value></data>
+  <data name="Launch_ApplyFailed" xml:space="preserve"><value>Kon de opstartopties niet toepassen. {0}</value></data>
+  <data name="Launch_Drift_Title" xml:space="preserve"><value>Opstartopties zijn teruggezet</value></data>
+  <data name="Launch_Drift_Body" xml:space="preserve"><value>Steam heeft je opstartopties voor {0} game(s) overschreven. Opnieuw toepassen sluit Steam af en opent het weer.</value></data>
+  <data name="Launch_Drift_Action" xml:space="preserve"><value>Opnieuw toepassen</value></data>
+  <data name="Err_SteamNotFound" xml:space="preserve"><value>Steam-locatie niet gevonden. Stel deze in bij Instellingen.</value></data>
+  <data name="Err_GithubUnreachable" xml:space="preserve"><value>Kon GitHub niet bereiken. Controleer je verbinding en probeer het opnieuw.</value></data>
+  <data name="Err_UpdateServerUnreachable" xml:space="preserve"><value>Kon de updateserver niet bereiken. Controleer je verbinding en probeer het opnieuw.</value></data>
+  <data name="Err_Cancelled" xml:space="preserve"><value>Geannuleerd.</value></data>
+  <data name="Err_CancelledByUser" xml:space="preserve"><value>Geannuleerd door gebruiker</value></data>
+  <data name="Err_ReleaseMissingDownload" xml:space="preserve"><value>De verwachte download ontbreekt in de release.</value></data>
+  <data name="Err_ReleaseMissingFile" xml:space="preserve"><value>{0} ontbreekt in de release.</value></data>
+  <data name="Err_VerifyFailed" xml:space="preserve"><value>De download is niet geverifieerd (sha256 komt niet overeen).</value></data>
+  <data name="Err_VerifyFailedFile" xml:space="preserve"><value>{0} is niet geverifieerd (sha256 komt niet overeen).</value></data>
+  <data name="Err_DownloadMissingFiles" xml:space="preserve"><value>Ontbreekt in de download: {0}.</value></data>
+  <data name="Err_WriteFailedCount" xml:space="preserve"><value>Kon {0} bestand(en) niet schrijven. Sluit Steam en probeer het opnieuw.</value></data>
+  <data name="Err_WriteFailedFile" xml:space="preserve"><value>Kon {0} niet schrijven. Sluit Steam en probeer het opnieuw.</value></data>
+  <data name="Err_OpenDownloadFailed" xml:space="preserve"><value>Kon de download niet openen: {0}</value></data>
+  <data name="Err_NoSourceAvailable" xml:space="preserve"><value>Geen bron beschikbaar voor dit spel.</value></data>
+  <data name="Api_Err_EmptyDownloadLink" xml:space="preserve"><value>De downloadlink was leeg. Probeer het opnieuw.</value></data>
+  <data name="Api_Err_DownloadFailed" xml:space="preserve"><value>Download mislukt ({0}).</value></data>
+  <data name="Api_Err_RequestFailed" xml:space="preserve"><value>Verzoek mislukt ({0})</value></data>
+  <data name="Api_Err_InvalidKey" xml:space="preserve"><value>Your authentication key was rejected. Check it in Settings.</value></data>
+  <data name="Hubcap_Err_InvalidKey" xml:space="preserve"><value>Je Hubcap-sleutel is ongeldig of verlopen.</value></data>
+  <data name="Hubcap_Err_LimitReached" xml:space="preserve"><value>Je dagelijkse Hubcap-limiet is bereikt.</value></data>
+  <data name="Hubcap_Err_NoManifest" xml:space="preserve"><value>Er is geen Hubcap-manifest voor deze app.</value></data>
+  <data name="Hubcap_Err_DownloadFailed" xml:space="preserve"><value>Hubcap-download mislukt ({0}).</value></data>
+  <data name="Nav_Downloads" xml:space="preserve"><value>Downloads</value></data>
+  <data name="Downloads_Title" xml:space="preserve"><value>Downloads</value></data>
+  <data name="Downloads_Empty" xml:space="preserve"><value>Geen downloads bezig. Kom op, download iets!</value></data>
+  <data name="Downloads_Section_Active" xml:space="preserve"><value>Wachtrij</value></data>
+  <data name="Downloads_Section_History" xml:space="preserve"><value>Geschiedenis</value></data>
+  <data name="Downloads_Status_Queued" xml:space="preserve"><value>In wachtrij</value></data>
+  <data name="Downloads_Status_Downloading" xml:space="preserve"><value>Bezig met downloaden</value></data>
+  <data name="Downloads_Status_AwaitingConfirm" xml:space="preserve"><value>Wacht op jou</value></data>
+  <data name="Downloads_Status_Installing" xml:space="preserve"><value>Bezig met installeren</value></data>
+  <data name="Downloads_Status_Completed" xml:space="preserve"><value>Klaar</value></data>
+  <data name="Downloads_Status_Failed" xml:space="preserve"><value>Mislukt</value></data>
+  <data name="Downloads_Status_Cancelled" xml:space="preserve"><value>Geannuleerd</value></data>
+  <data name="Downloads_Action_Cancel" xml:space="preserve"><value>Annuleren</value></data>
+  <data name="Downloads_Action_Retry" xml:space="preserve"><value>Opnieuw proberen</value></data>
+  <data name="Downloads_Action_Remove" xml:space="preserve"><value>Verwijderen</value></data>
+  <data name="Downloads_Action_MoveUp" xml:space="preserve"><value>Omhoog</value></data>
+  <data name="Downloads_Action_MoveDown" xml:space="preserve"><value>Omlaag</value></data>
+  <data name="Downloads_Action_ClearHistory" xml:space="preserve"><value>Geschiedenis wissen</value></data>
+  <data name="Downloads_Action_Review" xml:space="preserve"><value>Bekijken</value></data>
+  <data name="Downloads_Of" xml:space="preserve"><value>{0} van {1}</value></data>
+  <data name="Downloads_Eta" xml:space="preserve"><value>Nog {0}</value></data>
+  <data name="Downloads_ActionRequired" xml:space="preserve"><value>Actie vereist</value></data>
+  <data name="Downloads_Err_Interrupted" xml:space="preserve"><value>Onderbroken toen de app werd afgesloten.</value></data>
+  <data name="Downloads_Kind_Dlc" xml:space="preserve"><value>DLC-ontgrendeling</value></data>
+  <data name="Fixes_NotInstalled_Hint" xml:space="preserve"><value>Installeer eerst de game om een fix toe te passen.</value></data>
+  <data name="Downloads_Status_Paused" xml:space="preserve"><value>Gepauzeerd</value></data>
+  <data name="Downloads_Status_Verifying" xml:space="preserve"><value>Verifiëren…</value></data>
+  <data name="Downloads_Action_Pause" xml:space="preserve"><value>Pauzeren</value></data>
+  <data name="Downloads_Action_Resume" xml:space="preserve"><value>Hervatten</value></data>
+  <data name="Downloads_Kind_Depot" xml:space="preserve"><value>Depotbestanden</value></data>
+  <data name="Downloads_Depots_Progress" xml:space="preserve"><value>Depots · {0} van {1}</value></data>
+  <data name="Depot_Err_Tool" xml:space="preserve"><value>Kon de depot-downloader niet ophalen.</value></data>
+  <data name="Depot_Err_NoKeys" xml:space="preserve"><value>Geen ontsleutelsleutels gevonden voor dit spel.</value></data>
+  <data name="Depot_Err_Failed" xml:space="preserve"><value>Depot {0} mislukt: {1}</value></data>
+  <data name="Depot_Status_Done" xml:space="preserve"><value>{0} depots gedownload naar {1}.</value></data>
+  <data name="Builds_Action_Download" xml:space="preserve"><value>Downloaden</value></data>
+  <data name="Builds_Select_Title" xml:space="preserve"><value>Kies depots om te downloaden</value></data>
+  <data name="Builds_Select_Confirm" xml:space="preserve"><value>{0} depots downloaden ({1})</value></data>
+  <data name="Builds_Select_NoManifest" xml:space="preserve"><value>Dit depot geeft geen te downloaden versie op.</value></data>
+  <data name="Builds_Select_All" xml:space="preserve"><value>Alles selecteren</value></data>
+  <data name="Builds_Select_None" xml:space="preserve"><value>Geen depots geselecteerd</value></data>
+  <data name="Builds_Select_ChooseFolder" xml:space="preserve"><value>Kies waar de depotbestanden worden opgeslagen</value></data>
+  <data name="Depot_Err_NoSpace" xml:space="preserve"><value>Niet genoeg schijfruimte: vereist {0}, slechts {1} vrij.</value></data>
+  <data name="Builds_Select_SaveTo" xml:space="preserve"><value>Opslaan in</value></data>
+  <data name="Builds_Select_Space" xml:space="preserve"><value>Vereist {0} · {1} vrij op {2}</value></data>
+  <data name="Builds_Select_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download this depot.</value></data>
+  <data name="Depot_Err_NeedAuthKey" xml:space="preserve"><value>Add your authentication key to download depots.</value></data>
+  <data name="Downloads_Depot_FetchingManifest" xml:space="preserve"><value>manifest ophalen</value></data>
+  <data name="Depot_Err_NoManifest" xml:space="preserve"><value>Kon het manifest van dit depot niet ophalen.</value></data>
+  <data name="Downloads_Depots_Preparing" xml:space="preserve"><value>Voorbereiden · {0} van {1}</value></data>
+  <data name="Downloads_Depots_GettingTool" xml:space="preserve"><value>Downloader ophalen</value></data>
+  <data name="Downloads_Kind_Tool" xml:space="preserve"><value>Hulpprogramma</value></data>
+  <data name="Downloads_SteamAutoCrack" xml:space="preserve"><value>SteamAutoCrack</value></data>
+  <data name="Downloads_SAC_GettingRuntime" xml:space="preserve"><value>.NET-runtime controleren</value></data>
+  <data name="Downloads_SAC_GettingTool" xml:space="preserve"><value>SteamAutoCrack ophalen</value></data>
+  <data name="Downloads_SAC_Launched" xml:space="preserve"><value>SteamAutoCrack geopend.</value></data>
+  <data name="Downloads_SAC_Err_Runtime" xml:space="preserve"><value>Kan de .NET-runtime die SteamAutoCrack nodig heeft niet installeren.</value></data>
+  <data name="Downloads_SAC_Err_Restart" xml:space="preserve"><value>De .NET-runtime is geïnstalleerd, maar Windows moet opnieuw opstarten voordat SteamAutoCrack kan draaien.</value></data>
+  <data name="Downloads_SAC_Err_Tool" xml:space="preserve"><value>Kan SteamAutoCrack niet downloaden.</value></data>
+  <data name="Downloads_SAC_Err_Launch" xml:space="preserve"><value>Kan SteamAutoCrack niet starten.</value></data>
+  <data name="Downloads_SAC_Updated" xml:space="preserve"><value>SteamAutoCrack bijgewerkt.</value></data>
+  <data name="Downloads_Depot_PreAllocating" xml:space="preserve"><value>bestanden reserveren</value></data>
+  <data name="Downloads_Depot_Validating" xml:space="preserve"><value>bestaande bestanden controleren</value></data>
+  <data name="Depot_Cancel_Title" xml:space="preserve"><value>Download annuleren</value></data>
+  <data name="Depot_Cancel_Body" xml:space="preserve"><value>Er is al {0} geschreven naar:
+{1}
+
+Ja - stoppen en die bestanden verwijderen
+Nee - stoppen maar behouden
+Annuleren - doorgaan met downloaden</value></data>
+  <data name="Depot_Cancel_DeleteFailed" xml:space="preserve"><value>Kan de gedownloade bestanden niet verwijderen. Ze staan nog in {0}.</value></data>
+  <data name="Common_CopyAppId" xml:space="preserve"><value>App ID kopiëren</value></data>
+  <data name="Common_ShowInFolder" xml:space="preserve"><value>In map weergeven</value></data>
+  <data name="Err_ClipboardBusy" xml:space="preserve"><value>Kopiëren mislukt — een andere app gebruikt het klembord.</value></data>
+  <data name="Err_PathMissing" xml:space="preserve"><value>Kan {0} niet openen — mogelijk verplaatst of verwijderd.</value></data>
+  <data name="Builds_Select_NoKey" xml:space="preserve"><value>Geen ontsleutelingssleutel in de Lua voor deze depot.</value></data>
+  <data name="Depot_Err_BadKey" xml:space="preserve"><value>De ontsleutelingssleutel voor depot {0} is onjuist.</value></data>
+  <data name="Depot_Err_NoKeyFor" xml:space="preserve"><value>Geen ontsleutelingssleutel in de Lua voor depot {0}.</value></data>
+  <data name="Builds_Select_SharedHint" xml:space="preserve"><value>Gedeelde runtime — meestal al geïnstalleerd. Vink aan om toch te downloaden.</value></data>
+  <data name="Downloads_ClearHistory_Confirm" xml:space="preserve"><value>Alle {0} items uit de downloadgeschiedenis verwijderen? Gedownloade bestanden blijven staan.</value></data>
+  <data name="Fixes_Applied_Hint" xml:space="preserve"><value>Deze fix is al toegepast. Draai hem terug als je een andere wilt installeren.</value></data>
+  <data name="Fixes_MyGames" xml:space="preserve"><value>Mijn games</value></data>
+  <data name="Fixes_MyGames_Count" xml:space="preserve"><value>{0} van je games hebben fixes. Scroll door het overzicht voor de rest.</value></data>
+  <data name="Fixes_MyGames_NotInstalled" xml:space="preserve"><value>Nog geen lua's toegevoegd. Voeg een game toe (of installeer er een) om hem hier te zien.</value></data>
+  <data name="Fixes_Revert" xml:space="preserve"><value>Terugdraaien</value></data>
+  <data name="Fixes_Revert_Cancel" xml:space="preserve"><value>Annuleren</value></data>
+  <data name="Fixes_Revert_Confirm_Body" xml:space="preserve"><value>"{0}" terugdraaien? Gewijzigde bestanden worden hersteld vanaf de back-up en bestanden die de fix heeft toegevoegd worden verwijderd.</value></data>
+  <data name="Fixes_Revert_Confirm_Title" xml:space="preserve"><value>Fix voor {0} terugdraaien?</value></data>
+  <data name="Fixes_Revert_Done" xml:space="preserve"><value>Fix teruggedraaid</value></data>
+  <data name="Fixes_Revert_Done_Body" xml:space="preserve"><value>{0} hersteld, {1} toegevoegde bestand(en) verwijderd.</value></data>
+  <data name="Fixes_Revert_Failed" xml:space="preserve"><value>Kan fix niet terugdraaien</value></data>
+  <data name="Fixes_Revert_NoRecord" xml:space="preserve"><value>Geen registratie dat deze fix is toegepast. Mogelijk is hij al teruggedraaid.</value></data>
+  <data name="Fixes_Revert_Conflict" xml:space="preserve"><value>Fix kan niet veilig worden teruggedraaid</value></data>
+  <data name="Fixes_Revert_Conflict_Body" xml:space="preserve"><value>{0} is gewijzigd sinds deze fix is toegepast, dus herstellen zou die wijzigingen overschrijven. Als je er een andere fix overheen hebt toegepast, draai die dan eerst terug. {1} bestand(en) getroffen.</value></data>
+  <data name="Fixes_Revert_Partial" xml:space="preserve"><value>Fix gedeeltelijk teruggedraaid</value></data>
+  <data name="Fixes_Revert_Partial_Body" xml:space="preserve"><value>{0} bestand(en) konden niet worden hersteld. Sluit de game en probeer opnieuw.</value></data>
+  <data name="Auth_Err_NoKey" xml:space="preserve"><value>No authentication key set. Add one in Settings.</value></data>
+  <data name="Onboarding_AuthKey_Blurb" xml:space="preserve"><value>Paste your authentication key to unlock adding games and fixes. You can get one on lua.tools.</value></data>
+  <data name="Onboarding_AuthKeySet" xml:space="preserve"><value>Key saved ✓</value></data>
+</root>
