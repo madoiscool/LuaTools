@@ -267,7 +267,17 @@ public partial class SettingsViewModel : ObservableObject
     {
         IsGuest = _auth.IsGuest;
         AuthKeyIsConfigured = !IsGuest;
+        MaskedAuthKey = MaskKey(_auth.TrimmedKey);
         if (!IsGuest) AuthKeyRequiredMessage = null;
+    }
+
+    /// <summary>Never render the key itself: first four characters plus its length is enough to tell
+    /// one key from another when something is wrong, and useless to anyone reading over a shoulder.</summary>
+    private static string? MaskKey(string? key)
+    {
+        if (string.IsNullOrEmpty(key)) return null;
+        string head = key.Length <= 8 ? key[..2] : key[..4];
+        return $"{head}{new string('•', 12)}  ({key.Length})";
     }
 
     // ── Authentication key ──────────────────────────────────────────
@@ -282,6 +292,14 @@ public partial class SettingsViewModel : ObservableObject
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(AuthKeyStatusText))]
     private bool _authKeyIsConfigured;
+
+    /// <summary>Masked display form of the saved key (e.g. "abcd••••••••••••  (43)"), or null when none
+    /// is saved. The raw key is never bound into the view.</summary>
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(HasAuthKeyMask))]
+    private string? _maskedAuthKey;
+
+    public bool HasAuthKeyMask => MaskedAuthKey is not null;
 
     /// <summary>"Key set" / "No key set", shown as the status row in the key section.</summary>
     public string AuthKeyStatusText =>

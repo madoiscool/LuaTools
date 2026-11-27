@@ -17,11 +17,25 @@ public class AuthService(SettingsService settings)
     public string? AuthKey => settings.AuthKey;
 
     /// <summary>True when no key is set. Gated actions check this (the name survives from the old
-    /// guest model: no key = no access).</summary>
+    /// guest model: no key = no access). Inverted so "no key" is a PRESENT bool — every gate reads
+    /// <c>IsGuest</c>, and a missing binding would silently evaluate to false (= key present), which is
+    /// the wrong way to fail on a login gate.</summary>
     public bool IsGuest => string.IsNullOrWhiteSpace(settings.AuthKey);
 
-    /// <summary>True when a key is set.</summary>
+    /// <summary>True when a key is set (drives the "Key set" labels).</summary>
     public bool IsSignedIn => !IsGuest;
+
+    /// <summary>The stored key, trimmed, or null when none is set. Exposed so the Settings page can
+    /// mask it — showing nothing at all reads as "no key", which is exactly what a returning user is
+    /// here to check and fix.</summary>
+    public string? TrimmedKey
+    {
+        get
+        {
+            string? key = settings.AuthKey?.Trim();
+            return string.IsNullOrEmpty(key) ? null : key;
+        }
+    }
 
     public event Action? AuthStateChanged;
 

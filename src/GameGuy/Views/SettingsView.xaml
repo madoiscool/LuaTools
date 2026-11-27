@@ -101,14 +101,23 @@
                                 Text="{x:Static res:Strings.Settings_AuthKey_Hint}"
                                 TextWrapping="Wrap" />
                         </StackPanel>
-                        <ui:Button
-                            Grid.Column="1"
-                            Margin="12,0,0,0"
-                            VerticalAlignment="Center"
-                            Command="{Binding ClearAuthKeyCommand}"
-                            Content="{x:Static res:Strings.Settings_AuthKeyClear}"
-                            Icon="{ui:SymbolIcon Dismiss24}"
-                            Visibility="{Binding HasAuthKey, Converter={StaticResource BoolToVis}}" />
+                        <StackPanel Grid.Column="1" Margin="12,0,0,0" VerticalAlignment="Center" Orientation="Horizontal">
+                            <!-- Masked key: enough to spot the wrong one, never the key itself. -->
+                            <TextBlock
+                                Margin="0,0,10,0"
+                                VerticalAlignment="Center"
+                                FontFamily="Consolas"
+                                FontSize="11.5"
+                                Foreground="#6b7280"
+                                Text="{Binding MaskedAuthKey}"
+                                Visibility="{Binding HasAuthKeyMask, Converter={StaticResource BoolToVis}}" />
+                            <ui:Button
+                                VerticalAlignment="Center"
+                                Command="{Binding ClearAuthKeyCommand}"
+                                Content="{x:Static res:Strings.Settings_AuthKeyClear}"
+                                Icon="{ui:SymbolIcon Dismiss24}"
+                                Visibility="{Binding HasAuthKey, Converter={StaticResource BoolToVis}}" />
+                        </StackPanel>
                     </Grid>
 
                     <!-- Key input: only while NO key is saved. Same shape as the Hubcap section:

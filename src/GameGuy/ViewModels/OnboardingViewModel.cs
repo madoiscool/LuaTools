@@ -6,9 +6,14 @@ using GameGuy.Services;
 namespace GameGuy.ViewModels;
 
 /// <summary>
-/// First-run welcome overlay. Shown once (gated by <see cref="CacheService.OnboardingComplete"/>) over the
-/// whole app: asks for the authentication key, offers "apply recommended settings" (BetterSteamTools +
-/// FastFetch) and "install the plugin", then applies the chosen actions on "Let's go!" and dismisses.
+/// Overlay for two jobs, both hosted by <c>MainWindow</c>: the first-run welcome (gated by
+/// <see cref="CacheService.OnboardingComplete"/>) — authentication key, "apply recommended settings"
+/// (BetterSteamTools + FastFetch), "install the plugin" — and the key-only prompt that comes back on any
+/// later launch while no key is stored. "Let's go!" applies the chosen actions and dismisses.
+///
+/// A FIRST-RUN user with no key can still get through: the key is required at start-up, so requiring it
+/// here too would leave a brand-new install with no way in and no way to get a key. Gated actions
+/// re-prompt for it (see App → RequestAuthKeyGate), and clearing the key re-opens the key-only prompt.
 /// </summary>
 public partial class OnboardingViewModel : ObservableObject
 {
@@ -44,7 +49,6 @@ public partial class OnboardingViewModel : ObservableObject
     /// <summary>True when a key is already stored (skips the key-entry block).</summary>
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(NeedsAuthKey))]
-    [NotifyPropertyChangedFor(nameof(CanFinish))]
     private bool _isSignedIn;
     public bool NeedsAuthKey => !IsSignedIn;
 
@@ -86,8 +90,9 @@ public partial class OnboardingViewModel : ObservableObject
     private bool _isBusy;
     public bool NotBusy => !IsBusy;
 
-    /// <summary>A key is required, so "Let's go!" stays disabled until one is saved.</summary>
-    public bool CanFinish => NotBusy && !NeedsAuthKey;
+    /// <summary>"Let's go!" is enabled whenever nothing is running. The key-only prompt has no other way
+    /// out, so it must stay dismissible (a user can go set up a key from Settings afterwards).</summary>
+    public bool CanFinish => NotBusy;
 
     /// <summary>Error text shown under the key box; null when none.</summary>
     [ObservableProperty] private string? _statusLine;
@@ -110,8 +115,6 @@ public partial class OnboardingViewModel : ObservableObject
     }
 
     partial void OnAuthKeyInputChanged(string value) => SaveAuthKeyCommand.NotifyCanExecuteChanged();
-
-    partial void OnIsSignedInChanged(bool value) => FinishCommand.NotifyCanExecuteChanged();
 
     partial void OnIsBusyChanged(bool value) => FinishCommand.NotifyCanExecuteChanged();
 

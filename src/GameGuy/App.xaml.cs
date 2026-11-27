@@ -470,9 +470,10 @@ public partial class App : Application
                 else main.Onboarding.IsOpen = true;
             }
 
-            // An authentication key is REQUIRED: with none stored, the overlay comes back as a key-only
-            // prompt (no first-run install choices) and its "Let's go!" stays disabled until a key is
-            // saved. Same overlay, so there is one place that asks for the key.
+            // An authentication key is REQUIRED: with none stored, the overlay opens as a key-only prompt
+            // (no first-run install choices) and its "Let's go!" stays disabled until a key is saved.
+            // This is deliberately OUTSIDE the OnboardingComplete check above: that flag is permanent, so
+            // a returning user whose key is missing/cleared would otherwise never be asked again.
             if (main.Onboarding.NeedsAuthKey) main.Onboarding.OpenKeyOnly();
         }
 
